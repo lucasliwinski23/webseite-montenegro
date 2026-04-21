@@ -3100,14 +3100,10 @@ function setupMapFullscreen() {
     btn.innerHTML = isFs
       ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3v4H4M16 3v4h4M8 21v-4H4M16 21v-4h4"/></svg>'
       : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V3h4M21 7V3h-4M3 17v4h4M21 17v4h-4"/></svg>';
-    const apt = (window.__pgApartment) || { lat: 42.443, lng: 19.263 };
-    const targetZoom = isFs ? 15 : 14;
-    [50, 300, 700].forEach(ms => setTimeout(() => {
+    [50, 300].forEach(ms => setTimeout(() => {
       const m = window.__pgMap;
       if (!m) return;
       m.invalidateSize({ animate: false, pan: false });
-      m.setView([apt.lat, apt.lng], targetZoom, { animate: false });
-      m.eachLayer(l => { if (typeof l.redraw === 'function') l.redraw(); });
     }, ms));
   };
   document.addEventListener('fullscreenchange', onFsChange);
