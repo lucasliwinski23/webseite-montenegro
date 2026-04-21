@@ -2963,6 +2963,7 @@ function computeNearestSpot(lat, lng) {
   const apt = DATA?.meta?.apartment?.coords;
   const dApt = apt ? distM(lat, lng, apt.lat, apt.lng) : null;
 
+  const prevNearest = window.__nearestSpotId;
   if (best && bestD <= 80) {
     window.__nearestSpotId = best.spotId;
     window.__nearestDist = bestD;
@@ -2973,7 +2974,9 @@ function computeNearestSpot(lat, lng) {
   window.__userPos = { lat, lng };
   window.__distToApt = dApt;
   refreshHereBadges();
-  if (window.__refreshMarkers) window.__refreshMarkers();
+  // Marker nur rebuilden wenn sich der nearest Spot geändert hat — sonst würde
+  // jeder GPS-Tick geöffnete Popups zerstören.
+  if (prevNearest !== window.__nearestSpotId && window.__refreshMarkers) window.__refreshMarkers();
   if (window.__refreshUserMarker) window.__refreshUserMarker();
 }
 
@@ -4265,6 +4268,14 @@ function initMap() {
   window.__refreshUserMarker = refreshUserMarker;
 
   function refreshMarkers() {
+    // Welches Popup war offen? Koordinaten merken, um nach Rebuild wieder zu öffnen.
+    let openAt = null;
+    markersGroup.eachLayer(layer => {
+      if (layer.isPopupOpen && layer.isPopupOpen()) {
+        const ll = layer.getLatLng();
+        openAt = { lat: ll.lat, lng: ll.lng };
+      }
+    });
     markersGroup.clearLayers();
     markerById.clear();
     mapPoints.forEach(p => {
@@ -4283,6 +4294,15 @@ function initMap() {
       m.addTo(markersGroup);
       if (p.spotId) markerById.set(p.spotId, { marker: m, point: p });
     });
+    // Vorher offenes Popup an gleicher Koordinate wieder öffnen
+    if (openAt) {
+      markersGroup.eachLayer(layer => {
+        const ll = layer.getLatLng();
+        if (Math.abs(ll.lat - openAt.lat) < 1e-9 && Math.abs(ll.lng - openAt.lng) < 1e-9) {
+          layer.openPopup();
+        }
+      });
+    }
   }
   refreshMarkers();
 
