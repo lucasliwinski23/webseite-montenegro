@@ -3740,9 +3740,10 @@ function spotKey(spot, type) { return `${type}-${(spot.name||'').replace(/\W+/g,
 function homeNavUrl(spot) {
   const apt = DATA?.meta?.apartment?.coords;
   if (!apt) return '#';
-  const origin = (spot?.coords?.lat != null && spot?.coords?.lng != null)
-    ? `&origin=${spot.coords.lat},${spot.coords.lng}`
-    : '';
+  // Spot-Cards liefern spot.coords.{lat,lng}, Map-Points liefern spot.{lat,lng} direkt
+  const lat = spot?.coords?.lat ?? spot?.lat;
+  const lng = spot?.coords?.lng ?? spot?.lng;
+  const origin = (lat != null && lng != null) ? `&origin=${lat},${lng}` : '';
   return `https://www.google.com/maps/dir/?api=1${origin}&destination=${apt.lat},${apt.lng}&travelmode=walking`;
 }
 
