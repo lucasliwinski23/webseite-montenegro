@@ -1377,6 +1377,11 @@ section { padding: 70px 0; position: relative; }
   padding: 0 !important;
   border: none !important;
   border-radius: 0 !important;
+  /* transform/opacity neutralisieren — #map trägt .fade-in (translateY + opacity).
+     Ein aktiver transform macht das Element zum containing block für position:fixed
+     → dann ist der Fullscreen nicht viewport-verankert (iOS Safari Bug-Muster). */
+  transform: none !important;
+  opacity: 1 !important;
   z-index: 1200;
   background: var(--bg-card);
 }
@@ -1384,17 +1389,16 @@ section { padding: 70px 0; position: relative; }
   width: 100% !important;
   height: 100% !important;
 }
-body.map-fullscreen-active { overflow: hidden; }
-/* FABs + Theme ausblenden im Fullscreen — Bottom-Nav bleibt für Navigation */
+/* Scroll-Lock robust (auch iOS Safari) — JS setzt zusätzlich body.style.top = -scrollY */
+html.map-fullscreen-active,
+body.map-fullscreen-active { overflow: hidden; height: 100%; }
+body.map-fullscreen-active { position: fixed; width: 100%; left: 0; right: 0; }
+/* FABs, Theme UND Bottom-Nav ausblenden — nichts soll die Fullscreen-Map überlagern */
 body.map-fullscreen-active .home-fab,
 body.map-fullscreen-active .scroll-top-fab,
-body.map-fullscreen-active .theme-switch {
-  display: none;
-}
+body.map-fullscreen-active .theme-switch,
 body.map-fullscreen-active .bottom-nav {
-  z-index: 1300;
-  background: var(--bg-card);
-  border-top: 2px solid var(--accent-primary);
+  display: none !important;
 }
 /* Karten-Buttons im Fullscreen prominenter (Safe-Area für iOS-Notch) */
 #map.is-fullscreen .map-fullscreen-btn {
@@ -1427,6 +1431,7 @@ body.map-fullscreen-active .bottom-nav {
   width: 20px; height: 20px;
   fill: none; stroke: currentColor; stroke-width: 2;
   stroke-linecap: round; stroke-linejoin: round;
+  pointer-events: none; /* Taps landen am <button>, nicht am <path> */
 }
 .leaflet-container { font-family: 'Inter', sans-serif; background: var(--bg-card); }
 .leaflet-popup-content-wrapper {
@@ -3085,9 +3090,21 @@ function setupMapFullscreen() {
   const iconExit  = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3v4H4M16 3v4h4M8 21v-4H4M16 21v-4h4"/></svg>';
   btn.innerHTML = iconEnter;
 
+  let savedScrollY = 0;
   const setFullscreen = (on) => {
+    if (on) {
+      savedScrollY = window.scrollY || window.pageYOffset || 0;
+      document.documentElement.classList.add('map-fullscreen-active');
+      document.body.classList.add('map-fullscreen-active');
+      // iOS Safari ignoriert overflow:hidden auf body — position:fixed + top:-scrollY ist der Workaround
+      document.body.style.top = `-${savedScrollY}px`;
+    } else {
+      document.documentElement.classList.remove('map-fullscreen-active');
+      document.body.classList.remove('map-fullscreen-active');
+      document.body.style.top = '';
+      window.scrollTo(0, savedScrollY);
+    }
     map.classList.toggle('is-fullscreen', on);
-    document.body.classList.toggle('map-fullscreen-active', on);
     btn.setAttribute('aria-label', on ? 'Karte verkleinern' : 'Karte vergrößern');
     btn.title = on ? 'Karte verkleinern' : 'Karte vergrößern';
     btn.innerHTML = on ? iconExit : iconEnter;
