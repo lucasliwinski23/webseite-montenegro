@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0A0909" />
+<meta name="description" content="Podgorica Sauftour 24.-26. April 2026 - Der Plan" />
+<title>Podgorica Sauftour 2026 — Die Mission</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500;600;700&family=Archivo:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+:root {
+  --ink: #0A0909;
+  --coal: #14110F;
+  --steel: #2A2521;
+  --steel2: #3A332C;
+  --ember: #FF5722;
+  --amber: #F4A136;
+  --blood: #C23616;
+  --rust: #8B3A1A;
+  --bone: #F5F1EA;
+  --smoke: #9A8E84;
+  --ash: #605851;
+  --neon: #FFC857;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Archivo', sans-serif; background: var(--ink); color: var(--bone); overflow-x: hidden; line-height: 1.5; }
+
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255,87,34,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(244,161,54,0.02) 0%, transparent 50%);
+  z-index: 1;
+}
+body::after {
+  content: ''; position: fixed; inset: 0; pointer-events: none;
+  opacity: 0.04; z-index: 2;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 3; }
+
+.display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; line-height: 0.9; font-weight: 400; }
+.heading { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 400; }
+.label { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ember); font-weight: 700; }
+
+/* HERO */
+.hero {
+  min-height: 100vh; min-height: 100dvh;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(255,87,34,0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 80%, rgba(194,54,22,0.3) 0%, transparent 60%),
+    linear-gradient(180deg, var(--ink) 0%, var(--coal) 100%);
+  position: relative; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 40px 20px 100px; overflow: hidden;
+}
+
+/* Flammen */
+.flames { position: absolute; bottom: -50px; left: 0; right: 0; height: 250px; pointer-events: none; filter: blur(4px); z-index: 0; }
+.flame {
+  position: absolute; bottom: 0; width: 80px; height: 120px;
+  background: radial-gradient(ellipse at 50% 100%, var(--amber) 0%, var(--ember) 30%, var(--blood) 60%, transparent 90%);
+  border-radius: 50% 50% 40% 40% / 70% 70% 40% 40%;
+  transform-origin: 50% 100%;
+  animation: flicker 1.4s ease-in-out infinite;
+  opacity: 0.85; mix-blend-mode: screen;
+}
+.flame:nth-child(1){ left: 5%; animation-delay: 0s; width: 70px; height: 110px; }
+.flame:nth-child(2){ left: 18%; animation-delay: 0.3s; width: 100px; height: 140px; }
+.flame:nth-child(3){ left: 32%; animation-delay: 0.6s; width: 80px; height: 130px; }
+.flame:nth-child(4){ left: 45%; animation-delay: 0.15s; width: 120px; height: 150px; }
+.flame:nth-child(5){ left: 58%; animation-delay: 0.45s; width: 90px; height: 125px; }
+.flame:nth-child(6){ left: 72%; animation-delay: 0.75s; width: 75px; height: 115px; }
+.flame:nth-child(7){ left: 85%; animation-delay: 0.2s; width: 95px; height: 135px; }
+@keyframes flicker {
+  0%,100% { transform: scaleY(1) scaleX(1) translateX(0); opacity: 0.85; }
+  25% { transform: scaleY(1.15) scaleX(0.95) translateX(-3px); opacity: 0.9; }
+  50% { transform: scaleY(0.95) scaleX(1.05) translateX(2px); opacity: 0.7; }
+  75% { transform: scaleY(1.1) scaleX(0.9) translateX(4px); opacity: 0.95; }
+}
+
+/* Ticker */
+.ticker { position: absolute; top: 0; left: 0; right: 0; background: var(--ember); color: var(--ink); overflow: hidden; z-index: 5; border-bottom: 3px solid var(--blood); }
+.ticker-track { display: inline-block; white-space: nowrap; animation: marquee 28s linear infinite; padding: 10px 0; font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 0.15em; font-size: 0.85rem; text-transform: uppercase; }
+.ticker-track span { margin-right: 3rem; }
+.ticker-track span::before { content: '▲'; margin-right: 0.8rem; color: var(--ink); }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+.hero-content { position: relative; z-index: 3; max-width: 1200px; margin: 0 auto; width: 100%; }
+.hero-tag { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border: 2px solid var(--ember); background: rgba(255,87,34,0.1); color: var(--ember); margin-bottom: 20px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; }
+.hero-tag .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ember); animation: pulse 1.5s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(255,87,34,0.6); } 50% { box-shadow: 0 0 0 10px rgba(255,87,34,0); } }
+
+.hero h1 { color: var(--bone); margin-bottom: 6px; text-shadow: 0 4px 20px rgba(0,0,0,0.6); font-size: clamp(4rem, 18vw, 12rem); font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; line-height: 0.9; }
+.hero h1 .flame-word { background: linear-gradient(180deg, var(--amber) 0%, var(--ember) 50%, var(--blood) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 20px rgba(255,87,34,0.4)); }
+.hero-sub { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: clamp(1rem, 4vw, 1.5rem); color: var(--smoke); letter-spacing: 0.35em; text-transform: uppercase; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid var(--steel2); max-width: 600px; }
+
+.countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; max-width: 500px; margin-bottom: 30px; }
+.cd-cell { background: rgba(20,17,15,0.8); border: 1px solid var(--steel2); padding: 12px 4px; text-align: center; backdrop-filter: blur(4px); }
+.cd-num { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem, 8vw, 2.8rem); color: var(--ember); line-height: 1; text-shadow: 0 0 20px rgba(255,87,34,0.5); }
+.cd-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--smoke); text-transform: uppercase; margin-top: 4px; }
+
+.hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 2px solid var(--steel2); padding-top: 16px; }
+.hero-stat { text-align: left; padding-right: 8px; }
+.hero-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.5rem, 6vw, 2.5rem); color: var(--bone); line-height: 1; }
+.hero-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; letter-spacing: 0.18em; color: var(--smoke); text-transform: uppercase; margin-top: 4px; }
+.hero-stat:nth-child(1) .hero-stat-num { color: var(--ember); }
+.hero-stat:nth-child(2) .hero-stat-num { color: var(--amber); }
+
+.scroll-hint { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: var(--smoke); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; z-index: 4; text-align: center; }
+.scroll-hint::after { content: ''; display: block; width: 1px; height: 30px; background: var(--ember); margin: 8px auto 0; animation: slideDown 1.8s ease-in-out infinite; }
+@keyframes slideDown { 0%,100% { opacity: 0; transform: translateY(-10px); } 50% { opacity: 1; transform: translateY(10px); } }
+
+/* Sections */
+section { padding: 80px 0; position: relative; }
+.section-alt { background: var(--coal); }
+.section-ink { background: var(--ink); }
+.section-header { margin-bottom: 50px; position: relative; }
+.section-header .label { margin-bottom: 12px; display: inline-block; }
+.section-header h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 10vw, 5rem); line-height: 0.95; color: var(--bone); }
+.section-header .accent { color: var(--ember); display: inline-block; }
+.section-header p { margin-top: 16px; color: var(--smoke); max-width: 600px; font-size: 1rem; }
+
+/* Flight */
+.flight-wrap { display: grid; grid-template-columns: 1fr; gap: 24px; }
+@media (min-width: 768px) { .flight-wrap { grid-template-columns: 1fr 1fr; } }
+
+.flight-card { border: 2px solid var(--steel2); padding: 28px 24px; background: linear-gradient(135deg, rgba(20,17,15,0.5) 0%, rgba(20,17,15,0.9) 100%); position: relative; overflow: hidden; transition: transform 0.3s, border-color 0.3s; }
+.flight-card:hover { border-color: var(--ember); transform: translateY(-4px); }
+.flight-card::before { content: ''; position: absolute; top: -2px; left: -2px; right: -2px; height: 6px; background: var(--ember); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+.flight-card:hover::before { transform: scaleX(1); }
+
+.flight-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.flight-type { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; color: var(--ember); text-transform: uppercase; font-weight: 700; }
+.flight-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--bone); line-height: 1; }
+.flight-route { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; margin: 20px 0; }
+.airport-code { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--amber); line-height: 1; }
+.airport-name { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--smoke); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; }
+.arrow-col { text-align: center; color: var(--ember); font-size: 1.4rem; }
+.flight-meta { display: flex; gap: 24px; padding-top: 16px; border-top: 1px dashed var(--steel2); flex-wrap: wrap; }
+.flight-meta-item strong { color: var(--bone); font-size: 0.95rem; display: block; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+.flight-meta-item small { color: var(--smoke); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
+
+.route-viz { margin-top: 32px; padding: 20px; background: var(--coal); border: 1px solid var(--steel2); position: relative; overflow: hidden; }
+.route-line { height: 100px; position: relative; }
+.route-path { position: absolute; top: 50%; left: 8%; right: 8%; height: 2px; background: repeating-linear-gradient(90deg, var(--ember) 0, var(--ember) 8px, transparent 8px, transparent 16px); transform: translateY(-50%); }
+.route-start, .route-end { position: absolute; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; border-radius: 50%; background: var(--ember); box-shadow: 0 0 20px var(--ember); }
+.route-start { left: 6%; }
+.route-end { right: 6%; }
+.route-plane { position: absolute; top: 50%; left: 8%; transform: translateY(-50%); animation: flyRoute 6s ease-in-out infinite; color: var(--amber); font-size: 1.4rem; filter: drop-shadow(0 0 8px var(--amber)); }
+@keyframes flyRoute {
+  0% { left: 8%; transform: translateY(-50%) rotate(5deg); }
+  50% { left: calc(92% - 24px); transform: translateY(-60%) rotate(5deg); }
+  51% { left: calc(92% - 24px); transform: translateY(-60%) rotate(5deg); opacity: 0; }
+  52% { left: 8%; transform: translateY(-50%) rotate(5deg); opacity: 0; }
+  53% { opacity: 1; }
+  100% { left: calc(92% - 24px); transform: translateY(-60%) rotate(5deg); opacity: 1; }
+}
+.route-labels { display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--smoke); text-transform: uppercase; letter-spacing: 0.15em; }
+
+/* Days */
+.days-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 40px; position: sticky; top: 0; background: var(--ink); z-index: 10; padding: 12px 0; }
+.day-tab { background: var(--coal); border: 2px solid var(--steel2); padding: 14px 10px; text-align: center; cursor: pointer; transition: all 0.2s; font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--smoke); font-size: clamp(0.75rem, 2.5vw, 0.95rem); user-select: none; }
+.day-tab .tab-num { display: block; font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.4rem, 5vw, 2rem); color: var(--ash); line-height: 1; margin-bottom: 2px; transition: color 0.2s; }
+.day-tab.active { background: linear-gradient(135deg, var(--ember) 0%, var(--blood) 100%); color: var(--bone); border-color: var(--ember); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,87,34,0.4); }
+.day-tab.active .tab-num { color: var(--bone); }
+.day-tab:hover:not(.active) { border-color: var(--ember); color: var(--bone); }
+
+.day-panel { display: none; animation: fadeIn 0.4s ease-out; }
+.day-panel.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.timeline { position: relative; padding-left: 60px; }
+.timeline::before { content: ''; position: absolute; left: 22px; top: 10px; bottom: 10px; width: 2px; background: linear-gradient(180deg, var(--ember) 0%, var(--blood) 50%, var(--steel2) 100%); }
+.tl-item { position: relative; margin-bottom: 20px; padding: 18px 20px; background: var(--coal); border: 1px solid var(--steel2); transition: all 0.2s; cursor: pointer; }
+.tl-item:hover { border-color: var(--ember); background: var(--steel); transform: translateX(4px); }
+.tl-item::before { content: ''; position: absolute; left: -45px; top: 20px; width: 16px; height: 16px; background: var(--ember); border: 3px solid var(--ink); box-shadow: 0 0 0 2px var(--ember), 0 0 15px var(--ember); border-radius: 2px; transform: rotate(45deg); }
+.tl-time { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--amber); line-height: 1; margin-bottom: 4px; }
+.tl-title { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--bone); margin-bottom: 4px; font-size: 1.05rem; }
+.tl-detail { color: var(--smoke); font-size: 0.9rem; }
+.tl-item.highlight::before { background: var(--amber); box-shadow: 0 0 0 2px var(--amber), 0 0 15px var(--amber); }
+
+/* Map */
+#map { height: 500px; border: 2px solid var(--steel2); background: var(--coal); margin-bottom: 20px; filter: saturate(0.85); }
+.leaflet-container { font-family: 'Archivo', sans-serif; background: var(--coal); }
+.leaflet-popup-content-wrapper { background: var(--ink); color: var(--bone); border: 1px solid var(--ember); border-radius: 0; box-shadow: 0 4px 20px rgba(0,0,0,0.8); }
+.leaflet-popup-content { margin: 12px 14px; font-family: 'Archivo', sans-serif; line-height: 1.4; color: var(--bone); }
+.leaflet-popup-content strong { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ember); display: block; font-size: 1rem; margin-bottom: 4px; }
+.leaflet-popup-content small { color: var(--smoke); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; }
+.leaflet-popup-tip { background: var(--ink); border-left: 1px solid var(--ember); border-bottom: 1px solid var(--ember); }
+.leaflet-popup-close-button { color: var(--smoke) !important; font-size: 1.3rem !important; }
+.leaflet-bar a { background: var(--coal) !important; color: var(--bone) !important; border-color: var(--steel2) !important; }
+.leaflet-bar a:hover { background: var(--ember) !important; }
+.map-marker { width: 28px; height: 28px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 2px solid var(--bone); box-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+
+.map-legend { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+@media (min-width: 640px){ .map-legend { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px){ .map-legend { grid-template-columns: repeat(6, 1fr); } }
+.legend-item { display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: var(--coal); border: 1px solid var(--steel2); font-family: 'Oswald', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--bone); }
+.legend-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+
+/* Spot cards */
+.spot-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 720px) { .spot-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px){ .spot-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.spot-card { position: relative; background: var(--coal); border: 2px solid var(--steel2); overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column; }
+.spot-card:hover { border-color: var(--ember); transform: translateY(-6px); box-shadow: 0 12px 40px rgba(255,87,34,0.2); }
+.spot-card .sc-head { padding: 18px 18px 14px; position: relative; background: linear-gradient(135deg, var(--steel) 0%, var(--coal) 100%); border-bottom: 2px solid var(--ember); }
+.spot-card .sc-badge { display: inline-block; padding: 4px 10px; background: var(--ember); color: var(--ink); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+.spot-card .sc-badge.alt { background: var(--amber); }
+.spot-card .sc-badge.neon { background: var(--neon); }
+.spot-card h3 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.02em; color: var(--bone); line-height: 1.1; margin-bottom: 6px; }
+.spot-card .sc-rating { display: flex; align-items: baseline; gap: 10px; margin-top: 8px; font-family: 'JetBrains Mono', monospace; }
+.sc-rating .stars { font-size: 1.2rem; color: var(--amber); font-weight: 700; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.04em; }
+.sc-rating small { color: var(--smoke); font-size: 0.7rem; letter-spacing: 0.1em; }
+
+.spot-card .sc-body { padding: 16px 18px; color: var(--smoke); font-size: 0.92rem; flex: 1; line-height: 1.5; }
+.spot-card .sc-meta { padding: 12px 18px; border-top: 1px dashed var(--steel2); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--smoke); display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; letter-spacing: 0.05em; }
+.sc-meta b { color: var(--ember); font-weight: 700; }
+
+.spot-card .sc-actions { display: grid; grid-template-columns: 1fr 1fr; border-top: 2px solid var(--steel2); }
+.sc-btn { padding: 12px 8px; text-align: center; font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; cursor: pointer; color: var(--bone); text-decoration: none; transition: background 0.2s; border: none; background: transparent; }
+.sc-btn:first-child { border-right: 1px solid var(--steel2); }
+.sc-btn:hover { background: var(--ember); color: var(--ink); }
+.sc-btn.primary { background: var(--ember); color: var(--ink); }
+.sc-btn.primary:hover { background: var(--amber); }
+
+.sc-details { display: none; padding: 18px; background: var(--ink); border-top: 1px solid var(--ember); }
+.sc-details.open { display: block; }
+.sc-details h4 { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ember); font-size: 0.8rem; margin: 12px 0 8px; }
+.sc-details h4:first-child { margin-top: 0; }
+.review-quote { padding: 12px; background: var(--coal); border-left: 3px solid var(--amber); margin-bottom: 10px; font-style: italic; color: var(--bone); font-size: 0.9rem; line-height: 1.4; }
+.review-quote small { display: block; margin-top: 6px; color: var(--smoke); font-style: normal; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
+.menu-section { margin-bottom: 14px; }
+.menu-title { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; color: var(--amber); font-size: 0.85rem; letter-spacing: 0.08em; margin-bottom: 6px; padding-bottom: 4px; border-bottom: 1px dashed var(--steel2); }
+.menu-row { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; color: var(--bone); font-size: 0.88rem; }
+.menu-row .dots { flex: 1; border-bottom: 1px dotted var(--ash); margin: 0 8px; transform: translateY(-3px); opacity: 0.4; }
+.menu-row .price { color: var(--ember); font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; white-space: nowrap; }
+
+/* Sights */
+.sight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.sight { padding: 22px 18px; background: var(--coal); border: 1px solid var(--steel2); border-left: 4px solid var(--amber); transition: all 0.2s; }
+.sight:hover { border-left-color: var(--ember); transform: translateX(4px); }
+.sight-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--ember); line-height: 1; margin-bottom: 6px; }
+.sight h3 { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; color: var(--bone); font-size: 1.1rem; margin-bottom: 4px; }
+.sight-era { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--amber); letter-spacing: 0.08em; margin-bottom: 10px; text-transform: uppercase; }
+.sight p { color: var(--smoke); font-size: 0.88rem; line-height: 1.5; }
+
+/* Reservations */
+.reservation-list { display: grid; gap: 10px; }
+.reservation-row { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; padding: 16px 18px; background: var(--coal); border: 1px solid var(--steel2); border-left: 4px solid var(--ember); transition: all 0.2s; text-decoration: none; }
+.reservation-row:hover { border-color: var(--ember); }
+.rr-prio { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--ember); width: 34px; text-align: center; }
+.rr-name { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; color: var(--bone); font-size: 0.95rem; }
+.rr-when { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--smoke); margin-top: 2px; letter-spacing: 0.05em; }
+.rr-phone { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--amber); font-size: 0.95rem; white-space: nowrap; text-decoration: none; padding: 8px 12px; border: 1px solid var(--steel2); transition: all 0.2s; }
+.rr-phone:hover { background: var(--ember); color: var(--ink); border-color: var(--ember); }
+@media (max-width: 600px) { .reservation-row { grid-template-columns: auto 1fr; } .rr-phone { grid-column: 1 / -1; margin-top: 6px; text-align: center; } }
+
+.wa-template { margin-top: 20px; padding: 20px; background: var(--coal); border: 2px dashed var(--amber); font-family: 'JetBrains Mono', monospace; color: var(--bone); font-size: 0.88rem; line-height: 1.6; }
+.wa-template .placeholder { color: var(--amber); font-weight: 700; background: rgba(244,161,54,0.1); padding: 1px 6px; }
+.wa-template-header { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; color: var(--amber); font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 12px; }
+.copy-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; padding: 8px 14px; background: var(--ember); color: var(--ink); font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; border: none; cursor: pointer; transition: background 0.2s; }
+.copy-btn:hover { background: var(--amber); }
+
+/* Cheat */
+.cheat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.cheat-box { padding: 20px; background: var(--coal); border: 1px solid var(--steel2); border-top: 4px solid var(--ember); }
+.cheat-box h4 { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ember); font-size: 0.85rem; margin-bottom: 12px; }
+.cheat-box ul { list-style: none; padding: 0; }
+.cheat-box li { padding: 6px 0; color: var(--bone); font-size: 0.9rem; border-bottom: 1px dashed var(--steel2); display: flex; justify-content: space-between; gap: 10px; }
+.cheat-box li:last-child { border-bottom: none; }
+.cheat-box li b { color: var(--amber); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; }
+
+/* Finale */
+.final-bar { margin: 60px 0 20px; padding: 28px; text-align: center; background: linear-gradient(135deg, var(--blood) 0%, var(--ember) 100%); color: var(--ink); position: relative; overflow: hidden; }
+.final-bar .big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 10vw, 5rem); line-height: 0.9; position: relative; }
+.final-bar .sub { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3em; margin-top: 6px; position: relative; }
+
+footer { padding: 30px 20px 40px; text-align: center; color: var(--ash); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+footer span { color: var(--ember); }
+
+/* Warning */
+.warning { background: var(--blood); color: var(--bone); padding: 16px 20px; display: flex; align-items: center; gap: 14px; margin: 24px 0; border-left: 6px solid var(--amber); animation: warnPulse 3s ease-in-out infinite; }
+@keyframes warnPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(194,54,22,0.5); } 50% { box-shadow: 0 0 0 8px rgba(194,54,22,0); } }
+.warning strong { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.95rem; display: block; margin-bottom: 2px; }
+.warning p { font-size: 0.88rem; color: rgba(245,241,234,0.9); }
+.warning-icon { font-size: 2rem; line-height: 1; color: var(--amber); flex-shrink: 0; }
+
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* Bottom nav */
+.bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--ink); border-top: 2px solid var(--ember); display: flex; padding: 8px 0 max(8px, env(safe-area-inset-bottom)); z-index: 100; box-shadow: 0 -4px 20px rgba(0,0,0,0.6); }
+.bn-link { flex: 1; text-align: center; padding: 8px 4px; text-decoration: none; color: var(--smoke); font-family: 'Oswald', sans-serif; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; transition: color 0.15s; min-width: 0; }
+.bn-icon { display: block; font-size: 1.2rem; margin-bottom: 3px; color: var(--amber); }
+.bn-link:hover, .bn-link:focus { color: var(--ember); }
+main { padding-bottom: 80px; }
+
+.toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--amber); color: var(--ink); padding: 12px 20px; font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; z-index: 200; box-shadow: 0 8px 30px rgba(0,0,0,0.6); opacity: 0; transition: all 0.3s ease; pointer-events: none; }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.loading { text-align: center; padding: 80px 20px; color: var(--smoke); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="ticker"><div class="ticker-track" id="ticker"></div></div>
+  <div class="flames">
+    <div class="flame"></div><div class="flame"></div><div class="flame"></div><div class="flame"></div>
+    <div class="flame"></div><div class="flame"></div><div class="flame"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      <span id="hero-tag-text">Mission geplant · 24.–26. April 2026</span>
+    </div>
+    <h1>
+      <span id="hero-title">PODGORICA</span><br>
+      <span class="flame-word" id="hero-title-2">SAUFTOUR</span>
+    </h1>
+    <p class="hero-sub" id="hero-sub">Montenegro · 3 Tage · Keine Gnade</p>
+    <div class="countdown">
+      <div class="cd-cell"><div class="cd-num" id="cd-days">—</div><div class="cd-label">Tage</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-hrs">—</div><div class="cd-label">Std</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-min">—</div><div class="cd-label">Min</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-sec">—</div><div class="cd-label">Sek</div></div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num" id="stat-rest">—</div><div class="hero-stat-label">Restaurants</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" id="stat-bars">—</div><div class="hero-stat-label">Kneipen</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" id="stat-super">—</div><div class="hero-stat-label">Supermärkte</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">∞</div><div class="hero-stat-label">Biere</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll zur Mission</div>
+</header>
+
+<main>
+  <section id="flight" class="section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="label">∎ Operation</span>
+        <h2>Die <span class="accent">Anreise</span></h2>
+        <p>Wizz Air Direktflug. 2:15 h zwischen Dortmunder Bierreserve und erstem Nikšićko Pivo in Podgorica.</p>
+      </div>
+      <div class="flight-wrap" id="flight-cards"></div>
+      <div class="route-viz fade-in">
+        <div class="route-line">
+          <div class="route-path"></div>
+          <div class="route-start"></div>
+          <div class="route-end"></div>
+          <div class="route-plane">✈</div>
+        </div>
+        <div class="route-labels">
+          <span>Dortmund · 51.5°N</span>
+          <span>Podgorica · 42.4°N</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plan" class="section-ink">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="label">∎ Schlachtplan</span>
+        <h2>Die <span class="accent">3 Tage</span></h2>
+        <p>Stunde für Stunde. Von Landung bis Heimreise.</p>
+      </div>
+      <div class="days-tabs" id="days-tabs"></div>
+      <div id="days-panels"></div>
+    </div>
+  </section>
+
+  <section id="map-section" class="section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="label">∎ Das Terrain</span>
+        <h2>Die <span class="accent">Karte</span></h2>
+        <p>Alle Spots · tippen für Details · Google Maps öffnen per Klick auf den Link.</p>
+      </div>
+      <div id="map" class="fade-in"></div>
+      <div class="map-legend fade-in">
+        <div class="legend-item"><div class="legend-dot" style="background:#C23616"></div>Wohnung</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#FF5722"></div>Restaurant</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#9333EA"></div>Kneipe</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#22C55E"></div>Supermarkt</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#3B82F6"></div>Sight</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#F4A136"></div>Souvenir</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="restaurants" class="section-ink">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="label">∎ Food Stops</span>
+        <h2>Die <span class="accent">Restaurants</span></h2>
+        <p>6 Dinner-Optionen + 2 Brunch-Spots. Alle regional, alle getestet. Tap für Menü &amp; Reviews.</p>
+      </div>
+      <div class="spot-grid" id="restaurant-grid"><div class="loading">Lade Daten…</div></div>
+    </div>
+  </section>
+
+  <section id="bars" class="section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="label">∎ Getränke-Basis</span>
+        <h2>Die <span class="accent">Kneipen</span></h2>
+        <p>Warmup · Sportsbar · Craft-Bier · Party-Finish. Alles dabei.</p>
+      </div>
+      <div class="spot-grid" id="bar-grid"></div>
+    </div>
+  </section>
+
+  <section id="sights" class="section-ink">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="label">∎ Zwischen den Bieren</span>
+        <h2>Etwas <span class="accent">Kultur</span></h2>
+        <p>Das Minimum. Alle 4 Spots auf dem Weg zur ersten Kneipe.</p>
+      </div>
+      <div class="sight-grid fade-in" id="sight-grid"></div>
+    </div>
+  </section>
+
+  <section id="souvenirs" class="section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="label">∎ Für Daheim</span>
+        <h2>Geschenke für <span class="accent">die Freundinnen</span></h2>
+        <p>Damit wir nicht nur Kater mitbringen. Drei Shops, alle zu Fuß.</p>
+      </div>
+      <div class="spot-grid" id="souvenir-grid"></div>
+    </div>
+  </section>
+
+  <section id="reservations" class="section-ink">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="label">∎ Action Required</span>
+        <h2>Reservierungen <span class="accent">machen</span></h2>
+        <p>Bis Mittwoch anrufen. Tap auf Telefonnummer → direkt anrufen.</p>
+      </div>
+      <div class="reservation-list fade-in" id="reservation-list"></div>
+      <div class="wa-template fade-in">
+        <div class="wa-template-header">∎ WhatsApp · Englisch · Copy &amp; Paste</div>
+        <div id="wa-text"></div>
+        <button class="copy-btn" onclick="copyWA()">▸ Kopieren</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="cheat" class="section-alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="label">∎ Notfall-Info</span>
+        <h2>Cheat <span class="accent">Sheet</span></h2>
+        <p>Alles Wichtige in einer Übersicht. Für den Notfall.</p>
+      </div>
+      <div class="warning">
+        <span class="warning-icon">▲</span>
+        <div>
+          <strong>Sonntag sind alle Supermärkte zu</strong>
+          <p>Freitag direkt den Sonntagsvorrat mit einkaufen. Kein Spaß.</p>
+        </div>
+      </div>
+      <div class="cheat-grid fade-in" id="cheat-grid"></div>
+      <div class="final-bar">
+        <div class="big">Živjeli!</div>
+        <div class="sub">Montenegrinisch für Prost</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<nav class="bottom-nav">
+  <a href="#flight" class="bn-link"><span class="bn-icon">✈</span>Flug</a>
+  <a href="#plan" class="bn-link"><span class="bn-icon">⌚</span>Plan</a>
+  <a href="#map-section" class="bn-link"><span class="bn-icon">⌖</span>Map</a>
+  <a href="#restaurants" class="bn-link"><span class="bn-icon">☆</span>Food</a>
+  <a href="#bars" class="bn-link"><span class="bn-icon">◆</span>Bars</a>
+  <a href="#cheat" class="bn-link"><span class="bn-icon">!</span>Info</a>
+</nav>
+
+<div class="toast" id="toast">Kopiert!</div>
+
+<footer>
+  Podgorica Sauftour <span>·</span> 24.–26. April 2026 <span>·</span> Mission ACTIVE
+</footer>
+
+<script>
+// ======================= DATA LOADING =======================
+let DATA = null;
+
+async function loadData() {
+  try {
+    const res = await fetch('./data/trip-data.json');
+    if (!res.ok) throw new Error('Fetch failed');
+    DATA = await res.json();
+  } catch(e) {
+    console.error('Konnte trip-data.json nicht laden. Lege die Datei unter data/trip-data.json ab.', e);
+    document.getElementById('restaurant-grid').innerHTML = '<div class="loading" style="color:var(--ember)">⚠ data/trip-data.json fehlt. Bitte Datei anlegen oder von lokalem Webserver öffnen (python -m http.server).</div>';
+    return;
+  }
+  renderAll();
+}
+
+function renderAll() {
+  renderHero();
+  renderTicker();
+  renderFlights();
+  renderDays();
+  renderRestaurants();
+  renderBars();
+  renderSights();
+  renderSouvenirs();
+  renderReservations();
+  renderCheatSheet();
+  initMap();
+  initFadeIn();
+  initCountdown();
+}
+
+// ======================= RENDER =======================
+function renderHero() {
+  document.getElementById('hero-title').textContent = 'PODGORICA';
+  document.getElementById('hero-sub').textContent = DATA.meta.subtitle;
+  document.getElementById('hero-tag-text').textContent = 'Mission geplant · ' + DATA.meta.dateRange;
+  document.getElementById('stat-rest').textContent = String(DATA.restaurants.length).padStart(2,'0');
+  document.getElementById('stat-bars').textContent = String(DATA.bars.length).padStart(2,'0');
+  document.getElementById('stat-super').textContent = String(DATA.supermarkets.length).padStart(2,'0');
+}
+
+function renderTicker() {
+  const items = [
+    `W6 7602 · DTM → TGD`,
+    `${DATA.meta.dateRange}`,
+    `Wizz Air · 1.344 km`,
+    `Montenegro calling`,
+    `Sauftour 2026`,
+    `${DATA.restaurants.length} Restaurants · ${DATA.bars.length} Kneipen`,
+    `Mission aktiv`,
+    `Podgorica incoming`
+  ];
+  const html = items.map(t => `<span>${t}</span>`).join('');
+  const el = document.getElementById('ticker');
+  el.innerHTML = html + html;
+}
+
+function renderFlights() {
+  const f = DATA.flights;
+  document.getElementById('flight-cards').innerHTML = [
+    flightCard('HINFLUG', '▲ Outbound', f.outbound, f.outbound.date, [
+      {label:'Flugzeit', val:(f.outbound.durationMin/60).toFixed(2).replace('.',':').replace(':00',':00 h').replace(/:(\d)$/,':0$1 h').replace(/h+$/,'h')},
+      {label:'Distanz', val:f.outbound.distanceKm.toLocaleString('de')+' km'},
+      {label:'Direkt', val:'Kein Stopp'}
+    ]),
+    flightCard('RÜCKFLUG', '▼ Return', f.return, f.return.date, [
+      {label:'Flugzeit', val: `${Math.floor(f.return.durationMin/60)}:${String(f.return.durationMin%60).padStart(2,'0')} h`},
+      {label:'Airline', val: f.return.carrier},
+      {label:'Handgepäck', val: '40×30×20'}
+    ])
+  ].join('');
+}
+
+function flightCard(title, arrow, f, date, meta) {
+  return `<div class="flight-card fade-in">
+    <div class="flight-header">
+      <div><div class="flight-type">${arrow}</div><div class="flight-num">${f.number}</div></div>
+      <div class="flight-type" style="color:var(--amber);text-align:right">${date}</div>
+    </div>
+    <div class="flight-route">
+      <div><div class="airport-code">${f.from.code}</div><div class="airport-name">${f.from.name}</div><div class="mono" style="color:var(--bone);margin-top:8px;font-size:1.2rem;font-weight:700">${f.from.time}</div></div>
+      <div class="arrow-col">→</div>
+      <div style="text-align:right"><div class="airport-code">${f.to.code}</div><div class="airport-name" style="text-align:right">${f.to.name}</div><div class="mono" style="color:var(--bone);margin-top:8px;font-size:1.2rem;font-weight:700">${f.to.time}</div></div>
+    </div>
+    <div class="flight-meta">
+      ${meta.map(m => `<div class="flight-meta-item"><strong>${m.val}</strong><small>${m.label}</small></div>`).join('')}
+    </div>
+  </div>`;
+}
+
+function renderDays() {
+  const tabs = DATA.itinerary.map((d,i) => `
+    <div class="day-tab ${i===0?'active':''}" data-day="${i+1}">
+      <span class="tab-num">${d.dayNum}</span>${d.day}
+    </div>`).join('');
+  document.getElementById('days-tabs').innerHTML = tabs;
+
+  const panels = DATA.itinerary.map((d,i) => {
+    const warn = d.warning ? `<div class="warning"><span class="warning-icon">▲</span><div><strong>Check-out morgens</strong><p>${d.warning}</p></div></div>` : '';
+    const items = d.items.map(it => `
+      <div class="tl-item ${it.highlight?'highlight':''}">
+        <div class="tl-time">${it.time}</div>
+        <div class="tl-title">${it.title}</div>
+        <div class="tl-detail">${it.detail}</div>
+      </div>`).join('');
+    return `<div class="day-panel ${i===0?'active':''}" data-panel="${i+1}">${warn}<div class="timeline">${items}</div></div>`;
+  }).join('');
+  document.getElementById('days-panels').innerHTML = panels;
+
+  document.querySelectorAll('.day-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const day = tab.dataset.day;
+      document.querySelectorAll('.day-tab').forEach(t => t.classList.toggle('active', t.dataset.day === day));
+      document.querySelectorAll('.day-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === day));
+    });
+  });
+}
+
+function spotCard(spot, type) {
+  const hasReviews = spot.reviewQuotes && spot.reviewQuotes.length;
+  const hasMenu = spot.menu && spot.menu.length;
+  const badgeClass = spot.badgeClass ? spot.badgeClass : '';
+  const id = `det-${type}-${spot.name.replace(/\W+/g,'-')}`;
+  return `<div class="spot-card fade-in">
+    <div class="sc-head">
+      <span class="sc-badge ${badgeClass}">${spot.badge||''}</span>
+      <h3>${spot.name}</h3>
+      <div class="sc-rating">
+        <span class="stars">★ ${spot.rating}</span>
+        <small>${spot.reviews} Reviews</small>
+      </div>
+    </div>
+    <div class="sc-body">${spot.description}</div>
+    <div class="sc-meta">
+      ${spot.cuisine ? `<b>Küche</b><span>${spot.cuisine}</span>` : ''}
+      ${spot.type ? `<b>Typ</b><span>${spot.type}</span>` : ''}
+      ${spot.price ? `<b>Preis</b><span>${spot.price}</span>` : ''}
+      ${spot.hours ? `<b>Offen</b><span>${spot.hours}</span>` : ''}
+      <b>Tel</b><span>${spot.phone || '—'}</span>
+    </div>
+    <div class="sc-details" id="${id}">
+      ${hasReviews ? '<h4>▸ Was Gäste sagen</h4>' + spot.reviewQuotes.map(q => `<div class="review-quote">„${q.text}"<small>— ${q.author}</small></div>`).join('') : ''}
+      ${hasMenu ? '<h4>▸ Auszug Speisekarte</h4>' + spot.menu.map(cat => `<div class="menu-section"><div class="menu-title">${cat.title}</div>${cat.items.map(([n,p]) => `<div class="menu-row"><span>${n}</span><span class="dots"></span><span class="price">${p}</span></div>`).join('')}</div>`).join('') : ''}
+    </div>
+    <div class="sc-actions">
+      <button class="sc-btn" onclick="toggleDetails('${id}', this)">▾ Details</button>
+      <a class="sc-btn primary" href="${spot.maps}" target="_blank" rel="noopener">⌖ Maps</a>
+    </div>
+    ${(spot.phoneRaw || spot.menuUrl) ? `<div class="sc-actions" style="grid-template-columns:${spot.phoneRaw && spot.menuUrl ? '1fr 1fr' : '1fr'}">
+      ${spot.phoneRaw ? `<a class="sc-btn" href="tel:${spot.phoneRaw}">☎ Anrufen</a>` : ''}
+      ${spot.menuUrl ? `<a class="sc-btn" href="${spot.menuUrl}" target="_blank" rel="noopener">☰ ${spot.menuLabel||'Speisekarte'}</a>` : ''}
+    </div>` : ''}
+  </div>`;
+}
+
+function toggleDetails(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const open = el.classList.toggle('open');
+  btn.textContent = open ? '▴ Zuklappen' : '▾ Details';
+}
+
+function renderRestaurants() {
+  document.getElementById('restaurant-grid').innerHTML = DATA.restaurants.map(r => spotCard(r,'r')).join('');
+}
+function renderBars() {
+  document.getElementById('bar-grid').innerHTML = DATA.bars.map(b => spotCard(b,'b')).join('');
+}
+function renderSouvenirs() {
+  document.getElementById('souvenir-grid').innerHTML = DATA.souvenirs.map(s => spotCard(s,'s')).join('');
+}
+function renderSights() {
+  document.getElementById('sight-grid').innerHTML = DATA.sights.map(s => `
+    <div class="sight">
+      <div class="sight-num">${s.number}</div>
+      <h3>${s.name}</h3>
+      <div class="sight-era">${s.era} · ${s.walkTime}</div>
+      <p>${s.description}</p>
+    </div>`).join('');
+}
+function renderReservations() {
+  document.getElementById('reservation-list').innerHTML = DATA.reservations.map(r => `
+    <a href="tel:${r.phoneRaw}" class="reservation-row">
+      <span class="rr-prio">${r.prio}</span>
+      <div><div class="rr-name">${r.name}</div><div class="rr-when">${r.when}</div></div>
+      <span class="rr-phone">${r.phone}</span>
+    </a>`).join('');
+
+  const tpl = DATA.whatsappTemplate
+    .replace(/\[([^\]]+)\]/g, '<span class="placeholder">[$1]</span>')
+    .replace(/(Luca)/, '<span class="placeholder">$1</span>');
+  document.getElementById('wa-text').innerHTML = tpl;
+}
+function renderCheatSheet() {
+  document.getElementById('cheat-grid').innerHTML = DATA.cheatSheet.map(c => `
+    <div class="cheat-box">
+      <h4>∎ ${c.title}</h4>
+      <ul>${c.rows.map(([k,v]) => `<li>${k}<b>${v}</b></li>`).join('')}</ul>
+    </div>`).join('');
+}
+
+// ======================= MAP =======================
+function initMap() {
+  const TYPE_COLORS = { apt:'#C23616', rest:'#FF5722', bar:'#9333EA', shop:'#22C55E', sight:'#3B82F6', soup:'#F4A136' };
+  const points = [];
+  points.push({ n: 'Unsere Wohnung', lat: DATA.meta.apartment.coords.lat, lng: DATA.meta.apartment.coords.lng, type: 'apt', info: `${DATA.meta.apartment.address}, ${DATA.meta.apartment.floor} · Check-in ${DATA.meta.apartment.checkIn}` });
+  DATA.restaurants.forEach(r => r.coords && points.push({ n:r.name, lat:r.coords.lat, lng:r.coords.lng, type:'rest', info:`★ ${r.rating} · ${r.role}` }));
+  DATA.bars.forEach(b => b.coords && points.push({ n:b.name, lat:b.coords.lat, lng:b.coords.lng, type:'bar', info:`★ ${b.rating} · ${b.role}` }));
+  DATA.sights.forEach(s => s.coords && points.push({ n:s.name, lat:s.coords.lat, lng:s.coords.lng, type:'sight', info:`${s.era} · ${s.walkTime}` }));
+
+  const map = L.map('map', { scrollWheelZoom: false }).setView([42.443, 19.263], 14);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap &copy; CARTO',
+    subdomains: 'abcd', maxZoom: 19
+  }).addTo(map);
+
+  function customIcon(color) {
+    return L.divIcon({
+      className: 'custom-pin',
+      html: `<div class="map-marker" style="background:${color}"></div>`,
+      iconSize: [28,28], iconAnchor: [14,28], popupAnchor: [0,-28]
+    });
+  }
+  points.forEach(p => {
+    const m = L.marker([p.lat,p.lng], { icon: customIcon(TYPE_COLORS[p.type]||'#FF5722') }).addTo(map);
+    m.bindPopup(`<strong>${p.n}</strong><small>${p.info}</small>`);
+  });
+}
+
+// ======================= COUNTDOWN =======================
+function initCountdown() {
+  const tripDate = new Date(DATA.meta.departureIso).getTime();
+  function update() {
+    const diff = Math.max(0, tripDate - Date.now());
+    const d = Math.floor(diff/86400000);
+    const h = Math.floor((diff%86400000)/3600000);
+    const m = Math.floor((diff%3600000)/60000);
+    const s = Math.floor((diff%60000)/1000);
+    document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+    document.getElementById('cd-hrs').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-min').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-sec').textContent = String(s).padStart(2,'0');
+  }
+  update();
+  setInterval(update, 1000);
+}
+
+// ======================= FADE-IN =======================
+function initFadeIn() {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+}
+
+// ======================= WHATSAPP COPY =======================
+function copyWA() {
+  const el = document.getElementById('wa-text');
+  const text = el.innerText || el.textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const t = document.getElementById('toast');
+    t.textContent = 'Kopiert!';
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2000);
+  });
+}
+
+// ======================= START =======================
+loadData();
+</script>
+</body>
+</html>

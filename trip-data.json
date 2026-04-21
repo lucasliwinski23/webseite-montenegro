@@ -1,0 +1,632 @@
+{
+  "meta": {
+    "title": "Podgorica Sauftour 2026",
+    "subtitle": "Montenegro · 3 Tage · Keine Gnade",
+    "dateRange": "24.–26. April 2026",
+    "departureIso": "2026-04-24T09:31:00+02:00",
+    "returnIso": "2026-04-26T17:30:00+02:00",
+    "apartment": {
+      "address": "Slobode 21",
+      "floor": "4. Stock",
+      "postcode": "81000",
+      "city": "Podgorica",
+      "checkIn": "ab 14:00 Uhr",
+      "checkOut": "Sonntag morgens",
+      "coords": { "lat": 42.4415, "lng": 19.2636 }
+    }
+  },
+
+  "flights": {
+    "outbound": {
+      "number": "W6 7602",
+      "carrier": "Wizz Air",
+      "date": "Freitag 24. April 2026",
+      "from": { "code": "DTM", "name": "Dortmund", "time": "09:31" },
+      "to":   { "code": "TGD", "name": "Podgorica", "time": "11:45" },
+      "durationMin": 135,
+      "distanceKm": 1344,
+      "direct": true
+    },
+    "return": {
+      "number": "W6 7601",
+      "carrier": "Wizz Air",
+      "date": "Sonntag 26. April 2026",
+      "from": { "code": "TGD", "name": "Podgorica", "time": "17:30" },
+      "to":   { "code": "DTM", "name": "Dortmund", "time": "19:55" },
+      "durationMin": 145,
+      "handLuggage": "40×30×20 cm gratis"
+    }
+  },
+
+  "supermarkets": [
+    {
+      "name": "VOLI",
+      "address": "6 Novaka Miloševa",
+      "distanceM": 400,
+      "walkingMin": 5,
+      "hours": "Mo-Sa 7:30 – 21:30",
+      "closedSundays": true,
+      "note": "Größter Markt, volle Auswahl"
+    },
+    {
+      "name": "Mimoza Market",
+      "address": "5 Slobode",
+      "distanceM": 350,
+      "walkingMin": 5,
+      "hours": "Mo-Sa 7:30 – 21:30",
+      "closedSundays": true,
+      "note": "Direkt auf Slobode, klein"
+    },
+    {
+      "name": "iDEA",
+      "address": "Bulevar Ivana Crnojevića",
+      "distanceM": 500,
+      "walkingMin": 7,
+      "hours": "Mo-Sa 7:00 – 24:00",
+      "closedSundays": true,
+      "note": "Geht bis Mitternacht"
+    }
+  ],
+
+  "sundayWarning": "Sonntag sind ALLE Supermärkte geschlossen — Freitag direkt den Sonntagsvorrat mit einkaufen.",
+
+  "itinerary": [
+    {
+      "day": "Freitag",
+      "dayNum": "01",
+      "date": "24. April 2026",
+      "theme": "ANKUNFT & EINSTIEG",
+      "items": [
+        { "time": "11:45", "title": "Landung TGD", "detail": "W6 7602 aus Dortmund. Koffer holen. Willkommen in Montenegro.", "highlight": false },
+        { "time": "12:15", "title": "Taxi ins Zentrum", "detail": "Eko Taxi (+382 19 700) oder Bolt-App. ~15 € · 25 Min Fahrt.", "highlight": false },
+        { "time": "12:40", "title": "Leichter Lunch @ Gostiona 1928", "detail": "Traditionell, Terrasse, 2 Min von der Wohnung. Erstes Bier.", "highlight": true },
+        { "time": "13:45", "title": "Einkauf VOLI", "detail": "Wasser, Snacks, Biere. WICHTIG: Sonntagsvorrat gleich mit!", "highlight": false },
+        { "time": "14:10", "title": "Wohnung · Check-in", "detail": "Slobode 21, 4. Stock. Koffer ausladen, 30 Min ankommen.", "highlight": false },
+        { "time": "15:00", "title": "Warmup @ PG Akademija piva", "detail": "Regionale Brauerei mit Terrasse. Tasting-Flight. 3,5 h Zeit.", "highlight": true },
+        { "time": "19:00", "title": "Dinner · 3 Optionen", "detail": "Lanterna · Diplomat · Stara Kuća. Scroll runter für Details.", "highlight": true },
+        { "time": "22:30", "title": "Craft-Bier-Abend", "detail": "Bogart (4.9⭐) oder Itaka Library Bar (4.8⭐) am Fluss.", "highlight": false },
+        { "time": "00:00+", "title": "Morrison Pub (optional)", "detail": "Freitags bis 03:00. Live-Musik. Wenn noch Dampf da ist.", "highlight": false }
+      ]
+    },
+    {
+      "day": "Samstag",
+      "dayNum": "02",
+      "date": "25. April 2026",
+      "theme": "SPORTSBAR-TAG · DIE VOLLE DRÖHNUNG",
+      "items": [
+        { "time": "12:00", "title": "Langer Brunch", "detail": "SPAGO, Diplomat oder Gostiona 1928. 2 h entspannt, Kaffee dazu.", "highlight": false },
+        { "time": "14:30", "title": "Pub WWW Sportsbar · 4 h", "detail": "Grosse Terrasse, Flatscreens, Tuborg vom Fass, Bundesliga schauen.", "highlight": true },
+        { "time": "19:30", "title": "Dinner · 3 Optionen", "detail": "Protokol (Nr. 1 der Stadt) · Babi Gourmet · Steak House.", "highlight": true },
+        { "time": "22:30", "title": "Craft-Bier-Kneipe", "detail": "Fermentor (lokal gebraut) oder Itaka Library Bar.", "highlight": false },
+        { "time": "00:00", "title": "Morrison Party-Finish", "detail": "Samstags bis 03:00. DJ, Live-Musik, volle Bude.", "highlight": true },
+        { "time": "03:00", "title": "Heimweg", "detail": "Zu Fuß oder Bolt-App. 5 Min zur Wohnung.", "highlight": false }
+      ]
+    },
+    {
+      "day": "Sonntag",
+      "dayNum": "03",
+      "date": "26. April 2026",
+      "theme": "AUSKLANG MIT GEPÄCK & ABFLUG",
+      "warning": "Check-out morgens. Gepäck muss den ganzen Tag mitkommen. Keine Kneipenrunde vor Flug.",
+      "items": [
+        { "time": "10:30", "title": "Aufstehen & packen", "detail": "Letzte Sachen in den Koffer, Küche klar machen, Müll raus.", "highlight": false },
+        { "time": "11:00", "title": "Check-out", "detail": "Schlüssel zurück, Gepäck mitnehmen.", "highlight": false },
+        { "time": "11:30", "title": "Langer Brunch · 2,5 h", "detail": "Diplomat oder Gostiona 1928. Beide nah, Platz für Koffer.", "highlight": true },
+        { "time": "14:15", "title": "Taxi zum TGD", "detail": "Eko Taxi oder Bolt-App, ~15 €, 25 Min Fahrt.", "highlight": false },
+        { "time": "14:45", "title": "Am Flughafen", "detail": "Check-in, Security. Wizz Air ist streng mit Handgepäck.", "highlight": false },
+        { "time": "17:30", "title": "Abflug W6 7601", "detail": "Zurück nach Dortmund. 2:25 h Flugzeit.", "highlight": true },
+        { "time": "19:55", "title": "Landung DTM", "detail": "Willkommen zurück. Mission complete.", "highlight": false }
+      ]
+    }
+  ],
+
+  "restaurants": [
+    {
+      "name": "Konoba Lanterna",
+      "role": "Freitag Dinner · Option A",
+      "rating": "4.7",
+      "reviews": "1.778",
+      "cuisine": "Traditionell · Montenegrinisch",
+      "price": "€€ · Mittelklasse",
+      "phone": "+382 67 663 163",
+      "phoneRaw": "+38267663163",
+      "maps": "https://maps.google.com/?cid=10570094031606075112",
+      "coords": { "lat": 42.4402, "lng": 19.2621 },
+      "menuUrl": "https://lanterna.me/lanterna-meni-2023.pdf",
+      "menuLabel": "Speisekarte PDF",
+      "description": "Klassische Konoba in einem historischen Gebäude von 1630. Zentraler Innenhof mit uraltem Olivenbaum, Steinmauern, warme Beleuchtung. Tradition trifft auf ehrliche Küche — Portionen großzügig, Preise moderat.",
+      "reviewQuotes": [
+        { "text": "Traumhafter Innenhof mit altem Olivenbaum in der Mitte. Ruhig, entspannt — wirkt wie ein Rückzugsort mitten in der Stadt.", "author": "Google-Review" },
+        { "text": "Das Veal under the bell war butterzart, perfekt gewürzt. Pflicht-Gericht. Portionen reichen für zwei.", "author": "Wanderlog" }
+      ],
+      "menu": [
+        { "title": "Spezialitäten", "items": [
+          ["Veal under the bell (für 2)", "~35 €"],
+          ["Kačamak (Polenta mit Käse)", "~10 €"],
+          ["Ćevapi mit Zwiebel & Brot", "~10 €"]
+        ]},
+        { "title": "Hauptgerichte", "items": [
+          ["Kalbssuppe (teleća čorba)", "~5 €"],
+          ["Pastrmka (Forelle vom Grill)", "~14 €"],
+          ["Shopska Salat", "~5 €"]
+        ]},
+        { "title": "Getränke", "items": [
+          ["Nikšićko Pivo 0,5 l", "~2,50 €"],
+          ["Hausmacher-Rakija 2 cl", "~2 €"]
+        ]}
+      ],
+      "badge": "Fr Dinner · Option A"
+    },
+    {
+      "name": "Restoran Diplomat",
+      "role": "Freitag Dinner · Option B",
+      "rating": "4.8",
+      "reviews": "545",
+      "cuisine": "Mediterran · Regional",
+      "price": "€€ · 30-35 €/Pers.",
+      "phone": "+382 67 993 339",
+      "phoneRaw": "+38267993339",
+      "maps": "https://maps.google.com/?cid=15004571612270420080",
+      "coords": { "lat": 42.4423, "lng": 19.2645 },
+      "menuUrl": "https://restaurantguru.com/Diplomat-Restoran-Podgorica/menu",
+      "menuLabel": "Menü",
+      "description": "Gehobener mediterran-regionaler Tisch direkt am Trg Republike, 3 Min von unserer Wohnung. Bekannt für Kalbsbacke in Rotwein und das Brotkörbchen mit drei Sorten & Dips als Gratis-Starter.",
+      "reviewQuotes": [
+        { "text": "Kalbsbacke in Rotwein war außergewöhnlich — zart wie Butter, intensiv im Geschmack. Selten auf Karten in Podgorica.", "author": "Google-Review" },
+        { "text": "Bestes Essen in drei Wochen Montenegro. Freundlicher Service, richtig gute Weinempfehlungen.", "author": "Tripadvisor" }
+      ],
+      "menu": [
+        { "title": "Signature", "items": [
+          ["Kalbsbacke in Rotwein", "~18 €"],
+          ["Brotkörbchen + 3 Dips", "gratis"],
+          ["Spaghetti Carbonara", "~10 €"]
+        ]},
+        { "title": "Vorspeisen", "items": [
+          ["Caprese Salad", "~8 €"],
+          ["Crnogorska zakuska", "~14 €"],
+          ["Chicken Caesar Salad", "~9 €"]
+        ]},
+        { "title": "Süß", "items": [
+          ["Apple Pie Montenegro", "~5 €"],
+          ["Weinkarte (Glas ab)", "~3 €"]
+        ]}
+      ],
+      "badge": "Fr Dinner · Option B"
+    },
+    {
+      "name": "Stara Kuća",
+      "role": "Freitag Dinner · Option C",
+      "rating": "4.5",
+      "reviews": "321",
+      "cuisine": "National · Traditionell",
+      "price": "€€ · gehobene Mitte",
+      "phone": "+382 69 030 204",
+      "phoneRaw": "+38269030204",
+      "maps": "https://www.tripadvisor.com/Restaurant_Review-g304088-d1956908-Reviews-Nacionalni_Restoran_Stara_Kuca-Podgorica_Podgorica_Municipality.html",
+      "coords": { "lat": 42.4515, "lng": 19.2891 },
+      "menuUrl": "https://www.tripadvisor.com/Restaurant_Review-g304088-d1956908-Reviews-Nacionalni_Restoran_Stara_Kuca-Podgorica_Podgorica_Municipality.html",
+      "menuLabel": "Tripadvisor",
+      "description": "Restauriertes Herrenhaus mit offenem Kamin, wunderschöner Garten, elegante Einrichtung. 3 km außerhalb des Zentrums (Taxi ~5 €). Lamm in Milch als Signature. Wie ein kleines Schloss.",
+      "reviewQuotes": [
+        { "text": "Wunderbarer Ort mit köstlichem Essen und gemütlicher Atmosphäre. Überraschend vielfältige vegetarische Optionen.", "author": "Google-Review" },
+        { "text": "Wie ein kleines Schloss — beeindruckende Atmosphäre, offener Kamin in der Mitte, toller Service.", "author": "Tripadvisor" }
+      ],
+      "menu": [
+        { "title": "Signature Dishes", "items": [
+          ["Lamm in Milch", "~22 €"],
+          ["Asche-geröstetes Fleisch", "~20 €"],
+          ["Veal under the bell (2 Pers.)", "~40 €"]
+        ]},
+        { "title": "Vorspeisen", "items": [
+          ["Montenegrin. Aufschnitt", "~15 €"],
+          ["Kačamak mit Kajmak", "~9 €"],
+          ["Lammsuppe", "~6 €"]
+        ]},
+        { "title": "Wein", "items": [
+          ["Vranac-Flasche (regional)", "~20 €"],
+          ["Hausmacher-Rakija", "~2,50 €"]
+        ]}
+      ],
+      "badge": "Fr Dinner · Option C"
+    },
+    {
+      "name": "Restoran Protokol",
+      "role": "Samstag Dinner · Option A",
+      "rating": "4.9",
+      "reviews": "623",
+      "cuisine": "Regional-Kreativ · Fine Dining Light",
+      "price": "€€€ · gehoben",
+      "phone": "+382 68 222 111",
+      "phoneRaw": "+38268222111",
+      "maps": "https://maps.google.com/?cid=1466232572109582550",
+      "coords": { "lat": 42.4483, "lng": 19.2719 },
+      "menuUrl": "https://restoranprotokol.me/meni/",
+      "menuLabel": "Speisekarte",
+      "description": "HÖCHSTBEWERTET der Stadt. 4.9⭐ bei 623 Reviews. Gehobene regionale Küche mit kreativen Interpretationen. Angus-Steaks, Dry-Aged, eigene Zigarrenhumidor. Am Samstag IMMER vorbestellen.",
+      "reviewQuotes": [
+        { "text": "Perfekt! Unglaubliches Restaurant, Essen exzellent, Kellner perfekt. Sommelier mit viel Wissen und freundlicher Art.", "author": "Tripadvisor" },
+        { "text": "Sauberes Personal, professionell, immer zur Stelle. Breite Whisky-Auswahl, beeindruckende Zigarren-Humidor.", "author": "Google-Review" }
+      ],
+      "menu": [
+        { "title": "Gastro-Bar (günstiger)", "items": [
+          ["Tartar vom Rindfleisch", "22,00 €"],
+          ["Angus-Carpaccio mariniert", "18,50 €"],
+          ["Crnogorska zakuska", "16,00 €"]
+        ]},
+        { "title": "Restaurant", "items": [
+          ["Premium Dry-Aged Steak", "42-65 €"],
+          ["Kalbshauptgericht", "32-44 €"],
+          ["Fisch-Spezialitäten", "30-42 €"]
+        ]},
+        { "title": "Wein", "items": [
+          ["Hauswein (Glas)", "8,00 €"],
+          ["Premium Vranac (Flasche)", "32-42 €"]
+        ]}
+      ],
+      "badge": "Sa Dinner · Option A · TOP",
+      "badgeClass": "alt"
+    },
+    {
+      "name": "Babi Gourmet & Wine",
+      "role": "Samstag Dinner · Option B",
+      "rating": "4.8",
+      "reviews": "1.543",
+      "cuisine": "Gourmet · International",
+      "price": "€€€ · gehoben",
+      "phone": "+382 67 160 393",
+      "phoneRaw": "+38267160393",
+      "maps": "https://maps.google.com/?q=Babi+Gourmet+Wine+Podgorica",
+      "coords": { "lat": 42.4432, "lng": 19.2621 },
+      "menuUrl": "https://babirestaurant.me/",
+      "menuLabel": "Website",
+      "description": "Modernes Bistro im Capital Plaza. Gemütlich-hochwertige Atmosphäre ohne Steifheit. Langsam geschmortes Fleisch, Filet Mignon, Seebarsch. Exzellente Weinkarte.",
+      "reviewQuotes": [
+        { "text": "Wunderschöner Raum, köstliches Essen, elegante Präsentation. Service auf höchstem Niveau.", "author": "Google-Review" },
+        { "text": "Großzügige Portionen, lang gekochtes Fleisch — ein Traum. Das Babi Special Breakfast ist auch top.", "author": "Wanderlog" }
+      ],
+      "menu": [
+        { "title": "Hauptgerichte", "items": [
+          ["Langsam geschmorte Rump Steak", "~18 €"],
+          ["Beef Stroganoff", "~16 €"],
+          ["Steak Burger karamell. Zwiebeln", "~13 €"]
+        ]},
+        { "title": "Pasta", "items": [
+          ["Tagliatelle Truffle", "~14 €"],
+          ["Risotto-Variationen", "~12 €"],
+          ["Tortillas & Tacos", "~9 €"]
+        ]}
+      ],
+      "badge": "Sa Dinner · Option B"
+    },
+    {
+      "name": "Steak House Grill",
+      "role": "Samstag Dinner · Option C",
+      "rating": "4.7",
+      "reviews": "1.017",
+      "cuisine": "Steakhouse · Premium Grill",
+      "price": "€€€ · gehoben",
+      "phone": "+382 68 825 954",
+      "phoneRaw": "+38268825954",
+      "maps": "https://maps.google.com/?cid=17797174243230479228",
+      "coords": { "lat": 42.4430, "lng": 19.2655 },
+      "menuUrl": "http://www.steakhousemontenegro.com/",
+      "menuLabel": "Website",
+      "description": "Premium-Steakhouse mit breiter Karte. Du wählst dein eigenes Messer am Tisch. Dry-aged Steaks auf höchstem Niveau. Kostenlose Starter-Platte mit Knoblauchbrot und Patés.",
+      "reviewQuotes": [
+        { "text": "Umfangreiche Karte, aber wir kamen für das Fleisch. Beef Steak mit Süßkartoffel und Tagliata mit Trüffel-Püree — beide perfekt.", "author": "Google-Review" },
+        { "text": "Das beste Essen, das wir hatten. Adirs Service war außergewöhnlich. Messer-Auswahl am Tisch!", "author": "Tripadvisor" }
+      ],
+      "menu": [
+        { "title": "Signature Steaks", "items": [
+          ["Beef Steak mit Süßkartoffel", "~24 €"],
+          ["Tagliata mit Trüffel-Püree", "~28 €"],
+          ["Dry-Aged Ribeye", "~32 €"]
+        ]},
+        { "title": "Gratis", "items": [
+          ["Knoblauchbrot + 3 Patés", "0 €"],
+          ["Messer-Auswahl am Tisch", "0 €"]
+        ]},
+        { "title": "Rest", "items": [
+          ["Fisch-Spezialitäten", "~20-28 €"],
+          ["Wein-Glas premium", "~5 €"]
+        ]}
+      ],
+      "badge": "Sa Dinner · Option C"
+    },
+    {
+      "name": "SPAGO",
+      "role": "Samstag Brunch",
+      "rating": "4.8",
+      "reviews": "1.641",
+      "cuisine": "Italienisch · International",
+      "price": "€€",
+      "phone": "+382 20 653 419",
+      "phoneRaw": "+38220653419",
+      "maps": "https://maps.google.com/?cid=9440292918688025193",
+      "coords": { "lat": 42.4375, "lng": 19.2560 },
+      "menuUrl": "https://spagopodgorica.me/menu/",
+      "menuLabel": "Menü",
+      "description": "Italienisch-international. Laut italienischen Einheimischen beste Pizza in Podgorica. Große Brunch-Karte. Ruhige, elegante Atmosphäre.",
+      "reviewQuotes": [
+        { "text": "Die beste Pizza in Podgorica. Dünner Teig, krosse Kruste — unschlagbar. Auch Italiener in Deutschland kommen selten ran.", "author": "Google-Review" }
+      ],
+      "menu": [
+        { "title": "Pizza", "items": [
+          ["Margherita", "~8 €"],
+          ["Spezial (Parmigiano, Burrata)", "~13 €"]
+        ]},
+        { "title": "Hauptgerichte", "items": [
+          ["Enten-Variation auf Süßkartoffel", "~16 €"],
+          ["Pasta-Gericht", "~10 €"]
+        ]},
+        { "title": "Kaffee", "items": [
+          ["Cappuccino", "~2 €"]
+        ]}
+      ],
+      "badge": "Sa Brunch"
+    },
+    {
+      "name": "Gostiona 1928",
+      "role": "Freitag Lunch / Alt. Brunch",
+      "rating": "4.3",
+      "reviews": "298",
+      "cuisine": "Traditionell · Modern",
+      "price": "€€",
+      "phone": "+382 67 019 280",
+      "phoneRaw": "+38267019280",
+      "maps": "https://maps.google.com/?cid=18264164486066470930",
+      "coords": { "lat": 42.4420, "lng": 19.2628 },
+      "menuUrl": "https://www.instagram.com/gostiona1928/",
+      "menuLabel": "Instagram",
+      "description": "Traditionelles Haus von 1928 — 2 Min von unserer Wohnung. Obere Terrasse für Brunch ideal. Großzügige Portionen, tolle lokale Käse und Brote.",
+      "reviewQuotes": [
+        { "text": "Großzügige Portionen, faire Preise, spektakuläre Lage auf der oberen Terrasse. Gigantisch hinter der Fassade.", "author": "Google-Review" }
+      ],
+      "menu": [
+        { "title": "Frühstück", "items": [
+          ["Frühstücks-Platte traditionell", "~8 €"],
+          ["Lokale Käse-Variation", "~10 €"]
+        ]},
+        { "title": "Hauptgerichte", "items": [
+          ["Steak (mittags)", "~16 €"],
+          ["Tagliatelle Truffle", "~14 €"]
+        ]},
+        { "title": "Getränke", "items": [
+          ["Kaffee + Gebäck", "~4 €"]
+        ]}
+      ],
+      "badge": "Fr Lunch / Brunch"
+    }
+  ],
+
+  "bars": [
+    {
+      "name": "PG Akademija piva",
+      "role": "Fr Warmup · 15:00 — 18:30",
+      "rating": "4.5", "reviews": "547",
+      "type": "Brauerei · Regional",
+      "phone": "+382 67 661 777", "phoneRaw": "+38267661777",
+      "maps": "https://maps.google.com/?cid=9768950086476528290",
+      "coords": { "lat": 42.4410, "lng": 19.2608 },
+      "description": "Brauereigaststätte mit großer Außenfläche. Alle Biere direkt vom Tank. Tasting-Flight mit 6 Sorten ~12 €. Pizza als Fundament.",
+      "hours": "Täglich 8:00 – 00:00",
+      "badge": "Fr · Warmup",
+      "badgeClass": "alt"
+    },
+    {
+      "name": "Pub WWW",
+      "role": "Sa Sportsbar · 14:30 — 18:30",
+      "rating": "4.6", "reviews": "184",
+      "type": "Sportsbar · Terrasse",
+      "phone": "", "phoneRaw": "",
+      "maps": "https://maps.google.com/?cid=14138340181655497413",
+      "coords": { "lat": 42.4425, "lng": 19.2618 },
+      "description": "Grosse Außenterrasse mit Flatscreens. Tuborg vom Fass. Günstig. 4 h Bundesliga-Session möglich. Keine Bar-Attitüde.",
+      "hours": "Täglich bis 02:00",
+      "badge": "Sa · Sportsbar",
+      "badgeClass": "neon",
+      "menuUrl": "https://digitalmenus.co/menus/pub-www",
+      "menuLabel": "Digitale Karte"
+    },
+    {
+      "name": "Bogart Craft Beer",
+      "role": "Höchstbewertete Kneipe",
+      "rating": "4.9", "reviews": "120",
+      "type": "Craft Bier · Kicker",
+      "phone": "+382 63 228 680", "phoneRaw": "+38263228680",
+      "maps": "https://maps.google.com/?cid=17682603585148288458",
+      "coords": { "lat": 42.4460, "lng": 19.2655 },
+      "description": "4.9⭐/120 — höchste Bewertung aller Kneipen Podgoricas. Craft-Bier, Karaoke, Tischkicker. Insider-Spot.",
+      "hours": "Täglich 16:00 – 00:00",
+      "badge": "TOP · Craft"
+    },
+    {
+      "name": "Fermentor Craft Beer",
+      "role": "Lokal gebrautes Craft Bier",
+      "rating": "4.7", "reviews": "82",
+      "type": "Brewpub · Lokal",
+      "phone": "+382 69 541 943", "phoneRaw": "+38269541943",
+      "maps": "https://maps.google.com/?cid=15006436737621357921",
+      "coords": { "lat": 42.4389, "lng": 19.2678 },
+      "description": "Einzige Kneipe in Podgorica mit lokal gebrautem Craft Beer. Brewpub-Style. Echte Bierleute. Etwas außerhalb (Taxi ~3 €).",
+      "hours": "Täglich 8:00 – 00:00",
+      "badge": "Sa · Craft"
+    },
+    {
+      "name": "Itaka Library Bar",
+      "role": "Outdoor · am Fluss",
+      "rating": "4.8", "reviews": "358",
+      "type": "Fluss-Bar · Outdoor",
+      "phone": "+382 67 156 650", "phoneRaw": "+38267156650",
+      "maps": "https://maps.google.com/?cid=17457149018577535991",
+      "coords": { "lat": 42.4395, "lng": 19.2660 },
+      "description": "Versteckter Geheimtipp unter der Brücke am Moraca. Mehrere Outdoor-Ebenen, Boho-Atmosphäre, viele Einheimische.",
+      "hours": "Täglich 9:00 – 00:00",
+      "badge": "Outdoor"
+    },
+    {
+      "name": "Morrison Pub",
+      "role": "Party-Finish · bis 03:00",
+      "rating": "4.2", "reviews": "169",
+      "type": "Pub · Live-Musik",
+      "phone": "+382 69 499 900", "phoneRaw": "+38269499900",
+      "maps": "https://maps.google.com/?cid=15235719944161094538",
+      "coords": { "lat": 42.4418, "lng": 19.2635 },
+      "description": "Live-Musik, DJ, Rock-Vibe. Freitag & Samstag bis 03:00 geöffnet. Endstation für harte Nächte.",
+      "hours": "Fr/Sa 8:00 – 03:00",
+      "badge": "Party · Nacht",
+      "badgeClass": "neon"
+    },
+    {
+      "name": "SMASH Pub",
+      "role": "Craft + Burger",
+      "rating": "4.6", "reviews": "84",
+      "type": "Craft + Burger",
+      "phone": "+382 67 971 999", "phoneRaw": "+38267971999",
+      "maps": "https://maps.google.com/?q=SMASH+Pub+Podgorica",
+      "description": "Craft-Bier + beste Burgers der Stadt. Reggae/Classic-Rock-Musik. Falls ihr noch Hunger habt spät abends.",
+      "hours": "Täglich 7:00 – 00:00",
+      "badge": "Alt · Burger"
+    }
+  ],
+
+  "sights": [
+    {
+      "number": "01",
+      "name": "Sahat Kula",
+      "era": "1667 · Osmanisch",
+      "walkTime": "8 Min von Wohnung",
+      "coords": { "lat": 42.4409, "lng": 19.2591 },
+      "description": "16 m hoher Uhrturm, von Hadži-paša Osmanagić erbaut. Uhr kam aus Italien. Eines der wenigen osmanischen Bauwerke das den WK2 überlebte."
+    },
+    {
+      "number": "02",
+      "name": "Stara Varoš",
+      "era": "15.-19. Jh. · Altstadt",
+      "walkTime": "7 Min",
+      "description": "Historisches Viertel mit engen Gassen, Moscheen, kleinen Cafés. 30 Min Schlendern reicht. Authentischer Vibe."
+    },
+    {
+      "number": "03",
+      "name": "Millennium-Brücke",
+      "era": "2005 · 173 m lang",
+      "walkTime": "5 Min",
+      "coords": { "lat": 42.4445, "lng": 19.2548 },
+      "description": "Weiße Seil-Pylon-Struktur über dem Moraca-Fluss. Modernes Wahrzeichen. Bei Sonnenuntergang besonders stark."
+    },
+    {
+      "number": "04",
+      "name": "Moraca-Promenade",
+      "era": "Immer offen",
+      "walkTime": "5 Min",
+      "description": "Promenade am Fluss. Sonntag-Nachmittag voller Einheimischer mit Eis, Skateboards. Kaffee aus Plastikbecher."
+    }
+  ],
+
+  "souvenirs": [
+    {
+      "name": "Pg Souvenir Shop",
+      "role": "HAUPT-EMPFEHLUNG",
+      "rating": "4.4", "reviews": "58",
+      "type": "Alles · Magnete, Shirts, Tassen",
+      "phone": "", "phoneRaw": "",
+      "maps": "https://maps.google.com/?cid=16814064814060823788",
+      "description": "Breite Auswahl. Liegt im selben Gebäude wie Hard Rock Café — Shop + Kaffee-Bar. Magnete, T-Shirts, Hoodies, Tassen. Ab 10 € Kauf ein Kaffee gratis.",
+      "hours": "Täglich 8:00 – 24:00",
+      "badge": "★ Haupt-Tipp",
+      "badgeClass": "alt"
+    },
+    {
+      "name": "Petex",
+      "role": "Kleinere Auswahl · nur Cash",
+      "rating": "4.5", "reviews": "31",
+      "type": "Souvenirs · Kleiner",
+      "phone": "+382 69 566 266", "phoneRaw": "+38269566266",
+      "maps": "https://maps.google.com/?q=Petex+souvenir+Podgorica",
+      "description": "Versteckt zwischen zwei Gebäuden. Freundliche Inhaber. Günstiger als an der Küste. NUR Bargeld. Kleinere Auswahl, solide Qualität.",
+      "hours": "Mo-Fr 8:00-14:00 · Sa bis 12:00",
+      "badge": "Cash only"
+    },
+    {
+      "name": "ANOTHER STORY Design",
+      "role": "Handgemachter Schmuck",
+      "rating": "5.0", "reviews": "5",
+      "type": "Handmade Jewelry",
+      "phone": "", "phoneRaw": "",
+      "maps": "https://maps.google.com/?q=Another+Story+Design+Podgorica",
+      "description": "Was Persönlicheres für die Partnerin? Handgemachter Designer-Schmuck von lokalen Montenegrinern. Ohrringe, Silberketten, einzigartige Stücke. Kartenzahlung möglich.",
+      "hours": "Mo-Sa 8:30 – 21:30",
+      "badge": "Handmade"
+    }
+  ],
+
+  "reservations": [
+    { "prio": 1, "name": "Restoran Protokol",   "when": "Samstag 25.04. · 19:30 Uhr · Nr. 1 der Stadt",                 "phone": "+382 68 222 111", "phoneRaw": "+38268222111" },
+    { "prio": 2, "name": "Konoba Lanterna",     "when": "Freitag 24.04. · 19:00 Uhr · Veal under the bell 24 h vorher!","phone": "+382 67 663 163", "phoneRaw": "+38267663163" },
+    { "prio": 3, "name": "Restoran Diplomat",   "when": "Freitag oder Sonntag · Brunch & Dinner",                       "phone": "+382 67 993 339", "phoneRaw": "+38267993339" },
+    { "prio": 4, "name": "Babi Gourmet & Wine", "when": "Samstag · Alternative · Freitag vorher reservieren",           "phone": "+382 67 160 393", "phoneRaw": "+38267160393" },
+    { "prio": 5, "name": "Steak House Grill",   "when": "Samstag · Steak-Alternative",                                  "phone": "+382 68 825 954", "phoneRaw": "+38268825954" },
+    { "prio": 6, "name": "Stara Kuća",          "when": "Freitag · 3 km außerhalb · Taxi ~5 €",                         "phone": "+382 69 030 204", "phoneRaw": "+38269030204" }
+  ],
+
+  "whatsappTemplate": "Hello! I'd like to make a reservation for 2 people on [Friday 24th] at [19:00]. Name: Luca. Could you please confirm? We'd like a [outside / inside] table if possible. Thank you!",
+
+  "cheatSheet": [
+    {
+      "title": "Wohnung",
+      "rows": [
+        ["Adresse", "Slobode 21"],
+        ["Stock", "4."],
+        ["PLZ", "81000"],
+        ["Check-in", "Ab 14:00"],
+        ["Check-out", "Sonntag morgens"]
+      ]
+    },
+    {
+      "title": "Flüge",
+      "rows": [
+        ["Hin", "Fr 09:31"],
+        ["Retour", "So 17:30"],
+        ["Carrier", "Wizz Air"],
+        ["Duration", "2:15 h"]
+      ]
+    },
+    {
+      "title": "Taxi",
+      "rows": [
+        ["Eko Taxi", "+382 19 700"],
+        ["Bolt", "App"],
+        ["Flughafen", "~15 €"],
+        ["Zentrum", "25 Min"]
+      ]
+    },
+    {
+      "title": "Supermarkt",
+      "rows": [
+        ["VOLI", "400 m"],
+        ["Mimoza", "350 m"],
+        ["iDEA", "500 m"],
+        ["Öffnung", "Mo–Sa 7:30"]
+      ]
+    },
+    {
+      "title": "Notfall",
+      "rows": [
+        ["EU-Notruf", "112"],
+        ["Polizei", "122"],
+        ["Feuerwehr", "123"],
+        ["Rettung", "124"]
+      ]
+    },
+    {
+      "title": "Gut zu wissen",
+      "rows": [
+        ["Währung", "Euro €"],
+        ["Zeitzone", "MEZ"],
+        ["Trinkgeld", "10 %"],
+        ["Wetter", "~21°C"],
+        ["Sprache", "Montenegrinisch"]
+      ]
+    }
+  ]
+}
