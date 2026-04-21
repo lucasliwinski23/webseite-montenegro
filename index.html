@@ -1364,21 +1364,23 @@ section { padding: 70px 0; position: relative; }
 @media (max-width: 768px) { #map { height: 420px; } }
 @media (max-width: 480px) { #map { height: 360px; border-radius: 6px; } }
 
-/* Karten-Fullscreen — native Fullscreen API */
-#map:fullscreen,
-#map:-webkit-full-screen {
+/* Karten-Fullscreen — CSS-Pseudo-Fullscreen (funktioniert auch auf iOS Safari) */
+#map.is-fullscreen {
+  position: fixed !important;
+  inset: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
+  height: 100dvh !important;
   max-width: none !important;
   max-height: none !important;
   margin: 0 !important;
   padding: 0 !important;
   border: none !important;
   border-radius: 0 !important;
+  z-index: 1200;
   background: var(--bg-card);
 }
-#map:fullscreen .leaflet-container,
-#map:-webkit-full-screen .leaflet-container {
+#map.is-fullscreen .leaflet-container {
   width: 100% !important;
   height: 100% !important;
 }
@@ -1390,21 +1392,22 @@ body.map-fullscreen-active .theme-switch {
   display: none;
 }
 body.map-fullscreen-active .bottom-nav {
-  z-index: 1100;
+  z-index: 1300;
   background: var(--bg-card);
   border-top: 2px solid var(--accent-primary);
 }
-/* Karten-Buttons im Fullscreen prominenter */
-#map.fullscreen .map-fullscreen-btn {
-  top: 16px; right: 16px;
+/* Karten-Buttons im Fullscreen prominenter (Safe-Area für iOS-Notch) */
+#map.is-fullscreen .map-fullscreen-btn {
+  top: max(16px, env(safe-area-inset-top));
+  right: max(16px, env(safe-area-inset-right));
   width: 44px; height: 44px;
   background: rgba(28,22,18,0.95);
   border: 1px solid rgba(212,160,86,0.4);
   box-shadow: 0 6px 18px rgba(0,0,0,0.5);
 }
-#map.fullscreen .map-fullscreen-btn svg { width: 22px; height: 22px; }
+#map.is-fullscreen .map-fullscreen-btn svg { width: 22px; height: 22px; }
 /* Leaflet-Controls (Zoom) leicht nach rechts unten verschieben */
-#map.fullscreen .leaflet-top.leaflet-left { top: 70px; }
+#map.is-fullscreen .leaflet-top.leaflet-left { top: 70px; }
 .map-fullscreen-btn {
   position: absolute;
   top: 12px; right: 12px;
@@ -3069,7 +3072,7 @@ document.querySelectorAll('.info-nav-chip').forEach(chip => {
   });
 });
 
-// Karten-Fullscreen-Toggle
+// Karten-Fullscreen-Toggle — CSS-basiert (iOS Safari kann kein requestFullscreen auf DIVs)
 function setupMapFullscreen() {
   const map = document.getElementById('map');
   if (!map || map.querySelector('.map-fullscreen-btn')) return;
@@ -3078,36 +3081,33 @@ function setupMapFullscreen() {
   btn.className = 'map-fullscreen-btn';
   btn.setAttribute('aria-label', 'Karte vergrößern');
   btn.title = 'Karte vergrößern';
-  btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V3h4M21 7V3h-4M3 17v4h4M21 17v4h-4"/></svg>';
-  btn.addEventListener('click', async () => {
-    // Native Fullscreen-API: saubere Lösung, Browser handled alles
-    const inFs = document.fullscreenElement === map || document.webkitFullscreenElement === map;
-    try {
-      if (!inFs) {
-        if (map.requestFullscreen) await map.requestFullscreen();
-        else if (map.webkitRequestFullscreen) map.webkitRequestFullscreen();
-      } else {
-        if (document.exitFullscreen) await document.exitFullscreen();
-        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-      }
-    } catch(e) { console.warn('Fullscreen API:', e.message); }
-  });
-  // Bei FS-Wechsel Leaflet-Größe neu rechnen + alle Tiles neu
-  const onFsChange = () => {
-    const isFs = document.fullscreenElement === map || document.webkitFullscreenElement === map;
-    btn.setAttribute('aria-label', isFs ? 'Karte verkleinern' : 'Karte vergrößern');
-    btn.title = isFs ? 'Karte verkleinern' : 'Karte vergrößern';
-    btn.innerHTML = isFs
-      ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3v4H4M16 3v4h4M8 21v-4H4M16 21v-4h4"/></svg>'
-      : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V3h4M21 7V3h-4M3 17v4h4M21 17v4h-4"/></svg>';
+  const iconEnter = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V3h4M21 7V3h-4M3 17v4h4M21 17v4h-4"/></svg>';
+  const iconExit  = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3v4H4M16 3v4h4M8 21v-4H4M16 21v-4h4"/></svg>';
+  btn.innerHTML = iconEnter;
+
+  const setFullscreen = (on) => {
+    map.classList.toggle('is-fullscreen', on);
+    document.body.classList.toggle('map-fullscreen-active', on);
+    btn.setAttribute('aria-label', on ? 'Karte verkleinern' : 'Karte vergrößern');
+    btn.title = on ? 'Karte verkleinern' : 'Karte vergrößern';
+    btn.innerHTML = on ? iconExit : iconEnter;
     [50, 300].forEach(ms => setTimeout(() => {
       const m = window.__pgMap;
-      if (!m) return;
-      m.invalidateSize({ animate: false, pan: false });
+      if (m) m.invalidateSize({ animate: false, pan: false });
     }, ms));
   };
-  document.addEventListener('fullscreenchange', onFsChange);
-  document.addEventListener('webkitfullscreenchange', onFsChange);
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setFullscreen(!map.classList.contains('is-fullscreen'));
+  });
+
+  // ESC zum Schließen
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && map.classList.contains('is-fullscreen')) setFullscreen(false);
+  });
+
   map.appendChild(btn);
 }
 
