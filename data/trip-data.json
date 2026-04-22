@@ -121,7 +121,8 @@
         { "time": "14:30", "title": "Sportsbar · 4 h Bundesliga · Wähl deine Option", "detail": "Grosse Terrasse, Flatscreens, Tuborg vom Fass.", "highlight": true,
           "options": [
             { "ref": "bar:Pub WWW",                              "tag": "Klassiker · Terrasse" },
-            { "ref": "bar:Marco Polo Sport Pub & Catering",      "tag": "14 TV-Screens" }
+            { "ref": "bar:Marco Polo Sport Pub & Catering",      "tag": "14 TV-Screens" },
+            { "ref": "bar:Scottish Pub McCloud",                 "tag": "Scottish · Zentral" }
           ]
         },
         { "time": "19:30", "title": "Dinner · Wähl deine Option", "detail": "Drei der höchstbewerteten Spots Podgoricas.", "highlight": true,
@@ -602,6 +603,24 @@
       "description": "Craft-Bier + beste Burgers der Stadt. Reggae/Classic-Rock-Musik. Falls ihr noch Hunger habt spät abends.",
       "hours": "Täglich 7:00 – 00:00",
       "badge": "Alt · Burger"
+    },
+    {
+      "name": "Scottish Pub McCloud",
+      "role": "Sa Sportsbar · Alternative · Zentral",
+      "category": "sportsbar",
+      "rating": "4.6", "reviews": "120",
+      "type": "Scottish Pub · Football-TV",
+      "phone": "+382 69 997 829", "phoneRaw": "+38269997829",
+      "maps": "https://maps.google.com/?q=Scottish+Pub+McCloud+Podgorica",
+      "coords": { "lat": 42.4416, "lng": 19.2611 },
+      "description": "Erster und einziger schottischer Pub Podgoricas. Zentral auf der Hercegovačka, mitten im Kneipenviertel. TV für Champions League / Premier League / Bundesliga, gute Auswahl an Draught-Bier und Whisky, britische und mediterrane Küche. 'Feels like home'-Vibe — kein Sport-Tempel mit 14 Screens, sondern echter Pub mit gelegentlichem Spiel.",
+      "reviewQuotes": [
+        { "text": "The best pub in Podgorica — friendly mix of locals and visitors, good selection of beer and whiskey, plus excellent local food.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Premier League Sundays — proper pub atmosphere, draft beer and football on the screen.", "author": "Tripadvisor", "lang": "en" }
+      ],
+      "hours": "Mo-Sa 8:00 – 01:00 · So 9:00 – 01:00",
+      "badge": "Sa · Sportsbar · ALT-2",
+      "badgeClass": "alt"
     }
   ],
 
