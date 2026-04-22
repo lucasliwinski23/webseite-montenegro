@@ -2251,6 +2251,58 @@ body.map-fullscreen-active .bottom-nav {
 .beer-row-meta .pill.curated { color: var(--accent-good); border: 1px solid var(--accent-good); }
 .beer-row-meta .pill.craft   { color: var(--accent-info); border: 1px solid var(--accent-info); }
 
+/* Verifizierte Getränkepreise */
+.bev-list { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.bev-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px; align-items: center;
+  padding: 10px 14px;
+  background: var(--bg-section);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 4px;
+}
+.bev-row-main { min-width: 0; }
+.bev-row-spot {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-weight: 700; font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+.bev-row-item {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 0.98rem; color: var(--text-primary);
+  line-height: 1.2;
+}
+.bev-row-meta {
+  margin-top: 4px;
+  display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+}
+.bev-cat {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  padding: 2px 8px;
+  border: 1px solid;
+  border-radius: 999px;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.bev-src {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  color: var(--text-soft);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+a.bev-src { color: var(--accent-info); }
+a.bev-src:hover { color: var(--accent-primary); text-decoration: underline; }
+.bev-row-price {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700; font-size: 1rem;
+  color: var(--accent-warm);
+  white-space: nowrap;
+}
+
 /* Histogram (Rating, Distance) — vertikale Säulen */
 .histogram {
   display: grid;
@@ -4536,20 +4588,20 @@ function renderAnalytics() {
   const apt = A.apartment || { lat: 42.4415, lng: 19.2636 };
   const bars = (A.bars || []).map(b => ({ ...b, distM: Math.round(haversineM(apt, b)) }));
   const rests = (A.restaurants || []).map(r => ({ ...r, distM: Math.round(haversineM(apt, r)) }));
+  const beverages = A.verifiedBeverages || [];
 
   // === KPIs ===
   const ratedBars = bars.filter(b => typeof b.rating === 'number');
   const ratedRest = rests.filter(r => typeof r.rating === 'number');
   const avgBarRating = ratedBars.length ? (ratedBars.reduce((s,b)=>s+b.rating,0)/ratedBars.length).toFixed(2) : '–';
   const avgRestRating = ratedRest.length ? (ratedRest.reduce((s,r)=>s+r.rating,0)/ratedRest.length).toFixed(2) : '–';
-  const cheapestBeer = bars.filter(b => typeof b.beer === 'number').sort((a,b)=>a.beer-b.beer)[0];
   const closestBar = [...bars].sort((a,b)=>a.distM-b.distM)[0];
 
   const kpis = [
-    { label: 'Bars im 2 km Umkreis', value: bars.length, sub: 'Pubs, Craft, Lounge, Cocktail', cls: '' },
-    { label: 'Restaurants', value: rests.length, sub: 'Tradition bis Fine Dining', cls: 'alt' },
-    { label: 'Günstigstes Bier', value: cheapestBeer ? `${cheapestBeer.beer.toFixed(2).replace('.',',')} €` : '–', sub: cheapestBeer ? `0,5 L · ${cheapestBeer.name}` : '', cls: 'good' },
-    { label: 'Ø Rating Bars / Food', value: `${avgBarRating} / ${avgRestRating}`, sub: 'gewichtet aus Reviews', cls: 'warm' }
+    { label: 'Verifizierte Bars', value: bars.length, sub: 'kuratiert · Rating geprüft', cls: '' },
+    { label: 'Verifizierte Restaurants', value: rests.length, sub: 'mit Speisekarten-Auszug', cls: 'alt' },
+    { label: 'Verifizierte Preise', value: beverages.length, sub: 'direkt aus Original-Karten', cls: 'good' },
+    { label: 'Ø Rating Bars / Food', value: `${avgBarRating} / ${avgRestRating}`, sub: `${closestBar?'nächste Bar '+closestBar.distM+' m':''}`, cls: 'warm' }
   ];
   const kpiHtml = kpis.map(k => `
     <div class="kpi-card ${k.cls}">
@@ -4558,27 +4610,20 @@ function renderAnalytics() {
       <div class="kpi-sub">${esc(k.sub)}</div>
     </div>`).join('');
 
-  // === Bierpreis-Index (Top 12 günstigste) ===
-  const beerList = bars.filter(b => typeof b.beer === 'number')
-                       .sort((a,b) => a.beer - b.beer)
-                       .slice(0, 12);
-  const maxBeer = Math.max(...beerList.map(b => b.beer));
-  const minBeer = Math.min(...beerList.map(b => b.beer));
-  const beerHtml = beerList.map((b, i) => {
-    const pct = Math.max(8, Math.round((b.beer / maxBeer) * 100));
-    const isCraft = /craft/i.test(b.beerNote || '') || /craft|brewpub/i.test(b.type || '');
-    return `<div class="beer-row">
-      <div class="beer-row-head">
-        <div class="beer-row-name"><span class="rank">#${String(i+1).padStart(2,'0')}</span>${esc(b.name)}</div>
-        <div class="beer-row-price">${b.beer.toFixed(2).replace('.',',')} €</div>
+  // === Verifizierte Getränkepreise (statt geschätzter Bierpreis-Index) ===
+  const catColors = { 'Bier': 'var(--accent-good)', 'Wein': 'var(--accent-deep)', 'Spirituose': 'var(--accent-warm)', 'Kaffee': 'var(--accent-info)' };
+  const beverageHtml = beverages.map((bv) => {
+    const color = catColors[bv.category] || 'var(--accent-primary)';
+    return `<div class="bev-row" style="border-left-color:${color}">
+      <div class="bev-row-main">
+        <div class="bev-row-spot">${esc(bv.spot)}</div>
+        <div class="bev-row-item">${esc(bv.item)}</div>
+        <div class="bev-row-meta">
+          <span class="bev-cat" style="color:${color};border-color:${color}">${esc(bv.category)}</span>
+          ${bv.url ? `<a class="bev-src" href="${safeUrl(bv.url)}" target="_blank" rel="noopener">↗ Quelle</a>` : `<span class="bev-src">${esc(bv.source)}</span>`}
+        </div>
       </div>
-      <div class="beer-bar-track"><div class="beer-bar-fill" style="width:${pct}%"></div></div>
-      <div class="beer-row-meta">
-        <span class="pill">${esc(b.type || '')}</span>
-        <span class="pill ${isCraft?'craft':''}">${esc(b.beerNote || '')}</span>
-        ${b.curated ? '<span class="pill curated">★ kuratiert</span>' : ''}
-        <span class="pill">${b.distM} m</span>
-      </div>
+      <div class="bev-row-price">${esc(bv.price)}</div>
     </div>`;
   }).join('');
 
@@ -4692,24 +4737,22 @@ function renderAnalytics() {
   // === Final Assembly ===
   wrap.innerHTML = `
     <div class="analytics-header">
-      <h3>📊 Auswertungen <span style="color:var(--accent-primary)">·</span> Stand ${esc(A.asOf || '')}</h3>
-      <p>Alle Bars & Restaurants im ${A.radiusKm || 2} km Umkreis von Slobode 21 — verdichtet auf KPIs, Verteilungen & Bierpreis-Index.</p>
+      <h3>📊 Auswertungen <span style="color:var(--accent-primary)">·</span> Nur verifizierte Daten</h3>
+      <p>Bars & Restaurants im ${A.radiusKm || 2} km Umkreis, deren Rating, Reviews und Preise wir aktiv recherchiert haben — keine Schätzungen, keine ungeprüften Listen.</p>
       <div class="analytics-meta">
         <span>${bars.length} Bars</span>
         <span>${rests.length} Restaurants</span>
-        <span>Quellen: Tripadvisor · RestaurantGuru · Foodbook.me</span>
+        <span>${beverages.length} verifizierte Preise</span>
+        <span>Stand ${esc(A.asOf || '')}</span>
       </div>
     </div>
 
     <div class="kpi-grid">${kpiHtml}</div>
 
     <div class="chart-card">
-      <div class="chart-title"><span class="chart-icon">🍺</span>Bierpreis-Index · Top 12</div>
-      <div class="chart-sub">0,5 L Niksicko vom Fass · sortiert günstig → teuer · Craft-Tap separat markiert</div>
-      ${beerHtml}
-      <div class="chart-sub" style="margin-top:14px;border-top:1px dashed var(--border-soft);padding-top:10px">
-        Range: ${minBeer.toFixed(2).replace('.',',')} – ${maxBeer.toFixed(2).replace('.',',')} € · Median ≈ ${beerList[Math.floor(beerList.length/2)].beer.toFixed(2).replace('.',',')} €
-      </div>
+      <div class="chart-title"><span class="chart-icon">🍺</span>Verifizierte Getränkepreise</div>
+      <div class="chart-sub">Direkt aus Original-Speisekarten unserer ${rests.length} kuratierten Restaurants — keine Schätzungen. Click "Quelle" zur Karte.</div>
+      <div class="bev-list">${beverageHtml}</div>
     </div>
 
     <div class="chart-card">
@@ -4727,18 +4770,14 @@ function renderAnalytics() {
     ${donutsHtml}
 
     <div class="analytics-divider">▸ Echte Speisekarten · Auszug</div>
-    <div class="chart-sub" style="margin-bottom:14px">Live-verlinkte Original-Menüs der Top-Spots — vor Ort variabel.</div>
+    <div class="chart-sub" style="margin-bottom:14px">Live-verlinkte Original-Menüs — Preise direkt von der Karte (vor Ort minimal abweichend).</div>
     <div class="menu-showcase-grid">${showcase}</div>
 
-    <div class="chart-sub" style="margin-top:24px;font-style:italic">
-      Hinweis: ${esc(A.note || '')}
+    <div class="chart-sub" style="margin-top:24px;padding:12px 14px;background:var(--bg-section);border-left:3px solid var(--accent-info);border-radius:4px">
+      <strong style="color:var(--accent-info);text-transform:uppercase;letter-spacing:0.06em;font-size:0.7rem">∎ Datenbasis</strong><br>
+      ${esc(A.note || '')}
     </div>
   `;
-
-  // Animations: fade in beer bars when section becomes visible
-  requestAnimationFrame(() => {
-    wrap.querySelectorAll('.beer-bar-fill').forEach(f => f.classList.add('in'));
-  });
 }
 
 // ============================================================
