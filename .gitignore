@@ -1,0 +1,29 @@
+# Lokale Konfiguration mit Secrets — niemals committen
+.env
+.env.*
+!.env.example
+config.local.js
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Node / lokale Test-Tools (Playwright etc.)
+node_modules/
+package.json
+package-lock.json
+
+# Claude Code lokale Config
+.claude/
+
+# Screenshots zur Bug-Diagnose (lokal)
+Screenshot*.png
+debug_*.png
+debug_*.js
+test_*.js
+fs_*.png

@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Podgorica Sauftour 2026",
-    "subtitle": "Montenegro · 3 Tage · Keine Gnade",
+    "title": "Podgorica Gammelgulup 2026",
+    "subtitle": "Montenegro · 3 Tage · voller Einsatz",
     "dateRange": "24.–26. April 2026",
-    "departureIso": "2026-04-24T09:31:00+02:00",
+    "departureIso": "2026-04-24T09:00:00+02:00",
     "returnIso": "2026-04-26T17:30:00+02:00",
     "apartment": {
       "address": "Slobode 21",
@@ -21,8 +21,8 @@
       "number": "W6 7602",
       "carrier": "Wizz Air",
       "date": "Freitag 24. April 2026",
-      "from": { "code": "DTM", "name": "Dortmund", "time": "09:31" },
-      "to":   { "code": "TGD", "name": "Podgorica", "time": "11:45" },
+      "from": { "code": "DTM", "name": "Dortmund", "time": "09:00" },
+      "to":   { "code": "TGD", "name": "Podgorica", "time": "11:15" },
       "durationMin": 135,
       "distanceKm": 1344,
       "direct": true
@@ -42,6 +42,7 @@
     {
       "name": "VOLI",
       "address": "6 Novaka Miloševa",
+      "coords": { "lat": 42.4423, "lng": 19.2622 },
       "distanceM": 400,
       "walkingMin": 5,
       "hours": "Mo-Sa 7:30 – 21:30",
@@ -51,6 +52,7 @@
     {
       "name": "Mimoza Market",
       "address": "5 Slobode",
+      "coords": { "lat": 42.4416, "lng": 19.2628 },
       "distanceM": 350,
       "walkingMin": 5,
       "hours": "Mo-Sa 7:30 – 21:30",
@@ -60,6 +62,7 @@
     {
       "name": "iDEA",
       "address": "Bulevar Ivana Crnojevića",
+      "coords": { "lat": 42.4435, "lng": 19.2660 },
       "distanceM": 500,
       "walkingMin": 7,
       "hours": "Mo-Sa 7:00 – 24:00",
@@ -82,9 +85,21 @@
         { "time": "12:40", "title": "Leichter Lunch @ Gostiona 1928", "detail": "Traditionell, Terrasse, 2 Min von der Wohnung. Erstes Bier.", "highlight": true },
         { "time": "13:45", "title": "Einkauf VOLI", "detail": "Wasser, Snacks, Biere. WICHTIG: Sonntagsvorrat gleich mit!", "highlight": false },
         { "time": "14:10", "title": "Wohnung · Check-in", "detail": "Slobode 21, 4. Stock. Koffer ausladen, 30 Min ankommen.", "highlight": false },
+        { "time": "14:40", "title": "Mini-Sightseeing-Walk", "detail": "Sahat Kula (8 Min) + Stara Varoš (Altstadt, enge Gassen). 20 Min reichen. Liegt auf dem Weg zur Akademija.", "highlight": false },
         { "time": "15:00", "title": "Warmup @ PG Akademija piva", "detail": "Regionale Brauerei mit Terrasse. Tasting-Flight. 3,5 h Zeit.", "highlight": true },
-        { "time": "19:00", "title": "Dinner · 3 Optionen", "detail": "Lanterna · Diplomat · Stara Kuća. Scroll runter für Details.", "highlight": true },
-        { "time": "22:30", "title": "Craft-Bier-Abend", "detail": "Bogart (4.9⭐) oder Itaka Library Bar (4.8⭐) am Fluss.", "highlight": false },
+        { "time": "19:00", "title": "Dinner · Wähl deine Option", "detail": "Wahl zwischen Tradition, Mediterran und Schloss-Vibe.", "highlight": true,
+          "options": [
+            { "ref": "restaurant:Konoba Lanterna",   "tag": "Tradition" },
+            { "ref": "restaurant:Restoran Diplomat", "tag": "Mediterran" },
+            { "ref": "restaurant:Stara Kuća",        "tag": "Schloss-Vibe" }
+          ]
+        },
+        { "time": "22:30", "title": "Craft-Bier-Abend", "detail": "Höchstbewertete Craft-Spots der Stadt.", "highlight": false,
+          "options": [
+            { "ref": "bar:Bogart Craft Beer",  "tag": "TOP-Rated" },
+            { "ref": "bar:Itaka Library Bar",  "tag": "Outdoor / Fluss" }
+          ]
+        },
         { "time": "00:00+", "title": "Morrison Pub (optional)", "detail": "Freitags bis 03:00. Live-Musik. Wenn noch Dampf da ist.", "highlight": false }
       ]
     },
@@ -94,10 +109,34 @@
       "date": "25. April 2026",
       "theme": "SPORTSBAR-TAG · DIE VOLLE DRÖHNUNG",
       "items": [
-        { "time": "12:00", "title": "Langer Brunch", "detail": "SPAGO, Diplomat oder Gostiona 1928. 2 h entspannt, Kaffee dazu.", "highlight": false },
-        { "time": "14:30", "title": "Pub WWW Sportsbar · 4 h", "detail": "Grosse Terrasse, Flatscreens, Tuborg vom Fass, Bundesliga schauen.", "highlight": true },
-        { "time": "19:30", "title": "Dinner · 3 Optionen", "detail": "Protokol (Nr. 1 der Stadt) · Babi Gourmet · Steak House.", "highlight": true },
-        { "time": "22:30", "title": "Craft-Bier-Kneipe", "detail": "Fermentor (lokal gebraut) oder Itaka Library Bar.", "highlight": false },
+        { "time": "12:00", "title": "Langer Brunch · Wähl deine Option", "detail": "2 h entspannt, Kaffee dazu.", "highlight": false,
+          "options": [
+            { "ref": "restaurant:The Living Room Lounge & Dining", "tag": "TOP-Brunch" },
+            { "ref": "restaurant:SPAGO",                            "tag": "Italienisch" },
+            { "ref": "restaurant:Restoran Diplomat",                "tag": "Mediterran" },
+            { "ref": "restaurant:Gostiona 1928",                    "tag": "Tradition · 2 Min weg" }
+          ]
+        },
+        { "time": "14:00", "title": "Kurzer Verdauungs-Walk", "detail": "Millennium-Brücke (5 Min von Wohnung) + Moraca-Promenade. 30 Min Frischluft vor 4 h Sportsbar.", "highlight": false },
+        { "time": "14:30", "title": "Sportsbar · 4 h Bundesliga · Wähl deine Option", "detail": "Grosse Terrasse, Flatscreens, Tuborg vom Fass.", "highlight": true,
+          "options": [
+            { "ref": "bar:Pub WWW",                              "tag": "Klassiker · Terrasse" },
+            { "ref": "bar:Marco Polo Sport Pub & Catering",      "tag": "14 TV-Screens" }
+          ]
+        },
+        { "time": "19:30", "title": "Dinner · Wähl deine Option", "detail": "Drei der höchstbewerteten Spots Podgoricas.", "highlight": true,
+          "options": [
+            { "ref": "restaurant:Restoran Protokol",     "tag": "Nr. 1 der Stadt" },
+            { "ref": "restaurant:Babi Gourmet & Wine",   "tag": "Gourmet · Capital Plaza" },
+            { "ref": "restaurant:Steak House Grill",     "tag": "Premium-Grill" }
+          ]
+        },
+        { "time": "22:30", "title": "Craft-Bier-Kneipe · Wähl deine Option", "detail": "Lokal gebraut oder Boho-Lounge am Fluss.", "highlight": false,
+          "options": [
+            { "ref": "bar:Fermentor Craft Beer",  "tag": "Lokales Brewpub" },
+            { "ref": "bar:Itaka Library Bar",     "tag": "Outdoor / Fluss" }
+          ]
+        },
         { "time": "00:00", "title": "Morrison Party-Finish", "detail": "Samstags bis 03:00. DJ, Live-Musik, volle Bude.", "highlight": true },
         { "time": "03:00", "title": "Heimweg", "detail": "Zu Fuß oder Bolt-App. 5 Min zur Wohnung.", "highlight": false }
       ]
@@ -111,7 +150,13 @@
       "items": [
         { "time": "10:30", "title": "Aufstehen & packen", "detail": "Letzte Sachen in den Koffer, Küche klar machen, Müll raus.", "highlight": false },
         { "time": "11:00", "title": "Check-out", "detail": "Schlüssel zurück, Gepäck mitnehmen.", "highlight": false },
-        { "time": "11:30", "title": "Langer Brunch · 2,5 h", "detail": "Diplomat oder Gostiona 1928. Beide nah, Platz für Koffer.", "highlight": true },
+        { "time": "11:15", "title": "Souvenir-Stop", "detail": "Pg Souvenir Shop (Magnete, Shirts) oder Another Story (handmade Silber) — auf dem Weg zum Brunch.", "highlight": false },
+        { "time": "11:30", "title": "Langer Brunch · 2,5 h · Wähl deine Option", "detail": "Beide nah an der Wohnung, Platz für Koffer.", "highlight": true,
+          "options": [
+            { "ref": "restaurant:Restoran Diplomat", "tag": "Mediterran" },
+            { "ref": "restaurant:Gostiona 1928",     "tag": "Tradition · 2 Min" }
+          ]
+        },
         { "time": "14:15", "title": "Taxi zum TGD", "detail": "Eko Taxi oder Bolt-App, ~15 €, 25 Min Fahrt.", "highlight": false },
         { "time": "14:45", "title": "Am Flughafen", "detail": "Check-in, Security. Wizz Air ist streng mit Handgepäck.", "highlight": false },
         { "time": "17:30", "title": "Abflug W6 7601", "detail": "Zurück nach Dortmund. 2:25 h Flugzeit.", "highlight": true },
@@ -136,8 +181,9 @@
       "menuLabel": "Speisekarte PDF",
       "description": "Klassische Konoba in einem historischen Gebäude von 1630. Zentraler Innenhof mit uraltem Olivenbaum, Steinmauern, warme Beleuchtung. Tradition trifft auf ehrliche Küche — Portionen großzügig, Preise moderat.",
       "reviewQuotes": [
-        { "text": "Traumhafter Innenhof mit altem Olivenbaum in der Mitte. Ruhig, entspannt — wirkt wie ein Rückzugsort mitten in der Stadt.", "author": "Google-Review" },
-        { "text": "Das Veal under the bell war butterzart, perfekt gewürzt. Pflicht-Gericht. Portionen reichen für zwei.", "author": "Wanderlog" }
+        { "text": "Veal cooked under bell — fall apart tender and very flavoursome, large portion.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Service and food absolutely stunning and definitely not over priced. Come hungry — portions are huge.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Despite a slight language barrier, the staff made us feel very welcome and helped choose the best dishes.", "author": "Tripadvisor", "lang": "en" }
       ],
       "menu": [
         { "title": "Spezialitäten", "items": [
@@ -172,8 +218,9 @@
       "menuLabel": "Menü",
       "description": "Gehobener mediterran-regionaler Tisch direkt am Trg Republike, 3 Min von unserer Wohnung. Bekannt für Kalbsbacke in Rotwein und das Brotkörbchen mit drei Sorten & Dips als Gratis-Starter.",
       "reviewQuotes": [
-        { "text": "Kalbsbacke in Rotwein war außergewöhnlich — zart wie Butter, intensiv im Geschmack. Selten auf Karten in Podgorica.", "author": "Google-Review" },
-        { "text": "Bestes Essen in drei Wochen Montenegro. Freundlicher Service, richtig gute Weinempfehlungen.", "author": "Tripadvisor" }
+        { "text": "Veal cheeks in red wine (brasato) with mashed potatoes — so tender that you can cut the cheeks with the fork. Knife not needed.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Fantastic food with superb service, helpful staff who assist with menu understanding. Final bill ~40€ for two.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Veal cheeks were soft and melted like butter, with excellent soup and fish.", "author": "Tripadvisor", "lang": "en" }
       ],
       "menu": [
         { "title": "Signature", "items": [
@@ -232,6 +279,7 @@
     {
       "name": "Restoran Protokol",
       "role": "Samstag Dinner · Option A",
+      "address": "Marka Đukanovića 1/1",
       "rating": "4.9",
       "reviews": "623",
       "cuisine": "Regional-Kreativ · Fine Dining Light",
@@ -244,8 +292,9 @@
       "menuLabel": "Speisekarte",
       "description": "HÖCHSTBEWERTET der Stadt. 4.9⭐ bei 623 Reviews. Gehobene regionale Küche mit kreativen Interpretationen. Angus-Steaks, Dry-Aged, eigene Zigarrenhumidor. Am Samstag IMMER vorbestellen.",
       "reviewQuotes": [
-        { "text": "Perfekt! Unglaubliches Restaurant, Essen exzellent, Kellner perfekt. Sommelier mit viel Wissen und freundlicher Art.", "author": "Tripadvisor" },
-        { "text": "Sauberes Personal, professionell, immer zur Stelle. Breite Whisky-Auswahl, beeindruckende Zigarren-Humidor.", "author": "Google-Review" }
+        { "text": "The food was exceptional and the waiter absolutely on point. Excellent wine selection with knowledgeable sommelier.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Protokol has the best service of any restaurant in Podgorica — staff cater to any request and go beyond.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Excellent wine list, great and lovely staff who can tell you all about the wines and food. Chick and cozy atmosphere.", "author": "Tripadvisor", "lang": "en" }
       ],
       "menu": [
         { "title": "Gastro-Bar (günstiger)", "items": [
@@ -313,8 +362,9 @@
       "menuLabel": "Website",
       "description": "Premium-Steakhouse mit breiter Karte. Du wählst dein eigenes Messer am Tisch. Dry-aged Steaks auf höchstem Niveau. Kostenlose Starter-Platte mit Knoblauchbrot und Patés.",
       "reviewQuotes": [
-        { "text": "Umfangreiche Karte, aber wir kamen für das Fleisch. Beef Steak mit Süßkartoffel und Tagliata mit Trüffel-Püree — beide perfekt.", "author": "Google-Review" },
-        { "text": "Das beste Essen, das wir hatten. Adirs Service war außergewöhnlich. Messer-Auswahl am Tisch!", "author": "Tripadvisor" }
+        { "text": "Relaxing atmosphere, excellent service, top quality food, carefully selected menu for lovers of good meat.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Dry-aged Ribeye Steak — deliciously tender, brought on a mini barbecue right to the table.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "274 Reviews und keine Enttäuschung. Knife-selection ritual am Tisch ist das Highlight.", "author": "Tripadvisor", "lang": "en" }
       ],
       "menu": [
         { "title": "Signature Steaks", "items": [
@@ -336,6 +386,7 @@
     {
       "name": "SPAGO",
       "role": "Samstag Brunch",
+      "category": "brunch",
       "rating": "4.8",
       "reviews": "1.641",
       "cuisine": "Italienisch · International",
@@ -366,8 +417,43 @@
       "badge": "Sa Brunch"
     },
     {
+      "name": "The Living Room Lounge & Dining",
+      "role": "Brunch · Alternative TOP",
+      "category": "brunch",
+      "rating": "4.8",
+      "reviews": "612",
+      "cuisine": "European · Modern",
+      "price": "€€ · Mittelklasse",
+      "phone": "+382 67 333 333",
+      "phoneRaw": "+38267333333",
+      "maps": "https://maps.google.com/?q=The+Living+Room+Lounge+Dining+Podgorica",
+      "coords": { "lat": 42.4435, "lng": 19.2625 },
+      "menuLabel": "Karte vor Ort",
+      "description": "Top-bewerteter Brunch-Spot in Podgorica. European cuisine, makellose Sauberkeit, freundliches Personal, schöne Innen- und Außenbereiche. Empfohlen als Top-Brunch-Alternative zu SPAGO/Gostiona.",
+      "reviewQuotes": [
+        { "text": "Das beste Brunch-Erlebnis in Podgorica — Personal aufmerksam, Speisen frisch, Atmosphäre lounge-haft.", "author": "Tripadvisor" }
+      ],
+      "menu": [
+        { "title": "Brunch", "items": [
+          ["Big Breakfast Plate", "~12 €"],
+          ["Avocado Toast & Eier", "~9 €"],
+          ["Pancakes mit Beeren", "~7 €"]
+        ]},
+        { "title": "Mains", "items": [
+          ["Gegrilltes Hähnchen-Sandwich", "~10 €"],
+          ["Pasta des Tages", "~12 €"]
+        ]},
+        { "title": "Kaffee", "items": [
+          ["Cappuccino / Latte", "~2,50 €"]
+        ]}
+      ],
+      "badge": "Brunch · TOP-ALT",
+      "badgeClass": "alt"
+    },
+    {
       "name": "Gostiona 1928",
       "role": "Freitag Lunch / Alt. Brunch",
+      "category": "brunch",
       "rating": "4.3",
       "reviews": "298",
       "cuisine": "Traditionell · Modern",
@@ -437,6 +523,11 @@
       "maps": "https://maps.google.com/?cid=17682603585148288458",
       "coords": { "lat": 42.4460, "lng": 19.2655 },
       "description": "4.9⭐/120 — höchste Bewertung aller Kneipen Podgoricas. Craft-Bier, Karaoke, Tischkicker. Insider-Spot.",
+      "reviewQuotes": [
+        { "text": "Good craft beer, wide assortment, good music, atmosphere — and most importantly awesome bartenders that suggest drinks based on your preferences.", "author": "Restaurant Guru", "lang": "en" },
+        { "text": "Cosy atmosphere makes guests feel relaxed. Nintendo Switch on the TV — they even have a top floor for birthdays.", "author": "Restaurant Guru", "lang": "en" },
+        { "text": "Beautiful combination of bar culture with coziness and friendliness. Cheerful staff.", "author": "Tripadvisor", "lang": "en" }
+      ],
       "hours": "Täglich 16:00 – 00:00",
       "badge": "TOP · Craft"
     },
@@ -461,6 +552,11 @@
       "maps": "https://maps.google.com/?cid=17457149018577535991",
       "coords": { "lat": 42.4395, "lng": 19.2660 },
       "description": "Versteckter Geheimtipp unter der Brücke am Moraca. Mehrere Outdoor-Ebenen, Boho-Atmosphäre, viele Einheimische.",
+      "reviewQuotes": [
+        { "text": "Hidden gem tucked away under a bridge — part of an old Turkish bath, sits next to the river. Quirky, peaceful, away from traffic.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Cozy lovely atmosphere, nice people, pleasant green surroundings. Always relaxed and pet-friendly.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Sometimes they host local jazz bands. Music by their DJ is always really nice.", "author": "Spotted by Locals", "lang": "en" }
+      ],
       "hours": "Täglich 9:00 – 00:00",
       "badge": "Outdoor"
     },
@@ -478,8 +574,27 @@
       "badgeClass": "neon"
     },
     {
+      "name": "Marco Polo Sport Pub & Catering",
+      "role": "Sa Sportsbar · Alternative TOP",
+      "category": "sportsbar",
+      "rating": "5.0", "reviews": "18",
+      "type": "Sportsbar · 14 TV-Screens",
+      "phone": "+382 20 220 715", "phoneRaw": "+38220220715",
+      "maps": "https://maps.google.com/?q=Marco+Polo+Sport+Pub+Podgorica",
+      "coords": { "lat": 42.4470, "lng": 19.2480 },
+      "description": "Sportsbar in City Kvart mit 14 TV-Screens — fokussiert auf Live-Spiele. 5.0⭐ bei 18 Reviews. Große Portionen, gutes Essen, faire Preise. Alternative zu Pub WWW falls dort voll.",
+      "reviewQuotes": [
+        { "text": "Probably the best food in Podgorica! Big portion of great food for lower price — sport lovers paradise with 14 screens.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "If you like sport here you can find a lot of interesting memorabilia! A place for football fans and beer lovers.", "author": "Tripadvisor", "lang": "en" }
+      ],
+      "hours": "Täglich bis spät",
+      "badge": "Sa · Sportsbar · TOP-ALT",
+      "badgeClass": "alt"
+    },
+    {
       "name": "SMASH Pub",
       "role": "Craft + Burger",
+      "category": "craft",
       "rating": "4.6", "reviews": "84",
       "type": "Craft + Burger",
       "phone": "+382 67 971 999", "phoneRaw": "+38267971999",
@@ -560,6 +675,31 @@
     }
   ],
 
+  "sportEvents": {
+    "date": "Samstag 25. April 2026",
+    "venueWindow": "14:30 – 18:30 in der Sportsbar",
+    "matches": [
+      { "time": "15:30", "league": "BUNDESLIGA 31", "home": "Mainz 05", "away": "Bayern München", "highlight": true },
+      { "time": "15:30", "league": "BUNDESLIGA 31", "home": "1. FC Köln", "away": "Bayer Leverkusen", "highlight": true },
+      { "time": "15:30", "league": "BUNDESLIGA 31", "home": "Wolfsburg", "away": "M'gladbach", "highlight": false },
+      { "time": "15:30", "league": "BUNDESLIGA 31", "home": "Augsburg", "away": "Frankfurt", "highlight": false },
+      { "time": "15:30", "league": "BUNDESLIGA 31", "home": "Heidenheim", "away": "St. Pauli", "highlight": false },
+      { "time": "16:00", "league": "PREMIER LEAGUE", "home": "Liverpool", "away": "Crystal Palace", "highlight": true },
+      { "time": "16:00", "league": "PREMIER LEAGUE", "home": "Arsenal", "away": "Newcastle", "highlight": true },
+      { "time": "16:00", "league": "PREMIER LEAGUE", "home": "Fulham", "away": "Aston Villa", "highlight": false },
+      { "time": "16:00", "league": "PREMIER LEAGUE", "home": "West Ham", "away": "Everton", "highlight": false },
+      { "time": "16:00", "league": "PREMIER LEAGUE", "home": "Wolverhampton", "away": "Tottenham", "highlight": false },
+      { "time": "18:30", "league": "BUNDESLIGA 31", "home": "Hamburg", "away": "Hoffenheim", "highlight": false }
+    ],
+    "note": "Premier-League-Anstoßzeiten 16:00 lokal MNE = 17:00 UK. Alle Bundesliga + Premier-League-Spiele werden in Pub WWW oder Marco Polo Sport Pub übertragen.",
+    "motorsport": [
+      { "series": "F1", "info": "Bahrain & Saudi GP wegen Iran-Krieg gestrichen — kein F1-Wochenende am 25.04.2026" },
+      { "series": "MotoGP", "info": "Spanien GP Jerez startet erst Anfang Mai — 25.04. ist rennfrei" },
+      { "series": "DTM", "info": "Saison-Auftakt typisch Mitte Mai — kein DTM-Wochenende" },
+      { "series": "WEC", "info": "Spa-Francorchamps erst Anfang Mai — kein WEC-Rennen" }
+    ]
+  },
+
   "reservations": [
     { "prio": 1, "name": "Restoran Protokol",   "when": "Samstag 25.04. · 19:30 Uhr · Nr. 1 der Stadt",                 "phone": "+382 68 222 111", "phoneRaw": "+38268222111" },
     { "prio": 2, "name": "Konoba Lanterna",     "when": "Freitag 24.04. · 19:00 Uhr · Veal under the bell 24 h vorher!","phone": "+382 67 663 163", "phoneRaw": "+38267663163" },
@@ -570,6 +710,56 @@
   ],
 
   "whatsappTemplate": "Hello! I'd like to make a reservation for 2 people on [Friday 24th] at [19:00]. Name: Luca. Could you please confirm? We'd like a [outside / inside] table if possible. Thank you!",
+
+  "funFacts": {
+    "title": "Wissenswertes über Montenegro",
+    "subtitle": "Faktenbasiert — mit Vergleichen zu Deutschland",
+    "categories": [
+      {
+        "title": "Alkoholkonsum",
+        "icon": "🍻",
+        "facts": [
+          { "fact": "Montenegro: 10,3 L purer Alkohol pro Kopf/Jahr (WHO 2019). Deutschland: 12,8 L. Ihr säuft mehr daheim — gewinnt also nicht.", "src": "WHO Global Status Report on Alcohol 2024" },
+          { "fact": "Nikšićko Pivo 0,5l Restaurant: ~2,50 €. Deutsches Lager im Restaurant: 4-5 €. Bier-Inflation in DE = 80%.", "src": "lokale Speisekarten" },
+          { "fact": "Vranac (National-Wein) Glas im Restaurant: ~3 €. Spätburgunder im DE-Restaurant: ~6 €.", "src": "Diplomat-Karte / dt. Vergleich" },
+          { "fact": "Hausmacher-Rakija (40 %+ vol.) 2cl: ~2 €. In DE einen Ouzo: 3-4 €. Montenegros Hausschnaps ist günstiger als ABV-vergleichbarer Import.", "src": "lokale Speisekarten" }
+        ]
+      },
+      {
+        "title": "Geld & Gehälter",
+        "icon": "💰",
+        "facts": [
+          { "fact": "Durchschnittlicher Nettolohn Montenegro 2024: 861 €/Monat. Deutschland: ~2.700 €/Monat. Faktor 3,1.", "src": "MONSTAT 08/2024 / Destatis" },
+          { "fact": "Mindestlohn Montenegro: 532 €/Monat. Deutschland: ~2.220 € brutto/Monat (12,82 €/h × 173 h).", "src": "MONSTAT / Bundesagentur 2024" },
+          { "fact": "Podgorica-Stadt: 800–1.200 €/Monat netto sind oberer Mittelstand. In Stuttgart: Studentenjob.", "src": "MONSTAT / Glassdoor" },
+          { "fact": "Montenegro nutzt den Euro — ohne EU-Mitglied zu sein. Einseitig eingeführt 2002. Brüssel: leicht angefressen, aber duldet's.", "src": "EZB / Kommissions-Berichte" }
+        ]
+      },
+      {
+        "title": "Sehenswürdigkeiten",
+        "icon": "🏔️",
+        "facts": [
+          { "fact": "Kotor-Bucht: größte Mittelmeer-Bucht mit Fjord-Charakter. UNESCO seit 1979. Stadtmauer 5 km lang.", "src": "UNESCO World Heritage Centre" },
+          { "fact": "Tara-Schlucht: 151 km lang, bis 1.300 m tief. Zweittiefste Schlucht der Welt nach Grand Canyon (1.857 m).", "src": "UNESCO Durmitor-Profil" },
+          { "fact": "Durmitor-Nationalpark: 50+ Berge über 2.000 m. Höchster: Bobotov Kuk 2.525 m. UNESCO seit 1980.", "src": "UNESCO" },
+          { "fact": "Skadar-See: größter See des Balkans. 391 km² (zum Vergleich: Bodensee 536 km²). Halb Albanien, halb Montenegro.", "src": "Wikipedia / UNESCO Tentative" },
+          { "fact": "Ostrog-Kloster: in eine senkrechte Felswand gehauen. Pilgerziel seit dem 17. Jh. — und seit 5 Min. Instagram-Hit.", "src": "Visit Montenegro" }
+        ]
+      },
+      {
+        "title": "Kurioses",
+        "icon": "🇲🇪",
+        "facts": [
+          { "fact": "Crna Gora = 'Schwarzer Berg'. Italiener machten daraus 'Monte Negro' → 'Montenegro'. Deutsche Übersetzung wäre 'Schwarzberg' — klingt wie Sauerländer Skigebiet.", "src": "Etymologie" },
+          { "fact": "Podgorica hieß 1946–1992 'Titograd' — nach Marshall Tito. 1992 zurückbenannt. Stell dir vor, Berlin hieße 30 Jahre 'Adenaurorf'.", "src": "Historische Atlanten" },
+          { "fact": "Montenegro: seit 2006 unabhängig (vorher Serbien-Montenegro). Damit jünger als YouTube (2005) und Twitter (2006).", "src": "UN Membership" },
+          { "fact": "Land hat 13.812 km² — kleiner als Schleswig-Holstein (15.804 km²). Aber 5 Nationalparks und 6 Klimazonen.", "src": "Statistical Office of Montenegro" },
+          { "fact": "Einwohner: ~617.000. Das ist ungefähr Frankfurt am Main — als ganzes Land.", "src": "MONSTAT 2024" },
+          { "fact": "Stećci-Grabsteine (UNESCO 2016) sind mittelalterliche Marmor-Brocken mit eingemeißelten Tänzern. 70.000 Stück, geteilt mit Bosnien & Kroatien.", "src": "UNESCO" }
+        ]
+      }
+    ]
+  },
 
   "cheatSheet": [
     {
