@@ -121,7 +121,7 @@
         { "time": "14:30", "title": "Sportsbar · 4 h Bundesliga · Wähl deine Option", "detail": "Grosse Terrasse, Flatscreens, Tuborg vom Fass.", "highlight": true,
           "options": [
             { "ref": "bar:Pub WWW",                              "tag": "Klassiker · Terrasse" },
-            { "ref": "bar:Marco Polo Sport Pub & Catering",      "tag": "14 TV-Screens" }
+            { "ref": "bar:Scottish Pub McCloud",                 "tag": "Scottish · Zentral" }
           ]
         },
         { "time": "19:30", "title": "Dinner · Wähl deine Option", "detail": "Drei der höchstbewerteten Spots Podgoricas.", "highlight": true,
@@ -574,24 +574,6 @@
       "badgeClass": "neon"
     },
     {
-      "name": "Marco Polo Sport Pub & Catering",
-      "role": "Sa Sportsbar · Alternative TOP",
-      "category": "sportsbar",
-      "rating": "5.0", "reviews": "18",
-      "type": "Sportsbar · 14 TV-Screens",
-      "phone": "+382 20 220 715", "phoneRaw": "+38220220715",
-      "maps": "https://maps.google.com/?q=Marco+Polo+Sport+Pub+Podgorica",
-      "coords": { "lat": 42.4470, "lng": 19.2480 },
-      "description": "Sportsbar in City Kvart mit 14 TV-Screens — fokussiert auf Live-Spiele. 5.0⭐ bei 18 Reviews. Große Portionen, gutes Essen, faire Preise. Alternative zu Pub WWW falls dort voll.",
-      "reviewQuotes": [
-        { "text": "Probably the best food in Podgorica! Big portion of great food for lower price — sport lovers paradise with 14 screens.", "author": "Tripadvisor", "lang": "en" },
-        { "text": "If you like sport here you can find a lot of interesting memorabilia! A place for football fans and beer lovers.", "author": "Tripadvisor", "lang": "en" }
-      ],
-      "hours": "Täglich bis spät",
-      "badge": "Sa · Sportsbar · TOP-ALT",
-      "badgeClass": "alt"
-    },
-    {
       "name": "SMASH Pub",
       "role": "Craft + Burger",
       "category": "craft",
@@ -602,6 +584,24 @@
       "description": "Craft-Bier + beste Burgers der Stadt. Reggae/Classic-Rock-Musik. Falls ihr noch Hunger habt spät abends.",
       "hours": "Täglich 7:00 – 00:00",
       "badge": "Alt · Burger"
+    },
+    {
+      "name": "Scottish Pub McCloud",
+      "role": "Sa Sportsbar · Alternative · Zentral",
+      "category": "sportsbar",
+      "rating": "4.6", "reviews": "120",
+      "type": "Scottish Pub · Football-TV",
+      "phone": "+382 69 997 829", "phoneRaw": "+38269997829",
+      "maps": "https://maps.google.com/?q=Scottish+Pub+McCloud+Podgorica",
+      "coords": { "lat": 42.4416, "lng": 19.2611 },
+      "description": "Erster und einziger schottischer Pub Podgoricas. Zentral auf der Hercegovačka, mitten im Kneipenviertel. TV für Champions League / Premier League / Bundesliga, gute Auswahl an Draught-Bier und Whisky, britische und mediterrane Küche. 'Feels like home'-Vibe — kein Sport-Tempel mit 14 Screens, sondern echter Pub mit gelegentlichem Spiel.",
+      "reviewQuotes": [
+        { "text": "The best pub in Podgorica — friendly mix of locals and visitors, good selection of beer and whiskey, plus excellent local food.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Premier League Sundays — proper pub atmosphere, draft beer and football on the screen.", "author": "Tripadvisor", "lang": "en" }
+      ],
+      "hours": "Mo-Sa 8:00 – 01:00 · So 9:00 – 01:00",
+      "badge": "Sa · Sportsbar · ALT-2",
+      "badgeClass": "alt"
     }
   ],
 
@@ -691,7 +691,7 @@
       { "time": "16:00", "league": "PREMIER LEAGUE", "home": "Wolverhampton", "away": "Tottenham", "highlight": false },
       { "time": "18:30", "league": "BUNDESLIGA 31", "home": "Hamburg", "away": "Hoffenheim", "highlight": false }
     ],
-    "note": "Premier-League-Anstoßzeiten 16:00 lokal MNE = 17:00 UK. Alle Bundesliga + Premier-League-Spiele werden in Pub WWW oder Marco Polo Sport Pub übertragen.",
+    "note": "Premier-League-Anstoßzeiten 16:00 lokal MNE = 17:00 UK. Alle Bundesliga + Premier-League-Spiele werden in Pub WWW oder Scottish Pub McCloud übertragen.",
     "motorsport": [
       { "series": "F1", "info": "Bahrain & Saudi GP wegen Iran-Krieg gestrichen — kein F1-Wochenende am 25.04.2026" },
       { "series": "MotoGP", "info": "Spanien GP Jerez startet erst Anfang Mai — 25.04. ist rennfrei" },
