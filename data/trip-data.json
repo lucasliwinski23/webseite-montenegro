@@ -818,5 +818,157 @@
         ["Sprache", "Montenegrinisch"]
       ]
     }
-  ]
+  ],
+
+  "analytics": {
+    "asOf": "April 2026",
+    "radiusKm": 2,
+    "apartment": { "lat": 42.4415, "lng": 19.2636 },
+    "note": "Quellen: Tripadvisor · RestaurantGuru · Foodbook.me · Google Maps · Glovo. Bierpreise = typische 0,5 L Tap-Preise (Niksicko Lager). Vor Ort variabel — Stand Recherche April 2026.",
+    "bars": [
+      { "name":"Pub WWW",                   "lat":42.4425, "lng":19.2618, "type":"Sportsbar",  "rating":4.6, "reviews":184, "tier":"€",   "beer":2.20, "beerNote":"typisch", "curated":true },
+      { "name":"Bogart Craft Beer",         "lat":42.4460, "lng":19.2655, "type":"Craft",      "rating":4.9, "reviews":120, "tier":"€€",  "beer":3.50, "beerNote":"Craft-Tap", "curated":true },
+      { "name":"Fermentor Craft Beer",      "lat":42.4389, "lng":19.2678, "type":"Brewpub",    "rating":4.7, "reviews":82,  "tier":"€€",  "beer":3.50, "beerNote":"Craft-Tap", "curated":true },
+      { "name":"Itaka Library Bar",         "lat":42.4395, "lng":19.2660, "type":"Lounge",     "rating":4.8, "reviews":358, "tier":"€€",  "beer":2.50, "beerNote":"typisch", "curated":true },
+      { "name":"Morrison Pub",              "lat":42.4418, "lng":19.2635, "type":"Pub",        "rating":4.2, "reviews":169, "tier":"€€",  "beer":2.50, "beerNote":"typisch", "curated":true },
+      { "name":"PG Akademija piva",         "lat":42.4410, "lng":19.2608, "type":"Brewpub",    "rating":4.5, "reviews":547, "tier":"€€",  "beer":2.50, "beerNote":"Eigenbräu", "curated":true },
+      { "name":"SMASH Pub",                 "lat":42.4470, "lng":19.2515, "type":"Craft",      "rating":4.6, "reviews":84,  "tier":"€€",  "beer":3.80, "beerNote":"Craft-Tap", "curated":true },
+      { "name":"Scottish Pub McCloud",      "lat":42.4416, "lng":19.2611, "type":"Pub",        "rating":4.6, "reviews":120, "tier":"€€",  "beer":2.80, "beerNote":"typisch", "curated":true },
+      { "name":"Welder Pub",                "lat":42.4453, "lng":19.2580, "type":"Gastropub",  "rating":4.8, "reviews":562, "tier":"€€",  "beer":2.80, "beerNote":"typisch" },
+      { "name":"München Bierhaus",          "lat":42.4490, "lng":19.2510, "type":"Brauhaus",   "rating":4.8, "reviews":757, "tier":"€€",  "beer":2.50, "beerNote":"verifiziert (Foodbook)" },
+      { "name":"München Zweite",            "lat":42.4538, "lng":19.2625, "type":"Brauhaus",   "rating":4.6, "reviews":80,  "tier":"€€",  "beer":2.60, "beerNote":"typisch" },
+      { "name":"Zeppelin Lounge Bar",       "lat":42.4421, "lng":19.2618, "type":"Lounge",     "rating":4.5, "reviews":140, "tier":"€€",  "beer":2.80, "beerNote":"typisch" },
+      { "name":"Wine Bar Bucca",            "lat":42.4485, "lng":19.2510, "type":"Wine Bar",   "rating":4.8, "reviews":297, "tier":"€€€", "beer":3.50, "beerNote":"Wine-Fokus" },
+      { "name":"The Big Horn Gastropub",    "lat":42.4451, "lng":19.2685, "type":"Gastropub",  "rating":4.6, "reviews":163, "tier":"€€",  "beer":2.50, "beerNote":"typisch" },
+      { "name":"NORA Craft Beer Pub",       "lat":42.4445, "lng":19.2575, "type":"Craft",      "rating":3.9, "reviews":49,  "tier":"€€",  "beer":3.80, "beerNote":"Craft-Tap" },
+      { "name":"Beer Bank",                 "lat":42.4440, "lng":19.2580, "type":"Craft",      "rating":3.7, "reviews":54,  "tier":"€€€", "beer":4.00, "beerNote":"20 Taps Craft" },
+      { "name":"Berlin Pub",                "lat":42.4422, "lng":19.2630, "type":"Pub",        "rating":4.3, "reviews":50,  "tier":"€",   "beer":2.30, "beerNote":"typisch" },
+      { "name":"Biro Club",                 "lat":42.4419, "lng":19.2625, "type":"Club",       "rating":4.4, "reviews":120, "tier":"€€",  "beer":2.80, "beerNote":"Late-Night" },
+      { "name":"Sejdefa Ethno Jazz Club",   "lat":42.4418, "lng":19.2655, "type":"Live Music", "rating":4.5, "reviews":90,  "tier":"€€",  "beer":2.80, "beerNote":"typisch" },
+      { "name":"Camelot Pub",               "lat":42.4365, "lng":19.2480, "type":"Pub",        "rating":4.4, "reviews":110, "tier":"€€",  "beer":2.00, "beerNote":"verifiziert (Glovo)" },
+      { "name":"Pierre Champagne Bar",      "lat":42.4395, "lng":19.2530, "type":"Wine Bar",   "rating":4.6, "reviews":80,  "tier":"€€€", "beer":3.20, "beerNote":"Champagne-Fokus" },
+      { "name":"Mocktail Bar",              "lat":42.4422, "lng":19.2580, "type":"Cocktail",   "rating":4.1, "reviews":60,  "tier":"€€€", "beer":3.00, "beerNote":"Mocktail-Fokus" },
+      { "name":"Engleski Pub Nag's Head",   "lat":42.4410, "lng":19.2615, "type":"Pub",        "rating":4.2, "reviews":40,  "tier":"€€",  "beer":2.50, "beerNote":"typisch" },
+      { "name":"Restobar Štrudla",          "lat":42.4410, "lng":19.2616, "type":"Restobar",   "rating":4.3, "reviews":502, "tier":"€€",  "beer":2.80, "beerNote":"typisch" },
+      { "name":"Culture Club Tarantino",    "lat":42.4411, "lng":19.2617, "type":"Live Music", "rating":4.4, "reviews":150, "tier":"€€",  "beer":2.80, "beerNote":"typisch" },
+      { "name":"Loft Bistro Club",          "lat":42.4411, "lng":19.2616, "type":"Club",       "rating":4.3, "reviews":110, "tier":"€€",  "beer":2.80, "beerNote":"typisch" },
+      { "name":"Dobri Stari WWW",           "lat":42.4411, "lng":19.2617, "type":"Pub",        "rating":4.5, "reviews":180, "tier":"€€",  "beer":2.50, "beerNote":"typisch" },
+      { "name":"Bulevar Džada",             "lat":42.4408, "lng":19.2575, "type":"Local Bar",  "rating":4.5, "reviews":85,  "tier":"€",   "beer":1.80, "beerNote":"Local-Pricing" },
+      { "name":"Street Bar",                "lat":42.4456, "lng":19.2510, "type":"Cocktail",   "rating":4.5, "reviews":97,  "tier":"€€",  "beer":3.00, "beerNote":"Cocktail-Fokus" },
+      { "name":"Citaona Cocktail Bar",      "lat":42.4493, "lng":19.2515, "type":"Cocktail",   "rating":4.5, "reviews":75,  "tier":"€€",  "beer":3.00, "beerNote":"Cocktail-Fokus" },
+      { "name":"Terminal Pub Hemingway",    "lat":42.4475, "lng":19.2515, "type":"Pub",        "rating":4.4, "reviews":140, "tier":"€€",  "beer":2.50, "beerNote":"typisch" },
+      { "name":"Klub Bocara",               "lat":42.4495, "lng":19.2710, "type":"Local Bar",  "rating":4.6, "reviews":60,  "tier":"€",   "beer":1.80, "beerNote":"Local-Pricing" },
+      { "name":"Il Ravenite Lounge",        "lat":42.4395, "lng":19.2660, "type":"Lounge",     "rating":4.0, "reviews":53,  "tier":"€€",  "beer":2.80, "beerNote":"typisch" }
+    ],
+    "restaurants": [
+      { "name":"Konoba Lanterna",                  "lat":42.4402, "lng":19.2621, "cuisine":"Traditionell",   "rating":4.7, "reviews":1778, "tier":"€€",   "veg":"teilweise", "curated":true },
+      { "name":"Restoran Diplomat",                "lat":42.4423, "lng":19.2645, "cuisine":"Mediterran",     "rating":4.8, "reviews":545,  "tier":"€€",   "veg":"ja",        "curated":true },
+      { "name":"Stara Kuća",                       "lat":42.4515, "lng":19.2891, "cuisine":"Traditionell",   "rating":4.5, "reviews":321,  "tier":"€€",   "veg":"teilweise", "curated":true },
+      { "name":"Restoran Protokol",                "lat":42.4483, "lng":19.2719, "cuisine":"Steakhouse",     "rating":4.9, "reviews":623,  "tier":"€€€",  "veg":"ja",        "curated":true },
+      { "name":"Babi Gourmet & Wine",              "lat":42.4432, "lng":19.2621, "cuisine":"Gourmet",        "rating":4.8, "reviews":1543, "tier":"€€€",  "veg":"ja",        "curated":true },
+      { "name":"Steak House Grill",                "lat":42.4430, "lng":19.2655, "cuisine":"Steakhouse",     "rating":4.7, "reviews":1017, "tier":"€€€",  "veg":"teilweise", "curated":true },
+      { "name":"SPAGO",                            "lat":42.4375, "lng":19.2560, "cuisine":"Italienisch",    "rating":4.9, "reviews":1641, "tier":"€€",   "veg":"ja",        "curated":true },
+      { "name":"The Living Room Lounge & Dining",  "lat":42.4435, "lng":19.2625, "cuisine":"International",  "rating":4.5, "reviews":612,  "tier":"€€",   "veg":"ja",        "curated":true },
+      { "name":"Gostiona 1928",                    "lat":42.4420, "lng":19.2628, "cuisine":"Traditionell",   "rating":4.4, "reviews":344,  "tier":"€€",   "veg":"teilweise", "curated":true },
+      { "name":"Pod Volat",                        "lat":42.4408, "lng":19.2596, "cuisine":"Traditionell",   "rating":4.4, "reviews":2000, "tier":"€",    "veg":"teilweise" },
+      { "name":"Lupo di Mare",                     "lat":42.4430, "lng":19.2580, "cuisine":"Seafood",        "rating":4.5, "reviews":600,  "tier":"€€€",  "veg":"teilweise" },
+      { "name":"Pizzeria Mama Mia",                "lat":42.4413, "lng":19.2620, "cuisine":"Pizza",          "rating":4.3, "reviews":800,  "tier":"€€",   "veg":"ja" },
+      { "name":"Soya Sushi Bar",                   "lat":42.4445, "lng":19.2625, "cuisine":"Asiatisch",      "rating":4.4, "reviews":400,  "tier":"€€€",  "veg":"ja" },
+      { "name":"Buffalo Steak House",              "lat":42.4450, "lng":19.2620, "cuisine":"Steakhouse",     "rating":4.3, "reviews":300,  "tier":"€€",   "veg":"teilweise" },
+      { "name":"El Toro Steakhouse",               "lat":42.4475, "lng":19.2575, "cuisine":"Steakhouse",     "rating":4.5, "reviews":250,  "tier":"€€€",  "veg":"nein" },
+      { "name":"Restoran Lovac",                   "lat":42.4540, "lng":19.2660, "cuisine":"Wild/Tradition", "rating":4.6, "reviews":500,  "tier":"€€",   "veg":"nein" },
+      { "name":"Konoba Bokeška",                   "lat":42.4465, "lng":19.2625, "cuisine":"Seafood",        "rating":4.5, "reviews":280,  "tier":"€€€",  "veg":"teilweise" },
+      { "name":"Sicilia Trattoria",                "lat":42.4435, "lng":19.2615, "cuisine":"Italienisch",    "rating":4.4, "reviews":220,  "tier":"€€",   "veg":"ja" },
+      { "name":"Master Burger",                    "lat":42.4430, "lng":19.2610, "cuisine":"Burger",         "rating":4.5, "reviews":180,  "tier":"€",    "veg":"teilweise" },
+      { "name":"Konoba Pod Lozom",                 "lat":42.4400, "lng":19.2615, "cuisine":"Traditionell",   "rating":4.5, "reviews":200,  "tier":"€€",   "veg":"teilweise" },
+      { "name":"Konoba Đir",                       "lat":42.4400, "lng":19.2610, "cuisine":"Traditionell",   "rating":4.4, "reviews":160,  "tier":"€€",   "veg":"teilweise" },
+      { "name":"Forno Pizzeria",                   "lat":42.4418, "lng":19.2630, "cuisine":"Pizza",          "rating":4.4, "reviews":350,  "tier":"€",    "veg":"ja" },
+      { "name":"Carine (Hilton)",                  "lat":42.4490, "lng":19.2640, "cuisine":"Mediterran",     "rating":4.4, "reviews":420,  "tier":"€€€€", "veg":"ja" },
+      { "name":"Vinoteka Toscanini",               "lat":42.4445, "lng":19.2640, "cuisine":"Italienisch",    "rating":4.5, "reviews":180,  "tier":"€€€",  "veg":"ja" },
+      { "name":"Cosa Nostra Pizzeria",             "lat":42.4470, "lng":19.2625, "cuisine":"Pizza",          "rating":4.4, "reviews":280,  "tier":"€",    "veg":"ja" },
+      { "name":"Konoba Kalamper",                  "lat":42.4360, "lng":19.2680, "cuisine":"Traditionell",   "rating":4.5, "reviews":240,  "tier":"€€",   "veg":"teilweise" },
+      { "name":"Konoba Kod Pera na Bulevaru",      "lat":42.4460, "lng":19.2620, "cuisine":"Traditionell",   "rating":4.5, "reviews":700,  "tier":"€€",   "veg":"teilweise" },
+      { "name":"Brasserie Mareza",                 "lat":42.4460, "lng":19.2620, "cuisine":"International",  "rating":4.4, "reviews":190,  "tier":"€€",   "veg":"ja" },
+      { "name":"Restoran Capital",                 "lat":42.4490, "lng":19.2475, "cuisine":"International",  "rating":4.3, "reviews":210,  "tier":"€€€",  "veg":"ja" },
+      { "name":"Restaurant Berlin",                "lat":42.4455, "lng":19.2620, "cuisine":"International",  "rating":4.3, "reviews":140,  "tier":"€€",   "veg":"ja" },
+      { "name":"Restaurant Aquarius",              "lat":42.4440, "lng":19.2660, "cuisine":"Mediterran",     "rating":4.3, "reviews":120,  "tier":"€€",   "veg":"teilweise" },
+      { "name":"Sushi Garden",                     "lat":42.4445, "lng":19.2645, "cuisine":"Asiatisch",      "rating":4.3, "reviews":140,  "tier":"€€€",  "veg":"ja" },
+      { "name":"Restoran Jadran",                  "lat":42.4395, "lng":19.2620, "cuisine":"Seafood",        "rating":4.3, "reviews":110,  "tier":"€€",   "veg":"teilweise" },
+      { "name":"Tako Vam Treba",                   "lat":42.4405, "lng":19.2605, "cuisine":"Traditionell",   "rating":4.5, "reviews":500,  "tier":"€",    "veg":"teilweise" }
+    ],
+    "menuShowcase": [
+      {
+        "name":"Konoba Lanterna",
+        "url":"https://lanterna.me/lanterna-meni-2023.pdf",
+        "label":"Speisekarte PDF",
+        "items":[
+          ["Veal under the bell (für 2)","~35 €"],
+          ["Pastrmka — Forelle vom Grill","~14 €"],
+          ["Ćevapi mit Zwiebel & Brot","~10 €"],
+          ["Nikšićko Pivo 0,5 L","~2,50 €"],
+          ["Hausmacher-Rakija 2 cl","~2,00 €"]
+        ]
+      },
+      {
+        "name":"Restoran Diplomat",
+        "url":"https://restaurantguru.com/Diplomat-Restoran-Podgorica/menu",
+        "label":"Menü (RestaurantGuru)",
+        "items":[
+          ["Kalbsbacke in Rotwein","~18 €"],
+          ["Spaghetti Carbonara","~10 €"],
+          ["Crnogorska zakuska","~14 €"],
+          ["Hauswein Glas (Vranac)","~3 €"],
+          ["Brotkorb + 3 Dips","gratis"]
+        ]
+      },
+      {
+        "name":"PG Akademija piva",
+        "url":"https://www.facebook.com/PGAkademijaPiva/",
+        "label":"Brauerei-Karte",
+        "items":[
+          ["Eigenbräu Tasting-Flight (6 Sorten)","~12 €"],
+          ["Pilsner 0,5 L vom Tank","~2,50 €"],
+          ["Stout / IPA 0,5 L","~3,00 €"],
+          ["Pizza Margherita","~7 €"],
+          ["Brauerei-Burger","~9 €"]
+        ]
+      },
+      {
+        "name":"Welder Pub",
+        "url":"http://digitalnimeni.me/welder/en/index.html",
+        "label":"Digitale Speisekarte",
+        "items":[
+          ["Welder Burger","~9 €"],
+          ["BBQ Ribs","~14 €"],
+          ["Niksicko 0,5 L","~2,80 €"],
+          ["Craft Tap (Welder Brew)","~3,80 €"],
+          ["Whisky Sour","~5 €"]
+        ]
+      },
+      {
+        "name":"Steak House Grill",
+        "url":"http://www.steakhousemontenegro.com/",
+        "label":"Website",
+        "items":[
+          ["Beef Steak mit Süßkartoffel","~24 €"],
+          ["Tagliata mit Trüffel-Püree","~28 €"],
+          ["Dry-Aged Ribeye","~32 €"],
+          ["Knoblauchbrot + 3 Patés","gratis"],
+          ["Wein-Glas premium","~5 €"]
+        ]
+      },
+      {
+        "name":"SPAGO",
+        "url":"https://spagopodgorica.me/menu/",
+        "label":"Menü",
+        "items":[
+          ["Pizza Margherita","~8 €"],
+          ["Pizza Burrata","~13 €"],
+          ["Tagliatelle Truffle","~14 €"],
+          ["Aperol Spritz","~4 €"],
+          ["Cappuccino","~2 €"]
+        ]
+      }
+    ]
+  }
 }

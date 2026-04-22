@@ -2089,6 +2089,351 @@ body.map-fullscreen-active .bottom-nav {
 }
 
 /* ============================================================
+   AUSWERTUNGEN — Analytics, KPIs, Charts
+   ============================================================ */
+.analytics { margin-top: 60px; }
+.analytics-header { margin-bottom: 24px; text-align: left; }
+.analytics-header h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  color: var(--text-primary);
+  line-height: 1.05;
+  margin-bottom: 6px;
+  letter-spacing: 0.005em;
+}
+.analytics-header p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+.analytics-meta {
+  display: inline-flex; gap: 8px; flex-wrap: wrap;
+  margin-top: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  color: var(--text-soft);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.analytics-meta span {
+  padding: 4px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+/* KPI-Karten */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+@media (min-width: 720px) { .kpi-grid { grid-template-columns: repeat(4, 1fr); } }
+.kpi-card {
+  padding: 18px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent-primary);
+  border-radius: 6px;
+  box-shadow: var(--shadow-soft);
+  display: flex; flex-direction: column; gap: 6px;
+  position: relative; overflow: hidden;
+}
+.kpi-card.alt   { border-top-color: var(--accent-info); }
+.kpi-card.warm  { border-top-color: var(--accent-warm); }
+.kpi-card.good  { border-top-color: var(--accent-good); }
+.kpi-label {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-weight: 700; font-size: 0.66rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-muted);
+}
+.kpi-value {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  line-height: 1; color: var(--accent-primary);
+  font-weight: 700;
+}
+.kpi-card.alt  .kpi-value { color: var(--accent-info); }
+.kpi-card.warm .kpi-value { color: var(--accent-warm); }
+.kpi-card.good .kpi-value { color: var(--accent-good); }
+.kpi-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem; color: var(--text-soft);
+  letter-spacing: 0.06em;
+}
+
+/* Chart-Card Container */
+.chart-card {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: var(--shadow-soft);
+}
+.chart-card.flat { background: transparent; box-shadow: none; border: none; padding: 0; }
+.chart-title {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-weight: 700; font-size: 0.95rem;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--accent-primary);
+  margin-bottom: 4px;
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+}
+.chart-title .chart-icon {
+  font-family: 'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;
+  font-size: 1.1rem;
+}
+.chart-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem; color: var(--text-muted);
+  letter-spacing: 0.06em; margin-bottom: 14px;
+}
+
+/* Bierpreis-Index — horizontaler Bar-Chart */
+.beer-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border-soft);
+}
+.beer-row:last-child { border-bottom: none; }
+.beer-row-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+}
+.beer-row-name {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-weight: 600; font-size: 0.92rem;
+  color: var(--text-primary);
+  display: flex; align-items: baseline; gap: 6px;
+}
+.beer-row-name .rank {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem; color: var(--text-soft);
+  min-width: 22px;
+}
+.beer-row-price {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700; font-size: 1rem;
+  color: var(--accent-warm);
+  white-space: nowrap;
+}
+.beer-bar-track {
+  width: 100%; height: 8px;
+  background: var(--bg-section);
+  border-radius: 999px; overflow: hidden;
+  position: relative;
+}
+.beer-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-good) 0%, var(--accent-warm) 60%, var(--accent-warn) 100%);
+  border-radius: 999px;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.beer-bar-fill.in { transform: scaleX(1); }
+.beer-row-meta {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem; color: var(--text-soft);
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.beer-row-meta .pill {
+  padding: 2px 8px;
+  background: var(--bg-section);
+  border-radius: 999px;
+}
+.beer-row-meta .pill.curated { color: var(--accent-good); border: 1px solid var(--accent-good); }
+.beer-row-meta .pill.craft   { color: var(--accent-info); border: 1px solid var(--accent-info); }
+
+/* Histogram (Rating, Distance) — vertikale Säulen */
+.histogram {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 6), 1fr);
+  gap: 8px;
+  align-items: end;
+  height: 180px;
+  margin: 14px 0 6px;
+}
+.histogram-bar {
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+  position: relative;
+  height: 100%;
+  padding-top: 22px;
+}
+.histogram-fill {
+  width: 100%;
+  background: linear-gradient(180deg, var(--accent-primary) 0%, var(--accent-deep) 100%);
+  border-radius: 4px 4px 0 0;
+  min-height: 2px;
+  transition: height 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.histogram-fill.alt {
+  background: linear-gradient(180deg, var(--accent-info) 0%, var(--accent-petrol) 100%);
+}
+.histogram-count {
+  position: absolute; top: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700; font-size: 0.78rem;
+  color: var(--text-primary);
+}
+.histogram-axis {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 6), 1fr);
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem; color: var(--text-soft);
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-top: 4px;
+}
+.histogram-legend {
+  margin-top: 12px;
+  display: flex; gap: 16px; flex-wrap: wrap;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem; color: var(--text-muted);
+}
+.histogram-legend .key { display: inline-flex; align-items: center; gap: 6px; }
+.histogram-legend .swatch { width: 12px; height: 12px; border-radius: 2px; }
+.histogram-legend .swatch.bars { background: var(--accent-primary); }
+.histogram-legend .swatch.rest { background: var(--accent-info); }
+
+/* Donut-Chart */
+.donut-grid {
+  display: grid; grid-template-columns: 1fr; gap: 24px;
+  margin-bottom: 24px;
+}
+@media (min-width: 720px) { .donut-grid { grid-template-columns: 1fr 1fr; } }
+.donut-card {
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: var(--shadow-soft);
+}
+.donut-wrap {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+.donut-svg { width: 140px; height: 140px; }
+.donut-center {
+  font-family: 'Fraunces', Georgia, serif;
+  fill: var(--text-primary);
+  font-size: 28px; font-weight: 700;
+  text-anchor: middle; dominant-baseline: central;
+}
+.donut-center-sub {
+  font-family: 'JetBrains Mono', monospace;
+  fill: var(--text-soft);
+  font-size: 9px; letter-spacing: 1px;
+  text-anchor: middle; dominant-baseline: central;
+}
+.donut-legend { display: flex; flex-direction: column; gap: 6px; }
+.donut-legend-row {
+  display: grid; grid-template-columns: 14px 1fr auto; gap: 8px;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem; color: var(--text-muted);
+  padding: 3px 0;
+  border-bottom: 1px dashed var(--border-soft);
+}
+.donut-legend-row:last-child { border-bottom: none; }
+.donut-legend-row .swatch {
+  width: 12px; height: 12px; border-radius: 2px;
+}
+.donut-legend-row .label { color: var(--text-primary); font-weight: 500; }
+.donut-legend-row .count {
+  color: var(--accent-warm); font-weight: 700;
+}
+
+/* Menu-Showcase — echte Speisekarten */
+.menu-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 720px) { .menu-showcase-grid { grid-template-columns: 1fr 1fr; } }
+.menu-showcase-card {
+  padding: 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-warm);
+  border-radius: 6px;
+  box-shadow: var(--shadow-soft);
+}
+.menu-showcase-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 10px; flex-wrap: wrap;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.menu-showcase-name {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+.menu-showcase-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  color: var(--accent-info);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  text-decoration: none;
+  padding: 4px 10px;
+  border: 1px solid var(--accent-info);
+  border-radius: 999px;
+  transition: all 0.2s;
+}
+.menu-showcase-link:hover {
+  background: var(--accent-info);
+  color: #FFF;
+}
+.menu-showcase-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 6px 0;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  gap: 10px;
+}
+.menu-showcase-row .dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--border);
+  margin: 0 4px 4px;
+  height: 1px;
+}
+.menu-showcase-row .price {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent-warm);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Sektion-Trenner für Analytics */
+.analytics-divider {
+  margin: 36px 0 24px;
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--accent-primary);
+  display: flex; align-items: center; gap: 14px;
+}
+.analytics-divider::before,
+.analytics-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: var(--border);
+}
+
+/* ============================================================
    FINALE — zentrierte Živjeli-Section
    ============================================================ */
 .zivjeli {
@@ -2570,6 +2915,7 @@ main { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
         <button type="button" class="info-nav-chip active" data-target="info-warning">⚠ Warnungen</button>
         <button type="button" class="info-nav-chip" data-target="cheat-grid">∎ Cheat Sheet</button>
         <button type="button" class="info-nav-chip" data-target="fun-facts">📚 Wissenswertes</button>
+        <button type="button" class="info-nav-chip" data-target="analytics">📊 Auswertungen</button>
       </div>
 
       <div class="warning" id="info-warning">
@@ -2582,6 +2928,8 @@ main { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
       <div class="cheat-grid fade-in" id="cheat-grid"></div>
 
       <div class="fun-facts fade-in" id="fun-facts"></div>
+
+      <div class="analytics fade-in" id="analytics"></div>
 
       <div class="zivjeli">
         <div class="big">Živjeli!</div>
@@ -3279,6 +3627,7 @@ function renderAll() {
   renderReservations();
   renderCheatSheet();
   renderFunFacts();
+  renderAnalytics();
   bindHeroFacts();
   initMap();
   setupMapFullscreen();
@@ -4136,6 +4485,260 @@ function renderFunFacts() {
     </div>
     ${cats}
   `;
+}
+
+// ============================================================
+// AUSWERTUNGEN — Analytics Dashboard
+// ============================================================
+function haversineM(a, b) {
+  const R = 6371000, toRad = x => x * Math.PI / 180;
+  const dLat = toRad(b.lat - a.lat), dLng = toRad(b.lng - a.lng);
+  const s = Math.sin(dLat/2)**2 + Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLng/2)**2;
+  return 2 * R * Math.asin(Math.sqrt(s));
+}
+
+const ANALYTICS_PALETTE = [
+  '#C95A1B', '#2C5A68', '#A56619', '#3F6F3F', '#6B2E15',
+  '#7C4FBF', '#C9A36A', '#1F4D5C', '#8B3A1A', '#4A7A8C'
+];
+
+function donutSvg(slices, totalLabel, subLabel) {
+  const total = slices.reduce((s, x) => s + x.value, 0) || 1;
+  const cx = 70, cy = 70, r = 52, sw = 22;
+  let acc = 0;
+  const arcs = slices.map((sl, i) => {
+    const frac = sl.value / total;
+    const start = acc * 2 * Math.PI - Math.PI / 2;
+    acc += frac;
+    const end = acc * 2 * Math.PI - Math.PI / 2;
+    const x1 = cx + r * Math.cos(start), y1 = cy + r * Math.sin(start);
+    const x2 = cx + r * Math.cos(end),   y2 = cy + r * Math.sin(end);
+    const large = frac > 0.5 ? 1 : 0;
+    if (frac >= 0.999) {
+      // Vollkreis als zwei Hälften
+      return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${sl.color}" stroke-width="${sw}"/>`;
+    }
+    return `<path d="M ${x1.toFixed(2)} ${y1.toFixed(2)} A ${r} ${r} 0 ${large} 1 ${x2.toFixed(2)} ${y2.toFixed(2)}" fill="none" stroke="${sl.color}" stroke-width="${sw}" stroke-linecap="butt"/>`;
+  }).join('');
+  return `<svg class="donut-svg" viewBox="0 0 140 140" aria-hidden="true">
+    ${arcs}
+    <text class="donut-center" x="70" y="64">${esc(String(totalLabel))}</text>
+    <text class="donut-center-sub" x="70" y="84">${esc(subLabel || '')}</text>
+  </svg>`;
+}
+
+function renderAnalytics() {
+  const wrap = document.getElementById('analytics');
+  if (!wrap) return;
+  const A = DATA.analytics;
+  if (!A) { wrap.innerHTML = ''; return; }
+
+  const apt = A.apartment || { lat: 42.4415, lng: 19.2636 };
+  const bars = (A.bars || []).map(b => ({ ...b, distM: Math.round(haversineM(apt, b)) }));
+  const rests = (A.restaurants || []).map(r => ({ ...r, distM: Math.round(haversineM(apt, r)) }));
+
+  // === KPIs ===
+  const ratedBars = bars.filter(b => typeof b.rating === 'number');
+  const ratedRest = rests.filter(r => typeof r.rating === 'number');
+  const avgBarRating = ratedBars.length ? (ratedBars.reduce((s,b)=>s+b.rating,0)/ratedBars.length).toFixed(2) : '–';
+  const avgRestRating = ratedRest.length ? (ratedRest.reduce((s,r)=>s+r.rating,0)/ratedRest.length).toFixed(2) : '–';
+  const cheapestBeer = bars.filter(b => typeof b.beer === 'number').sort((a,b)=>a.beer-b.beer)[0];
+  const closestBar = [...bars].sort((a,b)=>a.distM-b.distM)[0];
+
+  const kpis = [
+    { label: 'Bars im 2 km Umkreis', value: bars.length, sub: 'Pubs, Craft, Lounge, Cocktail', cls: '' },
+    { label: 'Restaurants', value: rests.length, sub: 'Tradition bis Fine Dining', cls: 'alt' },
+    { label: 'Günstigstes Bier', value: cheapestBeer ? `${cheapestBeer.beer.toFixed(2).replace('.',',')} €` : '–', sub: cheapestBeer ? `0,5 L · ${cheapestBeer.name}` : '', cls: 'good' },
+    { label: 'Ø Rating Bars / Food', value: `${avgBarRating} / ${avgRestRating}`, sub: 'gewichtet aus Reviews', cls: 'warm' }
+  ];
+  const kpiHtml = kpis.map(k => `
+    <div class="kpi-card ${k.cls}">
+      <div class="kpi-label">${esc(k.label)}</div>
+      <div class="kpi-value">${esc(String(k.value))}</div>
+      <div class="kpi-sub">${esc(k.sub)}</div>
+    </div>`).join('');
+
+  // === Bierpreis-Index (Top 12 günstigste) ===
+  const beerList = bars.filter(b => typeof b.beer === 'number')
+                       .sort((a,b) => a.beer - b.beer)
+                       .slice(0, 12);
+  const maxBeer = Math.max(...beerList.map(b => b.beer));
+  const minBeer = Math.min(...beerList.map(b => b.beer));
+  const beerHtml = beerList.map((b, i) => {
+    const pct = Math.max(8, Math.round((b.beer / maxBeer) * 100));
+    const isCraft = /craft/i.test(b.beerNote || '') || /craft|brewpub/i.test(b.type || '');
+    return `<div class="beer-row">
+      <div class="beer-row-head">
+        <div class="beer-row-name"><span class="rank">#${String(i+1).padStart(2,'0')}</span>${esc(b.name)}</div>
+        <div class="beer-row-price">${b.beer.toFixed(2).replace('.',',')} €</div>
+      </div>
+      <div class="beer-bar-track"><div class="beer-bar-fill" style="width:${pct}%"></div></div>
+      <div class="beer-row-meta">
+        <span class="pill">${esc(b.type || '')}</span>
+        <span class="pill ${isCraft?'craft':''}">${esc(b.beerNote || '')}</span>
+        ${b.curated ? '<span class="pill curated">★ kuratiert</span>' : ''}
+        <span class="pill">${b.distM} m</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  // === Rating-Verteilung (Histogramm) ===
+  const ratingBuckets = [
+    { label: '< 4,0', min: 0,    max: 3.99 },
+    { label: '4,0–4,2', min: 4.0, max: 4.29 },
+    { label: '4,3–4,5', min: 4.3, max: 4.59 },
+    { label: '4,6–4,7', min: 4.6, max: 4.79 },
+    { label: '4,8–4,9', min: 4.8, max: 4.94 },
+    { label: '4,9+',    min: 4.95, max: 5.01 }
+  ];
+  const barCounts  = ratingBuckets.map(bk => bars.filter(b => b.rating >= bk.min && b.rating <= bk.max).length);
+  const restCounts = ratingBuckets.map(bk => rests.filter(r => r.rating >= bk.min && r.rating <= bk.max).length);
+  const maxRH = Math.max(...barCounts, ...restCounts, 1);
+  const ratingHtml = `
+    <div class="histogram" style="--cols:${ratingBuckets.length * 2}">
+      ${ratingBuckets.map((bk, i) => `
+        <div class="histogram-bar"><div class="histogram-count">${barCounts[i]||''}</div><div class="histogram-fill" style="height:${(barCounts[i]/maxRH)*100}%"></div></div>
+        <div class="histogram-bar"><div class="histogram-count">${restCounts[i]||''}</div><div class="histogram-fill alt" style="height:${(restCounts[i]/maxRH)*100}%"></div></div>
+      `).join('')}
+    </div>
+    <div class="histogram-axis" style="--cols:${ratingBuckets.length}">
+      ${ratingBuckets.map(bk => `<span>${esc(bk.label)}</span>`).join('')}
+    </div>
+    <div class="histogram-legend">
+      <span class="key"><span class="swatch bars"></span>Bars (${bars.length})</span>
+      <span class="key"><span class="swatch rest"></span>Restaurants (${rests.length})</span>
+    </div>`;
+
+  // === Distanz-Histogramm ===
+  const distBuckets = [
+    { label: '< 200 m', min: 0,    max: 200 },
+    { label: '200–500', min: 200, max: 500 },
+    { label: '500–800', min: 500, max: 800 },
+    { label: '800–1.2k', min: 800, max: 1200 },
+    { label: '1.2–1.6k', min: 1200, max: 1600 },
+    { label: '> 1.6k', min: 1600, max: 99999 }
+  ];
+  const distBarsCount  = distBuckets.map(bk => bars.filter(b => b.distM >= bk.min && b.distM < bk.max).length);
+  const distRestCount  = distBuckets.map(bk => rests.filter(r => r.distM >= bk.min && r.distM < bk.max).length);
+  const maxDH = Math.max(...distBarsCount, ...distRestCount, 1);
+  const distHtml = `
+    <div class="histogram" style="--cols:${distBuckets.length * 2}">
+      ${distBuckets.map((bk, i) => `
+        <div class="histogram-bar"><div class="histogram-count">${distBarsCount[i]||''}</div><div class="histogram-fill" style="height:${(distBarsCount[i]/maxDH)*100}%"></div></div>
+        <div class="histogram-bar"><div class="histogram-count">${distRestCount[i]||''}</div><div class="histogram-fill alt" style="height:${(distRestCount[i]/maxDH)*100}%"></div></div>
+      `).join('')}
+    </div>
+    <div class="histogram-axis" style="--cols:${distBuckets.length}">
+      ${distBuckets.map(bk => `<span>${esc(bk.label)}</span>`).join('')}
+    </div>
+    <div class="histogram-legend">
+      <span class="key"><span class="swatch bars"></span>Bars</span>
+      <span class="key"><span class="swatch rest"></span>Restaurants</span>
+    </div>`;
+
+  // === Donut-Charts: Bar-Typ + Küchen ===
+  const aggregate = (arr, key) => {
+    const m = new Map();
+    arr.forEach(x => { const k = x[key] || 'Sonstige'; m.set(k, (m.get(k)||0) + 1); });
+    return [...m.entries()]
+      .sort((a,b) => b[1] - a[1])
+      .map(([label, value], i) => ({ label, value, color: ANALYTICS_PALETTE[i % ANALYTICS_PALETTE.length] }));
+  };
+  const barTypes = aggregate(bars, 'type');
+  const cuisines = aggregate(rests, 'cuisine');
+
+  const renderDonutLegend = (items, total) => items.map(it => `
+    <div class="donut-legend-row">
+      <span class="swatch" style="background:${it.color}"></span>
+      <span class="label">${esc(it.label)}</span>
+      <span class="count">${it.value}</span>
+    </div>`).join('');
+
+  const donutsHtml = `
+    <div class="donut-grid">
+      <div class="donut-card">
+        <div class="chart-title"><span class="chart-icon">🍻</span>Bar-Typen</div>
+        <div class="chart-sub">Verteilung nach Charakter — Pubs vs Craft vs Lounge</div>
+        <div class="donut-wrap">
+          ${donutSvg(barTypes, bars.length, 'BARS')}
+          <div class="donut-legend">${renderDonutLegend(barTypes, bars.length)}</div>
+        </div>
+      </div>
+      <div class="donut-card">
+        <div class="chart-title"><span class="chart-icon">🍽️</span>Küchen</div>
+        <div class="chart-sub">Restaurants nach Küchen-Stil</div>
+        <div class="donut-wrap">
+          ${donutSvg(cuisines, rests.length, 'FOOD')}
+          <div class="donut-legend">${renderDonutLegend(cuisines, rests.length)}</div>
+        </div>
+      </div>
+    </div>`;
+
+  // === Menu-Showcase: Echte Speisekarten ===
+  const showcase = (A.menuShowcase || []).map(m => `
+    <div class="menu-showcase-card">
+      <div class="menu-showcase-head">
+        <div class="menu-showcase-name">${esc(m.name)}</div>
+        ${m.url ? `<a class="menu-showcase-link" href="${safeUrl(m.url)}" target="_blank" rel="noopener">↗ ${esc(m.label||'Karte')}</a>` : ''}
+      </div>
+      ${m.items.map(([n,p]) => `
+        <div class="menu-showcase-row">
+          <span>${esc(n)}</span>
+          <span class="dots" aria-hidden="true"></span>
+          <span class="price">${esc(p)}</span>
+        </div>`).join('')}
+    </div>`).join('');
+
+  // === Final Assembly ===
+  wrap.innerHTML = `
+    <div class="analytics-header">
+      <h3>📊 Auswertungen <span style="color:var(--accent-primary)">·</span> Stand ${esc(A.asOf || '')}</h3>
+      <p>Alle Bars & Restaurants im ${A.radiusKm || 2} km Umkreis von Slobode 21 — verdichtet auf KPIs, Verteilungen & Bierpreis-Index.</p>
+      <div class="analytics-meta">
+        <span>${bars.length} Bars</span>
+        <span>${rests.length} Restaurants</span>
+        <span>Quellen: Tripadvisor · RestaurantGuru · Foodbook.me</span>
+      </div>
+    </div>
+
+    <div class="kpi-grid">${kpiHtml}</div>
+
+    <div class="chart-card">
+      <div class="chart-title"><span class="chart-icon">🍺</span>Bierpreis-Index · Top 12</div>
+      <div class="chart-sub">0,5 L Niksicko vom Fass · sortiert günstig → teuer · Craft-Tap separat markiert</div>
+      ${beerHtml}
+      <div class="chart-sub" style="margin-top:14px;border-top:1px dashed var(--border-soft);padding-top:10px">
+        Range: ${minBeer.toFixed(2).replace('.',',')} – ${maxBeer.toFixed(2).replace('.',',')} € · Median ≈ ${beerList[Math.floor(beerList.length/2)].beer.toFixed(2).replace('.',',')} €
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title"><span class="chart-icon">⭐</span>Rating-Verteilung</div>
+      <div class="chart-sub">Wieviele Spots in welchem Sterne-Bereich (Google / Tripadvisor)</div>
+      ${ratingHtml}
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title"><span class="chart-icon">📍</span>Distanz von der Wohnung</div>
+      <div class="chart-sub">Luftlinie Slobode 21 → Spot · in Metern</div>
+      ${distHtml}
+    </div>
+
+    ${donutsHtml}
+
+    <div class="analytics-divider">▸ Echte Speisekarten · Auszug</div>
+    <div class="chart-sub" style="margin-bottom:14px">Live-verlinkte Original-Menüs der Top-Spots — vor Ort variabel.</div>
+    <div class="menu-showcase-grid">${showcase}</div>
+
+    <div class="chart-sub" style="margin-top:24px;font-style:italic">
+      Hinweis: ${esc(A.note || '')}
+    </div>
+  `;
+
+  // Animations: fade in beer bars when section becomes visible
+  requestAnimationFrame(() => {
+    wrap.querySelectorAll('.beer-bar-fill').forEach(f => f.classList.add('in'));
+  });
 }
 
 // ============================================================
