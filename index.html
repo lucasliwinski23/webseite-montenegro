@@ -525,6 +525,78 @@ body {
   .cd-label { font-size: 0.5rem; letter-spacing: 0.14em; }
 }
 
+/* Countdown · LIVE / DONE Modus */
+.countdown.live, .countdown.done { display: block; }
+.cd-live {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--hero-warm);
+  padding: 16px 18px;
+  display: flex; align-items: center; gap: 14px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+  background:
+    linear-gradient(90deg,
+      var(--hero-surface-strong) 0%,
+      rgba(230,90,50,0.28) 50%,
+      var(--hero-surface-strong) 100%);
+  background-size: 220% 100%;
+  animation: cd-live-shimmer 3.6s linear infinite;
+}
+.countdown.done .cd-live {
+  border-color: var(--hero-border);
+  animation: none;
+  background: var(--hero-surface-strong);
+}
+@keyframes cd-live-shimmer {
+  0%   { background-position: 100% 50%; }
+  100% { background-position: -100% 50%; }
+}
+.cd-live::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--hero-warm), transparent);
+  animation: cd-live-scan 2.4s ease-in-out infinite;
+}
+.countdown.done .cd-live::after { display: none; }
+@keyframes cd-live-scan {
+  0%   { transform: translateX(-100%); opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+.cd-live-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--hero-warm);
+  flex-shrink: 0;
+  animation: cd-live-pulse 1.4s ease-out infinite;
+}
+.countdown.done .cd-live-dot { background: var(--hero-text-muted); animation: none; }
+@keyframes cd-live-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(230,90,50,0.7); transform: scale(1); }
+  70%  { box-shadow: 0 0 0 14px rgba(230,90,50,0); transform: scale(1.25); }
+  100% { box-shadow: 0 0 0 0 rgba(230,90,50,0); transform: scale(1); }
+}
+.cd-live-text { flex: 1; min-width: 0; }
+.cd-live-label {
+  display: block;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.1rem, 4.8vw, 1.7rem);
+  color: var(--hero-warm);
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+.cd-live-sub {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem; letter-spacing: 0.16em;
+  color: var(--hero-text-muted); text-transform: uppercase;
+  margin-top: 6px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cd-live, .cd-live-dot, .cd-live::after { animation: none !important; }
+}
+
 /* Hero-Stats — immer 4 in einer Zeile */
 .hero-stats {
   display: grid;
@@ -4784,17 +4856,72 @@ function flyToSpotById(spotId) {
 // COUNTDOWN
 // ============================================================
 function initCountdown() {
-  const tripDate = new Date(DATA.meta.departureIso).getTime();
+  const container = document.querySelector('.countdown');
+  if (!container) return;
+  const start = new Date(DATA.meta.departureIso).getTime();
+  const end   = new Date(DATA.meta.returnIso).getTime();
+  let mode = null;
+
+  const preHtml = `
+    <div class="cd-cell"><div class="cd-num" id="cd-days">—</div><div class="cd-label">Tage</div></div>
+    <div class="cd-cell"><div class="cd-num" id="cd-hrs">—</div><div class="cd-label">Std</div></div>
+    <div class="cd-cell"><div class="cd-num" id="cd-min">—</div><div class="cd-label">Min</div></div>
+    <div class="cd-cell"><div class="cd-num" id="cd-sec">—</div><div class="cd-label">Sek</div></div>`;
+  const liveHtml = `
+    <div class="cd-live">
+      <span class="cd-live-dot" aria-hidden="true"></span>
+      <div class="cd-live-text">
+        <strong class="cd-live-label" id="cd-live-label">LIVE · SAUFTOUR LÄUFT</strong>
+        <small class="cd-live-sub" id="cd-live-sub">—</small>
+      </div>
+    </div>`;
+  const doneHtml = `
+    <div class="cd-live">
+      <span class="cd-live-dot" aria-hidden="true"></span>
+      <div class="cd-live-text">
+        <strong class="cd-live-label">MISSION COMPLETE</strong>
+        <small class="cd-live-sub">Podgorica Sauftour 2026 · erledigt</small>
+      </div>
+    </div>`;
+
+  function setMode(next) {
+    if (mode === next) return;
+    mode = next;
+    container.classList.remove('live', 'done');
+    if (next === 'live') {
+      container.classList.add('live');
+      container.setAttribute('aria-label', 'Sauftour läuft gerade');
+      container.innerHTML = liveHtml;
+    } else if (next === 'done') {
+      container.classList.add('done');
+      container.setAttribute('aria-label', 'Trip abgeschlossen');
+      container.innerHTML = doneHtml;
+    } else {
+      container.setAttribute('aria-label', 'Countdown bis Abflug');
+      container.innerHTML = preHtml;
+    }
+  }
+
   function update() {
-    const diff = Math.max(0, tripDate - Date.now());
-    const d = Math.floor(diff/86400000);
-    const h = Math.floor((diff%86400000)/3600000);
-    const m = Math.floor((diff%3600000)/60000);
-    const s = Math.floor((diff%60000)/1000);
-    document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
-    document.getElementById('cd-hrs').textContent  = String(h).padStart(2,'0');
-    document.getElementById('cd-min').textContent  = String(m).padStart(2,'0');
-    document.getElementById('cd-sec').textContent  = String(s).padStart(2,'0');
+    const now = Date.now();
+    if (now < start) {
+      setMode('pre');
+      const diff = start - now;
+      document.getElementById('cd-days').textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
+      document.getElementById('cd-hrs').textContent  = String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+      document.getElementById('cd-min').textContent  = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+      document.getElementById('cd-sec').textContent  = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+    } else if (now <= end) {
+      setMode('live');
+      const elapsed = now - start;
+      const dayIdx = Math.min(2, Math.floor(elapsed / 86400000));
+      const h = Math.floor((elapsed % 86400000) / 3600000);
+      const m = Math.floor((elapsed % 3600000) / 60000);
+      document.getElementById('cd-live-sub').textContent =
+        `Tag ${dayIdx+1} von 3 · T+${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')} h`;
+    } else {
+      setMode('done');
+    }
   }
   update();
   setInterval(update, 1000);
