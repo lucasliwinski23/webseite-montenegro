@@ -89,7 +89,7 @@
         { "time": "14:10", "title": "Wohnung · Check-in", "detail": "Slobode 21, 4. Stock. Koffer ausladen, 30 Min ankommen.", "highlight": false },
         { "time": "14:40", "title": "Mini-Sightseeing-Walk", "detail": "Sahat Kula (8 Min) + Stara Varoš (Altstadt, enge Gassen). 20 Min reichen. Liegt auf dem Weg zur Akademija.", "highlight": false },
         { "time": "15:00", "title": "Warmup @ PG Akademija piva", "detail": "Regionale Brauerei mit Terrasse. Tasting-Flight. 3,5 h Zeit.", "highlight": true },
-        { "time": "19:00", "title": "Dinner · Wähl deine Option", "detail": "Wahl zwischen Tradition, Mediterran und Schloss-Vibe.", "highlight": true,
+        { "time": "19:00", "title": "Dinner · Wähl deine Option", "detail": "Wahl zwischen Upscale Italian, Mediterran und Schloss-Vibe.", "highlight": true,
           "options": [
             { "ref": "restaurant:Hemera",            "tag": "Upscale Italian" },
             { "ref": "restaurant:Restoran Diplomat", "tag": "Mediterran" },
