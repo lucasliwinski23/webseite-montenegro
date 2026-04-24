@@ -91,7 +91,7 @@
         { "time": "15:00", "title": "Warmup @ PG Akademija piva", "detail": "Regionale Brauerei mit Terrasse. Tasting-Flight. 3,5 h Zeit.", "highlight": true },
         { "time": "19:00", "title": "Dinner · Wähl deine Option", "detail": "Wahl zwischen Tradition, Mediterran und Schloss-Vibe.", "highlight": true,
           "options": [
-            { "ref": "restaurant:Konoba Lanterna",   "tag": "Tradition" },
+            { "ref": "restaurant:Hemera",            "tag": "Upscale Italian" },
             { "ref": "restaurant:Restoran Diplomat", "tag": "Mediterran" },
             { "ref": "restaurant:Stara Kuća",        "tag": "Schloss-Vibe" }
           ]
@@ -169,38 +169,38 @@
 
   "restaurants": [
     {
-      "name": "Konoba Lanterna",
+      "name": "Hemera",
       "role": "Freitag Dinner · Option A",
       "rating": "4.7",
-      "reviews": "1.778",
-      "cuisine": "Traditionell · Montenegrinisch",
-      "price": "€€ · Mittelklasse",
-      "phone": "+382 67 663 163",
-      "phoneRaw": "+38267663163",
-      "maps": "https://maps.google.com/?cid=10570094031606075112",
-      "coords": { "lat": 42.4402, "lng": 19.2621 },
-      "menuUrl": "https://lanterna.me/lanterna-meni-2023.pdf",
-      "menuLabel": "Speisekarte PDF",
-      "description": "Klassische Konoba in einem historischen Gebäude von 1630. Zentraler Innenhof mit uraltem Olivenbaum, Steinmauern, warme Beleuchtung. Tradition trifft auf ehrliche Küche — Portionen großzügig, Preise moderat.",
+      "reviews": "328",
+      "cuisine": "Italienisch · Mediterran",
+      "price": "€€€ · Upscale (40-60 €/Pers.)",
+      "phone": "+382 20 221 652",
+      "phoneRaw": "+38220221652",
+      "maps": "https://maps.google.com/?q=Hotel+Hemera+Podgorica+Njego%C5%A1eva+17",
+      "coords": { "lat": 42.4423, "lng": 19.2620 },
+      "menuUrl": "https://www.hotelhemera.com/restoran-3/?lang=en",
+      "menuLabel": "Restaurant-Seite",
+      "description": "Boutique-Restaurant im Hotel Hemera (Njegoševa 17, ~5 Min vom Trg Republike). Designambiente inspiriert von griechischer Mythologie, Gartenterrasse für laue Abende. Italienisch-mediterrane Küche mit Black Angus Steaks, hausgemachter Pasta, frischem Fisch. Gilt als eines der besten Häuser der Stadt — entsprechend nicht ganz günstig, dafür Top-Service.",
       "reviewQuotes": [
-        { "text": "Veal cooked under bell — fall apart tender and very flavoursome, large portion.", "author": "Tripadvisor", "lang": "en" },
-        { "text": "Service and food absolutely stunning and definitely not over priced. Come hungry — portions are huge.", "author": "Tripadvisor", "lang": "en" },
-        { "text": "Despite a slight language barrier, the staff made us feel very welcome and helped choose the best dishes.", "author": "Tripadvisor", "lang": "en" }
+        { "text": "Extremely elegant and well-rounded restaurant. Arguably one of the best in the city.", "author": "Wanderlog", "lang": "en" },
+        { "text": "One of the best culinary experiences in Podgorica with great menu variety.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "One of the most expensive restaurants in Montenegro, but it's worth every penny.", "author": "Tripadvisor", "lang": "en" }
       ],
       "menu": [
-        { "title": "Spezialitäten", "items": [
-          ["Veal under the bell (für 2)", "~35 €"],
-          ["Kačamak (Polenta mit Käse)", "~10 €"],
-          ["Ćevapi mit Zwiebel & Brot", "~10 €"]
+        { "title": "Signature", "items": [
+          ["Black Angus Steak", "~35-45 €"],
+          ["Tagliatelle Nero mit Meeresfrüchten", "~18 €"],
+          ["Pasta Florentina (Hähnchen)", "~14 €"]
         ]},
-        { "title": "Hauptgerichte", "items": [
-          ["Kalbssuppe (teleća čorba)", "~5 €"],
-          ["Pastrmka (Forelle vom Grill)", "~14 €"],
-          ["Shopska Salat", "~5 €"]
+        { "title": "Klassiker", "items": [
+          ["Montenegro-Platte", "~22 €"],
+          ["Ćevapi-Teller", "~12 €"],
+          ["Frischer Fisch (Tagespreis)", "~25-40 €"]
         ]},
-        { "title": "Getränke", "items": [
-          ["Nikšićko Pivo 0,5 l", "~2,50 €"],
-          ["Hausmacher-Rakija 2 cl", "~2 €"]
+        { "title": "Dessert", "items": [
+          ["Vulcano Cake", "~7 €"],
+          ["Tiramisu", "~6 €"]
         ]}
       ],
       "badge": "Fr Dinner · Option A"
@@ -704,7 +704,7 @@
 
   "reservations": [
     { "prio": 1, "name": "Restoran Protokol",   "when": "Samstag 25.04. · 19:30 Uhr · Nr. 1 der Stadt",                 "phone": "+382 68 222 111", "phoneRaw": "+38268222111" },
-    { "prio": 2, "name": "Konoba Lanterna",     "when": "Freitag 24.04. · 19:00 Uhr · Veal under the bell 24 h vorher!","phone": "+382 67 663 163", "phoneRaw": "+38267663163" },
+    { "prio": 2, "name": "Hemera",              "when": "Freitag 24.04. · 19:00 Uhr · Reservierung empfohlen (klein, oft voll)",   "phone": "+382 20 221 652", "phoneRaw": "+38220221652" },
     { "prio": 3, "name": "Restoran Diplomat",   "when": "Freitag oder Sonntag · Brunch & Dinner",                       "phone": "+382 67 993 339", "phoneRaw": "+38267993339" },
     { "prio": 4, "name": "Babi Gourmet & Wine", "when": "Samstag · Alternative · Freitag vorher reservieren",           "phone": "+382 67 160 393", "phoneRaw": "+38267160393" },
     { "prio": 5, "name": "Steak House Grill",   "when": "Samstag · Steak-Alternative",                                  "phone": "+382 68 825 954", "phoneRaw": "+38268825954" },
@@ -838,7 +838,7 @@
       { "name":"Scottish Pub McCloud", "lat":42.4416, "lng":19.2611, "type":"Pub",       "rating":4.6, "reviews":120 }
     ],
     "restaurants": [
-      { "name":"Konoba Lanterna",                  "lat":42.4402, "lng":19.2621, "cuisine":"Traditionell",  "rating":4.7, "reviews":1778, "tier":"€€"  },
+      { "name":"Hemera",                           "lat":42.4423, "lng":19.2620, "cuisine":"Italienisch",   "rating":4.7, "reviews":328,  "tier":"€€€" },
       { "name":"Restoran Diplomat",                "lat":42.4423, "lng":19.2645, "cuisine":"Mediterran",    "rating":4.8, "reviews":545,  "tier":"€€"  },
       { "name":"Stara Kuća",                       "lat":42.4515, "lng":19.2891, "cuisine":"Traditionell",  "rating":4.5, "reviews":321,  "tier":"€€"  },
       { "name":"Restoran Protokol",                "lat":42.4483, "lng":19.2719, "cuisine":"Steakhouse",    "rating":4.9, "reviews":623,  "tier":"€€€" },
@@ -849,8 +849,6 @@
       { "name":"Gostiona 1928",                    "lat":42.4420, "lng":19.2628, "cuisine":"Traditionell",  "rating":4.4, "reviews":344,  "tier":"€€"  }
     ],
     "verifiedBeverages": [
-      { "spot":"Konoba Lanterna",  "item":"Nikšićko Pivo 0,5 L",            "price":"2,50 €",  "category":"Bier",     "source":"Lanterna Speisekarte 2023 (PDF)",          "url":"https://lanterna.me/lanterna-meni-2023.pdf" },
-      { "spot":"Konoba Lanterna",  "item":"Hausmacher-Rakija 2 cl",         "price":"2,00 €",  "category":"Spirituose","source":"Lanterna Speisekarte 2023 (PDF)",          "url":"https://lanterna.me/lanterna-meni-2023.pdf" },
       { "spot":"Restoran Diplomat","item":"Hauswein Glas (Vranac)",         "price":"3,00 €",  "category":"Wein",     "source":"Diplomat Menü (RestaurantGuru)",            "url":"https://restaurantguru.com/Diplomat-Restoran-Podgorica/menu" },
       { "spot":"Stara Kuća",       "item":"Vranac Flasche (regional)",      "price":"20,00 €", "category":"Wein",     "source":"Stara Kuća Menü",                           "url":"https://starakuca.me/" },
       { "spot":"Stara Kuća",       "item":"Hausmacher-Rakija",              "price":"2,50 €",  "category":"Spirituose","source":"Stara Kuća Menü",                          "url":"https://starakuca.me/" },
@@ -862,15 +860,15 @@
     ],
     "menuShowcase": [
       {
-        "name":"Konoba Lanterna",
-        "url":"https://lanterna.me/lanterna-meni-2023.pdf",
-        "label":"Speisekarte PDF",
+        "name":"Hemera",
+        "url":"https://www.hotelhemera.com/restoran-3/?lang=en",
+        "label":"Restaurant-Seite",
         "items":[
-          ["Veal under the bell (für 2)","~35 €"],
-          ["Pastrmka — Forelle vom Grill","~14 €"],
-          ["Ćevapi mit Zwiebel & Brot","~10 €"],
-          ["Nikšićko Pivo 0,5 L","~2,50 €"],
-          ["Hausmacher-Rakija 2 cl","~2,00 €"]
+          ["Black Angus Steak","~35-45 €"],
+          ["Tagliatelle Nero mit Meeresfrüchten","~18 €"],
+          ["Pasta Florentina (Hähnchen)","~14 €"],
+          ["Montenegro-Platte","~22 €"],
+          ["Vulcano Cake","~7 €"]
         ]
       },
       {
