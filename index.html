@@ -14,7 +14,6 @@
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="./config.local.js" onerror="console.info('config.local.js nicht vorhanden — Live-Flight wird via URL-Param ?apikey=… aktiviert.')"></script>
 
 <script>
 // FOUC-Prevention: Theme vor Body setzen — Dark ist Standard
@@ -915,6 +914,8 @@ section { padding: 70px 0; position: relative; }
 .airport-code { font-family: 'Fraunces', Georgia, serif; font-size: 2.4rem; color: var(--accent-warm); line-height: 1; }
 .airport-name { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
 .airport-time { font-family: 'JetBrains Mono', monospace; color: var(--text-primary); margin-top: 8px; font-size: 1.15rem; font-weight: 700; }
+.airport-time-sched { color: var(--text-muted); text-decoration: line-through; font-weight: 500; margin-right: 4px; }
+.airport-time-actual { color: var(--accent-warn); }
 .arrow-col { text-align: center; color: var(--accent-primary); font-size: 1.4rem; }
 .flight-meta { display: flex; gap: 22px; padding-top: 16px; border-top: 1px dashed var(--border); flex-wrap: wrap; }
 .flight-meta-item strong { color: var(--text-primary); font-size: 0.92rem; display: block; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
@@ -949,35 +950,6 @@ section { padding: 70px 0; position: relative; }
 .flight-live-text { color: var(--text-primary); font-weight: 600; letter-spacing: 0.05em; }
 .flight-live-text small { color: var(--text-muted); font-size: 0.7rem; display: block; margin-top: 2px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 400; }
 .flight-live-gate { font-weight: 700; color: var(--accent-primary); font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; }
-.flight-live { position: relative; }
-.live-ts {
-  position: absolute;
-  bottom: 4px; right: 10px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.58rem;
-  color: var(--text-soft);
-  letter-spacing: 0.06em;
-  pointer-events: none;
-}
-
-/* Inline-Pill-Button (für "Live aktivieren" etc.) */
-.inline-pill-btn {
-  display: inline-block;
-  margin-left: 6px;
-  padding: 5px 12px;
-  background: var(--accent-primary);
-  color: #FFF;
-  border: none;
-  border-radius: 999px;
-  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.15s, transform 0.15s;
-}
-.inline-pill-btn:hover { background: var(--accent-warm); transform: translateY(-1px); }
 
 /* Route-Viz */
 .route-viz {
@@ -3814,6 +3786,12 @@ function fmtDuration(min) {
   return `${h}:${String(m).padStart(2,'0')} h`;
 }
 function flightCard(title, arrow, f, date, meta, key) {
+  const fromTime = f.from.actualTime && f.from.actualTime !== f.from.time
+    ? `<span class="airport-time-sched">${f.from.time}</span> <span class="airport-time-actual">${f.from.actualTime}</span>`
+    : f.from.time;
+  const toTime = f.to.actualTime && f.to.actualTime !== f.to.time
+    ? `<span class="airport-time-sched">${f.to.time}</span> <span class="airport-time-actual">${f.to.actualTime}</span>`
+    : f.to.time;
   return `<div class="flight-card fade-in">
     <div class="flight-header">
       <div><div class="flight-type">${arrow}</div><div class="flight-num">${f.number}</div></div>
@@ -3823,13 +3801,13 @@ function flightCard(title, arrow, f, date, meta, key) {
       <div>
         <div class="airport-code">${f.from.code}</div>
         <div class="airport-name">${f.from.name}</div>
-        <div class="airport-time">${f.from.time}</div>
+        <div class="airport-time">${fromTime}</div>
       </div>
       <div class="arrow-col" aria-hidden="true">→</div>
       <div style="text-align:right">
         <div class="airport-code">${f.to.code}</div>
         <div class="airport-name" style="text-align:right">${f.to.name}</div>
-        <div class="airport-time">${f.to.time}</div>
+        <div class="airport-time">${toTime}</div>
       </div>
     </div>
     <div class="flight-meta">
@@ -3847,215 +3825,36 @@ function flightCard(title, arrow, f, date, meta, key) {
 }
 
 // ============================================================
-// LIVE FLIGHT STATUS — AeroDataBox via RapidAPI
-// API-Key wird einmalig über URL ?apikey=XXX gesetzt → localStorage.
-// Ohne Key läuft Fallback ("Planmäßig" mit Hinweis-Link).
-// Free-Tier Basic = 500 Calls/Monat. Caching: 5 Min in localStorage.
+// FLIGHT STATUS — manuell gepflegt via data/trip-data.json
+// Pflegefeld: flights.<outbound|return>.status = { state, delayMin, label, note }
 // ============================================================
-const AERO_HOST = 'aerodatabox.p.rapidapi.com';
-const AERO_CACHE_KEY = 'pg-flight-cache';
-const AERO_KEY_KEY = 'pg-aero-key';
-const AERO_CACHE_TTL = 5 * 60 * 1000; // 5 Min
-
-(function initApiKeyFromSources() {
-  try {
-    // 1. config.local.js (lokale Datei, .gitignored) → in localStorage migrieren
-    if (typeof window.PG_AERO_KEY === 'string' && window.PG_AERO_KEY.length > 10) {
-      const stored = localStorage.getItem(AERO_KEY_KEY);
-      if (stored !== window.PG_AERO_KEY) localStorage.setItem(AERO_KEY_KEY, window.PG_AERO_KEY);
-    }
-    // 2. URL-Parameter ?apikey=… → in localStorage + URL bereinigen
-    const url = new URL(location.href);
-    const k = url.searchParams.get('apikey');
-    if (k) {
-      localStorage.setItem(AERO_KEY_KEY, k);
-      url.searchParams.delete('apikey');
-      history.replaceState({}, '', url.toString());
-    }
-  } catch(e) {}
-})();
-function getAeroKey() {
-  try { return localStorage.getItem(AERO_KEY_KEY) || ''; } catch(e) { return ''; }
-}
-
 function initFlightStatus() {
   updateFlightStatus('outbound', DATA.flights.outbound);
   updateFlightStatus('return',   DATA.flights.return);
-  setInterval(() => {
-    updateFlightStatus('outbound', DATA.flights.outbound);
-    updateFlightStatus('return',   DATA.flights.return);
-  }, 5 * 60 * 1000);
 }
 
 function setLiveBlock(key, status, label, sub, gate) {
   const el = document.getElementById(`flight-live-${key}`);
   if (!el) return;
   el.dataset.status = status;
-  el.dataset.fetched = String(Date.now());
   el.querySelector('.live-label').textContent = label;
-  el.querySelector('.live-sub').innerHTML = sub;
+  el.querySelector('.live-sub').textContent = sub;
   document.getElementById(`flight-gate-${key}`).textContent = gate || '';
-  refreshLiveTimestamps();
 }
 
-function refreshLiveTimestamps() {
-  document.querySelectorAll('.flight-live[data-fetched]').forEach(el => {
-    const t = parseInt(el.dataset.fetched, 10);
-    if (!t) return;
-    const ageS = Math.round((Date.now() - t) / 1000);
-    let ts = el.querySelector('.live-ts');
-    if (!ts) {
-      ts = document.createElement('span');
-      ts.className = 'live-ts';
-      el.appendChild(ts);
-    }
-    if (ageS < 60) ts.textContent = `vor ${ageS}s`;
-    else if (ageS < 3600) ts.textContent = `vor ${Math.round(ageS/60)} min`;
-    else ts.textContent = `vor ${Math.round(ageS/3600)} h`;
-  });
-}
-setInterval(refreshLiveTimestamps, 30000);
-
-async function updateFlightStatus(key, flight) {
-  const flightDate = parseFlightDate(flight);
-  const diffH = (flightDate - Date.now()) / 3600000;
-  const apikey = getAeroKey();
-
-  // > 36h vor Flug: keine Live-Daten erwartet
-  if (diffH > 36) {
-    const sub = apikey
-      ? `Live-Status ab T-36h · ${flight.number}`
-      : `Planung · ${flight.number} · <button type="button" class="inline-pill-btn" onclick="setupAeroKey()">▸ Live aktivieren</button>`;
-    setLiveBlock(key, 'ontime', 'Planmäßig', sub, '');
+function updateFlightStatus(key, flight) {
+  if (flight.status && flight.status.label) {
+    const st = flight.status;
+    const statusKey = st.delayMin && st.delayMin > 0 ? 'delayed' : (st.state || 'landed');
+    setLiveBlock(key, statusKey, st.label, st.note || `Wizz Air · ${flight.number}`, '');
     return;
   }
-
-  // > 4h nach Flug: gelandet (statisch)
+  const diffH = (parseFlightDate(flight) - Date.now()) / 3600000;
   if (diffH < -4) {
     setLiveBlock(key, 'landed', 'Gelandet', `Wizz Air · ${flight.number}`, '');
-    return;
+  } else {
+    setLiveBlock(key, 'ontime', 'Planmäßig', `Plan ${flight.from.time} · Wizz Air · ${flight.number}`, '');
   }
-
-  if (!apikey) {
-    setLiveBlock(key, 'ontime', 'Planmäßig',
-      `Live-API nicht konfiguriert · <button type="button" class="inline-pill-btn" onclick="setupAeroKey()">▸ Key setzen</button>`,
-      '');
-    return;
-  }
-
-  // Live-API abfragen
-  try {
-    const live = await fetchAeroDataBox(flight, apikey);
-    if (!live) {
-      setLiveBlock(key, 'ontime', 'Planmäßig', `Noch keine Live-Daten · ${flight.number}`, '');
-      return;
-    }
-    renderLive(key, flight, live);
-  } catch(err) {
-    if (err.message === 'API_NOT_SUBSCRIBED') {
-      setLiveBlock(key, 'error', 'API nicht aktiviert',
-        `RapidAPI → AeroDataBox → "Subscribe to Test" (Basic / 0 €) · ${flight.number}`, '');
-    } else if (err.message === 'API_INVALID_KEY') {
-      setLiveBlock(key, 'error', 'Key ungültig',
-        `<button type="button" class="inline-pill-btn" onclick="setupAeroKey()">▸ Neuen Key setzen</button>`, '');
-    } else if (err.message === 'API_RATE_LIMIT') {
-      setLiveBlock(key, 'error', 'API-Limit erreicht',
-        `Free-Tier 500/Monat aufgebraucht — direkt bei Wizz checken · ${flight.number}`, '');
-    } else {
-      setLiveBlock(key, 'error', 'Status nicht abrufbar',
-        `Direkt bei Wizz Air checken · ${flight.number}`, '');
-    }
-  }
-}
-
-function renderLive(key, flight, live) {
-  // AeroDataBox-Status: "Expected", "EnRoute", "Departed", "Arrived",
-  // "CheckIn", "Boarding", "GateClosed", "Delayed", "Cancelled", "Diverted", "Unknown"
-  // Wir zeigen IMMER die Departure-Seite des Flugs (für Hin- + Rückflug separat abgefragt).
-  const sched = live.departureScheduled;
-  const actual = live.departureActual;
-  const gate = live.departureGate;
-
-  let status = 'ontime', label = 'Planmäßig';
-  const s = (live.status||'').toLowerCase();
-  if (s.includes('cancel'))           { status = 'error';    label = 'Annulliert'; }
-  else if (s.includes('divert'))      { status = 'error';    label = 'Umgeleitet'; }
-  else if (s.includes('delay'))       { status = 'delayed';  label = 'Verspätet'; }
-  else if (s.includes('board'))       { status = 'boarding'; label = 'Boarding'; }
-  else if (s.includes('gateclos'))    { status = 'boarding'; label = 'Gate geschlossen'; }
-  else if (s.includes('checkin'))     { status = 'boarding'; label = 'Check-in offen'; }
-  else if (s.includes('depart')||s.includes('enroute')) { status = 'boarding'; label = 'In der Luft'; }
-  else if (s.includes('arriv')||s.includes('landed'))   { status = 'landed';   label = 'Gelandet'; }
-  else if (actual && actual !== sched)                  { status = 'delayed';  label = 'Verspätet'; }
-
-  const ts = (t) => t ? t.split(/[T ]/)[1]?.slice(0,5) || t : '';
-  const detail = actual && actual !== sched
-    ? `Neu ${ts(actual)} (statt ${ts(sched)}) · Wizz Air`
-    : `Plan ${ts(sched) || flight.from.time} · Wizz Air`;
-  setLiveBlock(key, status, label, detail, gate ? `Gate ${gate}` : '');
-}
-
-function setupAeroKey() {
-  const cur = getAeroKey();
-  const k = prompt('RapidAPI-Key für AeroDataBox eingeben\n(kostenloser Account: rapidapi.com/aedbx-aedbx/api/aerodatabox)', cur || '');
-  if (k === null) return;
-  if (!k.trim()) { try { localStorage.removeItem(AERO_KEY_KEY); } catch(e){} }
-  else           { try { localStorage.setItem(AERO_KEY_KEY, k.trim()); } catch(e){} }
-  initFlightStatus();
-}
-window.setupAeroKey = setupAeroKey;
-
-async function fetchAeroDataBox(flight, apikey) {
-  // Cache prüfen
-  const cacheId = `${flight.number}-${flightDateString(flight)}`;
-  try {
-    const cache = JSON.parse(localStorage.getItem(AERO_CACHE_KEY) || '{}');
-    if (cache[cacheId] && Date.now() - cache[cacheId].t < AERO_CACHE_TTL) {
-      return cache[cacheId].d;
-    }
-  } catch(e) {}
-
-  const flightNo = flight.number.replace(/\s+/g,''); // "W6 7602" → "W67602"
-  const date = flightDateString(flight);             // "2026-04-24"
-  const url = `https://${AERO_HOST}/flights/number/${flightNo}/${date}?withAircraftImage=false&withLocation=false`;
-  const res = await fetch(url, {
-    headers: {
-      'X-RapidAPI-Key': apikey,
-      'X-RapidAPI-Host': AERO_HOST
-    }
-  });
-  if (!res.ok) {
-    if (res.status === 404) return null; // Flug noch nicht im System
-    if (res.status === 403) throw new Error('API_NOT_SUBSCRIBED');
-    if (res.status === 401) throw new Error('API_INVALID_KEY');
-    if (res.status === 429) throw new Error('API_RATE_LIMIT');
-    throw new Error('API ' + res.status);
-  }
-  const data = await res.json();
-  if (!Array.isArray(data) || data.length === 0) return null;
-  const f = data.find(x => x.departure?.airport?.iata === flight.from.code) || data[0];
-  const parsed = {
-    status: f.status,
-    departureGate: f.departure?.gate,
-    departureScheduled: f.departure?.scheduledTime?.local,
-    departureActual:    f.departure?.actualTime?.local || f.departure?.revisedTime?.local,
-    arrivalGate:        f.arrival?.gate,
-    arrivalScheduled:   f.arrival?.scheduledTime?.local,
-    arrivalActual:      f.arrival?.actualTime?.local || f.arrival?.revisedTime?.local
-  };
-  try {
-    const cache = JSON.parse(localStorage.getItem(AERO_CACHE_KEY) || '{}');
-    cache[cacheId] = { t: Date.now(), d: parsed };
-    localStorage.setItem(AERO_CACHE_KEY, JSON.stringify(cache));
-  } catch(e) {}
-  return parsed;
-}
-
-function flightDateString(flight) {
-  const iso = flight.number === DATA.flights.outbound.number
-    ? DATA.meta.departureIso
-    : DATA.meta.returnIso;
-  return iso.slice(0, 10); // "2026-04-24"
 }
 
 function parseFlightDate(flight) {

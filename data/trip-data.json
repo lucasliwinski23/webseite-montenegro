@@ -21,11 +21,13 @@
       "number": "W6 7602",
       "carrier": "Wizz Air",
       "date": "Freitag 24. April 2026",
-      "from": { "code": "DTM", "name": "Dortmund", "time": "09:00" },
-      "to":   { "code": "TGD", "name": "Podgorica", "time": "11:15" },
+      "from": { "code": "DTM", "name": "Dortmund", "time": "09:00", "actualTime": "09:29" },
+      "to":   { "code": "TGD", "name": "Podgorica", "time": "11:15", "actualTime": "11:37" },
       "durationMin": 135,
+      "actualDurationMin": 128,
       "distanceKm": 1344,
-      "direct": true
+      "direct": true,
+      "status": { "state": "landed", "delayMin": 22, "label": "Gelandet · +22 min verspätet", "note": "Abflug 09:29 statt 09:00 · Landung 11:37 statt 11:15" }
     },
     "return": {
       "number": "W6 7601",
@@ -80,9 +82,9 @@
       "date": "24. April 2026",
       "theme": "ANKUNFT & EINSTIEG",
       "items": [
-        { "time": "11:45", "title": "Landung TGD", "detail": "W6 7602 aus Dortmund. Koffer holen. Willkommen in Montenegro.", "highlight": false },
-        { "time": "12:15", "title": "Taxi ins Zentrum", "detail": "Eko Taxi (+382 19 700) oder Bolt-App. ~15 € · 25 Min Fahrt.", "highlight": false },
-        { "time": "12:40", "title": "Leichter Lunch @ Gostiona 1928", "detail": "Traditionell, Terrasse, 2 Min von der Wohnung. Erstes Bier.", "highlight": true },
+        { "time": "11:37", "title": "Landung TGD", "detail": "W6 7602 aus Dortmund · Plan 11:15 → Ist 11:37 (22 min verspätet). Koffer holen. Willkommen in Montenegro.", "highlight": false },
+        { "time": "12:10", "title": "Taxi ins Zentrum", "detail": "Eko Taxi (+382 19 700) oder Bolt-App. ~15 € · 25 Min Fahrt.", "highlight": false },
+        { "time": "12:35", "title": "Leichter Lunch @ Gostiona 1928", "detail": "Traditionell, Terrasse, 2 Min von der Wohnung. Erstes Bier.", "highlight": true },
         { "time": "13:45", "title": "Einkauf VOLI", "detail": "Wasser, Snacks, Biere. WICHTIG: Sonntagsvorrat gleich mit!", "highlight": false },
         { "time": "14:10", "title": "Wohnung · Check-in", "detail": "Slobode 21, 4. Stock. Koffer ausladen, 30 Min ankommen.", "highlight": false },
         { "time": "14:40", "title": "Mini-Sightseeing-Walk", "detail": "Sahat Kula (8 Min) + Stara Varoš (Altstadt, enge Gassen). 20 Min reichen. Liegt auf dem Weg zur Akademija.", "highlight": false },
