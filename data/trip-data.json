@@ -86,9 +86,9 @@
         { "time": "12:10", "title": "Taxi ins Zentrum ✓", "detail": "~15 € · 25 Min Fahrt ins Zentrum.", "highlight": false },
         { "time": "13:00", "title": "Wohnung · Check-in + VOLI-Einkauf ✓", "detail": "Slobode 21, 4. Stock. Sonntagsvorrat mit eingekauft (siehe Bier-Inventar Sonntag — wir haben übertrieben).", "highlight": false },
         { "time": "ca. 14:30 — 18:30", "title": "Pizza-Bude in der Njegoševa · Pizza + Raki · komplett ✓", "detail": "Direkt nach dem Einkauf rüber zur Njegoševa. Pizza-Bude irgendwo zwei (oder fünf?) Häuser von Hemera weg, Richtung Stara Varoš — Name leider weg, der Raki hat ganze Arbeit geleistet. Wir saßen dort ein paar Stunden komplett dicht. Akademija piva war eigentlich als Warmup geplant, ist aber dem Raki-Marathon zum Opfer gefallen.", "highlight": true },
-        { "time": "ca. 19:30 — 22:30", "title": "Dinner @ Restoran Diplomat ✓", "detail": "Mediterran-regional, Kalbsbacke in Rotwein, gratis Brotkorb mit Dips. Solider Anker für den Abend, nachdem der Nachmittag schon wankte.", "highlight": true },
-        { "time": "ca. 23:00 — 01:00", "title": "Bar-Stop @ Hemera · Ingwer-Cocktails ✓", "detail": "Boutique-Hotel-Bar in der Njegoševa 17. Cocktails mit Ingwer (genauer Drink-Name aus dem Gedächtnis verflüchtigt). Hotel-Premium-Vibe mit entsprechenden Preisen.", "highlight": true },
-        { "time": "ca. 01:00", "title": "Heimweg ✓", "detail": "Zu Fuß zur Wohnung, ca. 8 Min von der Njegoševa. Schlüssel haben funktioniert, Aufzug auch. Nicht selbstverständlich nach so einem Tag.", "highlight": false }
+        { "time": "ca. 19:30 — 22:30", "title": "Dinner @ Restoran Diplomat ✓", "detail": "Kalbsbacke in Rotwein, gratis Brotkorb, ordentlich Wein. Wir haben uns hier wortwörtlich umgebracht mit dem Sprit — solider Anker, der nach hinten losging.", "highlight": true },
+        { "time": "ca. 23:00 — 00:00", "title": "Wohnung · Nachsoff ✓", "detail": "Ab hier ging nichts mehr nach draußen. Heimweg auf wackligen Beinen, in der Wohnung haben wir noch eine Stunde nachgesoffen, dann war Schicht. Hemera-Bar-Stop war geplant, ist aber kollektiv verworfen worden — und zwar in dem Moment, als Luca die Schlüssel ins Schloss bekam.", "highlight": false },
+        { "time": "ab 00:00", "title": "Bett + Heizstrahler-Vorfall im Bad ✓", "detail": "Eigentlich Schlaf-Phase. Tatsächlich: der Heizstrahler im Badezimmer ist die komplette Nacht durchgelaufen, weil keiner mehr in der Lage war, ihn auszumachen. Resultat: das Bad wurde zur 7. Klimazone Montenegros (siehe Wissenswertes), geschätzte 400.000 Grad. Empfehlung: morgens lüften, nicht direkt anfassen.", "highlight": false }
       ]
     },
     {
@@ -152,13 +152,11 @@
   "restaurants": [
     {
       "name": "Hemera",
-      "role": "Freitag Bar-Stop · Ingwer-Cocktails",
+      "role": "Italian · Mediterran · Premium",
       "rating": "4.7",
       "reviews": "328",
       "cuisine": "Italienisch · Mediterran",
       "price": "€€€ · Upscale (40-60 €/Pers.)",
-      "visited": true,
-      "visitedNote": "Fr 24.04. · spät abends · Ingwer-Cocktails",
       "touristTrap": true,
       "touristTrapReason": "Hotel-Restaurant + €€€ Premium-Preise. Gemischte Reviews zur Pricing-Transparenz: einzelne Tripadvisor-Berichte erwähnen 6 €-Gerichte, die durch Preis-pro-Gewicht bei 24 € landen. Essen-Qualität nicht durchgehend konstant ('fair quality but simple, over-salted' bei einigen Reviewern). Trotzdem hohe Gesamtbewertung — also nicht meiden, aber: Karte vorab studieren, Gewichts-Preise nachfragen, kein Blind-Ordering.",
       "phone": "+382 20 221 652",
@@ -968,7 +966,7 @@
           { "fact": "Crna Gora = 'Schwarzer Berg'. Italiener machten daraus 'Monte Negro' → 'Montenegro'. Deutsche Übersetzung wäre 'Schwarzberg' — klingt wie Sauerländer Skigebiet.", "src": "Etymologie" },
           { "fact": "Podgorica hieß 1946–1992 'Titograd' — nach Marshall Tito. 1992 zurückbenannt. Stell dir vor, Berlin hieße 30 Jahre 'Adenaurorf'.", "src": "Historische Atlanten" },
           { "fact": "Montenegro: seit 2006 unabhängig (vorher Serbien-Montenegro). Damit jünger als YouTube (2005) und Twitter (2006).", "src": "UN Membership" },
-          { "fact": "Land hat 13.812 km² — kleiner als Schleswig-Holstein (15.804 km²). Aber 5 Nationalparks und 6 Klimazonen.", "src": "Statistical Office of Montenegro" },
+          { "fact": "Land hat 13.812 km² — kleiner als Schleswig-Holstein (15.804 km²). Aber 5 Nationalparks und seit Freitagnacht 7 Klimazonen — die siebte ist unser Apartment-Badezimmer in Slobode 21, ca. 400.000 Grad, verursacht durch einen Heizstrahler, der niemanden mehr fand, der ihn rechtzeitig ausschalten konnte.", "src": "Statistical Office of Montenegro + Felix-Beobachtung" },
           { "fact": "Einwohner: ~617.000. Das ist ungefähr Frankfurt am Main — als ganzes Land.", "src": "MONSTAT 2024" },
           { "fact": "Stećci-Grabsteine (UNESCO 2016) sind mittelalterliche Marmor-Brocken mit eingemeißelten Tänzern. 70.000 Stück, geteilt mit Bosnien & Kroatien.", "src": "UNESCO" }
         ]
