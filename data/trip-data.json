@@ -114,12 +114,12 @@
       "warning": "Luca geht's scheiße, wir kommen nicht zeitig los. Felix-Veto: Brauerei (Akademija) wird heute gestrichen. Stattdessen gleich Mittag im Restaurant mit ein paar Bieren — danach ziehen wir den Plan ab Sportsbar normal durch.",
       "items": [
         { "time": "11:30", "title": "Aufstehen · langsam", "detail": "Luca ist angeschlagen — kein Stress. Wasser, Kaffee, Schmerzmittel falls nötig. Brauerei-Frühstück ist gestrichen, wir starten direkt mit Mittag.", "highlight": false },
-        { "time": "13:00", "title": "Mittag mit Bier · Wähl deine Option", "detail": "Irgendwas Gescheites zu essen + erste Biere zum Aufpäppeln. Alle vier Spots sind nahe an der Wohnung, einer davon liegt 2 Min entfernt.", "highlight": true,
+        { "time": "13:00", "title": "Leichtes Mittag · auf Lucas Magen abgestimmt", "detail": "Heute kein schweres Lamm-unter-der-Glocke. Wir suchen Suppe, Salat, frischen Fisch oder Avocado Toast. Vier Spots, alle nah, alle bewusst leichter — Republic Of Good Food als TOP-PICK fürs Magen-Reset, die anderen drei als Backup falls sich jemand doch was Mediterranes traut.", "highlight": true,
           "options": [
-            { "ref": "restaurant:Gostiona 1928",                    "tag": "Tradition · 2 Min weg" },
-            { "ref": "restaurant:The Living Room Lounge & Dining", "tag": "TOP-Brunch" },
-            { "ref": "restaurant:SPAGO",                            "tag": "Italienisch · Pizza" },
-            { "ref": "restaurant:Restoran Diplomat",                "tag": "Mediterran" }
+            { "ref": "restaurant:The Republic Of Good Food",        "tag": "TOP-PICK · Salat / Suppe / Smoothie" },
+            { "ref": "restaurant:Restoran Maša",                    "tag": "Light Fish · Modern" },
+            { "ref": "restaurant:The Living Room Lounge & Dining", "tag": "Lounge · leichter Brunch" },
+            { "ref": "restaurant:Restoran Diplomat",                "tag": "Mediterran · 3 Min weg" }
           ]
         },
         { "time": "15:00", "title": "Walk zur Sportsbar", "detail": "Kurzer Frischluft-Zug Richtung Hercegovačka / Njegoševa. Bundesliga-Anpfiff 15:30, also keine Hetze, aber Tempo halten.", "highlight": false },
@@ -429,6 +429,87 @@
         ]}
       ],
       "badge": "Sa Dinner · Option C"
+    },
+    {
+      "name": "The Republic Of Good Food",
+      "role": "Sa Mittag · LEICHT · TOP-PICK",
+      "category": "brunch",
+      "rating": "4.2",
+      "reviews": "72",
+      "cuisine": "Healthy · Salate · Smoothies",
+      "price": "€ · Mittelklasse-Light",
+      "phone": "+382 67 337 530",
+      "phoneRaw": "+38267337530",
+      "maps": "https://maps.google.com/?q=The+Republic+of+Good+Food+Karadjordjeva+3+Podgorica",
+      "coords": { "lat": 42.4406, "lng": 19.2615 },
+      "menuUrl": "https://foodbook.me/en/profile/the-republic-of-good-food",
+      "menuLabel": "Foodbook",
+      "description": "Karadjordjeva 3, ~5-7 Min Fußweg von der Wohnung. Spezialisiert auf gesundes, leichtes Essen — Salate, Smoothies, frische Säfte, Suppen (potages), Oatmeal, Avocado Toast mit pochierten Eiern, Joghurt-Bowls und Sandwiches. Garten, AC, internationale + mediterrane + vegane/vegetarische Optionen. Wenn der Magen heute streikt, ist das hier die ehrlichste Wahl: nichts Schweres, nichts Frittiertes, nichts mit halbem Lamm. #37 von 223 Restaurants Tripadvisor.",
+      "reviewQuotes": [
+        { "text": "Excellent lunch — came here for a change from pizza and pasta. Salads, smoothies and avocado toast all brilliant. Service great, prices very fair.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Fresh, delicious, large portions. Abundance of vegetarian and lighter options — finally a place in Podgorica where you don't roll out feeling stuffed.", "author": "Wanderlog", "lang": "en" },
+        { "text": "Greek salad and avocado toast with poached eggs were standout dishes. Garden seating in summer is lovely.", "author": "Tripadvisor", "lang": "en" }
+      ],
+      "menu": [
+        { "title": "Leicht & Frisch (für angeschlagene Mägen)", "items": [
+          ["Suppe des Tages (potage)", "~5 €"],
+          ["Greek Salad / Caesar", "~7 €"],
+          ["Avocado Toast + pochiertes Ei", "~8 €"],
+          ["Oatmeal mit Beeren", "~5 €"]
+        ]},
+        { "title": "Brunch-Klassiker", "items": [
+          ["Joghurt-Bowl mit Granola", "~6 €"],
+          ["Sandwich (Hähnchen / Veggie)", "~7 €"],
+          ["Wrap (Hummus / Falafel)", "~7 €"]
+        ]},
+        { "title": "Drinks", "items": [
+          ["Frischer Smoothie", "~4 €"],
+          ["Detox-Saft (Ingwer / Zitrone)", "~4 €"],
+          ["Cappuccino", "~2 €"]
+        ]}
+      ],
+      "hours": "Täglich 8:00 – 00:00",
+      "badge": "Sa Mittag · LIGHT",
+      "badgeClass": "alt"
+    },
+    {
+      "name": "Restoran Maša",
+      "role": "Sa Mittag · Light Fish · Alternative",
+      "category": "brunch",
+      "rating": "4.6",
+      "reviews": "83",
+      "cuisine": "Mediterran · Seafood · Modern",
+      "price": "€€",
+      "phone": "+382 20 673 010",
+      "phoneRaw": "+38220673010",
+      "maps": "https://maps.google.com/?q=Restoran+Masa+Bulevar+Svetog+Petra+Cetinjskog+31+Podgorica",
+      "coords": { "lat": 42.4400, "lng": 19.2620 },
+      "menuLabel": "Tripadvisor",
+      "menuUrl": "https://www.tripadvisor.com/Restaurant_Review-g304088-d2464307-Reviews-Restoran_Masa-Podgorica_Podgorica_Municipality.html",
+      "description": "Sleek-modernes Familien-Restaurant mit 25-jähriger Fine-Dining-Tradition, große Glasfront, hohe Decken, urbane Atmosphäre. Bulevar Svetog Petra Cetinjskog 31, ~8 Min Fußweg. Spezialisiert auf frischen Fisch & Meeresfrüchte — perfekt grillierter Fisch, Garnelen, Seafood-Pasta. Auch Frühstück und hausgemachtes Eis. Tripadvisor #28 von 223. Reviewer nennen es schlicht 'Best restaurant in Podgorica'.",
+      "reviewQuotes": [
+        { "text": "Strongly recommended. Perfectly cooked fish and prawns. Modern interior, attentive staff, fair price for the quality.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Best restaurant in Podgorica — sleek, airy, glass front, family-run with 25 years of fine-dining know-how.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Najbolja hrana u Podgorici — Fisch, Risotto, Salate alle auf höchstem Niveau. Auch zum Frühstück Top.", "author": "Tripadvisor", "lang": "hr" }
+      ],
+      "menu": [
+        { "title": "Leicht & Frisch", "items": [
+          ["Gegrillter Tagesfisch (klein)", "~14-18 €"],
+          ["Garnelen-Salat", "~13 €"],
+          ["Risotto Frutti di Mare", "~12 €"]
+        ]},
+        { "title": "Frühstück", "items": [
+          ["Croissant + Espresso", "~3,50 €"],
+          ["Omelette mit Gemüse", "~7 €"]
+        ]},
+        { "title": "Süß", "items": [
+          ["Hausgemachtes Eis", "~3 €"],
+          ["Limonade frisch", "~3 €"]
+        ]}
+      ],
+      "hours": "Täglich 8:00 – 23:00",
+      "badge": "Sa Mittag · Light Fish",
+      "badgeClass": "alt"
     },
     {
       "name": "SPAGO",
@@ -772,7 +853,9 @@
     { "prio": 4, "name": "Restoran Diplomat",   "when": "Freitag oder Sonntag · Brunch & Dinner",                       "phone": "+382 67 993 339", "phoneRaw": "+38267993339" },
     { "prio": 5, "name": "Babi Gourmet & Wine", "when": "Samstag · Backup B · Freitag vorher reservieren",              "phone": "+382 67 160 393", "phoneRaw": "+38267160393" },
     { "prio": 6, "name": "Steak House Grill",   "when": "Samstag · Backup C · Steak-Alternative",                       "phone": "+382 68 825 954", "phoneRaw": "+38268825954" },
-    { "prio": 7, "name": "Stara Kuća",          "when": "Freitag · 3 km außerhalb · Taxi ~5 €",                         "phone": "+382 69 030 204", "phoneRaw": "+38269030204" }
+    { "prio": 7, "name": "Stara Kuća",          "when": "Freitag · 3 km außerhalb · Taxi ~5 €",                         "phone": "+382 69 030 204", "phoneRaw": "+38269030204" },
+    { "prio": 8, "name": "The Republic Of Good Food", "when": "Samstag 25.04. · Mittag · TOP-PICK leicht (Salat/Suppe/Avocado Toast)", "phone": "+382 67 337 530", "phoneRaw": "+38267337530" },
+    { "prio": 9, "name": "Restoran Maša",       "when": "Samstag 25.04. · Mittag-Alternative · light fish / modern",     "phone": "+382 20 673 010", "phoneRaw": "+38220673010" }
   ],
 
   "whatsappTemplate": "Hello! I'd like to make a reservation for 2 people on [Friday 24th] at [19:00]. Name: Luca. Could you please confirm? We'd like a [outside / inside] table if possible. Thank you!",
@@ -910,6 +993,8 @@
       { "name":"Restoran Protokol",                "lat":42.4483, "lng":19.2719, "cuisine":"Steakhouse",    "rating":4.9, "reviews":623,  "tier":"€€€" },
       { "name":"Babi Gourmet & Wine",              "lat":42.4432, "lng":19.2621, "cuisine":"Gourmet",       "rating":4.8, "reviews":1543, "tier":"€€€" },
       { "name":"Steak House Grill",                "lat":42.4430, "lng":19.2655, "cuisine":"Steakhouse",    "rating":4.7, "reviews":1017, "tier":"€€€" },
+      { "name":"The Republic Of Good Food",        "lat":42.4406, "lng":19.2615, "cuisine":"Healthy",       "rating":4.2, "reviews":72,   "tier":"€"   },
+      { "name":"Restoran Maša",                    "lat":42.4400, "lng":19.2620, "cuisine":"Mediterran",    "rating":4.6, "reviews":83,   "tier":"€€"  },
       { "name":"SPAGO",                            "lat":42.4375, "lng":19.2560, "cuisine":"Italienisch",   "rating":4.9, "reviews":1641, "tier":"€€"  },
       { "name":"The Living Room Lounge & Dining",  "lat":42.4435, "lng":19.2625, "cuisine":"International", "rating":4.5, "reviews":612,  "tier":"€€"  },
       { "name":"Gostiona 1928",                    "lat":42.4420, "lng":19.2628, "cuisine":"Traditionell",  "rating":4.4, "reviews":344,  "tier":"€€"  }
