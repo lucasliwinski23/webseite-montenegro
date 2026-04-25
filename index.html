@@ -2175,6 +2175,87 @@ body.map-fullscreen-active .bottom-nav {
 }
 
 /* ============================================================
+   TAXI INFO — Tarife & Anbieter
+   ============================================================ */
+.taxi-info { margin-top: 60px; }
+.taxi-info:empty { display: none; }
+.taxi-info-header { margin-bottom: 18px; text-align: left; }
+.taxi-info-header h3 {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 1.4rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--text-primary); margin-bottom: 4px;
+}
+.taxi-info-header p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.55; max-width: 56ch; }
+.taxi-tariff-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px; margin-bottom: 18px;
+}
+.taxi-tariff {
+  padding: 12px 14px;
+  background: var(--bg-card); border: 1px solid var(--border-soft);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 4px;
+}
+.taxi-tariff-label {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 4px;
+}
+.taxi-tariff-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.05rem; font-weight: 700; color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.taxi-tariff-note {
+  font-size: 0.72rem; color: var(--text-muted); font-style: italic;
+}
+.taxi-providers {
+  display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 18px;
+}
+.taxi-provider {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 12px 14px;
+  background: var(--bg-card); border: 1px solid var(--border-soft);
+  border-radius: 4px;
+}
+.taxi-provider-info { min-width: 0; flex: 1; }
+.taxi-provider-name {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 0.92rem; font-weight: 700; color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.taxi-provider-note { font-size: 0.78rem; color: var(--text-muted); }
+.taxi-provider-phone {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.92rem; font-weight: 700; color: var(--accent-primary);
+  text-decoration: none; padding: 6px 10px;
+  background: rgba(139,69,32,0.08); border-radius: 4px;
+  white-space: nowrap;
+}
+.taxi-provider-phone:hover { background: rgba(139,69,32,0.16); }
+.taxi-tips {
+  background: rgba(224,122,46,0.08); border-left: 3px solid var(--accent-warn);
+  border-radius: 4px; padding: 12px 16px; padding-left: 14px;
+}
+.taxi-tips-title {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--accent-warn);
+  margin-bottom: 8px;
+}
+.taxi-tips ul { list-style: none; padding: 0; margin: 0; }
+.taxi-tips li {
+  padding: 6px 0 6px 18px; position: relative;
+  font-size: 0.83rem; line-height: 1.5; color: var(--text-muted);
+  border-bottom: 1px dashed var(--border-soft);
+}
+.taxi-tips li:last-child { border-bottom: 0; }
+.taxi-tips li::before {
+  content: '▸'; position: absolute; left: 0; top: 6px;
+  color: var(--accent-warn); font-size: 0.85rem;
+}
+
+/* ============================================================
    CHECKOUT INFO — Auscheck-Plan
    ============================================================ */
 .checkout-info { margin-top: 60px; }
@@ -3186,6 +3267,7 @@ main { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
       <div class="info-nav fade-in" role="tablist" aria-label="Info-Bereiche">
         <button type="button" class="info-nav-chip active" data-target="info-warning">⚠ Warnungen</button>
         <button type="button" class="info-nav-chip" data-target="cheat-grid">∎ Cheat Sheet</button>
+        <button type="button" class="info-nav-chip" data-target="taxi-info">🚕 Taxi</button>
         <button type="button" class="info-nav-chip" data-target="checkout-info">🧹 Auscheck</button>
         <button type="button" class="info-nav-chip" data-target="fun-facts">📚 Wissenswertes</button>
         <button type="button" class="info-nav-chip" data-target="analytics">📊 Auswertungen</button>
@@ -3199,6 +3281,8 @@ main { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
         </div>
       </div>
       <div class="cheat-grid fade-in" id="cheat-grid"></div>
+
+      <div class="taxi-info fade-in" id="taxi-info"></div>
 
       <div class="checkout-info fade-in" id="checkout-info"></div>
 
@@ -3542,7 +3626,7 @@ function bindTimelineLinks() {
       isHome = true;
     } else if (/TGD|Flughafen|Landung|Abflug|Wizz/i.test(text)) {
       target = { sectionId: 'flight' };
-    } else if (/Taxi|Bolt/i.test(text)) {
+    } else if (/Taxi/i.test(text)) {
       target = { sectionId: 'map-section' };
     }
     if (!target && !isHome) return;
@@ -3903,6 +3987,7 @@ function renderAll() {
   renderSouvenirs();
   renderReservations();
   renderCheatSheet();
+  renderTaxiInfo();
   renderCheckoutInfo();
   renderFunFacts();
   renderAnalytics();
@@ -4592,6 +4677,43 @@ function bindHeroFacts() {
     f.addEventListener('click', trigger);
     f.addEventListener('keydown', trigger);
   });
+}
+
+function renderTaxiInfo() {
+  const wrap = document.getElementById('taxi-info');
+  if (!wrap || !DATA.taxiInfo) { if (wrap) wrap.innerHTML = ''; return; }
+  const t = DATA.taxiInfo;
+  const tariffs = (t.tariffs || []).map(tar => `
+    <div class="taxi-tariff">
+      <div class="taxi-tariff-label">${esc(tar.label)}</div>
+      <div class="taxi-tariff-value">${esc(tar.value)}</div>
+      ${tar.note ? `<div class="taxi-tariff-note">${esc(tar.note)}</div>` : ''}
+    </div>
+  `).join('');
+  const providers = (t.providers || []).map(p => {
+    const isCallable = /^\+?\d/.test(p.phoneIntl || '') || /^\d/.test(p.phone || '');
+    const href = p.phoneIntl && /^\+?\d/.test(p.phoneIntl)
+      ? `tel:${p.phoneIntl.replace(/\s/g,'')}`
+      : (p.phone && /^\d/.test(p.phone) ? `tel:+382${p.phone}` : null);
+    return `
+    <div class="taxi-provider">
+      <div class="taxi-provider-info">
+        <div class="taxi-provider-name">${esc(p.name)}</div>
+        ${p.note ? `<div class="taxi-provider-note">${esc(p.note)}</div>` : ''}
+      </div>
+      ${href ? `<a class="taxi-provider-phone" href="${safeUrl(href)}">📞 ${esc(p.phone)}</a>` : `<span class="taxi-provider-phone">${esc(p.phone)}</span>`}
+    </div>`;
+  }).join('');
+  const tips = (t.tips || []).map(tip => `<li>${esc(tip)}</li>`).join('');
+  wrap.innerHTML = `
+    <div class="taxi-info-header">
+      <h3>${esc(t.title)}</h3>
+      ${t.subtitle ? `<p>${esc(t.subtitle)}</p>` : ''}
+    </div>
+    ${tariffs ? `<div class="taxi-tariff-grid">${tariffs}</div>` : ''}
+    ${providers ? `<div class="taxi-providers">${providers}</div>` : ''}
+    ${tips ? `<div class="taxi-tips"><div class="taxi-tips-title">▲ Anti-Verarsch-Tipps</div><ul>${tips}</ul></div>` : ''}
+  `;
 }
 
 function renderCheckoutInfo() {
