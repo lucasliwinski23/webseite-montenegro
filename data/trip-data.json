@@ -114,10 +114,10 @@
       "warning": "Luca geht's scheiße, wir kommen nicht zeitig los. Felix-Veto: Brauerei (Akademija) wird heute gestrichen. Stattdessen gleich Mittag im Restaurant mit ein paar Bieren — danach ziehen wir den Plan ab Sportsbar normal durch.",
       "items": [
         { "time": "11:30", "title": "Aufstehen · langsam", "detail": "Luca ist angeschlagen — kein Stress. Wasser, Kaffee, Schmerzmittel falls nötig. Brauerei-Frühstück ist gestrichen, wir starten direkt mit Mittag.", "highlight": false },
-        { "time": "13:00", "title": "Leichtes Mittag · Felix-tauglich · auf Lucas Magen abgestimmt", "detail": "Kein schweres Lamm, kein Fisch (Felix-Veto). Suche: Suppe, Salat, Hähnchen-Risotto, Pasta mit Fleisch, Avocado Toast. Vier Spots, alle nah an der Wohnung. Republic Of Good Food als TOP-PICK fürs Magen-Reset, Forum (TripAdvisor #11/280) als zweite starke Light-Option mit Chicken-Risotto-Star-Gericht.", "highlight": true,
+        { "time": "13:00", "title": "Leichtes Mittag · alle Spots vorher auf 'noch offen' verifiziert", "detail": "Kein schweres Lamm, kein Fisch (Felix-Veto). Suche: Suppe, Salat, Hähnchen-Risotto, Pasta mit Fleisch, vegetarische Optionen. Vier verifizierte aktive Spots, alle ≤5 Min Fußweg. Forum als TOP-PICK (Tripadvisor #11/280, Chicken-Risotto-Star), Štrudla als zweite Light-Option mit Veggie+Fleisch-Mix.", "highlight": true,
           "options": [
-            { "ref": "restaurant:The Republic Of Good Food",        "tag": "TOP-PICK · Salat / Suppe / Smoothie" },
-            { "ref": "restaurant:Restoran Forum",                   "tag": "TOP-11/280 · Chicken Risotto · Café-Vibe" },
+            { "ref": "restaurant:Restoran Forum",                   "tag": "TOP-PICK · #11/280 · Chicken Risotto" },
+            { "ref": "restaurant:Restobar Štrudla",                 "tag": "Veggie+Fleisch · Modern" },
             { "ref": "restaurant:The Living Room Lounge & Dining", "tag": "Lounge · leichter Brunch" },
             { "ref": "restaurant:Restoran Diplomat",                "tag": "Mediterran · 3 Min weg" }
           ]
@@ -431,45 +431,44 @@
       "badge": "Sa Dinner · Option C"
     },
     {
-      "name": "The Republic Of Good Food",
-      "role": "Sa Mittag · LEICHT · TOP-PICK",
+      "name": "Restobar Štrudla",
+      "role": "Sa Mittag · LEICHT · TOP-PICK · Felix-tauglich",
       "category": "brunch",
-      "rating": "4.2",
-      "reviews": "72",
-      "cuisine": "Healthy · Salate · Smoothies",
-      "price": "€ · Mittelklasse-Light",
-      "phone": "+382 67 337 530",
-      "phoneRaw": "+38267337530",
-      "maps": "https://maps.google.com/?q=The+Republic+of+Good+Food+Karadjordjeva+3+Podgorica",
-      "coords": { "lat": 42.4406, "lng": 19.2615 },
-      "menuUrl": "https://foodbook.me/en/profile/the-republic-of-good-food",
+      "rating": "4.4",
+      "reviews": "76",
+      "cuisine": "Modern Bistro · Veggie/Vegan/Meat",
+      "price": "€ · Fair-Mittelklasse",
+      "phone": "+382 67 034 555",
+      "phoneRaw": "+38267034555",
+      "maps": "https://maps.google.com/?q=Restobar+Strudla+Bokeska+16+Podgorica",
+      "coords": { "lat": 42.4416, "lng": 19.2620 },
+      "menuUrl": "https://foodbook.me/profile/strudla-culture-club",
       "menuLabel": "Foodbook",
-      "description": "Karadjordjeva 3, ~5-7 Min Fußweg von der Wohnung. Spezialisiert auf gesundes, leichtes Essen — Salate, Smoothies, frische Säfte, Suppen (potages), Oatmeal, Avocado Toast mit pochierten Eiern, Joghurt-Bowls und Sandwiches. Garten, AC, internationale + mediterrane + vegane/vegetarische Optionen. Wenn der Magen heute streikt, ist das hier die ehrlichste Wahl: nichts Schweres, nichts Frittiertes, nichts mit halbem Lamm. #37 von 223 Restaurants Tripadvisor.",
+      "description": "Bokeška 16, ~5 Min Fußweg von der Wohnung — modern-stylische Mischung aus Restaurant + Lounge-Bar in einer der schönsten Straßen Podgoricas. Mo-So 8:00-02:00 (verifiziert offen 2026). Karte mit englischer Übersetzung deckt vegetarisch, vegan, raw food UND Fleisch ab — also Felix bekommt sein Hähnchen, Luca was Leichtes (Salate, Wraps, Risotto mit Pilzen, Auberginen-Rolls). Tripadvisor-aktiv (~#22-39 von 200+).",
       "reviewQuotes": [
-        { "text": "Excellent lunch — came here for a change from pizza and pasta. Salads, smoothies and avocado toast all brilliant. Service great, prices very fair.", "author": "Tripadvisor", "lang": "en" },
-        { "text": "Fresh, delicious, large portions. Abundance of vegetarian and lighter options — finally a place in Podgorica where you don't roll out feeling stuffed.", "author": "Wanderlog", "lang": "en" },
-        { "text": "Greek salad and avocado toast with poached eggs were standout dishes. Garden seating in summer is lovely.", "author": "Tripadvisor", "lang": "en" }
+        { "text": "Hip bar with good food — modern stylish combination of restaurant and lounge bar in the most beautiful street in central Podgorica. Prices good, team super friendly.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "All in one — the best place in Podgorica! Vegetarian, vegan, raw food and proper meat dishes all on one menu, every dish translated to English.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Trendy bar cafe — great vegetarian and vegan options without losing meat eaters. Fresh orange juice, friendly service, fair prices.", "author": "Tripadvisor", "lang": "en" }
       ],
       "menu": [
-        { "title": "Leicht & Frisch (für angeschlagene Mägen)", "items": [
-          ["Suppe des Tages (potage)", "~5 €"],
-          ["Greek Salad / Caesar", "~7 €"],
-          ["Avocado Toast + pochiertes Ei", "~8 €"],
-          ["Oatmeal mit Beeren", "~5 €"]
+        { "title": "Leicht & Felix-tauglich", "items": [
+          ["Risotto mit Pilzen", "~9 €"],
+          ["Auberginen-Rolls (vegetarisch)", "~7 €"],
+          ["Vegetarian Wrap", "~6 €"],
+          ["Salat-Bowl (Veggie / Hähnchen)", "~7 €"]
         ]},
-        { "title": "Brunch-Klassiker", "items": [
-          ["Joghurt-Bowl mit Granola", "~6 €"],
-          ["Sandwich (Hähnchen / Veggie)", "~7 €"],
-          ["Wrap (Hummus / Falafel)", "~7 €"]
+        { "title": "Fleisch (für Felix)", "items": [
+          ["Hähnchen-Spezialitäten", "~9-12 €"],
+          ["National-Teller (Fleisch)", "~13 €"]
         ]},
-        { "title": "Drinks", "items": [
-          ["Frischer Smoothie", "~4 €"],
-          ["Detox-Saft (Ingwer / Zitrone)", "~4 €"],
-          ["Cappuccino", "~2 €"]
+        { "title": "Drinks & Frisch", "items": [
+          ["Frischer Orangensaft", "~2,50 €"],
+          ["Cappuccino", "~2 €"],
+          ["Hauswein Glas", "~3 €"]
         ]}
       ],
-      "hours": "Täglich 8:00 – 00:00",
-      "badge": "Sa Mittag · LIGHT",
+      "hours": "Täglich 8:00 – 02:00",
+      "badge": "Sa Mittag · LIGHT · TOP",
       "badgeClass": "alt"
     },
     {
@@ -896,8 +895,8 @@
     { "prio": 5, "name": "Babi Gourmet & Wine", "when": "Samstag · Backup B · Freitag vorher reservieren",              "phone": "+382 67 160 393", "phoneRaw": "+38267160393" },
     { "prio": 6, "name": "Steak House Grill",   "when": "Samstag · Backup C · Steak-Alternative",                       "phone": "+382 68 825 954", "phoneRaw": "+38268825954" },
     { "prio": 7, "name": "Stara Kuća",          "when": "Freitag · 3 km außerhalb · Taxi ~5 €",                         "phone": "+382 69 030 204", "phoneRaw": "+38269030204" },
-    { "prio": 8, "name": "The Republic Of Good Food", "when": "Samstag 25.04. · Mittag · TOP-PICK leicht (Salat/Suppe/Avocado Toast)", "phone": "+382 67 337 530", "phoneRaw": "+38267337530" },
-    { "prio": 9, "name": "Restoran Forum",      "when": "Samstag 25.04. · Mittag-Alternative · TOP-11/280 · Chicken-Risotto",   "phone": "+382 69 344 772", "phoneRaw": "+38269344772" },
+    { "prio": 8, "name": "Restoran Forum",      "when": "Samstag 25.04. · Mittag-TOP · #11/280 · Chicken-Risotto",       "phone": "+382 69 344 772", "phoneRaw": "+38269344772" },
+    { "prio": 9, "name": "Restobar Štrudla",    "when": "Samstag 25.04. · Mittag-Alt · Veggie+Fleisch · Bokeška 16",     "phone": "+382 67 034 555", "phoneRaw": "+38267034555" },
     { "prio": 10, "name": "Restoran Maša",      "when": "Reserve · Light Fish · Hinweis: Felix mag keinen Fisch",        "phone": "+382 20 673 010", "phoneRaw": "+38220673010" }
   ],
 
@@ -1036,7 +1035,7 @@
       { "name":"Restoran Protokol",                "lat":42.4483, "lng":19.2719, "cuisine":"Steakhouse",    "rating":4.9, "reviews":623,  "tier":"€€€" },
       { "name":"Babi Gourmet & Wine",              "lat":42.4432, "lng":19.2621, "cuisine":"Gourmet",       "rating":4.8, "reviews":1543, "tier":"€€€" },
       { "name":"Steak House Grill",                "lat":42.4430, "lng":19.2655, "cuisine":"Steakhouse",    "rating":4.7, "reviews":1017, "tier":"€€€" },
-      { "name":"The Republic Of Good Food",        "lat":42.4406, "lng":19.2615, "cuisine":"Healthy",       "rating":4.2, "reviews":72,   "tier":"€"   },
+      { "name":"Restobar Štrudla",                 "lat":42.4416, "lng":19.2620, "cuisine":"Bistro",        "rating":4.4, "reviews":76,   "tier":"€"   },
       { "name":"Restoran Forum",                   "lat":42.4421, "lng":19.2618, "cuisine":"International", "rating":4.6, "reviews":126,  "tier":"€€"  },
       { "name":"Restoran Maša",                    "lat":42.4400, "lng":19.2620, "cuisine":"Mediterran",    "rating":4.6, "reviews":83,   "tier":"€€"  },
       { "name":"SPAGO",                            "lat":42.4375, "lng":19.2560, "cuisine":"Italienisch",   "rating":4.9, "reviews":1641, "tier":"€€"  },
