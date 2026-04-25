@@ -114,10 +114,10 @@
       "warning": "Luca geht's scheiße, wir kommen nicht zeitig los. Felix-Veto: Brauerei (Akademija) wird heute gestrichen. Stattdessen gleich Mittag im Restaurant mit ein paar Bieren — danach ziehen wir den Plan ab Sportsbar normal durch.",
       "items": [
         { "time": "11:30", "title": "Aufstehen · langsam", "detail": "Luca ist angeschlagen — kein Stress. Wasser, Kaffee, Schmerzmittel falls nötig. Brauerei-Frühstück ist gestrichen, wir starten direkt mit Mittag.", "highlight": false },
-        { "time": "13:00", "title": "Leichtes Mittag · auf Lucas Magen abgestimmt", "detail": "Heute kein schweres Lamm-unter-der-Glocke. Wir suchen Suppe, Salat, frischen Fisch oder Avocado Toast. Vier Spots, alle nah, alle bewusst leichter — Republic Of Good Food als TOP-PICK fürs Magen-Reset, die anderen drei als Backup falls sich jemand doch was Mediterranes traut.", "highlight": true,
+        { "time": "13:00", "title": "Leichtes Mittag · Felix-tauglich · auf Lucas Magen abgestimmt", "detail": "Kein schweres Lamm, kein Fisch (Felix-Veto). Suche: Suppe, Salat, Hähnchen-Risotto, Pasta mit Fleisch, Avocado Toast. Vier Spots, alle nah an der Wohnung. Republic Of Good Food als TOP-PICK fürs Magen-Reset, Forum (TripAdvisor #11/280) als zweite starke Light-Option mit Chicken-Risotto-Star-Gericht.", "highlight": true,
           "options": [
             { "ref": "restaurant:The Republic Of Good Food",        "tag": "TOP-PICK · Salat / Suppe / Smoothie" },
-            { "ref": "restaurant:Restoran Maša",                    "tag": "Light Fish · Modern" },
+            { "ref": "restaurant:Restoran Forum",                   "tag": "TOP-11/280 · Chicken Risotto · Café-Vibe" },
             { "ref": "restaurant:The Living Room Lounge & Dining", "tag": "Lounge · leichter Brunch" },
             { "ref": "restaurant:Restoran Diplomat",                "tag": "Mediterran · 3 Min weg" }
           ]
@@ -473,8 +473,50 @@
       "badgeClass": "alt"
     },
     {
+      "name": "Restoran Forum",
+      "role": "Sa Mittag · Light Backup · TOP-Bewertung",
+      "category": "brunch",
+      "rating": "4.6",
+      "reviews": "126",
+      "cuisine": "International · Mediterran · Caffe-Restoran",
+      "price": "€€ · Mittelklasse",
+      "phone": "+382 69 344 772",
+      "phoneRaw": "+38269344772",
+      "maps": "https://maps.google.com/?q=Forum+Restoran+Miljana+Vukova+1-3+Podgorica",
+      "coords": { "lat": 42.4421, "lng": 19.2618 },
+      "menuLabel": "Tripadvisor",
+      "menuUrl": "https://www.tripadvisor.com/Restaurant_Review-g304088-d3954962-Reviews-Forum-Podgorica_Podgorica_Municipality.html",
+      "description": "Caffe-Restoran direkt am Trg Republike (Miljana Vukova 1-3, 3-4 Min von der Wohnung). Tripadvisor #11 von 280 Restaurants Podgoricas — Top-Tier mit entspannter Café-Atmosphäre statt steifem Fine Dining. Tägliches Lunch-Menü zu fairen Preisen, internationale & mediterrane Karte. Star-Gericht: Chicken-Risotto in Butter. Pasta mit Hähnchen oder Rindfleisch, Salate, Suppen, vegetarische Optionen. Kein Seafood-Fokus → Felix-tauglich.",
+      "reviewQuotes": [
+        { "text": "The chicken risotto was the BEST thing my daughter had while in Europe. Wonderful place, impeccable service, reasonable prices.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Unmissable world-class restaurant — must visit if you're in Podgorica. Big choice of dishes, fast polite professional service.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Risotto in butter with chicken — an insatiable palette of contrasting tastes. Café atmosphere right at Trg Republike.", "author": "Tripadvisor", "lang": "en" }
+      ],
+      "menu": [
+        { "title": "Leicht & Felix-tauglich (kein Fisch)", "items": [
+          ["Chicken-Risotto in Butter (Star-Gericht)", "~12 €"],
+          ["Tagliatelle in Pesto-Sauce mit Rindfleisch", "~13 €"],
+          ["Suppe des Tages", "~5 €"],
+          ["Caesar Salad mit gegrilltem Hähnchen", "~9 €"]
+        ]},
+        { "title": "Tägliches Lunch-Menü", "items": [
+          ["Daily-Special (Fleisch oder Veggie)", "~7-9 €"],
+          ["Pasta des Tages", "~9 €"],
+          ["Vegetarisches Risotto", "~10 €"]
+        ]},
+        { "title": "Drinks", "items": [
+          ["Espresso / Cappuccino", "~1,50-2 €"],
+          ["Hauswein Glas", "~3 €"],
+          ["Frischsaft", "~3 €"]
+        ]}
+      ],
+      "hours": "Mo-Sa 7:00 – 00:00 · So 10:00 – 00:00",
+      "badge": "Sa Mittag · TOP-11/280",
+      "badgeClass": "alt"
+    },
+    {
       "name": "Restoran Maša",
-      "role": "Sa Mittag · Light Fish · Alternative",
+      "role": "Light Fish · Modern · Reserve-Option",
       "category": "brunch",
       "rating": "4.6",
       "reviews": "83",
@@ -486,7 +528,7 @@
       "coords": { "lat": 42.4400, "lng": 19.2620 },
       "menuLabel": "Tripadvisor",
       "menuUrl": "https://www.tripadvisor.com/Restaurant_Review-g304088-d2464307-Reviews-Restoran_Masa-Podgorica_Podgorica_Municipality.html",
-      "description": "Sleek-modernes Familien-Restaurant mit 25-jähriger Fine-Dining-Tradition, große Glasfront, hohe Decken, urbane Atmosphäre. Bulevar Svetog Petra Cetinjskog 31, ~8 Min Fußweg. Spezialisiert auf frischen Fisch & Meeresfrüchte — perfekt grillierter Fisch, Garnelen, Seafood-Pasta. Auch Frühstück und hausgemachtes Eis. Tripadvisor #28 von 223. Reviewer nennen es schlicht 'Best restaurant in Podgorica'.",
+      "description": "Sleek-modernes Familien-Restaurant mit 25-jähriger Fine-Dining-Tradition, große Glasfront, hohe Decken, urbane Atmosphäre. Bulevar Svetog Petra Cetinjskog 31, ~8 Min Fußweg. Spezialisiert auf frischen Fisch & Meeresfrüchte — perfekt grillierter Fisch, Garnelen, Seafood-Pasta. Auch Frühstück und hausgemachtes Eis. Tripadvisor #28 von 223. Hinweis: Felix mag keinen Fisch — daher nur als Reserve-Option für Fischfans (Luca solo).",
       "reviewQuotes": [
         { "text": "Strongly recommended. Perfectly cooked fish and prawns. Modern interior, attentive staff, fair price for the quality.", "author": "Tripadvisor", "lang": "en" },
         { "text": "Best restaurant in Podgorica — sleek, airy, glass front, family-run with 25 years of fine-dining know-how.", "author": "Tripadvisor", "lang": "en" },
@@ -508,7 +550,7 @@
         ]}
       ],
       "hours": "Täglich 8:00 – 23:00",
-      "badge": "Sa Mittag · Light Fish",
+      "badge": "Light Fish · Reserve",
       "badgeClass": "alt"
     },
     {
@@ -855,7 +897,8 @@
     { "prio": 6, "name": "Steak House Grill",   "when": "Samstag · Backup C · Steak-Alternative",                       "phone": "+382 68 825 954", "phoneRaw": "+38268825954" },
     { "prio": 7, "name": "Stara Kuća",          "when": "Freitag · 3 km außerhalb · Taxi ~5 €",                         "phone": "+382 69 030 204", "phoneRaw": "+38269030204" },
     { "prio": 8, "name": "The Republic Of Good Food", "when": "Samstag 25.04. · Mittag · TOP-PICK leicht (Salat/Suppe/Avocado Toast)", "phone": "+382 67 337 530", "phoneRaw": "+38267337530" },
-    { "prio": 9, "name": "Restoran Maša",       "when": "Samstag 25.04. · Mittag-Alternative · light fish / modern",     "phone": "+382 20 673 010", "phoneRaw": "+38220673010" }
+    { "prio": 9, "name": "Restoran Forum",      "when": "Samstag 25.04. · Mittag-Alternative · TOP-11/280 · Chicken-Risotto",   "phone": "+382 69 344 772", "phoneRaw": "+38269344772" },
+    { "prio": 10, "name": "Restoran Maša",      "when": "Reserve · Light Fish · Hinweis: Felix mag keinen Fisch",        "phone": "+382 20 673 010", "phoneRaw": "+38220673010" }
   ],
 
   "whatsappTemplate": "Hello! I'd like to make a reservation for 2 people on [Friday 24th] at [19:00]. Name: Luca. Could you please confirm? We'd like a [outside / inside] table if possible. Thank you!",
@@ -994,6 +1037,7 @@
       { "name":"Babi Gourmet & Wine",              "lat":42.4432, "lng":19.2621, "cuisine":"Gourmet",       "rating":4.8, "reviews":1543, "tier":"€€€" },
       { "name":"Steak House Grill",                "lat":42.4430, "lng":19.2655, "cuisine":"Steakhouse",    "rating":4.7, "reviews":1017, "tier":"€€€" },
       { "name":"The Republic Of Good Food",        "lat":42.4406, "lng":19.2615, "cuisine":"Healthy",       "rating":4.2, "reviews":72,   "tier":"€"   },
+      { "name":"Restoran Forum",                   "lat":42.4421, "lng":19.2618, "cuisine":"International", "rating":4.6, "reviews":126,  "tier":"€€"  },
       { "name":"Restoran Maša",                    "lat":42.4400, "lng":19.2620, "cuisine":"Mediterran",    "rating":4.6, "reviews":83,   "tier":"€€"  },
       { "name":"SPAGO",                            "lat":42.4375, "lng":19.2560, "cuisine":"Italienisch",   "rating":4.9, "reviews":1641, "tier":"€€"  },
       { "name":"The Living Room Lounge & Dining",  "lat":42.4435, "lng":19.2625, "cuisine":"International", "rating":4.5, "reviews":612,  "tier":"€€"  },
