@@ -63,14 +63,35 @@ Frage nach **AskUserQuestion** (oder direkt in Klartext, wenn nur 1-2 Punkte feh
 
 **Wenn eine Quelle blockiert (403/503):** nicht aufgeben — andere Quelle ziehen. Tripadvisor-WebFetch failt oft → über Tripadvisor-Search-Snippets gehen oder RestaurantGuru als Fallback.
 
+### Step 2.5 · Rating-Quelle (Google = canonical)
+
+**Pflicht-Standard:** das `rating`-Feld in `data/trip-data.json` ist **immer** die **Google-Maps / Google-Reviews-Bewertung**. Tripadvisor und RestaurantGuru werden zur Quervalidierung herangezogen, aber nicht als kanonische Zahl eingetragen.
+
+**Begründung:** Google hat den breitesten Review-Pool, ist die Quelle, die User selbst checken, und vermeidet Source-Drift zwischen Sessions.
+
+**Pflicht-Felder am Restaurant/Bar-Eintrag:**
+- `rating`: **Google-Rating** (z.B. "4.2", "4.7")
+- `reviews`: Google-Review-Count, falls in der Suche herausziehbar — sonst nächstbeste Quelle (Tripadvisor / RestaurantGuru) und in Commit-Message vermerken
+- `ratingSource`: **immer setzen**. `"google"` wenn Google-Rating verwendet, sonst die genutzte Quelle (`"tripadvisor"`, `"restaurantguru"`).
+
+**Suchquery für Google-Rating:** `"<spot name>" Podgorica Google rating reviews maps`. Suchergebnisse von Aggregatoren wie RestaurantGuru / Wanderlog enthalten oft den Hinweis "Google users granted the rating of X.X to this place" oder "X.X out of 5 stars from Y reviews on Google Maps".
+
+**Niemals Werte schätzen oder zwischen Quellen mitteln.** Wenn du Google nicht findest, dokumentiere die fallback-Quelle in `ratingSource` — das ist ehrlich und nachvollziehbar.
+
 ### Step 3 · Live-Verifikation (Closure-Check)
 
-**Pflicht vor Empfehlung** — sonst empfiehlst du wieder einen geschlossenen Laden (siehe Republic Of Good Food Disaster):
+**Pflicht vor Empfehlung** — sonst empfiehlst du wieder einen geschlossenen Laden (siehe Republic Of Good Food und Štrudla Disasters).
 
-- WebSearch: `"<spot name>" closed permanently 2025 2026 still open`
-- Check: Letztes Review-Datum auf Google Maps / RestaurantGuru / Tripadvisor — wenn älter als 6 Monate: Verdacht
-- Check: Aktive Social-Media-Posts (Instagram/Facebook) im aktuellen Quartal — wenn Insta-Feed seit 8+ Monaten still: starker Verdacht
-- Check: "Geschlossen / Permanently Closed"-Tags auf Google Maps / RestaurantGuru / Snapchat / Foursquare
+**Reihenfolge der Checks (vom verlässlichsten zum schwächsten):**
+
+1. **WebFetch auf RestaurantGuru-Profilseite** — die Seite enthält oft explizit "Permanently closed" als Tag. Das ist der härteste Trigger. WebSearch allein reicht NICHT — die Snippets zeigen oft alte aktive Listings, auch wenn der Spot tot ist.
+2. **WebFetch auf Tripadvisor** — wenn nicht 403. Tripadvisor zeigt geschlossene Spots als "CLOSED" am Top.
+3. **Insta-Feed-Stille:** letzter Post älter als 8 Monate → starker Verdacht
+4. **WebSearch:** `"<spot name>" closed permanently 2025 2026 still open` — als ergänzendes Signal
+5. **Letztes Review-Datum** auf Google Maps / RestaurantGuru / Tripadvisor — wenn älter als 6 Monate: Verdacht
+6. **Maps-/Snapchat-/Foursquare-"Geschlossen"-Tags**
+
+**Anti-Pattern (gelernt aus Republic + Štrudla):** sich nur auf WebSearch-Snippets verlassen. Diese zeigen Cached-Aggregator-Daten, die oft monatelang nicht aktualisiert sind. **Mindestens 1× WebFetch auf RestaurantGuru-Profilseite pro neuem Spot.**
 - Check: Gibt's einen "Reopened" / "Under new management" Hinweis? — dann ist's OK aber neue Reviews stärker gewichten
 
 **Wenn unsicher:** Spot rausnehmen ODER explizit als "Status unklar — vor Hingehen anrufen" markieren. **Nie blindlings empfehlen.**
@@ -120,8 +141,9 @@ In `data/trip-data.json` einbauen mit voller Card:
   "name": "...",
   "role": "...",
   "category": "brunch | dinner | sportsbar | craft | ...",
-  "rating": "4.6",
-  "reviews": "126",
+  "rating": "4.2",
+  "reviews": "134",
+  "ratingSource": "google",
   "cuisine": "...",
   "price": "€€",
   "phone": "+382 ...",

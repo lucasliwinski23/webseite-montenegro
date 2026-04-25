@@ -114,10 +114,9 @@
       "warning": "Luca geht's scheiße, wir kommen nicht zeitig los. Felix-Veto: Brauerei (Akademija) wird heute gestrichen. Stattdessen gleich Mittag im Restaurant mit ein paar Bieren — danach ziehen wir den Plan ab Sportsbar normal durch.",
       "items": [
         { "time": "11:30", "title": "Aufstehen · langsam", "detail": "Luca ist angeschlagen — kein Stress. Wasser, Kaffee, Schmerzmittel falls nötig. Brauerei-Frühstück ist gestrichen, wir starten direkt mit Mittag.", "highlight": false },
-        { "time": "13:00", "title": "Leichtes Mittag · Felix-tauglich · auf Lucas Magen abgestimmt", "detail": "Kein schweres Lamm, kein Fisch (Felix-Veto). Suche: Suppe, Salat, Hähnchen-Risotto, Pasta mit Fleisch, vegetarische Optionen. Vier Spots, alle ≤5 Min Fußweg. Forum als TOP-PICK (Tripadvisor #11/280, Chicken-Risotto-Star), Štrudla als zweite Light-Option mit Veggie+Fleisch-Mix.", "highlight": true,
+        { "time": "13:00", "title": "Leichtes Mittag · Felix-tauglich · auf Lucas Magen abgestimmt", "detail": "Kein schweres Lamm, kein Fisch (Felix-Veto). Suche: Suppe, Salat, Hähnchen-Risotto, Pasta mit Fleisch. Drei Spots, alle ≤5 Min Fußweg. Forum als TOP-PICK (Caffe-Restoran direkt am Trg Republike, Chicken-Risotto-Star), Living Room als Lounge-Brunch, Diplomat als mediterrane Backup-Option.", "highlight": true,
           "options": [
-            { "ref": "restaurant:Restoran Forum",                   "tag": "TOP-PICK · #11/280 · Chicken Risotto" },
-            { "ref": "restaurant:Restobar Štrudla",                 "tag": "Veggie+Fleisch · Modern" },
+            { "ref": "restaurant:Restoran Forum",                   "tag": "TOP-PICK · Trg Republike · Chicken Risotto" },
             { "ref": "restaurant:The Living Room Lounge & Dining", "tag": "Lounge · leichter Brunch" },
             { "ref": "restaurant:Restoran Diplomat",                "tag": "Mediterran · 3 Min weg" }
           ]
@@ -289,8 +288,9 @@
       "name": "Konoba 'Lanterna'",
       "role": "Samstag Dinner · TOP-PICK",
       "address": "Kralja Nikole 36",
-      "rating": "4.6",
-      "reviews": "2.275",
+      "rating": "4.7",
+      "reviews": "501",
+      "ratingSource": "google",
       "cuisine": "Konoba · Seafood · Traditionell",
       "price": "€€ · Mittelklasse-Plus",
       "phone": "+382 67 663 163",
@@ -299,7 +299,7 @@
       "coords": { "lat": 42.4395, "lng": 19.2548 },
       "menuUrl": "https://lanterna.me/en",
       "menuLabel": "Website",
-      "description": "Älteste authentische Konoba Podgoricas, in einem Haus von 1630. Steinmauern, Holz, Terrasse mit zentralem Olivenbaum. Kralja Nikole 36, ~10 Min Fußweg vom Trg Republike. Tripadvisor #4 von 223 Restaurants — Stammgäste nennen sie schlicht 'das beste Restaurant der Stadt'. Spezialität: frischer Fisch & Meeresfrüchte sowie Kačamak (Käse-Klassiker). Große Portionen, faire Preise. Am Wochenende voll — Reservierung Pflicht.",
+      "description": "Älteste authentische Konoba Podgoricas, in einem Haus von 1630. Steinmauern, Holz, Terrasse mit zentralem Olivenbaum. Kralja Nikole 36, ~10 Min Fußweg vom Trg Republike. Stammgäste nennen sie schlicht 'das beste Restaurant der Stadt'. Spezialität: frischer Fisch & Meeresfrüchte sowie Kačamak (Käse-Klassiker). Große Portionen, faire Preise. Am Wochenende voll — Reservierung Pflicht.",
       "reviewQuotes": [
         { "text": "The best restaurant in Podgorica — great service, excellent tasty food, reasonable prices. The terrace with the olive tree is gorgeous.", "author": "Tripadvisor", "lang": "en" },
         { "text": "Squid with potatoes and spinach was outstanding. Kačamak is a must-try — creamy, rich, perfectly done.", "author": "Wanderlog", "lang": "en" },
@@ -433,52 +433,12 @@
       "badge": "Sa Dinner · Option C"
     },
     {
-      "name": "Restobar Štrudla",
-      "role": "Sa Mittag · LEICHT · TOP-PICK · Felix-tauglich",
-      "category": "brunch",
-      "rating": "4.4",
-      "reviews": "76",
-      "cuisine": "Modern Bistro · Veggie/Vegan/Meat",
-      "price": "€ · Fair-Mittelklasse",
-      "phone": "+382 67 034 555",
-      "phoneRaw": "+38267034555",
-      "maps": "https://maps.google.com/?q=Restobar+Strudla+Bokeska+16+Podgorica",
-      "coords": { "lat": 42.4416, "lng": 19.2620 },
-      "menuUrl": "https://foodbook.me/profile/strudla-culture-club",
-      "menuLabel": "Foodbook",
-      "description": "Bokeška 16, ~5 Min Fußweg von der Wohnung — modern-stylische Mischung aus Restaurant + Lounge-Bar in einer der schönsten Straßen Podgoricas. Mo-So 8:00-02:00. Karte mit englischer Übersetzung deckt vegetarisch, vegan, raw food UND Fleisch ab — also Felix bekommt sein Hähnchen, Luca was Leichtes (Salate, Wraps, Risotto mit Pilzen, Auberginen-Rolls). Tripadvisor #22-39 von 200+.",
-      "reviewQuotes": [
-        { "text": "Hip bar with good food — modern stylish combination of restaurant and lounge bar in the most beautiful street in central Podgorica. Prices good, team super friendly.", "author": "Tripadvisor", "lang": "en" },
-        { "text": "All in one — the best place in Podgorica! Vegetarian, vegan, raw food and proper meat dishes all on one menu, every dish translated to English.", "author": "Tripadvisor", "lang": "en" },
-        { "text": "Trendy bar cafe — great vegetarian and vegan options without losing meat eaters. Fresh orange juice, friendly service, fair prices.", "author": "Tripadvisor", "lang": "en" }
-      ],
-      "menu": [
-        { "title": "Leicht & Felix-tauglich", "items": [
-          ["Risotto mit Pilzen", "~9 €"],
-          ["Auberginen-Rolls (vegetarisch)", "~7 €"],
-          ["Vegetarian Wrap", "~6 €"],
-          ["Salat-Bowl (Veggie / Hähnchen)", "~7 €"]
-        ]},
-        { "title": "Fleisch (für Felix)", "items": [
-          ["Hähnchen-Spezialitäten", "~9-12 €"],
-          ["National-Teller (Fleisch)", "~13 €"]
-        ]},
-        { "title": "Drinks & Frisch", "items": [
-          ["Frischer Orangensaft", "~2,50 €"],
-          ["Cappuccino", "~2 €"],
-          ["Hauswein Glas", "~3 €"]
-        ]}
-      ],
-      "hours": "Täglich 8:00 – 02:00",
-      "badge": "Sa Mittag · LIGHT · TOP",
-      "badgeClass": "alt"
-    },
-    {
       "name": "Restoran Forum",
-      "role": "Sa Mittag · Light Backup · TOP-Bewertung",
+      "role": "Sa Mittag · Light · Caffe-Restoran am Trg Republike",
       "category": "brunch",
-      "rating": "4.6",
-      "reviews": "126",
+      "rating": "4.2",
+      "reviews": "134",
+      "ratingSource": "google",
       "cuisine": "International · Mediterran · Caffe-Restoran",
       "price": "€€ · Mittelklasse",
       "phone": "+382 69 344 772",
@@ -487,7 +447,7 @@
       "coords": { "lat": 42.4421, "lng": 19.2618 },
       "menuLabel": "Tripadvisor",
       "menuUrl": "https://www.tripadvisor.com/Restaurant_Review-g304088-d3954962-Reviews-Forum-Podgorica_Podgorica_Municipality.html",
-      "description": "Caffe-Restoran direkt am Trg Republike (Miljana Vukova 1-3, 3-4 Min von der Wohnung). Tripadvisor #11 von 280 Restaurants Podgoricas — Top-Tier mit entspannter Café-Atmosphäre statt steifem Fine Dining. Tägliches Lunch-Menü zu fairen Preisen, internationale & mediterrane Karte. Star-Gericht: Chicken-Risotto in Butter. Pasta mit Hähnchen oder Rindfleisch, Salate, Suppen, vegetarische Optionen. Kein Seafood-Fokus → Felix-tauglich.",
+      "description": "Caffe-Restoran direkt am Trg Republike (Miljana Vukova 1-3, 3-4 Min von der Wohnung). Entspannte Café-Atmosphäre statt steifes Fine Dining. Tägliches Lunch-Menü zu fairen Preisen, internationale & mediterrane Karte. Star-Gericht: Chicken-Risotto in Butter. Pasta mit Hähnchen oder Rindfleisch, Salate, Suppen, vegetarische Optionen. Kein Seafood-Fokus → Felix-tauglich.",
       "reviewQuotes": [
         { "text": "The chicken risotto was the BEST thing my daughter had while in Europe. Wonderful place, impeccable service, reasonable prices.", "author": "Tripadvisor", "lang": "en" },
         { "text": "Unmissable world-class restaurant — must visit if you're in Podgorica. Big choice of dishes, fast polite professional service.", "author": "Tripadvisor", "lang": "en" },
@@ -519,8 +479,9 @@
       "name": "Restoran Maša",
       "role": "Light Fish · Modern · Reserve-Option",
       "category": "brunch",
-      "rating": "4.6",
-      "reviews": "83",
+      "rating": "4.3",
+      "reviews": "560",
+      "ratingSource": "google",
       "cuisine": "Mediterran · Seafood · Modern",
       "price": "€€",
       "phone": "+382 20 673 010",
@@ -529,7 +490,7 @@
       "coords": { "lat": 42.4400, "lng": 19.2620 },
       "menuLabel": "Tripadvisor",
       "menuUrl": "https://www.tripadvisor.com/Restaurant_Review-g304088-d2464307-Reviews-Restoran_Masa-Podgorica_Podgorica_Municipality.html",
-      "description": "Sleek-modernes Familien-Restaurant mit 25-jähriger Fine-Dining-Tradition, große Glasfront, hohe Decken, urbane Atmosphäre. Bulevar Svetog Petra Cetinjskog 31, ~8 Min Fußweg. Spezialisiert auf frischen Fisch & Meeresfrüchte — perfekt grillierter Fisch, Garnelen, Seafood-Pasta. Auch Frühstück und hausgemachtes Eis. Tripadvisor #28 von 223. Hinweis: Felix mag keinen Fisch — daher nur als Reserve-Option für Fischfans (Luca solo).",
+      "description": "Sleek-modernes Familien-Restaurant mit 25-jähriger Fine-Dining-Tradition, große Glasfront, hohe Decken, urbane Atmosphäre. Bulevar Svetog Petra Cetinjskog 31, ~8 Min Fußweg. Spezialisiert auf frischen Fisch & Meeresfrüchte — perfekt grillierter Fisch, Garnelen, Seafood-Pasta. Auch Frühstück und hausgemachtes Eis. Hinweis: Felix mag keinen Fisch — daher nur als Reserve-Option für Fischfans (Luca solo).",
       "reviewQuotes": [
         { "text": "Strongly recommended. Perfectly cooked fish and prawns. Modern interior, attentive staff, fair price for the quality.", "author": "Tripadvisor", "lang": "en" },
         { "text": "Best restaurant in Podgorica — sleek, airy, glass front, family-run with 25 years of fine-dining know-how.", "author": "Tripadvisor", "lang": "en" },
@@ -899,9 +860,8 @@
     { "prio": 5, "name": "Babi Gourmet & Wine", "when": "Samstag · Backup B · Freitag vorher reservieren",              "phone": "+382 67 160 393", "phoneRaw": "+38267160393" },
     { "prio": 6, "name": "Steak House Grill",   "when": "Samstag · Backup C · Steak-Alternative",                       "phone": "+382 68 825 954", "phoneRaw": "+38268825954" },
     { "prio": 7, "name": "Stara Kuća",          "when": "Freitag · 3 km außerhalb · Taxi ~5 €",                         "phone": "+382 69 030 204", "phoneRaw": "+38269030204" },
-    { "prio": 8, "name": "Restoran Forum",      "when": "Samstag 25.04. · Mittag-TOP · #11/280 · Chicken-Risotto",       "phone": "+382 69 344 772", "phoneRaw": "+38269344772" },
-    { "prio": 9, "name": "Restobar Štrudla",    "when": "Samstag 25.04. · Mittag-Alt · Veggie+Fleisch · Bokeška 16",     "phone": "+382 67 034 555", "phoneRaw": "+38267034555" },
-    { "prio": 10, "name": "Restoran Maša",      "when": "Reserve · Light Fish · Hinweis: Felix mag keinen Fisch",        "phone": "+382 20 673 010", "phoneRaw": "+38220673010" }
+    { "prio": 8, "name": "Restoran Forum",      "when": "Samstag 25.04. · Mittag-TOP · Caffe-Restoran am Trg Republike · Chicken-Risotto", "phone": "+382 69 344 772", "phoneRaw": "+38269344772" },
+    { "prio": 9, "name": "Restoran Maša",       "when": "Reserve · Light Fish · Hinweis: Felix mag keinen Fisch",        "phone": "+382 20 673 010", "phoneRaw": "+38220673010" }
   ],
 
   "whatsappTemplate": "Hello! I'd like to make a reservation for 2 people on [Friday 24th] at [19:00]. Name: Luca. Could you please confirm? We'd like a [outside / inside] table if possible. Thank you!",
@@ -1032,16 +992,15 @@
       { "name":"Scottish Pub McCloud", "lat":42.4416, "lng":19.2611, "type":"Pub",       "rating":4.6, "reviews":120 }
     ],
     "restaurants": [
-      { "name":"Konoba 'Lanterna'",                "lat":42.4395, "lng":19.2548, "cuisine":"Konoba",        "rating":4.6, "reviews":2275, "tier":"€€"  },
+      { "name":"Konoba 'Lanterna'",                "lat":42.4395, "lng":19.2548, "cuisine":"Konoba",        "rating":4.7, "reviews":501,  "tier":"€€"  },
       { "name":"Hemera",                           "lat":42.4423, "lng":19.2620, "cuisine":"Italienisch",   "rating":4.7, "reviews":328,  "tier":"€€€" },
       { "name":"Restoran Diplomat",                "lat":42.4423, "lng":19.2645, "cuisine":"Mediterran",    "rating":4.8, "reviews":545,  "tier":"€€"  },
       { "name":"Stara Kuća",                       "lat":42.4515, "lng":19.2891, "cuisine":"Traditionell",  "rating":4.5, "reviews":321,  "tier":"€€"  },
       { "name":"Restoran Protokol",                "lat":42.4483, "lng":19.2719, "cuisine":"Steakhouse",    "rating":4.9, "reviews":623,  "tier":"€€€" },
       { "name":"Babi Gourmet & Wine",              "lat":42.4432, "lng":19.2621, "cuisine":"Gourmet",       "rating":4.8, "reviews":1543, "tier":"€€€" },
       { "name":"Steak House Grill",                "lat":42.4430, "lng":19.2655, "cuisine":"Steakhouse",    "rating":4.7, "reviews":1017, "tier":"€€€" },
-      { "name":"Restobar Štrudla",                 "lat":42.4416, "lng":19.2620, "cuisine":"Bistro",        "rating":4.4, "reviews":76,   "tier":"€"   },
-      { "name":"Restoran Forum",                   "lat":42.4421, "lng":19.2618, "cuisine":"International", "rating":4.6, "reviews":126,  "tier":"€€"  },
-      { "name":"Restoran Maša",                    "lat":42.4400, "lng":19.2620, "cuisine":"Mediterran",    "rating":4.6, "reviews":83,   "tier":"€€"  },
+      { "name":"Restoran Forum",                   "lat":42.4421, "lng":19.2618, "cuisine":"International", "rating":4.2, "reviews":134,  "tier":"€€"  },
+      { "name":"Restoran Maša",                    "lat":42.4400, "lng":19.2620, "cuisine":"Mediterran",    "rating":4.3, "reviews":560,  "tier":"€€"  },
       { "name":"SPAGO",                            "lat":42.4375, "lng":19.2560, "cuisine":"Italienisch",   "rating":4.9, "reviews":1641, "tier":"€€"  },
       { "name":"The Living Room Lounge & Dining",  "lat":42.4435, "lng":19.2625, "cuisine":"International", "rating":4.5, "reviews":612,  "tier":"€€"  },
       { "name":"Gostiona 1928",                    "lat":42.4420, "lng":19.2628, "cuisine":"Traditionell",  "rating":4.4, "reviews":344,  "tier":"€€"  }
