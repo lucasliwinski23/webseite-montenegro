@@ -85,11 +85,10 @@
         { "time": "11:37", "title": "Landung TGD ✓", "detail": "W6 7602 aus Dortmund · Plan 11:15 → Ist 11:37 (22 min verspätet). Koffer geholt, willkommen in Montenegro.", "highlight": false },
         { "time": "12:10", "title": "Taxi ins Zentrum ✓", "detail": "~15 € · 25 Min Fahrt ins Zentrum.", "highlight": false },
         { "time": "13:00", "title": "Wohnung · Check-in + VOLI-Einkauf ✓", "detail": "Slobode 21, 4. Stock. Sonntagsvorrat mit eingekauft (siehe Bier-Inventar Sonntag — wir haben übertrieben).", "highlight": false },
-        { "time": "15:00 — 18:30", "title": "Warmup @ PG Akademija piva ✓", "detail": "Brauereigaststätte, Tasting-Flight, 3,5 h. Erstes Tank-Bier sitzt.", "highlight": true },
-        { "time": "ca. 19:30 — 22:30", "title": "Dinner @ Restoran Diplomat ✓", "detail": "Mediterran-regional, Kalbsbacke in Rotwein, gratis Brotkorb mit Dips. Solider Anker für den Abend bevor es krass wurde.", "highlight": true },
+        { "time": "ca. 14:30 — 18:30", "title": "Pizza-Bude in der Njegoševa · Pizza + Raki · komplett ✓", "detail": "Direkt nach dem Einkauf rüber zur Njegoševa. Pizza-Bude irgendwo zwei (oder fünf?) Häuser von Hemera weg, Richtung Stara Varoš — Name leider weg, der Raki hat ganze Arbeit geleistet. Wir saßen dort ein paar Stunden komplett dicht. Akademija piva war eigentlich als Warmup geplant, ist aber dem Raki-Marathon zum Opfer gefallen.", "highlight": true },
+        { "time": "ca. 19:30 — 22:30", "title": "Dinner @ Restoran Diplomat ✓", "detail": "Mediterran-regional, Kalbsbacke in Rotwein, gratis Brotkorb mit Dips. Solider Anker für den Abend, nachdem der Nachmittag schon wankte.", "highlight": true },
         { "time": "ca. 23:00 — 01:00", "title": "Bar-Stop @ Hemera · Ingwer-Cocktails ✓", "detail": "Boutique-Hotel-Bar in der Njegoševa 17. Cocktails mit Ingwer (genauer Drink-Name aus dem Gedächtnis verflüchtigt). Hotel-Premium-Vibe mit entsprechenden Preisen.", "highlight": true },
-        { "time": "ca. 01:00 — 03:00", "title": "Pizza-Stop in der Njegoševa · Pizza + Raki ✓", "detail": "Irgendeine Pizza-Bude zwei (oder fünf?) Häuser von Hemera weg, Richtung Stara Varoš. Name leider weg — der Raki hat ganze Arbeit geleistet. Beste Pizza-Diagnose des Abends, bestätigt durch das übereinstimmende 'mhm'-Geräusch beider Beteiligter.", "highlight": false },
-        { "time": "ca. 03:00", "title": "Heimweg ✓", "detail": "Zu Fuß zur Wohnung, ca. 8 Min von der Njegoševa. Schlüssel haben funktioniert, Aufzug auch.", "highlight": false }
+        { "time": "ca. 01:00", "title": "Heimweg ✓", "detail": "Zu Fuß zur Wohnung, ca. 8 Min von der Njegoševa. Schlüssel haben funktioniert, Aufzug auch. Nicht selbstverständlich nach so einem Tag.", "highlight": false }
       ]
     },
     {
@@ -605,11 +604,9 @@
   "bars": [
     {
       "name": "PG Akademija piva",
-      "role": "Fr Warmup · ✓ Besucht",
+      "role": "Fr Warmup · 15:00 — 18:30",
       "rating": "4.5", "reviews": "547",
       "type": "Brauerei · Regional",
-      "visited": true,
-      "visitedNote": "Fr 24.04. · Warmup",
       "phone": "+382 67 661 777", "phoneRaw": "+38267661777",
       "maps": "https://maps.google.com/?cid=9768950086476528290",
       "coords": { "lat": 42.4410, "lng": 19.2608 },
