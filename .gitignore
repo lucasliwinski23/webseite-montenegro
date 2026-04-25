@@ -18,8 +18,9 @@ node_modules/
 package.json
 package-lock.json
 
-# Claude Code lokale Config
-.claude/
+# Claude Code lokale Config — alles ignorieren AUSSER geteilten Skills
+.claude/*
+!.claude/skills/
 
 # Screenshots zur Bug-Diagnose (lokal)
 Screenshot*.png
