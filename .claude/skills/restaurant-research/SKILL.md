@@ -36,24 +36,42 @@ Frage nach **AskUserQuestion** (oder direkt in Klartext, wenn nur 1-2 Punkte feh
 
 ### Step 2 · Recherche
 
-**Parallele Suchen** (mehrere `WebSearch` in einem Tool-Block):
+**Goldener Grundsatz:** so breit wie möglich. Die unten gelisteten Quellen sind **Pflicht-Sweep**, nicht abschließend — wenn unterwegs eine bessere oder lokalere Quelle auftaucht (Blog, Reddit, lokale Foodie-Seite, YouTube-Walk-Through, lokales Magazin), die mit reinnehmen.
 
-- Tripadvisor: `"<cuisine>" Podgorica <area> reviews rating ranking`
-- RestaurantGuru: `"<spot name>" Podgorica menu reviews`
-- Wanderlog: `best <category> in <city> <constraints>`
-- Foodbook.me / podgorica.travel (lokal kuratiert)
-- Instagram für Atmosphäre / Fotos (über Web-Search nach `instagram.com`)
+**Pflicht-Sweep (mindestens diese in parallelen WebSearches):**
 
-**Quality-Schwelle:** mindestens **2 unabhängige Quellen** pro Empfehlung mit übereinstimmender Aussage zu Rating + Adresse + Status.
+| Quelle | Wofür | Beispiel-Query |
+|--------|-------|----------------|
+| **Google Maps / Google Reviews** | Live-Status (Open/Closed Permanently), aktuellste Reviews, Photo-Stream, Bewertungs-Verteilung, Distanz | `<spot name> Google Maps Podgorica reviews rating` + Maps-Link via WebFetch wenn vorhanden |
+| **Tripadvisor** | Ranking innerhalb der Stadt (#X von Y), Long-Form-Reviews, Photos | `"<spot name>" Podgorica Tripadvisor rating ranking review count` |
+| **RestaurantGuru** | Speisekarte mit Preisen, Foto-Galerie, Working Hours, Closure-Tags | `"<spot name>" Podgorica restaurantguru menu prices` |
+| **Foodbook.me** | Lokal-Montenegro-Datenbank, oft mit aktuellen Hours + Delivery-Status | `<spot name> foodbook.me profile` |
+| **Wanderlog / Spotted by Locals** | Reise-Listen, Locals-Perspektive, Insider-Tipps | `best <category> in <city> wanderlog spottedbylocals` |
+| **Instagram / Facebook** | Visuelle Eval (Interieur, Teller, Atmosphäre), Aktivitätsnachweis (letzter Post = lebt der Laden noch?) | `instagram.com/<handle>` oder `facebook.com/<handle>` |
+| **Lokale Tourismus-Seiten** | Kuratierte Empfehlungen mit lokalem Bias-Check | `podgorica.travel`, `montenegro.travel`, `montenegropulse.com` |
+| **Reddit / Forums** | Ehrliche Locals-Meinungen ohne PR-Filter | `reddit.com r/montenegro <spot name>`, Tripadvisor-Forum-Threads |
+| **YouTube** | Walking-Tours, Food-Vlogs, Atmosphäre in Bewegung | `<spot name> Podgorica review youtube` |
+| **Lokale Food-Blogs / Magazine** | Tiefere Einordnung, manchmal versteckte Gems | `<city> food blog <cuisine>`, "earthtoeditorial", "theculturetrip", etc. |
+
+**Google-Maps-Strategie:**
+- Wenn der User einen `maps.app.goo.gl/...`-Link liefert → direkt mit `WebFetch` resolven, daraus Name + Adresse + Coords ziehen
+- Auch ohne Link: Google-Suche `"<spot name>" maps Podgorica` → liefert oft Maps-Cards mit Status, Hours, Top-Reviews-Snippets
+- Photo-Eval: wenn aus Search-Ergebnissen Photo-Beschreibungen kommen ("dim lighting, plastic chairs", "Renaissance art, grand piano"), das nutzen für Atmosphären-Einordnung
+- "Permanently Closed"-Tag in Maps-Snippets → SOFORT-RAUS-KRITERIUM
+
+**Quality-Schwelle:** mindestens **2 unabhängige Quellen** pro Empfehlung mit übereinstimmender Aussage zu Rating + Adresse + Status. **3+ Quellen** wenn der Spot prominent in der Empfehlung landet (TOP-PICK).
+
+**Wenn eine Quelle blockiert (403/503):** nicht aufgeben — andere Quelle ziehen. Tripadvisor-WebFetch failt oft → über Tripadvisor-Search-Snippets gehen oder RestaurantGuru als Fallback.
 
 ### Step 3 · Live-Verifikation (Closure-Check)
 
 **Pflicht vor Empfehlung** — sonst empfiehlst du wieder einen geschlossenen Laden (siehe Republic Of Good Food Disaster):
 
 - WebSearch: `"<spot name>" closed permanently 2025 2026 still open`
-- Check: Letztes Review-Datum auf RestaurantGuru / Tripadvisor — wenn älter als 6 Monate: Verdacht
-- Check: Aktive Social-Media-Posts (Instagram/Facebook) im aktuellen Quartal
-- Check: "Geschlossen"-Tags auf Maps / Snapchat / Foursquare
+- Check: Letztes Review-Datum auf Google Maps / RestaurantGuru / Tripadvisor — wenn älter als 6 Monate: Verdacht
+- Check: Aktive Social-Media-Posts (Instagram/Facebook) im aktuellen Quartal — wenn Insta-Feed seit 8+ Monaten still: starker Verdacht
+- Check: "Geschlossen / Permanently Closed"-Tags auf Google Maps / RestaurantGuru / Snapchat / Foursquare
+- Check: Gibt's einen "Reopened" / "Under new management" Hinweis? — dann ist's OK aber neue Reviews stärker gewichten
 
 **Wenn unsicher:** Spot rausnehmen ODER explizit als "Status unklar — vor Hingehen anrufen" markieren. **Nie blindlings empfehlen.**
 
