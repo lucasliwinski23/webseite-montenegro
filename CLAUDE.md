@@ -45,6 +45,17 @@ README.md                 Projekt-Übersicht
 - **Maps-Links:** Immer in neuem Tab (`target="_blank" rel="noopener"`).
 - **Performance-Ziele:** Lighthouse Performance > 85, Accessibility > 95.
 
+## Recherche-Suchparameter (intern, nicht für Website-Copy)
+
+- **Schließungs-Status immer vor Empfehlung verifizieren** (RestaurantGuru / Tripadvisor / Foodbook). Nicht ungeprüft empfehlen.
+- **Tourist-Trap-Heuristik** für `touristTrap`-Markierung in `trip-data.json`:
+  - Lage > Qualität (zentrale Tourist-Magneten mit Reviews à la "great location, fair food")
+  - **Sky-Bars / Rooftop-Bars / Hotel-Restaurants** = Default-Verdacht
+  - Polarisierte Reviews (5⭐ + 1⭐ ohne Mitte)
+  - Pricing-Transparency-Issues (Pricing-by-Weight ohne Hinweis, versteckte Couvert-/Bread-Charges)
+  - Premium-Preise + gemischte Quality-Reviews
+- **Methodik-Notizen gehören in Commit-Messages oder CLAUDE.md**, nicht in user-facing Itinerary-Texte.
+
 ## Lokal testen
 
 ```bash
