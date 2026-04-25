@@ -1604,12 +1604,15 @@ body.map-fullscreen-active .bottom-nav {
   color: #231B14;
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 700;
-  font-size: 0.52rem;
-  padding: 2px 5px;
+  font-size: 0.62rem;
+  padding: 2px 6px;
   border-radius: 999px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
   white-space: nowrap;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   border: 1px solid rgba(0,0,0,0.15);
   box-shadow: 0 1px 3px rgba(0,0,0,0.25);
   /* Default versteckt — nur bei hohem Zoom oder bei aktivem Pin sichtbar */
@@ -4982,15 +4985,15 @@ function initMap() {
   const markerById = new Map();
   let markersGroup = L.layerGroup().addTo(map);
 
-  function customIcon(type, isFav, isHere) {
+  function customIcon(type, isFav, isHere, name) {
     const color = TYPE_COLORS[type] || TYPE_COLORS.rest;
     const ic = TYPE_ICON[type] || '●';
-    const label = TYPE_LABEL[type] || '';
+    const label = name || TYPE_LABEL[type] || '';
     return L.divIcon({
       className: 'custom-pin',
       html: `<div class="map-pin-wrap${isFav?' fav':''}${isHere?' here':''}">
         <div class="map-pin" style="background:${color}"><span class="map-pin-icon">${ic}</span></div>
-        <span class="map-pin-label">${label}</span>
+        <span class="map-pin-label">${esc(label)}</span>
       </div>`,
       iconSize: [80, 56],
       iconAnchor: [40, 38],
@@ -5031,7 +5034,7 @@ function initMap() {
       if (!activeFilter.has(p.type)) return;
       const isFav = p.spotId && FAVS.has(p.spotId);
       const isHere = window.__nearestSpotId && p.spotId === window.__nearestSpotId;
-      const m = L.marker([p.lat, p.lng], { icon: customIcon(p.type, isFav, isHere) });
+      const m = L.marker([p.lat, p.lng], { icon: customIcon(p.type, isFav, isHere, p.n) });
       const homeUrl = homeNavUrl(p);
       const popup = `<strong>${esc(p.n)}</strong><small>${esc(p.info)}</small>` +
         `<div class="popup-actions">
