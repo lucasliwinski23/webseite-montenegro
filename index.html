@@ -500,7 +500,57 @@ body {
 }
 
 /* Countdown */
-.countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; max-width: 500px; margin-bottom: 26px; }
+.countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; max-width: 500px; margin-bottom: 18px; }
+.hero-alerts { max-width: 500px; margin: 0 0 22px; display: flex; flex-direction: column; gap: 10px; }
+.hero-alerts:empty { display: none; }
+.hero-alert {
+  background: rgba(224,122,46,0.16);
+  border-left: 4px solid var(--accent-warn);
+  border-radius: 6px;
+  padding: 12px 16px;
+  display: flex; align-items: flex-start; gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  animation: heroAlertPulse 2.4s ease-in-out infinite;
+  transition: transform 0.18s ease, background 0.18s ease;
+  border-top: 0; border-right: 0; border-bottom: 0;
+}
+.hero-alert:hover, .hero-alert:focus-visible {
+  background: rgba(224,122,46,0.24);
+  transform: translateX(2px);
+  outline: none;
+}
+.hero-alert-icon { font-size: 1.5rem; line-height: 1; color: var(--accent-warn); flex-shrink: 0; margin-top: 1px; }
+.hero-alert-body { min-width: 0; flex: 1; }
+.hero-alert-day {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent-warn); font-weight: 700; margin-bottom: 2px;
+}
+.hero-alert-title {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 0.95rem; font-weight: 700; color: var(--hero-text); margin-bottom: 4px;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.hero-alert-text { font-size: 0.85rem; line-height: 1.4; color: var(--hero-text-muted); }
+.hero-alert-cta {
+  display: inline-block; margin-top: 6px;
+  font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent-warn); font-weight: 600;
+}
+@keyframes heroAlertPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(224,122,46,0.45); }
+  50%     { box-shadow: 0 0 0 10px rgba(224,122,46,0); }
+}
+@media (prefers-reduced-motion: reduce) { .hero-alert { animation: none; } }
+@media (max-width: 480px) {
+  .hero-alert { padding: 10px 12px; gap: 10px; }
+  .hero-alert-title { font-size: 0.85rem; }
+  .hero-alert-text { font-size: 0.78rem; }
+}
 .cd-cell {
   background: var(--hero-surface-strong);
   border: 1px solid var(--hero-border);
@@ -2856,6 +2906,7 @@ main { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
       <div class="cd-cell"><div class="cd-num" id="cd-min">—</div><div class="cd-label">Min</div></div>
       <div class="cd-cell"><div class="cd-num" id="cd-sec">—</div><div class="cd-label">Sek</div></div>
     </div>
+    <div class="hero-alerts" id="hero-alerts" aria-label="Akute Plan-Updates"></div>
     <div class="hero-stats">
       <div class="hero-stat"><div class="hero-stat-num" id="stat-rest">—</div><div class="hero-stat-label">Restaurants</div></div>
       <div class="hero-stat"><div class="hero-stat-num" id="stat-bars">—</div><div class="hero-stat-label">Kneipen</div></div>
@@ -3710,6 +3761,7 @@ async function loadData() {
 
 function renderAll() {
   renderHero();
+  renderHeroAlerts();
   renderTicker();
   renderFlights();
   initFlightStatus();
@@ -3797,6 +3849,35 @@ function renderHero() {
       });
     });
   }
+}
+
+function renderHeroAlerts() {
+  const wrap = document.getElementById('hero-alerts');
+  if (!wrap || !Array.isArray(DATA.itinerary)) return;
+  const alerts = DATA.itinerary
+    .map((d, i) => ({ d, i }))
+    .filter(({ d }) => d.warning && d.warningTitle);
+  if (!alerts.length) { wrap.innerHTML = ''; return; }
+  wrap.innerHTML = alerts.map(({ d, i }) => `
+    <button type="button" class="hero-alert" data-day="${i+1}" aria-label="${esc(d.warningTitle)} · zum ${esc(d.day)}-Plan springen">
+      <span class="hero-alert-icon" aria-hidden="true">▲</span>
+      <span class="hero-alert-body">
+        <span class="hero-alert-day">${esc(d.day)} · ${esc(d.date)}</span>
+        <span class="hero-alert-title">${esc(d.warningTitle)}</span>
+        <span class="hero-alert-text">${esc(d.warning)}</span>
+        <span class="hero-alert-cta">→ Zum Tagesplan</span>
+      </span>
+    </button>
+  `).join('');
+  wrap.querySelectorAll('.hero-alert').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const day = btn.dataset.day;
+      const tab = document.querySelector(`.day-tab[data-day="${day}"]`);
+      const plan = document.getElementById('plan');
+      if (plan) plan.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (tab) setTimeout(() => tab.click(), 250);
+    });
+  });
 }
 
 function renderTicker() {
