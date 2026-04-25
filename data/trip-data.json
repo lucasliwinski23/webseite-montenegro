@@ -122,7 +122,7 @@
             { "ref": "bar:Itaka Library Bar",     "tag": "Outdoor / Fluss" }
           ]
         },
-        { "time": "23:00 — 00:00", "title": "Heimweg · realistisch", "detail": "Bolt oder zu Fuß. Wir tun nicht so, als ginge das hier bis 03:00 — Luca hat seine Performance schon in der Freitag-Pizza-Bude abgeliefert. Sonntag haben wir noch Auscheck (siehe Auscheck-Sektion unter Cheat Sheet) plus Flughafen — also lieber jetzt ins Bett.", "highlight": false }
+        { "time": "23:00 — 00:00", "title": "Heimweg · realistisch", "detail": "Taxi (Halo 19700 / City 19711) oder zu Fuß. Wir tun nicht so, als ginge das hier bis 03:00 — Luca hat seine Performance schon in der Freitag-Pizza-Bude abgeliefert. Sonntag haben wir noch Auscheck (siehe Auscheck-Sektion unter Cheat Sheet) plus Flughafen — also lieber jetzt ins Bett.", "highlight": false }
       ]
     },
     {
@@ -141,7 +141,7 @@
             { "ref": "restaurant:Gostiona 1928",     "tag": "Tradition · 2 Min" }
           ]
         },
-        { "time": "14:15", "title": "Taxi zum TGD", "detail": "Eko Taxi oder Bolt-App, ~15 €, 25 Min Fahrt.", "highlight": false },
+        { "time": "14:15", "title": "Taxi zum TGD", "detail": "Halo Taxi (19700) oder City Taxi (19711) anrufen — Festpreis Flughafen-Transfer ~12-15 €, 25 Min Fahrt. Taximeter muss laufen, Preisliste hängt im Auto. Siehe Taxi-Info unter Cheat Sheet.", "highlight": false },
         { "time": "14:45", "title": "Am Flughafen", "detail": "Check-in, Security. Wizz Air ist streng mit Handgepäck.", "highlight": false },
         { "time": "17:30", "title": "Abflug W6 7601", "detail": "Zurück nach Dortmund. 2:25 h Flugzeit.", "highlight": true },
         { "time": "19:55", "title": "Landung DTM", "detail": "Willkommen zurück. Mission complete.", "highlight": false }
@@ -849,44 +849,43 @@
   "whatsappTemplate": "Hello! I'd like to make a reservation for 2 people on [Friday 24th] at [19:00]. Name: Luca. Could you please confirm? We'd like a [outside / inside] table if possible. Thank you!",
 
   "checkoutInfo": {
-    "title": "Sonntag · Auscheck-Kommando",
-    "subtitle": "Wie wir dieses Bier-Massaker geordnet auflösen",
-    "intro": "Liebes Tagebuch: Wir haben am Freitag bei VOLI ungefähr ein halbes Lager an Pivo eingekauft, weil 'man weiß ja nie' und 'Sonntag ist alles zu'. Stand jetzt sieht's aus, als hätten wir ein bisschen optimistisch gerechnet. Hier der geordnete Rückzug — Schritt für Schritt, damit die Wohnung übergabefähig bleibt und der Fluganstand erhalten ist.",
+    "title": "Sonntag · Auscheck mit Würde",
+    "subtitle": "Wir trinken bis 15:00 Uhr Bier, dann müssen wir zum Flughafen",
+    "intro": "Wir haben am Freitag bei VOLI ungefähr ein halbes Lager an Pivo eingekauft, weil 'man weiß ja nie' und 'Sonntag ist alles zu'. Plot Twist: wir haben ungefähr ein Drittel davon getrunken. Plan ist simpel — bis 15:00 Uhr trinken wir das weg, was wir wegbekommen, dann ab ins Taxi zum TGD.",
     "sections": [
       {
-        "title": "Bier-Inventur · Samstag-Abend-Stand",
+        "title": "Bier-Plan · bis 15:00 wegtrinken",
         "icon": "🍺",
         "items": [
-          "Vollständige Bestandsaufnahme im Kühlschrank + Vorratsregal. Voraussichtliche Schätzung: ein Drittel des Einkaufs überlebt.",
-          "Was kalt ist → Samstag-Abend-Reserve. Was warm ist → bleibt warm, niemand verschwendet jetzt noch Kühl-Kapazität.",
-          "Pfandflaschen separat sammeln (in Montenegro selten Pfand, aber falls Glas-Sammelstelle bekannt → dort)."
+          "Was kalt ist → priorisiert. Was warm ist → trotzdem in Reichweite stellen, wir sind keine Snobs.",
+          "Frühstücksbier ist erlaubt. 11:00 ist hier kein magischer Cutoff, wir sind in Montenegro.",
+          "Was um 14:30 noch übrig ist, bleibt in der Wohnung als Trinkgeld für die Reinigung. Realismus schlägt Stolz."
         ]
       },
       {
-        "title": "Sonntag-Vormittag · letzte Runde mit Stil",
-        "icon": "🌅",
-        "items": [
-          "Frühstücksbier ist erlaubt, aber bitte mit Kaffee dazu — Sonntag-Etikette.",
-          "Was bis 11:00 nicht getrunken ist, wird nicht mehr getrunken. Realismus schlägt Stolz.",
-          "Reste-Bier in der Wohnung lassen (Notiz für Vermieter: 'Geschenk, Trinkgeld, kein Reklamationsfall')."
-        ]
-      },
-      {
-        "title": "Müll & Ordnung · der unschöne Teil",
+        "title": "Müll · das Nötigste",
         "icon": "🗑️",
         "items": [
-          "Glasflaschen → Glascontainer (in Stara Varoš und am Trg Republike vorhanden). Wer Lust hat, schleppt; alle anderen sammeln neben dem Mülleimer.",
-          "Restmüll + Plastik → Hausmülltonne im Innenhof. Tüten vorher zuknoten, sonst Aufstand bei den Nachbarn.",
-          "Pizzakartons, Snack-Verpackungen, alles was nach Rakija duftet → Restmüll. Nicht im Kühlschrank vergessen."
+          "Glasflaschen + Restmüll in die Tonne im Innenhof. Tüte zuknoten, fertig.",
+          "Was offensichtlich riecht (Pizzakarton, alte Snacks) → mit raus. Alles andere darf bleiben."
         ]
       },
       {
-        "title": "Wohnungs-Übergabe · vor dem Taxi",
+        "title": "Wohnung · ohne Putz-Drama",
         "icon": "🔑",
         "items": [
-          "Spülmaschine starten oder Geschirr abspülen. Nicht: 'das macht die Reinigung schon'. Doch — wir machen das vorher.",
-          "Bett gemacht, Handtücher gestapelt, Müll raus, Kühlschrank geleert (außer Bier-Geschenk siehe oben).",
-          "Schlüssel nach Vereinbarung mit Host — Standard ist auf dem Esstisch liegen lassen + Tür ins Schloss ziehen."
+          "Wir spülen kein Geschirr und werfen keine Maschinen an — die Reinigung kommt sowieso.",
+          "Was wir machen: Müll raus, eigene Sachen einpacken, Schlüssel nach Host-Vereinbarung deponieren.",
+          "Bei Unklarheit: kurze Nachricht an den Vermieter, fertig."
+        ]
+      },
+      {
+        "title": "14:15 · Taxi rufen",
+        "icon": "🚕",
+        "items": [
+          "Halo Taxi 19700 oder City Taxi 19711 anrufen, Adresse Slobode 21 angeben.",
+          "Festpreis Flughafen-Transfer ~12-15 €. Taximeter läuft sichtbar, Preisliste muss im Auto hängen.",
+          "Klik Taxi App (kliktaxi.me) als Backup falls Telefon zickt."
         ]
       },
       {
@@ -895,11 +894,36 @@
         "items": [
           "Pässe, Boarding-Pässe, Wallet, Telefon-Akku → Hosentasche, nicht Koffer.",
           "Wizz-Air-Handgepäck-Maße checken (40×30×20 cm gratis). Was nicht reinpasst, wird unterwegs entsorgt oder angezogen.",
-          "Letzter Blick: Steckdosen, Fenster, Klimaanlage aus, Kühlschrank zu, Lichter aus."
+          "Letzter Blick: Fenster zu, Klimaanlage aus, Lichter aus, Tür ins Schloss."
         ]
       }
     ],
-    "footer": "Nicht panisch. Wir kriegen das hin. Im Notfall: Vermieter anrufen, Bolt rufen, weiter atmen. Živjeli — und tschüss Podgorica."
+    "footer": "Nicht panisch. Im Notfall: Vermieter anrufen, Halo Taxi 19700, weiter atmen. Živjeli — und tschüss Podgorica."
+  },
+
+  "taxiInfo": {
+    "title": "Taxi · Standardtarife & Anti-Verarsch-Spickzettel",
+    "subtitle": "Damit wir wissen, ob der Taxameter Sinn ergibt oder Dichtung ist",
+    "tariffs": [
+      { "label": "Grundpreis (Start)", "value": "0,50 — 1,00 €", "note": "Standard ~0,80 €" },
+      { "label": "Pro Kilometer", "value": "0,65 — 1,80 €", "note": "Standard ~0,80-1,00 €" },
+      { "label": "Wartezeit pro Stunde", "value": "10 — 15 €", "note": "selten relevant" },
+      { "label": "Flughafen → Zentrum (25 Min)", "value": "12 — 15 €", "note": "Festpreis üblich" },
+      { "label": "Innerhalb Zentrum (5 Min)", "value": "3 — 5 €", "note": "z.B. Slobode → Hercegovačka" }
+    ],
+    "providers": [
+      { "name": "Halo Taxi", "phone": "19700", "phoneIntl": "+382 69 019 700", "note": "Klassiker, etabliert" },
+      { "name": "City Taxi", "phone": "19711", "phoneIntl": "+382 69 019 711", "note": "Alternative, 0–24" },
+      { "name": "Klik Taxi App", "phone": "kliktaxi.me", "phoneIntl": "App", "note": "Nur registrierte Anbieter — keine Privatpiraten" }
+    ],
+    "tips": [
+      "Taximeter MUSS sichtbar laufen. Wenn er ausgeschaltet bleibt — aussteigen, anderen rufen.",
+      "Preisliste hängt per Gesetz im Auto (in der Regel an der Beifahrertür). Vorher angucken kostet nix.",
+      "Drivers ohne offizielle Lizenz-Plakette innen am Armaturenbrett = Privatpirat = teurer Spaß.",
+      "Bargeld bevorzugt, Karte oft nicht akzeptiert. Wechsel klein halten — '20 € auf 4 € Fahrt' = Diskussion garantiert.",
+      "Ungefähr-Check vor der Fahrt: Slobode → TGD sollte ~10 km / ~25 Min sein. Wenn der Fahrer 'Stau' angibt und 25 € fordert: zweite Meinung holen.",
+      "Trinkgeld 5-10 % ist üblich, kein Muss."
+    ]
   },
 
   "funFacts": {
@@ -975,10 +999,10 @@
     {
       "title": "Taxi",
       "rows": [
-        ["Eko Taxi", "+382 19 700"],
-        ["Bolt", "App"],
-        ["Flughafen", "~15 €"],
-        ["Zentrum", "25 Min"]
+        ["Halo Taxi", "19700"],
+        ["City Taxi", "19711"],
+        ["Klik Taxi App", "kliktaxi.me"],
+        ["Flughafen", "~12-15 €"]
       ]
     },
     {
