@@ -899,6 +899,79 @@
     "footer": "Nicht panisch. Im Notfall: Vermieter anrufen, Halo Taxi 19700, weiter atmen. Živjeli — und tschüss Podgorica."
   },
 
+  "manifesto": {
+    "title": "Plan Luca & Flex · Das 100-Tage-Manifest",
+    "subtitle": "Wenn man uns Montenegro überlässt — satirisch, nicht der EU-Kommission zuschicken.",
+    "intro": "Auf Basis der Wirtschafts-Analyse (siehe ideas/montenegro-economic-strategy.md im Repo) haben wir uns gefragt: Was würden Luca & Flex konkret in 100 Tagen umsetzen, wenn man uns hier den Schlüssel in die Hand drücken würde? Antwort folgt — bitte mit dem nötigen Augenzwinkern lesen.",
+    "phases": [
+      {
+        "label": "Tag 1 — Antrittsrede",
+        "icon": "🎤",
+        "items": [
+          "Vereidigung in der Pizza-Bude in der Njegoševa, Name immer noch unbekannt — wir machen die Bude einfach zur ersten Botschaft.",
+          "Erste Amtshandlung: Heizstrahler-Audit in allen öffentlichen Gebäuden. Die 7. Klimazone wird wissenschaftlich vermessen.",
+          "Verfassungs-Präambel ergänzt um den Satz: 'Pivo ist Grundnahrungsmittel.'"
+        ]
+      },
+      {
+        "label": "Tag 2-14 — Wirtschaft",
+        "icon": "💸",
+        "items": [
+          "Mehrwertsteuer auf Tuborg vom Fass: 0 %. Mehrwertsteuer auf Tuborg aus der Dose: 25 %. Wir wollen Qualitäts-Konsum fördern.",
+          "Pivo-Pfand wird eingeführt — 5 Cent pro Flasche. Wir hatten Sonntag morgen 47 Flaschen rumstehen, das nennt sich Geschäftsmodell.",
+          "Akademija piva wird zur Nationalbank umgewidmet. Tasting-Flight statt Leitzins."
+        ]
+      },
+      {
+        "label": "Tag 15-30 — Tourismus",
+        "icon": "🛥️",
+        "items": [
+          "Tourist-Trap-Steuer: jeder Spot mit 'Sky' oder 'Rooftop' im Namen zahlt 30 % Aufschlag, der direkt an Genesungs-Fonds für Trip-Geschädigte fließt.",
+          "Yacht-Ankerplätze werden in der Boka-Bucht verdoppelt. Ankerplatz-Reservierungs-Pflicht für Yachten >40 m. Tagesgebühr 2.000 € — geht direkt in den Heizstrahler-Verbots-Fonds.",
+          "Kotor-Stadtmauer-Eintrittspreise nach Algorithmus: je oranger der Sonnenbrand der Tagesgäste, desto höher der Preis."
+        ]
+      },
+      {
+        "label": "Tag 31-50 — Justiz & Inneres",
+        "icon": "⚖️",
+        "items": [
+          "Korruptions-Sondergericht namens 'Tribunal Diplomat' (in Anlehnung an unser Lieblings-Restaurant). Verhandlungen nur an Tischen mit Brotkorb und drei Dips.",
+          "Heizstrahler im Badezimmer ohne Auto-Off-Funktion: ab 2027 verboten. Bestand-Heizstrahler bekommen einen QR-Code, der bei Gebrauch eine Push-Notification an den Vermieter schickt.",
+          "Pizza-Buden-Register: jede Pizza-Bude in der Njegoševa muss ein Schild aushängen. Anonyme Pizza-Buden gefährden den Tourismus-Nachvollzug."
+        ]
+      },
+      {
+        "label": "Tag 51-70 — Sport & Kultur",
+        "icon": "⚽",
+        "items": [
+          "Bundesliga-Bezugspflicht in allen Sportsbars zwischen 15:30 und 17:30 lokal. Wer Premier League zeigt, muss auch Bundesliga zeigen — Demokratie verlangt Pluralismus.",
+          "Pub WWW wird zum geschützten Kulturgut erklärt. Tuborg vom Fass wird UNESCO-Welterbe-Antrag (immaterielles Kulturerbe).",
+          "Konoba 'Lanterna' bekommt den Status eines Nationalheiligtums. Reservierungen werden per Lotterie verteilt, damit Touristen eine faire Chance haben."
+        ]
+      },
+      {
+        "label": "Tag 71-90 — Außenpolitik",
+        "icon": "🌍",
+        "items": [
+          "EU-Beitritts-Verhandlungen: Final-Push. Wir bringen Brüssel zwei Flaschen Vranac und einen Vorrat an Kačamak. Sollte reichen.",
+          "Sister-City-Programm Podgorica ↔ Dortmund (wegen Wizz-Air-Direktflug). Tausch: Borussia-Dortmund-Schal gegen Plantaže-Vranac-Kiste.",
+          "Bilateral-Abkommen mit Serbien zum Raki-Mindeststandard. 40 % Vol oder es zählt nicht."
+        ]
+      },
+      {
+        "label": "Tag 91-100 — Bilanz",
+        "icon": "📊",
+        "items": [
+          "BIP/Kopf-Wachstum: noch nicht messbar. Nicht-Bier-Anteil am Kaffeeladen-Umsatz: leicht gesunken.",
+          "Heizstrahler-Pannen pro Apartment-Nacht: -23 %. Tuborg-vom-Fass-Konsum: +47 %. Beides als Erfolg verbucht.",
+          "Kabinett tritt geschlossen zurück, weil wir festgestellt haben: managen ist anstrengend, und im Pub WWW läuft das Spiel.",
+          "Übergabe an die nächste Regierung mit folgendem Brief: 'Heizstrahler aus, Schlüssel auf dem Tisch. Živjeli.'"
+        ]
+      }
+    ],
+    "footer": "Disclaimer: Dieses Dokument hat keine politische Wirkung. Sollte es trotzdem versehentlich umgesetzt werden, übernehmen wir keine Verantwortung — außer für die Tuborg-Reform, die war ernst gemeint."
+  },
+
   "taxiInfo": {
     "title": "Taxi · Standardtarife & Anti-Verarsch-Spickzettel",
     "subtitle": "Damit wir wissen, ob der Taxameter Sinn ergibt oder Dichtung ist",

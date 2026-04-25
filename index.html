@@ -2311,6 +2311,63 @@ body.map-fullscreen-active .bottom-nav {
 }
 
 /* ============================================================
+   MANIFESTO — 100-Tage-Plan (Satire)
+   ============================================================ */
+.manifesto { margin-top: 60px; }
+.manifesto:empty { display: none; }
+.manifesto-header { margin-bottom: 18px; text-align: left; }
+.manifesto-header h3 {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 1.4rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--text-primary); margin-bottom: 4px;
+}
+.manifesto-header p {
+  color: var(--text-muted); font-size: 0.85rem; line-height: 1.55;
+  max-width: 56ch; font-style: italic;
+}
+.manifesto-intro {
+  padding: 14px 16px; margin-bottom: 18px;
+  background: var(--bg-card); border-left: 3px solid var(--accent-primary);
+  border-radius: 4px; font-size: 0.88rem; line-height: 1.6;
+  color: var(--text-muted); max-width: 64ch;
+}
+.manifesto-phase {
+  margin-bottom: 14px;
+  background: var(--bg-card); border: 1px solid var(--border-soft);
+  border-radius: 6px; overflow: hidden;
+}
+.manifesto-phase-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--bg-secondary);
+}
+.manifesto-phase-icon { font-size: 1.15rem; line-height: 1; flex-shrink: 0; }
+.manifesto-phase-label {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--accent-primary);
+}
+.manifesto-phase ul { list-style: none; padding: 6px 14px 12px; margin: 0; }
+.manifesto-phase li {
+  padding: 8px 0; padding-left: 22px; position: relative;
+  font-size: 0.86rem; line-height: 1.55; color: var(--text-muted);
+  border-bottom: 1px dashed var(--border-soft);
+}
+.manifesto-phase li:last-child { border-bottom: 0; }
+.manifesto-phase li::before {
+  content: '§'; position: absolute; left: 0; top: 8px;
+  color: var(--accent-warm); font-family: 'Inter Tight', system-ui, sans-serif;
+  font-weight: 700; font-size: 0.95rem;
+}
+.manifesto-footer {
+  margin-top: 8px; padding: 12px 14px;
+  font-size: 0.82rem; font-style: italic;
+  color: var(--text-muted); text-align: center;
+  max-width: 56ch; margin-left: auto; margin-right: auto;
+}
+
+/* ============================================================
    FUN FACTS — Wissenswertes
    ============================================================ */
 .fun-facts { margin-top: 60px; }
@@ -3269,6 +3326,7 @@ main { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
         <button type="button" class="info-nav-chip" data-target="cheat-grid">∎ Cheat Sheet</button>
         <button type="button" class="info-nav-chip" data-target="taxi-info">🚕 Taxi</button>
         <button type="button" class="info-nav-chip" data-target="checkout-info">🧹 Auscheck</button>
+        <button type="button" class="info-nav-chip" data-target="manifesto">🎭 Plan Luca &amp; Flex</button>
         <button type="button" class="info-nav-chip" data-target="fun-facts">📚 Wissenswertes</button>
         <button type="button" class="info-nav-chip" data-target="analytics">📊 Auswertungen</button>
       </div>
@@ -3285,6 +3343,8 @@ main { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
       <div class="taxi-info fade-in" id="taxi-info"></div>
 
       <div class="checkout-info fade-in" id="checkout-info"></div>
+
+      <div class="manifesto fade-in" id="manifesto"></div>
 
       <div class="fun-facts fade-in" id="fun-facts"></div>
 
@@ -3989,6 +4049,7 @@ function renderAll() {
   renderCheatSheet();
   renderTaxiInfo();
   renderCheckoutInfo();
+  renderManifesto();
   renderFunFacts();
   renderAnalytics();
   bindHeroFacts();
@@ -4677,6 +4738,30 @@ function bindHeroFacts() {
     f.addEventListener('click', trigger);
     f.addEventListener('keydown', trigger);
   });
+}
+
+function renderManifesto() {
+  const wrap = document.getElementById('manifesto');
+  if (!wrap || !DATA.manifesto) { if (wrap) wrap.innerHTML = ''; return; }
+  const m = DATA.manifesto;
+  const phases = (m.phases || []).map(ph => `
+    <div class="manifesto-phase">
+      <div class="manifesto-phase-head">
+        <span class="manifesto-phase-icon" aria-hidden="true">${esc(ph.icon || '§')}</span>
+        <span class="manifesto-phase-label">${esc(ph.label)}</span>
+      </div>
+      <ul>${(ph.items || []).map(it => `<li>${esc(it)}</li>`).join('')}</ul>
+    </div>
+  `).join('');
+  wrap.innerHTML = `
+    <div class="manifesto-header">
+      <h3>${esc(m.title)}</h3>
+      ${m.subtitle ? `<p>${esc(m.subtitle)}</p>` : ''}
+    </div>
+    ${m.intro ? `<div class="manifesto-intro">${esc(m.intro)}</div>` : ''}
+    ${phases}
+    ${m.footer ? `<div class="manifesto-footer">${esc(m.footer)}</div>` : ''}
+  `;
 }
 
 function renderTaxiInfo() {
