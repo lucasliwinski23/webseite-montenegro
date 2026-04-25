@@ -3952,7 +3952,7 @@ function renderDays() {
   const idx = spotIndex();
   const panels = DATA.itinerary.map((d,i) => {
     const warn = d.warning
-      ? `<div class="warning"><span class="warning-icon" aria-hidden="true">▲</span><div><strong>Check-out morgens</strong><p>${esc(d.warning)}</p></div></div>`
+      ? `<div class="warning"><span class="warning-icon" aria-hidden="true">▲</span><div><strong>${esc(d.warningTitle || 'Check-out morgens')}</strong><p>${esc(d.warning)}</p></div></div>`
       : '';
     const items = d.items.map((it, ii) => {
       const itemKey = `${d.dayNum}-${ii}-${it.time}`;

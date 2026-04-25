@@ -109,17 +109,25 @@
       "day": "Samstag",
       "dayNum": "02",
       "date": "25. April 2026",
-      "theme": "BRAUEREI-FRÜHSTÜCK → LUNCH → SPORTSBAR",
+      "theme": "LANGSAMER START · MITTAG → SPORTSBAR → DINNER",
+      "warningTitle": "Plan-Update Vormittag",
+      "warning": "Luca geht's scheiße, wir kommen nicht zeitig los. Felix-Veto: Brauerei (Akademija) wird heute gestrichen. Stattdessen gleich Mittag im Restaurant mit ein paar Bieren — danach ziehen wir den Plan ab Sportsbar normal durch.",
       "items": [
-        { "time": "10:30", "title": "Aufstehen & langsamer Start", "detail": "Kaffee in der Wohnung, Dusche, keine Hetze. Brauerei öffnet 8:00, wir sind entspannt um 11:00 da.", "highlight": false },
-        { "time": "11:00", "title": "Brauerei-Frühstück @ PG Akademija piva", "detail": "5 Min zu Fuß. Brewer's Breakfast (Eier, Bacon, Brot, Hausmacher-Wurst, Pommes) ~6-8 €. Dazu erstes Bier direkt vom Tank, Tasting-Flight 6 Sorten ~12 €. 2,5 h Zeit — Auftakt mit Stil.", "highlight": true },
-        { "time": "13:30", "title": "Kurzer Walk zur Njegoševa", "detail": "~10 Min Fußweg Moskovska → Njegoševa. Luft vor dem Sportsbar-Marathon.", "highlight": false },
-        { "time": "13:45", "title": "Lunch @ Sport Pub · Bundesliga-Anpfiff 15:30", "detail": "Njegoševa 47. 14 TV-Screens, grosse Portionen lokales Essen zu fairem Preis. Perfekter Zwischenstopp: richtig essen + erste Halbzeit Bundesliga live schauen.", "highlight": true },
-        { "time": "15:45", "title": "Wechsel zu Pub WWW", "detail": "~5 Min Fußweg. Halbzeit-Umzug in die klassische Sportsbar mit grosser Außenterrasse.", "highlight": false },
-        { "time": "16:00", "title": "Pub WWW · 2. Halbzeit + Premier League + 18:30 Hamburg-HSV", "detail": "Bleiben bis zum Abendessen. Terrasse, Flatscreens, Tuborg vom Fass. Alternativ Scottish Pub McCloud in der Nähe (zentrale Hercegovačka).", "highlight": true,
+        { "time": "11:30", "title": "Aufstehen · langsam", "detail": "Luca ist angeschlagen — kein Stress. Wasser, Kaffee, Schmerzmittel falls nötig. Brauerei-Frühstück ist gestrichen, wir starten direkt mit Mittag.", "highlight": false },
+        { "time": "13:00", "title": "Mittag mit Bier · Wähl deine Option", "detail": "Irgendwas Gescheites zu essen + erste Biere zum Aufpäppeln. Alle vier Spots sind nahe an der Wohnung, einer davon liegt 2 Min entfernt.", "highlight": true,
           "options": [
-            { "ref": "bar:Pub WWW",                              "tag": "Klassiker · Terrasse" },
-            { "ref": "bar:Scottish Pub McCloud",                 "tag": "Scottish · Zentral" }
+            { "ref": "restaurant:Gostiona 1928",                    "tag": "Tradition · 2 Min weg" },
+            { "ref": "restaurant:The Living Room Lounge & Dining", "tag": "TOP-Brunch" },
+            { "ref": "restaurant:SPAGO",                            "tag": "Italienisch · Pizza" },
+            { "ref": "restaurant:Restoran Diplomat",                "tag": "Mediterran" }
+          ]
+        },
+        { "time": "15:00", "title": "Walk zur Sportsbar", "detail": "Kurzer Frischluft-Zug Richtung Hercegovačka / Njegoševa. Bundesliga-Anpfiff 15:30, also keine Hetze, aber Tempo halten.", "highlight": false },
+        { "time": "15:30", "title": "Sportsbar · Bundesliga-Anpfiff bis Dinner · Wähl deine Option", "detail": "Ab hier ziehen wir den ursprünglichen Plan durch: 2. Halbzeit, Premier League, 18:30 Hamburg-HSV — bleiben bis zum Abendessen.", "highlight": true,
+          "options": [
+            { "ref": "bar:Pub WWW",              "tag": "Klassiker · Terrasse" },
+            { "ref": "bar:Sport Pub",            "tag": "14 TV-Screens" },
+            { "ref": "bar:Scottish Pub McCloud", "tag": "Scottish · Zentral" }
           ]
         },
         { "time": "19:30", "title": "Dinner · Wähl deine Option", "detail": "Drei der höchstbewerteten Spots Podgoricas.", "highlight": true,
@@ -135,7 +143,7 @@
             { "ref": "bar:Itaka Library Bar",     "tag": "Outdoor / Fluss" }
           ]
         },
-        { "time": "00:00", "title": "Morrison Party-Finish", "detail": "Samstags bis 03:00. DJ, Live-Musik, volle Bude.", "highlight": true },
+        { "time": "00:00", "title": "Morrison Party-Finish", "detail": "Samstags bis 03:00. DJ, Live-Musik, volle Bude. Nur falls Luca wieder fit ist — sonst Heimweg vorziehen.", "highlight": true },
         { "time": "03:00", "title": "Heimweg", "detail": "Zu Fuß oder Bolt-App. 5 Min zur Wohnung.", "highlight": false }
       ]
     },
@@ -486,26 +494,26 @@
   "bars": [
     {
       "name": "PG Akademija piva",
-      "role": "Fr Warmup 15:00 · Sa Frühstück 11:00",
+      "role": "Fr Warmup · 15:00 — 18:30",
       "rating": "4.5", "reviews": "547",
       "type": "Brauerei · Regional",
       "phone": "+382 67 661 777", "phoneRaw": "+38267661777",
       "maps": "https://maps.google.com/?cid=9768950086476528290",
       "coords": { "lat": 42.4410, "lng": 19.2608 },
-      "description": "Brauereigaststätte mit großer Außenfläche, Moskovska 2-9. Alle Biere direkt vom Tank. Brewer's Breakfast (Eier, Bacon, Brot, Hausmacher-Wurst, Pommes) ab 8:00. Tasting-Flight mit 6 Sorten ~12 €. Pizza als Fundament. Doppel-Einsatz: Freitag Warmup + Samstag Frühstück.",
+      "description": "Brauereigaststätte mit großer Außenfläche, Moskovska 2-9. Alle Biere direkt vom Tank. Tasting-Flight mit 6 Sorten ~12 €. Pizza als Fundament. (Sa-Frühstück gestrichen — Luca angeschlagen.)",
       "hours": "Täglich 8:00 – 00:00",
-      "badge": "Fr Warmup · Sa Frühstück",
+      "badge": "Fr · Warmup",
       "badgeClass": "alt"
     },
     {
       "name": "Pub WWW",
-      "role": "Sa Sportsbar · 16:00 — 19:30",
+      "role": "Sa Sportsbar · 15:30 — 19:30",
       "rating": "4.6", "reviews": "184",
       "type": "Sportsbar · Terrasse",
       "phone": "", "phoneRaw": "",
       "maps": "https://maps.google.com/?cid=14138340181655497413",
       "coords": { "lat": 42.4425, "lng": 19.2618 },
-      "description": "Grosse Außenterrasse mit Flatscreens. Tuborg vom Fass. Günstig. Ab Halbzeit-Wechsel: 2. Halbzeit Bundesliga + Premier League + 18:30 Hamburg-HSV bis zum Dinner. Keine Bar-Attitüde.",
+      "description": "Grosse Außenterrasse mit Flatscreens. Tuborg vom Fass. Günstig. Bundesliga 15:30 + Premier League + 18:30 Hamburg-HSV bis zum Dinner. Keine Bar-Attitüde.",
       "hours": "Täglich bis 02:00",
       "badge": "Sa · Sportsbar",
       "badgeClass": "neon",
@@ -514,21 +522,21 @@
     },
     {
       "name": "Sport Pub",
-      "role": "Sa Lunch-Stop · Bundesliga-Anpfiff 15:30",
+      "role": "Sa Sportsbar · Alternative · 14 TV-Screens",
       "category": "sportsbar",
       "rating": "4.5", "reviews": "150",
       "type": "Sportsbar · Food · 14 TV-Screens",
       "phone": "+382 69 511 000", "phoneRaw": "+38269511000",
       "maps": "https://maps.google.com/?q=Sport+Pub+Podgorica+Njegoseva+47",
       "coords": { "lat": 42.4421, "lng": 19.2650 },
-      "description": "Njegoševa 47, mitten im Kneipenviertel. 14 TV-Screens mit Bundesliga/Premier League/Champions League. Grosse Portionen lokales Essen zu fairem Preis — perfekter Lunch-Stop auf dem Weg zum Pub WWW. Interieur voller Trikots und Flaggen, Live-Musik an manchen Abenden.",
+      "description": "Njegoševa 47, mitten im Kneipenviertel. 14 TV-Screens mit Bundesliga/Premier League/Champions League. Grosse Portionen lokales Essen zu fairem Preis. Alternative zu Pub WWW falls dort zu voll oder die Stimmung wechseln will. Interieur voller Trikots und Flaggen.",
       "reviewQuotes": [
         { "text": "The place meets all your needs — sports, amazing food, friendly staff. Charming interior full of jerseys and flags of sport clubs from across the world.", "author": "Tripadvisor", "lang": "en" },
         { "text": "14 TV screens with a lot of actual and legendary matches. Big portions of great food for lower price — a highlight.", "author": "Tripadvisor", "lang": "en" }
       ],
       "hours": "Täglich 8:00 – 00:00",
-      "badge": "Sa · Lunch + Fußball",
-      "badgeClass": "neon"
+      "badge": "Sa · Sportsbar · ALT",
+      "badgeClass": "alt"
     },
     {
       "name": "Bogart Craft Beer",
@@ -693,7 +701,7 @@
 
   "sportEvents": {
     "date": "Samstag 25. April 2026",
-    "venueWindow": "13:45 Sport Pub (Lunch + 15:30 Anpfiff) → 16:00 Pub WWW (2. Halbzeit + Premier League + 18:30)",
+    "venueWindow": "Mittag erst im Restaurant, dann ab 15:30 Sportsbar (Pub WWW / Sport Pub / Scottish McCloud) bis Dinner",
     "matches": [
       { "time": "15:30", "league": "BUNDESLIGA 31", "home": "Mainz 05", "away": "Bayern München", "highlight": true },
       { "time": "15:30", "league": "BUNDESLIGA 31", "home": "1. FC Köln", "away": "Bayer Leverkusen", "highlight": true },
@@ -707,7 +715,7 @@
       { "time": "16:00", "league": "PREMIER LEAGUE", "home": "Wolverhampton", "away": "Tottenham", "highlight": false },
       { "time": "18:30", "league": "BUNDESLIGA 31", "home": "Hamburg", "away": "Hoffenheim", "highlight": false }
     ],
-    "note": "Premier-League-Anstoßzeiten 16:00 lokal MNE = 17:00 UK. Bundesliga-Anpfiff 15:30 erleben wir beim Lunch im Sport Pub (14 TV-Screens, Njegoševa 47), danach Halbzeit-Umzug zu Pub WWW für 2. Halbzeit + Premier League + 18:30 Hamburg-HSV. Alternativ Scottish Pub McCloud auf der Hercegovačka.",
+    "note": "Premier-League-Anstoßzeiten 16:00 lokal MNE = 17:00 UK. Plan-Update: Brauerei-Frühstück gestrichen (Luca angeschlagen). Erst Mittag im Restaurant, dann pünktlich 15:30 in der Sportsbar (Pub WWW Klassiker, Sport Pub mit 14 Screens, Scottish McCloud zentral) — bleiben bis Dinner.",
     "motorsport": [
       { "series": "F1", "info": "Bahrain & Saudi GP wegen Iran-Krieg gestrichen — kein F1-Wochenende am 25.04.2026" },
       { "series": "MotoGP", "info": "Spanien GP Jerez startet erst Anfang Mai — 25.04. ist rennfrei" },
