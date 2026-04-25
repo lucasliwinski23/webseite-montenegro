@@ -1291,6 +1291,21 @@ section { padding: 70px 0; position: relative; }
 @media (prefers-reduced-motion: reduce) {
   .opt-grid, .opt-header-icon { transition: none; }
 }
+.opt-trap {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-top: 6px;
+  padding: 3px 8px;
+  background: rgba(224,122,46,0.18);
+  border: 1px solid var(--accent-warn);
+  border-radius: 999px;
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-warn);
+  width: fit-content;
+}
 .opt-card {
   position: relative;
   display: grid;
@@ -3316,6 +3331,7 @@ function renderOptionSelector(itemKey, options) {
               ${price ? `<span class="opt-meta-item price">${esc(price)}</span>` : ''}
               ${dist  ? `<span class="opt-meta-item">📍 ${esc(dist)}</span>` : ''}
             </div>
+            ${sp.touristTrap ? `<div class="opt-trap">▲ Touri-Falle</div>` : ''}
             ${killer ? `<div class="opt-killer">${esc(killer)}</div>` : ''}
           </a>`;
         }).join('')}
