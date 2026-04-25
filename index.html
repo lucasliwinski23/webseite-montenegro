@@ -1734,6 +1734,23 @@ body.map-fullscreen-active .bottom-nav {
 .sc-rating .stars { font-size: 1.05rem; color: var(--accent-warm); font-weight: 700; }
 .sc-rating small { color: var(--text-muted); font-size: 0.7rem; letter-spacing: 0.1em; }
 
+.spot-card .sc-tourist-trap {
+  margin: 0 16px 0;
+  padding: 10px 12px;
+  background: rgba(224,122,46,0.14);
+  border-left: 3px solid var(--accent-warn);
+  border-radius: 4px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--text-primary);
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.spot-card .sc-tourist-trap-icon { font-size: 1rem; line-height: 1; color: var(--accent-warn); flex-shrink: 0; margin-top: 1px; }
+.spot-card .sc-tourist-trap b {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.7rem;
+  color: var(--accent-warn); display: block; margin-bottom: 2px; font-weight: 700;
+}
 .spot-card .sc-body { padding: 16px 18px; color: var(--text-muted); font-size: 0.92rem; flex: 1; line-height: 1.55; }
 .spot-card .sc-meta {
   padding: 0 0 14px 0;
@@ -4121,6 +4138,7 @@ function spotCard(spot, type) {
         <small>${esc(spot.reviews)} Reviews</small>
       </div>
     </div>
+    ${spot.touristTrap ? `<div class="sc-tourist-trap"><span class="sc-tourist-trap-icon" aria-hidden="true">▲</span><div><b>Touri-Falle markiert</b>${esc(spot.touristTrapReason || 'Lage > Qualität / Preis-Leistung schwach.')}</div></div>` : ''}
     <div class="sc-body">${esc(spot.description)}</div>
     <div class="sc-details" id="${detId}">
       <div class="sc-meta">
