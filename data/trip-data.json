@@ -96,24 +96,17 @@
       "day": "Samstag",
       "dayNum": "02",
       "date": "25. April 2026",
-      "theme": "LANGSAMER START · MITTAG → SPORTSBAR → DINNER",
-      "warningTitle": "Plan-Update Vormittag",
-      "warning": "Luca geht's scheiße, wir kommen nicht zeitig los. Felix-Veto: Brauerei (Akademija) wird heute gestrichen. Stattdessen gleich Mittag im Restaurant mit ein paar Bieren — danach ziehen wir den Plan ab Sportsbar normal durch.",
+      "theme": "FAUL-MODUS · DIREKT ZUM PUB WWW · TUBORG-THERAPIE",
+      "warningTitle": "Plan-Update · Faul-Tag",
+      "warning": "Lucas Magen ist immer noch ein Verhandlungsgegner. Sämtliche ambitionierten Mittag-Pläne, Walks zur Frischluftgewinnung und Restaurant-Optionen sind hiermit höflich storniert. Strategie: ein Schritt vom Bett bis zum Pub WWW (Bundesliga + Pub-Food), dort bleiben wir bis zum Dinner. Felix bekommt sein Bier, Luca seine Genesung — durch Tuborg, was sonst.",
       "items": [
-        { "time": "11:30", "title": "Aufstehen · langsam", "detail": "Luca ist angeschlagen — kein Stress. Wasser, Kaffee, Schmerzmittel falls nötig. Brauerei-Frühstück ist gestrichen, wir starten direkt mit Mittag.", "highlight": false },
-        { "time": "13:00", "title": "Leichtes Mittag · Felix-tauglich · auf Lucas Magen abgestimmt", "detail": "Kein schweres Lamm, kein Fisch (Felix-Veto). Suche: Suppe, Salat, Hähnchen-Risotto, Pasta mit Fleisch. Drei Spots, alle ≤5 Min Fußweg. Forum als TOP-PICK (Caffe-Restoran direkt am Trg Republike, Chicken-Risotto-Star), Living Room als Lounge-Brunch, Diplomat als mediterrane Backup-Option.", "highlight": true,
+        { "time": "12:30", "title": "Sehr langsam aufstehen", "detail": "Luca steht aus dem Bett auf wie aus einer Bewerbungsabsage — knirschend, mit langer Bedenkzeit. Wasser, Paracetamol, Kaffee, optional eine kleine Schweige-Minute. Kein Sightseeing, kein Brunch-Ehrgeiz, keine kreativen Ideen.", "highlight": false },
+        { "time": "13:30", "title": "Direkt zum Pub WWW · keine Umwege", "detail": "Wir gehen heute den Faulen-Königsweg: aus der Wohnung raus, 5 Minuten Hercegovačka runter, in den Pub WWW. Kein Mittagsrestaurant. Kein Walk zur Frischluftgewinnung. Wenn jemand vorschlägt, vorher noch was zu sehen, wird er sanft, aber bestimmt zurechtgewiesen.", "highlight": true },
+        { "time": "13:30 — 19:30", "title": "Pub WWW · Mittag + Bundesliga + Premier League · Tuborg-Therapie", "detail": "Wir parken uns für 6 Stunden auf der Terrasse vom Pub WWW. Essen kommt von der digitalen Karte (Burger, Sandwiches, das Übliche — Pub-Food, kein Kalbsbacken-Drama). Bundesliga-Anpfiff 15:30, dann Premier League 16:00, dann 18:30 Hamburg-HSV. Tuborg vom Fass. Lucas Magen bekommt Therapie nach altbewährtem Ground-Tuborg-Protokoll.", "highlight": true,
           "options": [
-            { "ref": "restaurant:Restoran Forum",                   "tag": "TOP-PICK · Trg Republike · Chicken Risotto" },
-            { "ref": "restaurant:The Living Room Lounge & Dining", "tag": "Lounge · leichter Brunch" },
-            { "ref": "restaurant:Restoran Diplomat",                "tag": "Mediterran · 3 Min weg" }
-          ]
-        },
-        { "time": "15:00", "title": "Walk zur Sportsbar", "detail": "Kurzer Frischluft-Zug Richtung Hercegovačka / Njegoševa. Bundesliga-Anpfiff 15:30, also keine Hetze, aber Tempo halten.", "highlight": false },
-        { "time": "15:30", "title": "Sportsbar · Bundesliga-Anpfiff bis Dinner · Wähl deine Option", "detail": "Ab hier ziehen wir den ursprünglichen Plan durch: 2. Halbzeit, Premier League, 18:30 Hamburg-HSV — bleiben bis zum Abendessen.", "highlight": true,
-          "options": [
-            { "ref": "bar:Pub WWW",              "tag": "Klassiker · Terrasse" },
-            { "ref": "bar:Sport Pub",            "tag": "14 TV-Screens" },
-            { "ref": "bar:Scottish Pub McCloud", "tag": "Scottish · Zentral" }
+            { "ref": "bar:Pub WWW",              "tag": "PLAN A · Klassiker · Terrasse + Food" },
+            { "ref": "bar:Sport Pub",            "tag": "Backup · 14 TV-Screens" },
+            { "ref": "bar:Scottish Pub McCloud", "tag": "Backup · Scottish · Zentral" }
           ]
         },
         { "time": "19:30", "title": "Dinner @ Konoba 'Lanterna' · richtig geil essen", "detail": "Heute Abend Festessen. 1630er-Konoba, Olivenbaum-Terrasse, frischer Fisch + Kačamak. Reservierung läuft. Falls aus irgendeinem Grund nichts geht: drei Backup-Optionen direkt darunter.", "highlight": true,
@@ -124,14 +117,13 @@
             { "ref": "restaurant:Steak House Grill",     "tag": "Backup C · Premium-Grill" }
           ]
         },
-        { "time": "22:30", "title": "Craft-Bier-Kneipe · Wähl deine Option", "detail": "Lokal gebraut oder Boho-Lounge am Fluss.", "highlight": false,
+        { "time": "22:30", "title": "Craft-Bier · nur falls Wunder geschieht", "detail": "Plan B falls Luca um 22:30 nicht aussieht wie ein gefallener Engel: Fermentor oder Itaka. Plan A — der wahrscheinlichere Plan A — heißt Wohnung, Wasser, Bett.", "highlight": false,
           "options": [
             { "ref": "bar:Fermentor Craft Beer",  "tag": "Lokales Brewpub" },
             { "ref": "bar:Itaka Library Bar",     "tag": "Outdoor / Fluss" }
           ]
         },
-        { "time": "00:00", "title": "Morrison Party-Finish", "detail": "Samstags bis 03:00. DJ, Live-Musik, volle Bude. Nur falls Luca wieder fit ist — sonst Heimweg vorziehen.", "highlight": true },
-        { "time": "03:00", "title": "Heimweg", "detail": "Zu Fuß oder Bolt-App. 5 Min zur Wohnung.", "highlight": false }
+        { "time": "23:00 — 00:00", "title": "Heimweg · realistisch", "detail": "Bolt oder zu Fuß. Wir tun nicht so, als ginge das hier bis 03:00 — Luca hat seine Performance schon in der Freitag-Pizza-Bude abgeliefert. Sonntag haben wir noch Auscheck (siehe Auscheck-Sektion unter Cheat Sheet) plus Flughafen — also lieber jetzt ins Bett.", "highlight": false }
       ]
     },
     {
