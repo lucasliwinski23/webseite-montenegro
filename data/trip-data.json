@@ -80,29 +80,16 @@
       "day": "Freitag",
       "dayNum": "01",
       "date": "24. April 2026",
-      "theme": "ANKUNFT & EINSTIEG",
+      "theme": "ANKUNFT & EINSTIEG · ✓ ABGEHAKT",
       "items": [
-        { "time": "11:37", "title": "Landung TGD", "detail": "W6 7602 aus Dortmund · Plan 11:15 → Ist 11:37 (22 min verspätet). Koffer holen. Willkommen in Montenegro.", "highlight": false },
-        { "time": "12:10", "title": "Taxi ins Zentrum", "detail": "Eko Taxi (+382 19 700) oder Bolt-App. ~15 € · 25 Min Fahrt.", "highlight": false },
-        { "time": "12:35", "title": "Leichter Lunch @ Gostiona 1928", "detail": "Traditionell, Terrasse, 2 Min von der Wohnung. Erstes Bier.", "highlight": true },
-        { "time": "13:45", "title": "Einkauf VOLI", "detail": "Wasser, Snacks, Biere. WICHTIG: Sonntagsvorrat gleich mit!", "highlight": false },
-        { "time": "14:10", "title": "Wohnung · Check-in", "detail": "Slobode 21, 4. Stock. Koffer ausladen, 30 Min ankommen.", "highlight": false },
-        { "time": "14:40", "title": "Mini-Sightseeing-Walk", "detail": "Sahat Kula (8 Min) + Stara Varoš (Altstadt, enge Gassen). 20 Min reichen. Liegt auf dem Weg zur Akademija.", "highlight": false },
-        { "time": "15:00", "title": "Warmup @ PG Akademija piva", "detail": "Regionale Brauerei mit Terrasse. Tasting-Flight. 3,5 h Zeit.", "highlight": true },
-        { "time": "19:00", "title": "Dinner · Wähl deine Option", "detail": "Wahl zwischen Upscale Italian, Mediterran und Schloss-Vibe.", "highlight": true,
-          "options": [
-            { "ref": "restaurant:Hemera",            "tag": "Upscale Italian" },
-            { "ref": "restaurant:Restoran Diplomat", "tag": "Mediterran" },
-            { "ref": "restaurant:Stara Kuća",        "tag": "Schloss-Vibe" }
-          ]
-        },
-        { "time": "22:30", "title": "Craft-Bier-Abend", "detail": "Höchstbewertete Craft-Spots der Stadt.", "highlight": false,
-          "options": [
-            { "ref": "bar:Bogart Craft Beer",  "tag": "TOP-Rated" },
-            { "ref": "bar:Itaka Library Bar",  "tag": "Outdoor / Fluss" }
-          ]
-        },
-        { "time": "00:00+", "title": "Morrison Pub (optional)", "detail": "Freitags bis 03:00. Live-Musik. Wenn noch Dampf da ist.", "highlight": false }
+        { "time": "11:37", "title": "Landung TGD ✓", "detail": "W6 7602 aus Dortmund · Plan 11:15 → Ist 11:37 (22 min verspätet). Koffer geholt, willkommen in Montenegro.", "highlight": false },
+        { "time": "12:10", "title": "Taxi ins Zentrum ✓", "detail": "~15 € · 25 Min Fahrt ins Zentrum.", "highlight": false },
+        { "time": "13:00", "title": "Wohnung · Check-in + VOLI-Einkauf ✓", "detail": "Slobode 21, 4. Stock. Sonntagsvorrat mit eingekauft (siehe Bier-Inventar Sonntag — wir haben übertrieben).", "highlight": false },
+        { "time": "15:00 — 18:30", "title": "Warmup @ PG Akademija piva ✓", "detail": "Brauereigaststätte, Tasting-Flight, 3,5 h. Erstes Tank-Bier sitzt.", "highlight": true },
+        { "time": "ca. 19:30 — 22:30", "title": "Dinner @ Restoran Diplomat ✓", "detail": "Mediterran-regional, Kalbsbacke in Rotwein, gratis Brotkorb mit Dips. Solider Anker für den Abend bevor es krass wurde.", "highlight": true },
+        { "time": "ca. 23:00 — 01:00", "title": "Bar-Stop @ Hemera · Ingwer-Cocktails ✓", "detail": "Boutique-Hotel-Bar in der Njegoševa 17. Cocktails mit Ingwer (genauer Drink-Name aus dem Gedächtnis verflüchtigt). Hotel-Premium-Vibe mit entsprechenden Preisen.", "highlight": true },
+        { "time": "ca. 01:00 — 03:00", "title": "Pizza-Stop in der Njegoševa · Pizza + Raki ✓", "detail": "Irgendeine Pizza-Bude zwei (oder fünf?) Häuser von Hemera weg, Richtung Stara Varoš. Name leider weg — der Raki hat ganze Arbeit geleistet. Beste Pizza-Diagnose des Abends, bestätigt durch das übereinstimmende 'mhm'-Geräusch beider Beteiligter.", "highlight": false },
+        { "time": "ca. 03:00", "title": "Heimweg ✓", "detail": "Zu Fuß zur Wohnung, ca. 8 Min von der Njegoševa. Schlüssel haben funktioniert, Aufzug auch.", "highlight": false }
       ]
     },
     {
@@ -174,11 +161,13 @@
   "restaurants": [
     {
       "name": "Hemera",
-      "role": "Freitag Dinner · Option A",
+      "role": "Freitag Bar-Stop · Ingwer-Cocktails",
       "rating": "4.7",
       "reviews": "328",
       "cuisine": "Italienisch · Mediterran",
       "price": "€€€ · Upscale (40-60 €/Pers.)",
+      "visited": true,
+      "visitedNote": "Fr 24.04. · spät abends · Ingwer-Cocktails",
       "touristTrap": true,
       "touristTrapReason": "Hotel-Restaurant + €€€ Premium-Preise. Gemischte Reviews zur Pricing-Transparenz: einzelne Tripadvisor-Berichte erwähnen 6 €-Gerichte, die durch Preis-pro-Gewicht bei 24 € landen. Essen-Qualität nicht durchgehend konstant ('fair quality but simple, over-salted' bei einigen Reviewern). Trotzdem hohe Gesamtbewertung — also nicht meiden, aber: Karte vorab studieren, Gewichts-Preise nachfragen, kein Blind-Ordering.",
       "phone": "+382 20 221 652",
@@ -213,11 +202,13 @@
     },
     {
       "name": "Restoran Diplomat",
-      "role": "Freitag Dinner · Option B",
+      "role": "Freitag Dinner · ✓ Besucht",
       "rating": "4.8",
       "reviews": "545",
       "cuisine": "Mediterran · Regional",
       "price": "€€ · 30-35 €/Pers.",
+      "visited": true,
+      "visitedNote": "Fr 24.04. · Dinner",
       "phone": "+382 67 993 339",
       "phoneRaw": "+38267993339",
       "maps": "https://maps.google.com/?cid=15004571612270420080",
@@ -622,9 +613,11 @@
   "bars": [
     {
       "name": "PG Akademija piva",
-      "role": "Fr Warmup · 15:00 — 18:30",
+      "role": "Fr Warmup · ✓ Besucht",
       "rating": "4.5", "reviews": "547",
       "type": "Brauerei · Regional",
+      "visited": true,
+      "visitedNote": "Fr 24.04. · Warmup",
       "phone": "+382 67 661 777", "phoneRaw": "+38267661777",
       "maps": "https://maps.google.com/?cid=9768950086476528290",
       "coords": { "lat": 42.4410, "lng": 19.2608 },
@@ -865,6 +858,60 @@
   ],
 
   "whatsappTemplate": "Hello! I'd like to make a reservation for 2 people on [Friday 24th] at [19:00]. Name: Luca. Could you please confirm? We'd like a [outside / inside] table if possible. Thank you!",
+
+  "checkoutInfo": {
+    "title": "Sonntag · Auscheck-Kommando",
+    "subtitle": "Wie wir dieses Bier-Massaker geordnet auflösen",
+    "intro": "Liebes Tagebuch: Wir haben am Freitag bei VOLI ungefähr ein halbes Lager an Pivo eingekauft, weil 'man weiß ja nie' und 'Sonntag ist alles zu'. Stand jetzt sieht's aus, als hätten wir ein bisschen optimistisch gerechnet. Hier der geordnete Rückzug — Schritt für Schritt, damit die Wohnung übergabefähig bleibt und der Fluganstand erhalten ist.",
+    "sections": [
+      {
+        "title": "Bier-Inventur · Samstag-Abend-Stand",
+        "icon": "🍺",
+        "items": [
+          "Vollständige Bestandsaufnahme im Kühlschrank + Vorratsregal. Voraussichtliche Schätzung: ein Drittel des Einkaufs überlebt.",
+          "Was kalt ist → Samstag-Abend-Reserve. Was warm ist → bleibt warm, niemand verschwendet jetzt noch Kühl-Kapazität.",
+          "Pfandflaschen separat sammeln (in Montenegro selten Pfand, aber falls Glas-Sammelstelle bekannt → dort)."
+        ]
+      },
+      {
+        "title": "Sonntag-Vormittag · letzte Runde mit Stil",
+        "icon": "🌅",
+        "items": [
+          "Frühstücksbier ist erlaubt, aber bitte mit Kaffee dazu — Sonntag-Etikette.",
+          "Was bis 11:00 nicht getrunken ist, wird nicht mehr getrunken. Realismus schlägt Stolz.",
+          "Reste-Bier in der Wohnung lassen (Notiz für Vermieter: 'Geschenk, Trinkgeld, kein Reklamationsfall')."
+        ]
+      },
+      {
+        "title": "Müll & Ordnung · der unschöne Teil",
+        "icon": "🗑️",
+        "items": [
+          "Glasflaschen → Glascontainer (in Stara Varoš und am Trg Republike vorhanden). Wer Lust hat, schleppt; alle anderen sammeln neben dem Mülleimer.",
+          "Restmüll + Plastik → Hausmülltonne im Innenhof. Tüten vorher zuknoten, sonst Aufstand bei den Nachbarn.",
+          "Pizzakartons, Snack-Verpackungen, alles was nach Rakija duftet → Restmüll. Nicht im Kühlschrank vergessen."
+        ]
+      },
+      {
+        "title": "Wohnungs-Übergabe · vor dem Taxi",
+        "icon": "🔑",
+        "items": [
+          "Spülmaschine starten oder Geschirr abspülen. Nicht: 'das macht die Reinigung schon'. Doch — wir machen das vorher.",
+          "Bett gemacht, Handtücher gestapelt, Müll raus, Kühlschrank geleert (außer Bier-Geschenk siehe oben).",
+          "Schlüssel nach Vereinbarung mit Host — Standard ist auf dem Esstisch liegen lassen + Tür ins Schloss ziehen."
+        ]
+      },
+      {
+        "title": "Letzte-Stunde-Checkliste",
+        "icon": "✈",
+        "items": [
+          "Pässe, Boarding-Pässe, Wallet, Telefon-Akku → Hosentasche, nicht Koffer.",
+          "Wizz-Air-Handgepäck-Maße checken (40×30×20 cm gratis). Was nicht reinpasst, wird unterwegs entsorgt oder angezogen.",
+          "Letzter Blick: Steckdosen, Fenster, Klimaanlage aus, Kühlschrank zu, Lichter aus."
+        ]
+      }
+    ],
+    "footer": "Nicht panisch. Wir kriegen das hin. Im Notfall: Vermieter anrufen, Bolt rufen, weiter atmen. Živjeli — und tschüss Podgorica."
+  },
 
   "funFacts": {
     "title": "Wissenswertes über Montenegro",

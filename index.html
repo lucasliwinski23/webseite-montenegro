@@ -1306,6 +1306,22 @@ section { padding: 70px 0; position: relative; }
   color: var(--accent-warn);
   width: fit-content;
 }
+.opt-visited {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-top: 6px;
+  padding: 3px 8px;
+  background: rgba(58,138,87,0.16);
+  border: 1px solid #3a8a57;
+  border-radius: 999px;
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3a8a57;
+  width: fit-content;
+}
+[data-theme="dark"] .opt-visited { background: rgba(116,194,142,0.14); border-color: #74c28e; color: #74c28e; }
 .opt-card {
   position: relative;
   display: grid;
@@ -1749,6 +1765,25 @@ body.map-fullscreen-active .bottom-nav {
 .sc-rating .stars { font-size: 1.05rem; color: var(--accent-warm); font-weight: 700; }
 .sc-rating small { color: var(--text-muted); font-size: 0.7rem; letter-spacing: 0.1em; }
 
+.spot-card .sc-visited {
+  margin: 0 16px 0;
+  padding: 8px 12px;
+  background: rgba(58,138,87,0.16);
+  border-left: 3px solid #3a8a57;
+  border-radius: 4px;
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #3a8a57;
+  display: flex; align-items: center; gap: 8px;
+}
+.spot-card .sc-visited-icon { font-size: 1rem; line-height: 1; flex-shrink: 0; }
+[data-theme="dark"] .spot-card .sc-visited { background: rgba(116,194,142,0.14); border-left-color: #74c28e; color: #74c28e; }
+.spot-card.is-visited { opacity: 0.92; }
+.spot-card.is-visited h3::after { content: ' ✓'; color: #3a8a57; font-size: 0.85em; }
+
 .spot-card .sc-tourist-trap {
   margin: 0 16px 0;
   padding: 10px 12px;
@@ -2134,6 +2169,61 @@ body.map-fullscreen-active .bottom-nav {
   color: #FFF;
   border-color: var(--accent-primary);
   box-shadow: 0 4px 12px rgba(184,104,37,0.3);
+}
+
+/* ============================================================
+   CHECKOUT INFO — Auscheck-Plan
+   ============================================================ */
+.checkout-info { margin-top: 60px; }
+.checkout-info:empty { display: none; }
+.checkout-info-header { margin-bottom: 18px; text-align: left; }
+.checkout-info-header h3 {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 1.4rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--text-primary); margin-bottom: 4px;
+}
+.checkout-info-header p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.55; max-width: 56ch; }
+.checkout-intro {
+  padding: 14px 16px; margin-bottom: 18px;
+  background: var(--bg-card); border-left: 3px solid var(--border);
+  border-radius: 4px; font-size: 0.88rem; line-height: 1.6;
+  color: var(--text-muted); max-width: 64ch;
+}
+.checkout-section {
+  margin-bottom: 14px;
+  background: var(--bg-card); border: 1px solid var(--border-soft);
+  border-radius: 6px; overflow: hidden;
+}
+.checkout-section-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--bg-secondary);
+}
+.checkout-section-icon { font-size: 1.1rem; line-height: 1; flex-shrink: 0; }
+.checkout-section-title {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--text-primary);
+}
+.checkout-section ul {
+  list-style: none; padding: 6px 14px 12px; margin: 0;
+}
+.checkout-section li {
+  padding: 8px 0; padding-left: 20px; position: relative;
+  font-size: 0.86rem; line-height: 1.55; color: var(--text-muted);
+  border-bottom: 1px dashed var(--border-soft);
+}
+.checkout-section li:last-child { border-bottom: 0; }
+.checkout-section li::before {
+  content: '▸'; position: absolute; left: 0; top: 8px;
+  color: var(--accent-primary); font-size: 0.85rem;
+}
+.checkout-footer {
+  margin-top: 8px; padding: 12px 14px;
+  font-size: 0.84rem; font-style: italic;
+  color: var(--text-muted); text-align: center;
+  max-width: 56ch; margin-left: auto; margin-right: auto;
 }
 
 /* ============================================================
@@ -3093,6 +3183,7 @@ main { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
       <div class="info-nav fade-in" role="tablist" aria-label="Info-Bereiche">
         <button type="button" class="info-nav-chip active" data-target="info-warning">⚠ Warnungen</button>
         <button type="button" class="info-nav-chip" data-target="cheat-grid">∎ Cheat Sheet</button>
+        <button type="button" class="info-nav-chip" data-target="checkout-info">🧹 Auscheck</button>
         <button type="button" class="info-nav-chip" data-target="fun-facts">📚 Wissenswertes</button>
         <button type="button" class="info-nav-chip" data-target="analytics">📊 Auswertungen</button>
       </div>
@@ -3105,6 +3196,8 @@ main { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
         </div>
       </div>
       <div class="cheat-grid fade-in" id="cheat-grid"></div>
+
+      <div class="checkout-info fade-in" id="checkout-info"></div>
 
       <div class="fun-facts fade-in" id="fun-facts"></div>
 
@@ -3332,6 +3425,7 @@ function renderOptionSelector(itemKey, options) {
               ${dist  ? `<span class="opt-meta-item">📍 ${esc(dist)}</span>` : ''}
             </div>
             ${sp.touristTrap ? `<div class="opt-trap">▲ Touri-Falle</div>` : ''}
+            ${sp.visited ? `<div class="opt-visited">✓ Besucht</div>` : ''}
             ${killer ? `<div class="opt-killer">${esc(killer)}</div>` : ''}
           </a>`;
         }).join('')}
@@ -3806,6 +3900,7 @@ function renderAll() {
   renderSouvenirs();
   renderReservations();
   renderCheatSheet();
+  renderCheckoutInfo();
   renderFunFacts();
   renderAnalytics();
   bindHeroFacts();
@@ -4142,7 +4237,7 @@ function spotCard(spot, type) {
   const isFav = FAVS.has(id);
   const cat = inferCategory(spot, type);
 
-  return `<div class="spot-card fade-in" data-spotid="${esc(id)}" data-type="${esc(type)}" data-cat="${esc(cat)}" data-fav="${isFav}">
+  return `<div class="spot-card fade-in ${spot.visited?'is-visited':''}" data-spotid="${esc(id)}" data-type="${esc(type)}" data-cat="${esc(cat)}" data-fav="${isFav}">
     <button class="fav-toggle ${isFav?'active':''}" data-fav="${esc(id)}"
       aria-label="Favorit ${isFav?'entfernen':'markieren'}: ${esc(spot.name)}"
       aria-pressed="${isFav}" title="Favorit">★</button>
@@ -4155,6 +4250,7 @@ function spotCard(spot, type) {
       </div>
     </div>
     ${spot.touristTrap ? `<div class="sc-tourist-trap"><span class="sc-tourist-trap-icon" aria-hidden="true">▲</span><div><b>Touri-Falle markiert</b>${esc(spot.touristTrapReason || 'Lage > Qualität / Preis-Leistung schwach.')}</div></div>` : ''}
+    ${spot.visited ? `<div class="sc-visited" aria-label="Bereits besucht"><span class="sc-visited-icon" aria-hidden="true">✓</span><span>Bereits besucht${spot.visitedNote ? ` · ${esc(spot.visitedNote)}` : ''}</span></div>` : ''}
     <div class="sc-body">${esc(spot.description)}</div>
     <div class="sc-details" id="${detId}">
       <div class="sc-meta">
@@ -4493,6 +4589,30 @@ function bindHeroFacts() {
     f.addEventListener('click', trigger);
     f.addEventListener('keydown', trigger);
   });
+}
+
+function renderCheckoutInfo() {
+  const wrap = document.getElementById('checkout-info');
+  if (!wrap || !DATA.checkoutInfo) { if (wrap) wrap.innerHTML = ''; return; }
+  const ci = DATA.checkoutInfo;
+  const sections = (ci.sections || []).map(sec => `
+    <div class="checkout-section">
+      <div class="checkout-section-head">
+        <span class="checkout-section-icon" aria-hidden="true">${esc(sec.icon || '▸')}</span>
+        <span class="checkout-section-title">${esc(sec.title)}</span>
+      </div>
+      <ul>${(sec.items || []).map(it => `<li>${esc(it)}</li>`).join('')}</ul>
+    </div>
+  `).join('');
+  wrap.innerHTML = `
+    <div class="checkout-info-header">
+      <h3>${esc(ci.title)}</h3>
+      ${ci.subtitle ? `<p>${esc(ci.subtitle)}</p>` : ''}
+    </div>
+    ${ci.intro ? `<div class="checkout-intro">${esc(ci.intro)}</div>` : ''}
+    ${sections}
+    ${ci.footer ? `<div class="checkout-footer">${esc(ci.footer)}</div>` : ''}
+  `;
 }
 
 function renderFunFacts() {
