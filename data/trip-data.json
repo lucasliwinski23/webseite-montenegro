@@ -114,7 +114,7 @@
       "warning": "Luca geht's scheiße, wir kommen nicht zeitig los. Felix-Veto: Brauerei (Akademija) wird heute gestrichen. Stattdessen gleich Mittag im Restaurant mit ein paar Bieren — danach ziehen wir den Plan ab Sportsbar normal durch.",
       "items": [
         { "time": "11:30", "title": "Aufstehen · langsam", "detail": "Luca ist angeschlagen — kein Stress. Wasser, Kaffee, Schmerzmittel falls nötig. Brauerei-Frühstück ist gestrichen, wir starten direkt mit Mittag.", "highlight": false },
-        { "time": "13:00", "title": "Leichtes Mittag · alle Spots vorher auf 'noch offen' verifiziert", "detail": "Kein schweres Lamm, kein Fisch (Felix-Veto). Suche: Suppe, Salat, Hähnchen-Risotto, Pasta mit Fleisch, vegetarische Optionen. Vier verifizierte aktive Spots, alle ≤5 Min Fußweg. Forum als TOP-PICK (Tripadvisor #11/280, Chicken-Risotto-Star), Štrudla als zweite Light-Option mit Veggie+Fleisch-Mix.", "highlight": true,
+        { "time": "13:00", "title": "Leichtes Mittag · Felix-tauglich · auf Lucas Magen abgestimmt", "detail": "Kein schweres Lamm, kein Fisch (Felix-Veto). Suche: Suppe, Salat, Hähnchen-Risotto, Pasta mit Fleisch, vegetarische Optionen. Vier Spots, alle ≤5 Min Fußweg. Forum als TOP-PICK (Tripadvisor #11/280, Chicken-Risotto-Star), Štrudla als zweite Light-Option mit Veggie+Fleisch-Mix.", "highlight": true,
           "options": [
             { "ref": "restaurant:Restoran Forum",                   "tag": "TOP-PICK · #11/280 · Chicken Risotto" },
             { "ref": "restaurant:Restobar Štrudla",                 "tag": "Veggie+Fleisch · Modern" },
@@ -446,7 +446,7 @@
       "coords": { "lat": 42.4416, "lng": 19.2620 },
       "menuUrl": "https://foodbook.me/profile/strudla-culture-club",
       "menuLabel": "Foodbook",
-      "description": "Bokeška 16, ~5 Min Fußweg von der Wohnung — modern-stylische Mischung aus Restaurant + Lounge-Bar in einer der schönsten Straßen Podgoricas. Mo-So 8:00-02:00 (verifiziert offen 2026). Karte mit englischer Übersetzung deckt vegetarisch, vegan, raw food UND Fleisch ab — also Felix bekommt sein Hähnchen, Luca was Leichtes (Salate, Wraps, Risotto mit Pilzen, Auberginen-Rolls). Tripadvisor-aktiv (~#22-39 von 200+).",
+      "description": "Bokeška 16, ~5 Min Fußweg von der Wohnung — modern-stylische Mischung aus Restaurant + Lounge-Bar in einer der schönsten Straßen Podgoricas. Mo-So 8:00-02:00. Karte mit englischer Übersetzung deckt vegetarisch, vegan, raw food UND Fleisch ab — also Felix bekommt sein Hähnchen, Luca was Leichtes (Salate, Wraps, Risotto mit Pilzen, Auberginen-Rolls). Tripadvisor #22-39 von 200+.",
       "reviewQuotes": [
         { "text": "Hip bar with good food — modern stylish combination of restaurant and lounge bar in the most beautiful street in central Podgorica. Prices good, team super friendly.", "author": "Tripadvisor", "lang": "en" },
         { "text": "All in one — the best place in Podgorica! Vegetarian, vegan, raw food and proper meat dishes all on one menu, every dish translated to English.", "author": "Tripadvisor", "lang": "en" },
