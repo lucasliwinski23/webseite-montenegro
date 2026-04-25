@@ -130,11 +130,12 @@
             { "ref": "bar:Scottish Pub McCloud", "tag": "Scottish · Zentral" }
           ]
         },
-        { "time": "19:30", "title": "Dinner · Wähl deine Option", "detail": "Drei der höchstbewerteten Spots Podgoricas.", "highlight": true,
+        { "time": "19:30", "title": "Dinner @ Konoba 'Lanterna' · richtig geil essen", "detail": "Heute Abend Festessen. 1630er-Konoba, Olivenbaum-Terrasse, frischer Fisch + Kačamak. Reservierung läuft. Falls aus irgendeinem Grund nichts geht: drei Backup-Optionen direkt darunter.", "highlight": true,
           "options": [
-            { "ref": "restaurant:Restoran Protokol",     "tag": "Nr. 1 der Stadt" },
-            { "ref": "restaurant:Babi Gourmet & Wine",   "tag": "Gourmet · Capital Plaza" },
-            { "ref": "restaurant:Steak House Grill",     "tag": "Premium-Grill" }
+            { "ref": "restaurant:Konoba 'Lanterna'",     "tag": "TOP-PICK · Konoba 1630" },
+            { "ref": "restaurant:Restoran Protokol",     "tag": "Backup A · Nr. 1 der Stadt" },
+            { "ref": "restaurant:Babi Gourmet & Wine",   "tag": "Backup B · Gourmet" },
+            { "ref": "restaurant:Steak House Grill",     "tag": "Backup C · Premium-Grill" }
           ]
         },
         { "time": "22:30", "title": "Craft-Bier-Kneipe · Wähl deine Option", "detail": "Lokal gebraut oder Boho-Lounge am Fluss.", "highlight": false,
@@ -281,6 +282,46 @@
         ]}
       ],
       "badge": "Fr Dinner · Option C"
+    },
+    {
+      "name": "Konoba 'Lanterna'",
+      "role": "Samstag Dinner · TOP-PICK",
+      "address": "Kralja Nikole 36",
+      "rating": "4.6",
+      "reviews": "2.275",
+      "cuisine": "Konoba · Seafood · Traditionell",
+      "price": "€€ · Mittelklasse-Plus",
+      "phone": "+382 67 663 163",
+      "phoneRaw": "+38267663163",
+      "maps": "https://maps.app.goo.gl/8d6tvhaSQPpCXaCo7",
+      "coords": { "lat": 42.4395, "lng": 19.2548 },
+      "menuUrl": "https://lanterna.me/en",
+      "menuLabel": "Website",
+      "description": "Älteste authentische Konoba Podgoricas, in einem Haus von 1630. Steinmauern, Holz, Terrasse mit zentralem Olivenbaum. Kralja Nikole 36, ~10 Min Fußweg vom Trg Republike. Tripadvisor #4 von 223 Restaurants — Stammgäste nennen sie schlicht 'das beste Restaurant der Stadt'. Spezialität: frischer Fisch & Meeresfrüchte sowie Kačamak (Käse-Klassiker). Große Portionen, faire Preise. Am Wochenende voll — Reservierung Pflicht.",
+      "reviewQuotes": [
+        { "text": "The best restaurant in Podgorica — great service, excellent tasty food, reasonable prices. The terrace with the olive tree is gorgeous.", "author": "Tripadvisor", "lang": "en" },
+        { "text": "Squid with potatoes and spinach was outstanding. Kačamak is a must-try — creamy, rich, perfectly done.", "author": "Wanderlog", "lang": "en" },
+        { "text": "Stone-and-wood interior in a 17th-century house. Portions consistently too large for one person — exceptional value.", "author": "RestaurantGuru", "lang": "en" }
+      ],
+      "menu": [
+        { "title": "Signature", "items": [
+          ["Frischer Grillfisch (Tagespreis)", "~25-40 €"],
+          ["Tintenfisch mit Kartoffel & Spinat", "~16 €"],
+          ["Kačamak mit Kajmak", "~9 €"]
+        ]},
+        { "title": "Traditionell", "items": [
+          ["Lamm unter der Glocke (2 Pers.)", "~38 €"],
+          ["Crnogorska zakuska", "~14 €"],
+          ["Ćevapi-Teller", "~10 €"]
+        ]},
+        { "title": "Wein", "items": [
+          ["Vranac (Glas / regional)", "~3 €"],
+          ["Vranac Premium Flasche", "~22 €"],
+          ["Hausmacher-Rakija", "~2,50 €"]
+        ]}
+      ],
+      "badge": "Sa Dinner · TOP-PICK",
+      "badgeClass": "alt"
     },
     {
       "name": "Restoran Protokol",
@@ -725,12 +766,13 @@
   },
 
   "reservations": [
-    { "prio": 1, "name": "Restoran Protokol",   "when": "Samstag 25.04. · 19:30 Uhr · Nr. 1 der Stadt",                 "phone": "+382 68 222 111", "phoneRaw": "+38268222111" },
-    { "prio": 2, "name": "Hemera",              "when": "Freitag 24.04. · 19:00 Uhr · Reservierung empfohlen (klein, oft voll)",   "phone": "+382 20 221 652", "phoneRaw": "+38220221652" },
-    { "prio": 3, "name": "Restoran Diplomat",   "when": "Freitag oder Sonntag · Brunch & Dinner",                       "phone": "+382 67 993 339", "phoneRaw": "+38267993339" },
-    { "prio": 4, "name": "Babi Gourmet & Wine", "when": "Samstag · Alternative · Freitag vorher reservieren",           "phone": "+382 67 160 393", "phoneRaw": "+38267160393" },
-    { "prio": 5, "name": "Steak House Grill",   "when": "Samstag · Steak-Alternative",                                  "phone": "+382 68 825 954", "phoneRaw": "+38268825954" },
-    { "prio": 6, "name": "Stara Kuća",          "when": "Freitag · 3 km außerhalb · Taxi ~5 €",                         "phone": "+382 69 030 204", "phoneRaw": "+38269030204" }
+    { "prio": 1, "name": "Konoba 'Lanterna'",   "when": "Samstag 25.04. · 19:30 Uhr · TOP-PICK heute Abend · am Wochenende voll, Reservierung Pflicht", "phone": "+382 67 663 163", "phoneRaw": "+38267663163" },
+    { "prio": 2, "name": "Restoran Protokol",   "when": "Samstag 25.04. · Backup A · Nr. 1 der Stadt",                  "phone": "+382 68 222 111", "phoneRaw": "+38268222111" },
+    { "prio": 3, "name": "Hemera",              "when": "Freitag 24.04. · 19:00 Uhr · Reservierung empfohlen (klein, oft voll)",   "phone": "+382 20 221 652", "phoneRaw": "+38220221652" },
+    { "prio": 4, "name": "Restoran Diplomat",   "when": "Freitag oder Sonntag · Brunch & Dinner",                       "phone": "+382 67 993 339", "phoneRaw": "+38267993339" },
+    { "prio": 5, "name": "Babi Gourmet & Wine", "when": "Samstag · Backup B · Freitag vorher reservieren",              "phone": "+382 67 160 393", "phoneRaw": "+38267160393" },
+    { "prio": 6, "name": "Steak House Grill",   "when": "Samstag · Backup C · Steak-Alternative",                       "phone": "+382 68 825 954", "phoneRaw": "+38268825954" },
+    { "prio": 7, "name": "Stara Kuća",          "when": "Freitag · 3 km außerhalb · Taxi ~5 €",                         "phone": "+382 69 030 204", "phoneRaw": "+38269030204" }
   ],
 
   "whatsappTemplate": "Hello! I'd like to make a reservation for 2 people on [Friday 24th] at [19:00]. Name: Luca. Could you please confirm? We'd like a [outside / inside] table if possible. Thank you!",
@@ -861,6 +903,7 @@
       { "name":"Scottish Pub McCloud", "lat":42.4416, "lng":19.2611, "type":"Pub",       "rating":4.6, "reviews":120 }
     ],
     "restaurants": [
+      { "name":"Konoba 'Lanterna'",                "lat":42.4395, "lng":19.2548, "cuisine":"Konoba",        "rating":4.6, "reviews":2275, "tier":"€€"  },
       { "name":"Hemera",                           "lat":42.4423, "lng":19.2620, "cuisine":"Italienisch",   "rating":4.7, "reviews":328,  "tier":"€€€" },
       { "name":"Restoran Diplomat",                "lat":42.4423, "lng":19.2645, "cuisine":"Mediterran",    "rating":4.8, "reviews":545,  "tier":"€€"  },
       { "name":"Stara Kuća",                       "lat":42.4515, "lng":19.2891, "cuisine":"Traditionell",  "rating":4.5, "reviews":321,  "tier":"€€"  },
@@ -882,6 +925,18 @@
       { "spot":"The Living Room",  "item":"Cappuccino / Latte",             "price":"2,50 €",  "category":"Kaffee",   "source":"Living Room Karte vor Ort",                 "url":"http://www.thelivingroom-pg.com/en/" }
     ],
     "menuShowcase": [
+      {
+        "name":"Konoba 'Lanterna'",
+        "url":"https://lanterna.me/en",
+        "label":"Website",
+        "items":[
+          ["Frischer Grillfisch (Tagespreis)","~25-40 €"],
+          ["Tintenfisch mit Kartoffel & Spinat","~16 €"],
+          ["Kačamak mit Kajmak","~9 €"],
+          ["Lamm unter der Glocke (2 Pers.)","~38 €"],
+          ["Vranac Premium Flasche","~22 €"]
+        ]
+      },
       {
         "name":"Hemera",
         "url":"https://www.hotelhemera.com/restoran-3/?lang=en",
