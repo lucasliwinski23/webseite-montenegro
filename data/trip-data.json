@@ -903,6 +903,37 @@
     "footer": "Nicht panisch. Im Notfall: Vermieter anrufen, Halo Taxi 19700, weiter atmen. Živjeli — und tschüss Podgorica."
   },
 
+  "lucaAnalysis": {
+    "title": "Warum immer Luca?",
+    "subtitle": "Comedy-Forschung mit echter Datenbasis. Volle Studie unter ideas/luca-incident-analysis.md im Repo.",
+    "ratio": { "luca": 4, "felix": 1, "label": "Namentliche Vorfälle Fr-So" },
+    "incidents": [
+      { "when": "Fr nachmittags", "who": "Beide", "what": "Pizza-Bude komplett dichtgesoffen, Name vergessen" },
+      { "when": "Fr 19:30—22:30", "who": "Beide", "what": "Diplomat — wortwörtlich umgebracht mit dem Sprit" },
+      { "when": "Fr 23:00—00:00", "who": "Luca (Initiator)", "what": "Hemera-Plan kollektiv aufgegeben, als Luca die Schlüssel ins Schloss bekam" },
+      { "when": "Fr ab 00:00", "who": "Beide", "what": "Heizstrahler im Bad nicht ausgeschaltet — 7. Klimazone, ca. 400.000 Grad" },
+      { "when": "Sa morgens", "who": "Luca", "what": "'Lucas Magen ist immer noch ein Verhandlungsgegner'" },
+      { "when": "Sa ganzen Tag", "who": "Luca (initiiert)", "what": "Faul-Tag-Modus" },
+      { "when": "So nachts", "who": "Luca", "what": "Bett vollgeblutet (Nasenbluten)" },
+      { "when": "So morgens", "who": "Felix", "what": "Halbtot, sitzt aber — erster eigener Status-Marker" }
+    ],
+    "hypotheses": [
+      { "label": "H1 · Initiator-Effekt", "text": "Luca führt riskante Bewegungen ein und exponiert sich zuerst. Felix konsumiert mit, aber selten als Erstantragender." },
+      { "label": "H2 · Anatomie + Heizstrahler", "text": "Trockene Schleimhaut + Dehydrierung + Blutdruck-Spitzen + 400.000-Grad-Bad = Nasenbluten erwartbar. Die Klimazone hat ihren Job gemacht." },
+      { "label": "H3 · Verantwortungs-Asymmetrie", "text": "Felix führt das Veto (Brauerei, Fisch) — entwickelt schützende Risikoaversion. Luca als Voll-Konsument ohne Veto-Funktion fängt die Restrisiken ab." },
+      { "label": "H4 · Reporting Bias", "text": "Vielleicht ist Felix nicht besser dran, kommt nur weniger zu Wort. Heutiges 'halbtot, sitzt aber' rehabilitiert die Statistik." },
+      { "label": "H5 · Erstgeborenen-Reisplanende", "text": "Wer den Trip plant, kompensiert Stress überdurchschnittlich. Felix hat den Luxus, einfach mitzulaufen." }
+    ],
+    "synthesis": "Wahrscheinlich H1 + H2 + H3 in Kombination. H4 ist die ehrliche Schutzhypothese — heute Morgen erstmals bestätigt durch Felix' eigenen Status-Eintrag.",
+    "prevention": [
+      "Heizstrahler-Schutzschalter auf Pre-Trip-Checkliste — die 7. Klimazone war vorhersehbar.",
+      "Veto-Rotation: nächste Reise wechseln sich Luca und Felix in der Veto-Rolle ab. Senkt H3-Effekt.",
+      "Initiator-Steuer: wer den Sprit-Suizid initiiert, trinkt verbindlich das letzte Glas Wasser. Senkt H1.",
+      "Ehrliches Tages-Reporting auch von Felix — schließt H4 als Confounder aus."
+    ],
+    "footer": "Pro-Tip Nasenbluten: Nasenflügel zudrücken, nach vorne lehnen (nicht nach hinten — sonst Schluckblut), 10 Min halten. Wenn nach 20 Min nicht aufhört: Ambulanz. Gilt auch in Podgorica, gilt erst recht zu Hause."
+  },
+
   "manifesto": {
     "title": "Plan Luca & Felix · Das 100-Tage-Manifest",
     "subtitle": "Wenn man uns Montenegro überlässt — satirisch, nicht der EU-Kommission zuschicken.",
