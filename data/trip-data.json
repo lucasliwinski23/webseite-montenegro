@@ -106,15 +106,14 @@
             { "ref": "bar:Scottish Pub McCloud", "tag": "Backup · Scottish · Zentral" }
           ]
         },
-        { "time": "19:30", "title": "Dinner @ Konoba 'Lanterna' · richtig geil essen", "detail": "Heute Abend Festessen. 1630er-Konoba, Olivenbaum-Terrasse, frischer Fisch + Kačamak. Reservierung läuft. Falls aus irgendeinem Grund nichts geht: drei Backup-Optionen direkt darunter.", "highlight": true,
+        { "time": "ca. 19:30 — 22:30", "title": "Dinner @ Konoba 'Lanterna' ✓ · erneutes Raki-Ereignis", "detail": "1630er-Konoba, Olivenbaum-Terrasse, Kačamak — und dann Hausmacher-Rakija. Wie schon Freitag in der Pizza-Bude haben wir uns hier noch einmal maßlos umgebracht. Lerneffekt: null — das ist jetzt offiziell ein Muster (siehe 'Warum Luca?'-Analyse).", "highlight": true,
           "options": [
-            { "ref": "restaurant:Konoba 'Lanterna'",     "tag": "TOP-PICK · Konoba 1630" },
-            { "ref": "restaurant:Restoran Protokol",     "tag": "Backup A · Nr. 1 der Stadt" },
-            { "ref": "restaurant:Babi Gourmet & Wine",   "tag": "Backup B · Gourmet" },
-            { "ref": "restaurant:Steak House Grill",     "tag": "Backup C · Premium-Grill" }
+            { "ref": "restaurant:Konoba 'Lanterna'",     "tag": "✓ besucht · Raki-Marathon" },
+            { "ref": "restaurant:Restoran Protokol",     "tag": "Backup A · ungenutzt" },
+            { "ref": "restaurant:Babi Gourmet & Wine",   "tag": "Backup B · ungenutzt" },
+            { "ref": "restaurant:Steak House Grill",     "tag": "Backup C · ungenutzt" }
           ]
         },
-        { "time": "ca. 19:30 — 22:30", "title": "Lanterna ✓ · erneutes Raki-Ereignis", "detail": "1630er-Konoba, Olivenbaum-Terrasse, Kačamak — und dann Hausmacher-Rakija. Wie schon Freitag in der Pizza-Bude haben wir uns hier noch einmal maßlos umgebracht. Lerneffekt: null. (Das ist jetzt offiziell ein Muster, siehe 'Warum Luca?'-Analyse.)", "highlight": true },
         { "time": "ca. 22:45", "title": "'Burger King' ✓ · die heimliche Reise-Konstante", "detail": "Auf dem Heimweg pflichtbewusst beim 'Burger King' eingelaufen — wie jeden Tag bisher. Spoiler: in Podgorica gibt's gar keinen offiziellen BK. Vermutete Identität: Goodfellas (Stanka Dragojevića 8, American Pizzeria & Grill) oder SMASH Pub (Craft + Burger). Wir klären das in der Nachbesprechung.", "highlight": true },
         { "time": "ca. 23:30", "title": "Wohnung · ein einziges Bier ✓", "detail": "Plan war Craft-Bier-Wahl (Fermentor / Itaka). Realität war ein einziges Bier auf der Couch und die ehrliche Erkenntnis, dass mehr nicht geht.", "highlight": false },
         { "time": "00:00", "title": "Bett ✓", "detail": "Faul-Modus war erfolgreicher als geplant — Punktlandung zur Geisterstunde. Heizstrahler diesmal tatsächlich kontrolliert ausgeschaltet (Lerneffekt aus der 7. Klimazone, siehe Wissenswertes). Der Erfolg war nur halbgar — Luca hat trotzdem in der Nacht das Bett vollgeblutet, siehe Sonntag.", "highlight": false }
