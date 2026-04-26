@@ -124,8 +124,8 @@
       "dayNum": "03",
       "date": "26. April 2026",
       "theme": "LAZARETT-MORGEN · BRUNCH · ABFLUG",
-      "warningTitle": "Felix kotzt gleich",
-      "warning": "Diplomat-Brunch ist durch — Kälbsburger, ganz okay, nicht gut. Jetzt sitzen wir hier mit Bier und gucken Felix dabei zu, wie er versucht, kein Magengeschwür zu kriegen. Wirkt knapp. Felix hat seit elf nur 'mhm' gesagt, in drei Tonlagen. Score steht jetzt 4:2 (Luca:Felix), Felix hat heute hart aufgeholt und sieht entsprechend aus. Plan: noch ein bisschen sitzen, dann packen, dann Taxi, dann Flugzeug.",
+      "warningTitle": "Penner-Modus am TGD",
+      "warning": "Sind nach Plan am TGD. Departures macht noch nicht auf, reingelassen werden wir nicht. Sitzen jetzt draußen auf dem Gehweg wie zwei Penner, mit Koffer und Bier. Zweites ist schon unterwegs — wir arbeiten am Pegel.",
       "items": [
         { "time": "09:00", "title": "Aufstehen · Bestandsaufnahme", "detail": "Wer noch ein Pulshat, hebt die Hand. Luca dokumentiert das Bett-Drama, Felix probiert vorsichtig die Senkrechte. Wasser, Kaffee, mehr Wasser. Niemand spricht laut.", "highlight": false },
         { "time": "09:30", "title": "Bett-Schadensmeldung an Vermieter", "detail": "Kurze Nachricht, Foto dazu, fertig. Wir leben, das Bett nicht mehr ganz.", "highlight": false },
@@ -139,7 +139,7 @@
           ]
         },
         { "time": "14:15", "title": "Taxi zum TGD", "detail": "Halo Taxi (19700) oder City Taxi (19711). 12-15 € fix, 25 Min. Taximeter muss laufen, Preisliste hängt im Auto.", "highlight": false },
-        { "time": "14:45", "title": "Am Flughafen", "detail": "Check-in, Security. Wizz Air ist streng mit Handgepäck — was nicht in 40×30×20 cm passt, wird angezogen.", "highlight": false },
+        { "time": "14:45", "title": "Am TGD ✓ · Bordstein-Vorglühen", "detail": "Angekommen. Departures macht noch nicht auf, also sitzen wir draußen auf dem Gehweg mit Koffer und Bier. Zweite Runde läuft. Wenn die Tür aufgeht, gehen wir möglichst gerade rein.", "highlight": true },
         { "time": "17:30", "title": "Abflug W6 7601", "detail": "Zurück nach Dortmund. 2:25 h Flugzeit. Schlafen ja, schnarchen nein.", "highlight": true },
         { "time": "19:55", "title": "Landung DTM", "detail": "Wir sind durch. Bett zu Hause wartet schon.", "highlight": false }
       ]
