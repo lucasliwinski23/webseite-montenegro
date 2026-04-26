@@ -114,13 +114,10 @@
             { "ref": "restaurant:Steak House Grill",     "tag": "Backup C · Premium-Grill" }
           ]
         },
-        { "time": "22:30", "title": "Craft-Bier · nur falls Wunder geschieht", "detail": "Plan B falls Luca um 22:30 nicht aussieht wie ein gefallener Engel: Fermentor oder Itaka. Plan A — der wahrscheinlichere Plan A — heißt Wohnung, Wasser, Bett.", "highlight": false,
-          "options": [
-            { "ref": "bar:Fermentor Craft Beer",  "tag": "Lokales Brewpub" },
-            { "ref": "bar:Itaka Library Bar",     "tag": "Outdoor / Fluss" }
-          ]
-        },
-        { "time": "23:00 — 00:00", "title": "Heimweg · realistisch", "detail": "Taxi (Halo 19700 / City 19711) oder zu Fuß. Wir tun nicht so, als ginge das hier bis 03:00 — Luca hat seine Performance schon in der Freitag-Pizza-Bude abgeliefert. Sonntag haben wir noch Auscheck (siehe Auscheck-Sektion unter Cheat Sheet) plus Flughafen — also lieber jetzt ins Bett.", "highlight": false }
+        { "time": "ca. 19:30 — 22:30", "title": "Lanterna ✓ · erneutes Raki-Ereignis", "detail": "1630er-Konoba, Olivenbaum-Terrasse, Kačamak — und dann Hausmacher-Rakija. Wie schon Freitag in der Pizza-Bude haben wir uns hier noch einmal maßlos umgebracht. Lerneffekt: null. (Das ist jetzt offiziell ein Muster, siehe 'Warum Luca?'-Analyse.)", "highlight": true },
+        { "time": "ca. 22:45", "title": "'Burger King' ✓ · die heimliche Reise-Konstante", "detail": "Auf dem Heimweg pflichtbewusst beim 'Burger King' eingelaufen — wie jeden Tag bisher. Spoiler: in Podgorica gibt's gar keinen offiziellen BK. Vermutete Identität: Goodfellas (Stanka Dragojevića 8, American Pizzeria & Grill) oder SMASH Pub (Craft + Burger). Wir klären das in der Nachbesprechung.", "highlight": true },
+        { "time": "ca. 23:30", "title": "Wohnung · ein einziges Bier ✓", "detail": "Plan war Craft-Bier-Wahl (Fermentor / Itaka). Realität war ein einziges Bier auf der Couch und die ehrliche Erkenntnis, dass mehr nicht geht.", "highlight": false },
+        { "time": "00:00", "title": "Bett ✓", "detail": "Faul-Modus war erfolgreicher als geplant — Punktlandung zur Geisterstunde. Heizstrahler diesmal tatsächlich kontrolliert ausgeschaltet (Lerneffekt aus der 7. Klimazone, siehe Wissenswertes). Der Erfolg war nur halbgar — Luca hat trotzdem in der Nacht das Bett vollgeblutet, siehe Sonntag.", "highlight": false }
       ]
     },
     {
@@ -128,8 +125,8 @@
       "dayNum": "03",
       "date": "26. April 2026",
       "theme": "LAZARETT-MORGEN · BRUNCH · ABFLUG",
-      "warningTitle": "Lagebericht 09:00",
-      "warning": "Vorfall in der Nacht: Luca hatte Nasenbluten, das Bett ist jetzt eine Spurensicherungsstelle. Felix sitzt aufrecht und atmet — das ist die gute Nachricht. Eine zweite gibt's nicht. Plan steht trotzdem: Brunch, packen, Taxi, Flugzeug. In genau dieser Reihenfolge.",
+      "warningTitle": "Status: scheiße",
+      "warning": "Lanterna gestern → erneut Raki-Ereignis (Maßlosigkeit ist hier offenbar Tradition). Danach Burger King (Reise-Konstante, jeden Tag bisher). Zu Hause noch genau ein Bier geschafft, 00:00 Bett. Beide angeschlagen. Plan steht trotzdem: Brunch, packen, Taxi, Flugzeug.",
       "items": [
         { "time": "09:00", "title": "Aufstehen · Bestandsaufnahme", "detail": "Wer noch ein Pulshat, hebt die Hand. Luca dokumentiert das Bett-Drama, Felix probiert vorsichtig die Senkrechte. Wasser, Kaffee, mehr Wasser. Niemand spricht laut.", "highlight": false },
         { "time": "09:30", "title": "Bett-Schadensmeldung an Vermieter", "detail": "Kurze ehrliche Nachricht zum Bettlaken. Mit Foto, ohne Ausreden. Erwartungsmanagement: 'wir leben noch, das Bett nicht mehr ganz.'", "highlight": false },
