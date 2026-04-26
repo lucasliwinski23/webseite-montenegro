@@ -2368,6 +2368,115 @@ body.map-fullscreen-active .bottom-nav {
 }
 
 /* ============================================================
+   LUCA ANALYSIS — Comedy-Forschung
+   ============================================================ */
+.luca-analysis { margin-top: 60px; }
+.luca-analysis:empty { display: none; }
+.la-header { margin-bottom: 18px; text-align: left; }
+.la-header h3 {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 1.4rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--text-primary); margin-bottom: 4px;
+}
+.la-header p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.55; max-width: 56ch; font-style: italic; }
+.la-ratio {
+  display: flex; align-items: stretch; gap: 0;
+  margin-bottom: 22px;
+  background: var(--bg-card); border: 1px solid var(--border-soft);
+  border-radius: 6px; overflow: hidden;
+}
+.la-ratio-cell {
+  flex: 1; padding: 14px 16px; text-align: center;
+  border-right: 1px solid var(--border-soft);
+}
+.la-ratio-cell:last-child { border-right: 0; }
+.la-ratio-name {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--text-muted); margin-bottom: 4px;
+}
+.la-ratio-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2.2rem; font-weight: 700; line-height: 1;
+}
+.la-ratio-cell.luca .la-ratio-num { color: var(--accent-warn); }
+.la-ratio-cell.felix .la-ratio-num { color: var(--accent-primary); }
+.la-ratio-label {
+  text-align: center; font-size: 0.72rem; color: var(--text-muted);
+  margin-top: -14px; margin-bottom: 18px; font-style: italic;
+}
+.la-section-title {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--accent-primary);
+  margin: 18px 0 8px;
+}
+.la-incidents {
+  background: var(--bg-card); border: 1px solid var(--border-soft);
+  border-radius: 6px; overflow: hidden;
+  margin-bottom: 4px;
+}
+.la-incident {
+  display: grid; grid-template-columns: minmax(110px,auto) minmax(120px,auto) 1fr;
+  gap: 8px 12px; padding: 8px 14px;
+  font-size: 0.82rem; line-height: 1.45;
+  border-bottom: 1px dashed var(--border-soft);
+}
+.la-incident:last-child { border-bottom: 0; }
+.la-incident-when {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem; color: var(--text-muted); white-space: nowrap;
+}
+.la-incident-who {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-weight: 700; font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--accent-warn); white-space: nowrap;
+}
+.la-incident-who.felix-only { color: var(--accent-primary); }
+.la-incident-who.both { color: var(--text-muted); }
+.la-incident-what { color: var(--text-muted); }
+@media (max-width: 480px) {
+  .la-incident { grid-template-columns: 1fr; gap: 2px; padding: 10px 12px; }
+}
+.la-hypothesis {
+  background: var(--bg-card); border: 1px solid var(--border-soft);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 4px; padding: 10px 14px; margin-bottom: 8px;
+}
+.la-hypothesis-label {
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--accent-primary); margin-bottom: 3px;
+}
+.la-hypothesis-text { font-size: 0.84rem; line-height: 1.5; color: var(--text-muted); }
+.la-synthesis {
+  margin-top: 10px; padding: 12px 14px;
+  background: rgba(184,84,31,0.1); border-left: 3px solid var(--accent-warm);
+  border-radius: 4px; font-size: 0.86rem; line-height: 1.55;
+  color: var(--text-primary);
+}
+.la-synthesis b { color: var(--accent-warm); }
+.la-prevention { list-style: none; padding: 0; margin: 6px 0 0; }
+.la-prevention li {
+  padding: 8px 0 8px 22px; position: relative;
+  font-size: 0.84rem; line-height: 1.5; color: var(--text-muted);
+  border-bottom: 1px dashed var(--border-soft);
+}
+.la-prevention li:last-child { border-bottom: 0; }
+.la-prevention li::before {
+  content: '✚'; position: absolute; left: 0; top: 8px;
+  color: var(--accent-primary); font-weight: 700;
+}
+.la-footer {
+  margin-top: 14px; padding: 12px 14px;
+  font-size: 0.82rem; line-height: 1.55;
+  background: var(--bg-card); border: 1px solid var(--border-soft);
+  border-radius: 4px; color: var(--text-muted);
+  font-style: italic;
+}
+.la-footer b { color: var(--text-primary); font-style: normal; }
+
+/* ============================================================
    FUN FACTS — Wissenswertes
    ============================================================ */
 .fun-facts { margin-top: 60px; }
@@ -3327,6 +3436,7 @@ main { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
         <button type="button" class="info-nav-chip" data-target="taxi-info">🚕 Taxi</button>
         <button type="button" class="info-nav-chip" data-target="checkout-info">🧹 Auscheck</button>
         <button type="button" class="info-nav-chip" data-target="manifesto">🎭 Plan Luca &amp; Felix</button>
+        <button type="button" class="info-nav-chip" data-target="luca-analysis">🔬 Warum Luca?</button>
         <button type="button" class="info-nav-chip" data-target="fun-facts">📚 Wissenswertes</button>
         <button type="button" class="info-nav-chip" data-target="analytics">📊 Auswertungen</button>
       </div>
@@ -3345,6 +3455,8 @@ main { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
       <div class="checkout-info fade-in" id="checkout-info"></div>
 
       <div class="manifesto fade-in" id="manifesto"></div>
+
+      <div class="luca-analysis fade-in" id="luca-analysis"></div>
 
       <div class="fun-facts fade-in" id="fun-facts"></div>
 
@@ -4050,6 +4162,7 @@ function renderAll() {
   renderTaxiInfo();
   renderCheckoutInfo();
   renderManifesto();
+  renderLucaAnalysis();
   renderFunFacts();
   renderAnalytics();
   bindHeroFacts();
@@ -4738,6 +4851,53 @@ function bindHeroFacts() {
     f.addEventListener('click', trigger);
     f.addEventListener('keydown', trigger);
   });
+}
+
+function renderLucaAnalysis() {
+  const wrap = document.getElementById('luca-analysis');
+  if (!wrap || !DATA.lucaAnalysis) { if (wrap) wrap.innerHTML = ''; return; }
+  const a = DATA.lucaAnalysis;
+  const incidents = (a.incidents || []).map(it => {
+    const whoLower = (it.who || '').toLowerCase();
+    let cls = 'both';
+    if (whoLower.startsWith('luca')) cls = '';
+    else if (whoLower.startsWith('felix')) cls = 'felix-only';
+    return `<div class="la-incident">
+      <span class="la-incident-when">${esc(it.when)}</span>
+      <span class="la-incident-who ${cls}">${esc(it.who)}</span>
+      <span class="la-incident-what">${esc(it.what)}</span>
+    </div>`;
+  }).join('');
+  const hypotheses = (a.hypotheses || []).map(h => `
+    <div class="la-hypothesis">
+      <div class="la-hypothesis-label">${esc(h.label)}</div>
+      <div class="la-hypothesis-text">${esc(h.text)}</div>
+    </div>
+  `).join('');
+  const prevention = (a.prevention || []).map(p => `<li>${esc(p)}</li>`).join('');
+  const ratio = a.ratio || {};
+  wrap.innerHTML = `
+    <div class="la-header">
+      <h3>${esc(a.title)}</h3>
+      ${a.subtitle ? `<p>${esc(a.subtitle)}</p>` : ''}
+    </div>
+    <div class="la-ratio">
+      <div class="la-ratio-cell luca">
+        <div class="la-ratio-name">Luca</div>
+        <div class="la-ratio-num">${esc(ratio.luca ?? '—')}</div>
+      </div>
+      <div class="la-ratio-cell felix">
+        <div class="la-ratio-name">Felix</div>
+        <div class="la-ratio-num">${esc(ratio.felix ?? '—')}</div>
+      </div>
+    </div>
+    ${ratio.label ? `<div class="la-ratio-label">${esc(ratio.label)}</div>` : ''}
+    ${incidents ? `<div class="la-section-title">▸ Vorfall-Log</div><div class="la-incidents">${incidents}</div>` : ''}
+    ${hypotheses ? `<div class="la-section-title">▸ Hypothesen</div>${hypotheses}` : ''}
+    ${a.synthesis ? `<div class="la-synthesis"><b>Synthese:</b> ${esc(a.synthesis)}</div>` : ''}
+    ${prevention ? `<div class="la-section-title">▸ Prävention nächste Reise</div><ul class="la-prevention">${prevention}</ul>` : ''}
+    ${a.footer ? `<div class="la-footer">${esc(a.footer)}</div>` : ''}
+  `;
 }
 
 function renderManifesto() {
