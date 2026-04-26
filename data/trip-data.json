@@ -125,7 +125,7 @@
       "date": "26. April 2026",
       "theme": "LAZARETT-MORGEN · BRUNCH · ABFLUG",
       "warningTitle": "Felix kotzt gleich",
-      "warning": "Diplomat-Brunch ist durch — Kälbsburger, ganz okay, nicht gut. Jetzt sitzen wir hier mit Bier und gucken Felix dabei zu, wie er versucht, kein Magengeschwür zu kriegen. Wirkt knapp. Score steht jetzt 4:2 (Luca:Felix), Felix hat heute hart aufgeholt und sieht entsprechend aus. Plan: noch ein bisschen sitzen, dann packen, dann Taxi, dann Flugzeug.",
+      "warning": "Diplomat-Brunch ist durch — Kälbsburger, ganz okay, nicht gut. Jetzt sitzen wir hier mit Bier und gucken Felix dabei zu, wie er versucht, kein Magengeschwür zu kriegen. Wirkt knapp. Felix hat seit elf nur 'mhm' gesagt, in drei Tonlagen. Score steht jetzt 4:2 (Luca:Felix), Felix hat heute hart aufgeholt und sieht entsprechend aus. Plan: noch ein bisschen sitzen, dann packen, dann Taxi, dann Flugzeug.",
       "items": [
         { "time": "09:00", "title": "Aufstehen · Bestandsaufnahme", "detail": "Wer noch ein Pulshat, hebt die Hand. Luca dokumentiert das Bett-Drama, Felix probiert vorsichtig die Senkrechte. Wasser, Kaffee, mehr Wasser. Niemand spricht laut.", "highlight": false },
         { "time": "09:30", "title": "Bett-Schadensmeldung an Vermieter", "detail": "Kurze Nachricht, Foto dazu, fertig. Wir leben, das Bett nicht mehr ganz.", "highlight": false },
@@ -912,7 +912,8 @@
       { "when": "Sa 19:30—22:30", "who": "Felix bestellt · Luca leidet", "what": "Lanterna. Felix bestellt wieder Raki. Funktioniert immer noch." },
       { "when": "So nachts", "who": "Luca", "what": "Nasenbluten. Bett ist jetzt rot." },
       { "when": "So morgens", "who": "Felix", "what": "Halbtot, sitzt aber." },
-      { "when": "So ca. 13:00", "who": "Felix", "what": "Diplomat-Brunch + Kälbsburger im Magen. Felix kotzt fast." }
+      { "when": "So ca. 13:00", "who": "Felix", "what": "Diplomat-Brunch + Kälbsburger im Magen. Felix kotzt fast." },
+      { "when": "So 13:30", "who": "Felix", "what": "Drei Tonlagen 'mhm'. 'Ja' kommt heute nicht mehr. Speisekarte gelesen wie ein Mahnschreiben." }
     ],
     "hypotheses": [
       { "label": "H1 · Felix bestellt, Luca zahlt", "text": "Felix holt den Raki an den Tisch, Luca trinkt mit. Beim zweiten Mal weiß man, dass es kein Zufall ist. Plot-Twist: der Schuldige steht hinter der Bar, nicht davor." },
