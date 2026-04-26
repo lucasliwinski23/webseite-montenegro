@@ -96,8 +96,6 @@
       "dayNum": "02",
       "date": "25. April 2026",
       "theme": "FAUL-MODUS · DIREKT ZUM PUB WWW · TUBORG-THERAPIE",
-      "warningTitle": "iDEA. Jetzt.",
-      "warning": "Lanterna ✓. VOLI und Mimoza sind seit 21:30 zu — bleibt iDEA (Bulevar Ivana Crnojevića, bis 24:00). Wer keinen Sonntags-Bier-Vorrat will, geht jetzt direkt heim. Alle anderen: Umweg über iDEA.",
       "items": [
         { "time": "12:30", "title": "Sehr langsam aufstehen", "detail": "Luca steht aus dem Bett auf wie aus einer Bewerbungsabsage — knirschend, mit langer Bedenkzeit. Wasser, Paracetamol, Kaffee, optional eine kleine Schweige-Minute. Kein Sightseeing, kein Brunch-Ehrgeiz, keine kreativen Ideen.", "highlight": false },
         { "time": "13:30", "title": "Direkt zum Pub WWW · keine Umwege", "detail": "Wir gehen heute den Faulen-Königsweg: aus der Wohnung raus, 5 Minuten Hercegovačka runter, in den Pub WWW. Kein Mittagsrestaurant. Kein Walk zur Frischluftgewinnung. Wenn jemand vorschlägt, vorher noch was zu sehen, wird er sanft, aber bestimmt zurechtgewiesen.", "highlight": true },
@@ -129,22 +127,26 @@
       "day": "Sonntag",
       "dayNum": "03",
       "date": "26. April 2026",
-      "theme": "AUSKLANG MIT GEPÄCK & ABFLUG",
-      "warning": "Check-out morgens. Gepäck muss den ganzen Tag mitkommen. Keine Kneipenrunde vor Flug.",
+      "theme": "LAZARETT-MORGEN · BRUNCH · ABFLUG",
+      "warningTitle": "Lagebericht 09:00",
+      "warning": "Vorfall in der Nacht: Luca hatte Nasenbluten, das Bett ist jetzt eine Spurensicherungsstelle. Felix sitzt aufrecht und atmet — mehr Verkehrssicherheit war heute Morgen nicht zu erwarten. Plan steht trotzdem: Brunch, packen, Taxi, Flugzeug. In genau dieser Reihenfolge.",
       "items": [
-        { "time": "10:30", "title": "Aufstehen & packen", "detail": "Letzte Sachen in den Koffer, Küche klar machen, Müll raus.", "highlight": false },
-        { "time": "11:00", "title": "Check-out", "detail": "Schlüssel zurück, Gepäck mitnehmen.", "highlight": false },
-        { "time": "11:15", "title": "Souvenir-Stop", "detail": "Pg Souvenir Shop (Magnete, Shirts) oder Another Story (handmade Silber) — auf dem Weg zum Brunch.", "highlight": false },
-        { "time": "11:30", "title": "Langer Brunch · 2,5 h · Wähl deine Option", "detail": "Beide nah an der Wohnung, Platz für Koffer.", "highlight": true,
+        { "time": "09:00", "title": "Aufstehen · Bestandsaufnahme", "detail": "Wer noch ein Pulshat, hebt die Hand. Luca dokumentiert das Bett-Drama, Felix probiert vorsichtig die Senkrechte. Wasser, Kaffee, mehr Wasser. Niemand spricht laut.", "highlight": false },
+        { "time": "09:30", "title": "Bett-Schadensmeldung an Vermieter", "detail": "Kurze ehrliche Nachricht zum Bettlaken. Mit Foto, ohne Ausreden. Erwartungsmanagement: 'wir leben noch, das Bett nicht mehr ganz.'", "highlight": false },
+        { "time": "10:30", "title": "Packen · langsam", "detail": "Letzte Sachen in den Koffer, Küche klar machen, Restbier inspizieren (siehe Auscheck-Plan unter Cheat Sheet). Tempo: Zeitlupe.", "highlight": false },
+        { "time": "11:00", "title": "Check-out", "detail": "Schlüssel auf dem Tisch, Tür ins Schloss. Falls Bett-Diskussion mit Vermieter offen: Bargeld bereit halten.", "highlight": false },
+        { "time": "11:15", "title": "Souvenir-Stop (optional)", "detail": "Pg Souvenir Shop oder Another Story — wenn Energie reicht. Wenn nicht: direkt zum Brunch.", "highlight": false },
+        { "time": "11:30", "title": "Langer Brunch · 2,5 h · Wähl deine Option", "detail": "Drei Spots, alle in Kofferreichweite. Heute kein Heldentum — Hauptsache fett und warm.", "highlight": true,
           "options": [
-            { "ref": "restaurant:Restoran Diplomat", "tag": "Mediterran" },
-            { "ref": "restaurant:Gostiona 1928",     "tag": "Tradition · 2 Min" }
+            { "ref": "restaurant:Gostiona 1928",       "tag": "Tradition · 2 Min · Frühstücksplatte" },
+            { "ref": "restaurant:Restoran Forum",      "tag": "Café-Vibe · Trg Republike · Chicken-Risotto" },
+            { "ref": "restaurant:Restoran Diplomat",   "tag": "Bekanntes Terrain · ggf. mit Flashbacks" }
           ]
         },
-        { "time": "14:15", "title": "Taxi zum TGD", "detail": "Halo Taxi (19700) oder City Taxi (19711) anrufen — Festpreis Flughafen-Transfer ~12-15 €, 25 Min Fahrt. Taximeter muss laufen, Preisliste hängt im Auto. Siehe Taxi-Info unter Cheat Sheet.", "highlight": false },
-        { "time": "14:45", "title": "Am Flughafen", "detail": "Check-in, Security. Wizz Air ist streng mit Handgepäck.", "highlight": false },
-        { "time": "17:30", "title": "Abflug W6 7601", "detail": "Zurück nach Dortmund. 2:25 h Flugzeit.", "highlight": true },
-        { "time": "19:55", "title": "Landung DTM", "detail": "Willkommen zurück. Mission complete.", "highlight": false }
+        { "time": "14:15", "title": "Taxi zum TGD", "detail": "Halo Taxi (19700) oder City Taxi (19711). Festpreis ~12-15 €, 25 Min Fahrt. Taximeter muss laufen, Preisliste hängt im Auto.", "highlight": false },
+        { "time": "14:45", "title": "Am Flughafen", "detail": "Check-in, Security. Wizz Air ist streng mit Handgepäck — was nicht in 40×30×20 cm passt, wird unterwegs angezogen.", "highlight": false },
+        { "time": "17:30", "title": "Abflug W6 7601", "detail": "Zurück nach Dortmund. 2:25 h Flugzeit. Schlafen erlaubt, schnarchen nicht.", "highlight": true },
+        { "time": "19:55", "title": "Landung DTM", "detail": "Willkommen zurück. Mission complete. Bett zu Hause warten lassen.", "highlight": false }
       ]
     }
   ],
