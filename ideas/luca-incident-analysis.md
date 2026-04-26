@@ -10,29 +10,32 @@ Ja, hab ich. Hier die Auswertung.
 
 ## 1. Datenlage · Vorfälle pro Person im Zeitraum 24.04.–26.04.2026
 
-| Tag | Zeitstempel | Vorfall | Luca | Felix |
-|-----|-------------|---------|:----:|:-----:|
-| Fr | nachmittags | Pizza-Bude komplett dichtgesoffen, Name vergessen | ✓ | ✓ |
-| Fr | 19:30–22:30 | Diplomat — "wortwörtlich umgebracht mit dem Sprit" | ✓ | ✓ |
-| Fr | 23:00–00:00 | Wohnungs-Nachsoff, Hemera-Plan kollektiv aufgegeben in dem Moment, als **Luca** die Schlüssel ins Schloss bekam | **✓** | (passiv) |
-| Fr | ab 00:00 | Heizstrahler im Bad nicht ausgeschaltet — keiner mehr in der Lage, beide gemeint | ✓ | ✓ |
-| Sa | morgens | "Lucas Magen ist immer noch ein Verhandlungsgegner" | **✓** | (gesund) |
-| Sa | ganzen Tag | Faul-Tag wegen **Luca** initiiert | **✓** | (mitgezogen) |
-| So | nachts | **Bett vollgeblutet (Nasenbluten)** | **✓** | (unbeteiligt) |
-| So | morgens | "Halbtot, sitzt aber" | (überlebt) | **✓** |
+| Tag | Zeitstempel | Vorfall | Wer bestellt | Wer leidet |
+|-----|-------------|---------|:-------------|:-----------|
+| Fr | nachmittags | Pizza-Bude komplett dichtgesoffen, Name vergessen | **Felix** (Raki) | beide |
+| Fr | 19:30–22:30 | Diplomat — "wortwörtlich umgebracht mit dem Sprit" | beide | beide |
+| Fr | 23:00–00:00 | Wohnungs-Nachsoff, Hemera-Plan kollektiv aufgegeben, als **Luca** die Schlüssel ins Schloss bekam | (gemeinsame Entscheidung) | Luca als Symptom-Träger |
+| Fr | ab 00:00 | Heizstrahler im Bad nicht ausgeschaltet — keiner mehr in der Lage | beide | beide |
+| Sa | morgens | "Lucas Magen ist immer noch ein Verhandlungsgegner" | n/a | **Luca** |
+| Sa | ganzen Tag | Faul-Tag wegen Lucas Magen | n/a | beide (Luca causal, Felix collateral) |
+| Sa | 19:30–22:30 | Lanterna — erneut Raki-Ereignis | **Felix** (Raki, wieder) | beide |
+| So | nachts | **Bett vollgeblutet (Nasenbluten)** | n/a | **Luca** |
+| So | morgens | "Halbtot, sitzt aber" | n/a | **Felix** |
 
-**Zwischenbilanz:** Luca hat 4 namentlich personalisierte Vorfälle, Felix 1. Hemera als "potenzielle Touri-Falle" haben wir auch markiert, aber das war kein Vorfall sondern eine kuratorische Entscheidung — also nicht zählbar.
+**Zwischenbilanz:** Luca hat 4 namentlich personalisierte Vorfälle, Felix 1. **Aber:** Felix ist in den dokumentierten Fällen 2× nachweislich der Raki-Initiator, Luca 0×. Das verschiebt die Lesart der Daten erheblich.
 
-**Vorfall-Quote Luca/Felix: 4:1** — statistisch signifikant, auch ohne Konfidenzintervall.
+**Vorfall-Quote Luca/Felix: 4:1** — statistisch signifikant. **Order-Initiative bei Hochprozentigem: 2:0 für Felix** — auch signifikant, aber in die andere Richtung.
 
 ---
 
 ## 2. Hypothesen · warum immer Luca?
 
-### H1 · Initiator-Effekt
-Luca ist in den Daten der **Initiator** der riskanten Bewegungen (Schlüssel-im-Schloss-Triumph, Magen-Veto, Faul-Tag-Erklärung). Felix ist meist **Co-Konsument**, aber selten Erstantragender. Wer initiiert, exponiert sich zuerst — und kassiert die Konsequenz zuerst.
+### H1 · Felix-Raki-Paradox (NEU, ersetzt frühere Initiator-Hypothese)
+**Datenrevision** nach Auswertung Pizza-Bude und Lanterna: Felix ist nachweislich der **Order-Initiator beim Hochprozentigen** — er bestellt den Raki, jedes Mal. Trotzdem trifft's primär Luca.
 
-**Datenstütze:** Pizza-Bude-Wahl (laut Erzählung am Nachmittag impulsiv), Diplomat-Sprit-Suizid (Initiative am Tisch). Klassisches Risk-Owner-Muster.
+**Erkenntnis:** Initiator ≠ Risikoträger. Felix wirft die Schwarzpulver-Tüte, Luca zündet sie an. Die Studie hat damit ihren ersten echten Plot-Twist.
+
+**Datenstütze:** Pizza-Bude (Felix → Raki, Luca → komplett), Lanterna (Felix → Raki erneut, Luca → trinkt mit, Bett vollgeblutet). Reproduzierbar wie ein Laborexperiment.
 
 ### H2 · Anatomische Vorbelastung (Nasenbluten)
 Nasenbluten sind häufig idiopathisch oder durch Schleimhaut-Fragilität bedingt. Risikofaktoren: trockene Luft (siehe **7. Klimazone Apartment-Badezimmer, ca. 400.000 Grad** — Heizstrahler-Vorfall direkt korrelierend), Dehydrierung (siehe Tuborg-Therapie), Blutdruck-Spitzen nach Sprit. Diese drei Faktoren konzentrierten sich in der Person Luca — die anatomische Schleimhaut hat gemacht, was sie machen musste.
@@ -40,9 +43,13 @@ Nasenbluten sind häufig idiopathisch oder durch Schleimhaut-Fragilität bedingt
 **Vorhersagbarkeit:** mittel-hoch. Die 7. Klimazone war ja schon 24h vorher als Risiko in den Wissenswertes-Notizen.
 
 ### H3 · Verteilungs-Asymmetrie der Verantwortung
-Felix ist auf der Reise vom User selbst als "der Vetomäßige" charakterisiert worden (Brauerei-Veto, Fisch-Veto). Veto-Träger entwickeln eine **schützende Risikoaversion** — sie ziehen früher die Reißleine. Luca als Voll-Konsument der Optionen ohne Veto-Funktion fängt die Restrisiken ab.
+Felix führt zwei Hebel mit kontrolliertem Risiko für sich selbst:
+- **das Veto** (Brauerei-Streichung, Fisch-Veto) → schützt vor Risiken, die er nicht selbst gesucht hat
+- **die Order beim Hochprozentigen** (siehe H1) → er weiß vermutlich, wo seine eigene Grenze ist
 
-**Strukturell:** Wer im Team das Stop-Schild führt, wird seltener in den Pfosten fahren.
+Luca als Voll-Konsument ohne Veto-Funktion und ohne Order-Hoheit fängt die Restrisiken ab. **Strukturell unfair, aber konsistent.**
+
+**Strukturell:** Wer im Team Stop-Schild und Tankwart gleichzeitig führt, wird seltener selbst in den Pfosten fahren.
 
 ### H4 · Selbstinszenierungs-Dividende
 Möglicher Confounder: Luca berichtet die Vorfälle hier (User-Stimme im Chat), Felix sitzt halbtot daneben und liefert keine Selbstauskunft. Es kann Reporting Bias vorliegen — Felix' Vorfälle könnten unterdokumentiert sein. Heutiger "halbtot, sitzt aber"-Status ist ein erster Indizien-Beleg, dass Felix nicht so unversehrt ist wie die Datenlage suggeriert.
@@ -57,13 +64,13 @@ Luca ist (vermutlich) Trip-Organisator, hat die Wohnung gebucht, hatte den Plan 
 ## 3. Synthese
 
 Die wahrscheinlichste Erklärung ist eine **Kombination aus H1 + H2 + H3**:
-- Luca initiiert → exponiert sich zuerst (H1)
-- Luca konsumiert ungebremst → physiologischer Effekt früher (H3, H5)
-- Luca schläft im am stärksten vom Heizstrahler überhitzten Raum → Nasenbluten erwartbar (H2)
+- **Felix ordert** den Raki, Luca trinkt mit (H1, neu nach Datenrevision)
+- **Felix kontrolliert** zwei Hebel (Veto + Order) und schützt sich strukturell (H3)
+- Luca **konsumiert ungebremst** und schläft im am stärksten vom Heizstrahler überhitzten Raum → Nasenbluten erwartbar (H2)
 
-H4 (Reporting Bias) ist die ehrliche Schutzhypothese — vielleicht ist Felix tatsächlich nicht besser dran, kommt nur weniger zu Wort.
+H4 (Reporting Bias) wurde Sonntagmorgen erstmals teilweise eingelöst — Felix hat seinen ersten eigenen Status-Marker bekommen. H5 (Toleranz-Differenzial) erklärt H1 plausibel, müsste aber durch eine Vergleichsstudie auf neutralem Trinkboden überprüft werden.
 
-**Empfehlung an die Bordbuch-Führung:** Auf den Heimflug die Frage stellen, ob Felix vielleicht in den letzten 48h auch was hatte, was nur nicht laut wurde. Wenn ja → H4 bestätigt, Luca rehabilitiert. Wenn nein → H1+H3 bleiben Hauptverdächtige.
+**Empfehlung an die Bordbuch-Führung:** Felix in den nächsten Sessions ehrlich nach Order-Motivation fragen. Wenn er bewusst aggressiver ordert, weil er weiß, dass er es verträgt → H1+H5 bestätigt, strukturelle Unfairness ist die Story. Wenn er nicht weiß, was er ordert → reine Bequemlichkeits-Asymmetrie.
 
 ---
 
@@ -71,7 +78,8 @@ H4 (Reporting Bias) ist die ehrliche Schutzhypothese — vielleicht ist Felix ta
 
 - **Heizstrahler-Schutzschalter** auf der Pre-Trip-Checkliste vermerken (siehe Plan Luca & Felix, Tag 31-50, Heizstrahler-QR-Code).
 - **Veto-Rotation:** Auf der nächsten Reise wechseln sich Luca und Felix in der Veto-Rolle ab. Senkt H3-Effekt.
-- **Initiator-Steuer:** wer den Sprit-Suizid initiiert, trinkt das letzte Glas Wasser — verbindlich. Senkt H1.
+- **Order-Rotation beim Hochprozentigen:** Luca bestellt den Raki nächste Reise, Felix trinkt mit. Direkter H1-Test.
+- **Order-Steuer:** wer den Sprit-Suizid bestellt (= Felix in 100 % der dokumentierten Fälle), trinkt das nächste Glas Wasser verbindlich. Senkt das Felix-Raki-Paradox.
 - **Ehrliches Reporting:** auch Felix gibt ein Mal pro Tag einen Status durch. Schließt H4 als Confounder aus.
 
 ---

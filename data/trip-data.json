@@ -904,23 +904,24 @@
     "subtitle": "Comedy-Forschung mit echter Datenbasis. Volle Studie unter ideas/luca-incident-analysis.md im Repo.",
     "ratio": { "luca": 4, "felix": 1, "label": "Namentliche Vorfälle Fr-So" },
     "incidents": [
-      { "when": "Fr nachmittags", "who": "Beide", "what": "Pizza-Bude komplett dichtgesoffen, Name vergessen" },
+      { "when": "Fr nachmittags", "who": "Felix bestellt · Luca leidet", "what": "Pizza-Bude — Felix ordert den Raki, Luca trinkt mit, beide komplett dicht" },
       { "when": "Fr 19:30—22:30", "who": "Beide", "what": "Diplomat — wortwörtlich umgebracht mit dem Sprit" },
-      { "when": "Fr 23:00—00:00", "who": "Luca (Initiator)", "what": "Hemera-Plan kollektiv aufgegeben, als Luca die Schlüssel ins Schloss bekam" },
+      { "when": "Fr 23:00—00:00", "who": "Luca", "what": "Hemera-Plan kollektiv aufgegeben, als Luca die Schlüssel ins Schloss bekam" },
       { "when": "Fr ab 00:00", "who": "Beide", "what": "Heizstrahler im Bad nicht ausgeschaltet — 7. Klimazone, ca. 400.000 Grad" },
       { "when": "Sa morgens", "who": "Luca", "what": "'Lucas Magen ist immer noch ein Verhandlungsgegner'" },
-      { "when": "Sa ganzen Tag", "who": "Luca (initiiert)", "what": "Faul-Tag-Modus" },
+      { "when": "Sa ganzen Tag", "who": "Luca", "what": "Faul-Tag-Modus initiiert (auf Lucas Kosten)" },
+      { "when": "Sa 19:30—22:30", "who": "Felix bestellt · Luca leidet", "what": "Lanterna — Felix bestellt erneut den Raki, Luca trinkt erneut mit. Reproduzierbar wie ein Laborexperiment." },
       { "when": "So nachts", "who": "Luca", "what": "Bett vollgeblutet (Nasenbluten)" },
-      { "when": "So morgens", "who": "Felix", "what": "Halbtot, sitzt aber — erster eigener Status-Marker" }
+      { "when": "So morgens", "who": "Felix", "what": "Halbtot, sitzt aber — erster eigener Status-Marker (späte Rehabilitation der Statistik)" }
     ],
     "hypotheses": [
-      { "label": "H1 · Initiator-Effekt", "text": "Luca führt riskante Bewegungen ein und exponiert sich zuerst. Felix konsumiert mit, aber selten als Erstantragender." },
-      { "label": "H2 · Anatomie + Heizstrahler", "text": "Trockene Schleimhaut + Dehydrierung + Blutdruck-Spitzen + 400.000-Grad-Bad = Nasenbluten erwartbar. Die Klimazone hat ihren Job gemacht." },
-      { "label": "H3 · Verantwortungs-Asymmetrie", "text": "Felix führt das Veto (Brauerei, Fisch) — entwickelt schützende Risikoaversion. Luca als Voll-Konsument ohne Veto-Funktion fängt die Restrisiken ab." },
-      { "label": "H4 · Reporting Bias", "text": "Vielleicht ist Felix nicht besser dran, kommt nur weniger zu Wort. Heutiges 'halbtot, sitzt aber' rehabilitiert die Statistik." },
-      { "label": "H5 · Erstgeborenen-Reisplanende", "text": "Wer den Trip plant, kompensiert Stress überdurchschnittlich. Felix hat den Luxus, einfach mitzulaufen." }
+      { "label": "H1 · Felix-Raki-Paradox (NEU, ersetzt Initiator-Effekt)", "text": "Datenrevision nach Lanterna: Felix ist nachweislich der Initiator — er bestellt den Raki, jedes Mal. Trotzdem trifft's primär Luca. Erkenntnis: Initiator ≠ Risikoträger. Felix wirft die Schwarzpulver-Tüte, Luca zündet sie an. Die Studie hat hier ihren ersten echten Plot-Twist." },
+      { "label": "H2 · Anatomie + Heizstrahler", "text": "Trockene Schleimhaut + Dehydrierung + Blutdruck-Spitzen + 400.000-Grad-Bad = Nasenbluten erwartbar. Die Klimazone hat ihren Job gemacht — die Anatomie auch." },
+      { "label": "H3 · Verantwortungs-Asymmetrie", "text": "Felix führt das Veto (Brauerei, Fisch) UND bestellt den Raki — beides Hebel mit kontrolliertem Risiko für ihn selbst. Luca als Voll-Konsument ohne Veto-Funktion und ohne Order-Hoheit fängt die Restrisiken ab. Strukturell unfair." },
+      { "label": "H4 · Reporting Bias", "text": "Vielleicht ist Felix nicht besser dran, kommt nur weniger zu Wort. Heutiges 'halbtot, sitzt aber' rehabilitiert die Statistik — Felix hat seinen ersten eigenen Status-Eintrag." },
+      { "label": "H5 · Toleranz-Differenzial", "text": "Mögliche Unterhypothese zu H1: Felix bestellt aggressiver, weil er weiß, dass er es verträgt. Luca trinkt aus Geselligkeit mit, ohne den körpereigenen Bremsweg zu kalkulieren. Wenn das stimmt: Felix ist ein heimlicher Stratege, Luca der Treue." }
     ],
-    "synthesis": "Wahrscheinlich H1 + H2 + H3 in Kombination. H4 ist die ehrliche Schutzhypothese — heute Morgen erstmals bestätigt durch Felix' eigenen Status-Eintrag.",
+    "synthesis": "Wahrscheinlich H1 + H2 + H3 in Kombination — Felix ordert, Luca trägt, das Bad heizt. H4 ist die ehrliche Schutzhypothese, die heute Morgen erstmals teilweise eingelöst wurde. H5 könnte H1 erklären, müsste aber durch eine Vergleichsstudie auf neutralem Trinkboden überprüft werden.",
     "prevention": [
       "Heizstrahler-Schutzschalter auf Pre-Trip-Checkliste — die 7. Klimazone war vorhersehbar.",
       "Veto-Rotation: nächste Reise wechseln sich Luca und Felix in der Veto-Rolle ab. Senkt H3-Effekt.",
