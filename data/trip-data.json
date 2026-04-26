@@ -124,19 +124,19 @@
       "dayNum": "03",
       "date": "26. April 2026",
       "theme": "LAZARETT-MORGEN · BRUNCH · ABFLUG",
-      "warningTitle": "Status: scheiße",
-      "warning": "Lanterna war gestern wieder ein Raki-Ereignis — zwei Tage hintereinander wortwörtlich umgebracht ist offiziell kein Zufall mehr, sondern ein Muster mit Wiederholungstäter-Profil. Danach pflichtbewusst beim Burger King eingelaufen, der inzwischen so verlässlich Teil unserer Reise ist, dass wir ihn in der Statistik als Konstante führen müssen. Zu Hause haben wir noch genau ein Bier geschafft — ehrlichste Leistung des Abends — und sind um Mitternacht ins Bett gefallen. Beide angeschlagen, beide funktionsfähig im weitesten Sinne. Plan steht trotzdem: Brunch, packen, Taxi, Flugzeug, in genau dieser Reihenfolge.",
+      "warningTitle": "Live-Lazarett @ Diplomat ✓",
+      "warning": "Standortmeldung 11:42 vom Tisch beim Diplomat: Wir haben uns kollektiv für bekanntes Terrain entschieden, weil Brunch-Experimente heute körperlich nicht verhandelbar waren. Das Personal hat uns mit dem leisen 'die schon wieder' begrüßt, der Wirt hat zwei Gläser Wasser hingestellt, ohne gefragt zu werden — wir sind hier inzwischen Stammgäste mit Aktensymbol. Felix ist richtig kaputt. Er sieht aus wie ein angeschlagener Boxer in Runde 11, bewegt sich, als würde er bei jeder Geste bezahlen müssen, und hat seit dem Aufstehen vor allem 'mhm' produziert — in vier verschiedenen Tonlagen, ein 'ja' war noch nicht drin. Die Speisekarte hat er in Spalten gelesen, nicht in Zeilen, und nach drei Minuten resigniert auf 'das Gleiche wie Freitag' gezeigt. Luca trinkt Wasser mit der Andacht eines Kommunionkinds, tippt parallel diese Statusmeldung, weil Reden gerade niemand kann, und hat heute Morgen ein Bett an den Vermieter abgetreten, das mehr Spuren hat als die Reise selbst. Der Brotkorb steht — historische Premiere — fünf Minuten unberührt, weil Felix nicht und Luca nicht und sonst ist hier keiner. Plan ab hier in kindlicher Klarheit: warm essen, langsam aufstehen, Koffer holen, Taxi rufen, Flugzeug, Sofa. Heimat ist heute kein Ort, sondern eine Behauptung.",
       "items": [
         { "time": "09:00", "title": "Aufstehen · Bestandsaufnahme", "detail": "Wer noch ein Pulshat, hebt die Hand. Luca dokumentiert das Bett-Drama, Felix probiert vorsichtig die Senkrechte. Wasser, Kaffee, mehr Wasser. Niemand spricht laut.", "highlight": false },
         { "time": "09:30", "title": "Bett-Schadensmeldung an Vermieter", "detail": "Kurze ehrliche Nachricht zum Bettlaken. Mit Foto, ohne Ausreden. Erwartungsmanagement: 'wir leben noch, das Bett nicht mehr ganz.'", "highlight": false },
         { "time": "10:30", "title": "Packen · langsam", "detail": "Letzte Sachen in den Koffer, Küche klar machen, Restbier inspizieren (siehe Auscheck-Plan unter Cheat Sheet). Tempo: Zeitlupe.", "highlight": false },
         { "time": "11:00", "title": "Check-out", "detail": "Schlüssel auf dem Tisch, Tür ins Schloss. Falls Bett-Diskussion mit Vermieter offen: Bargeld bereit halten.", "highlight": false },
         { "time": "11:15", "title": "Souvenir-Stop (optional)", "detail": "Pg Souvenir Shop oder Another Story — wenn Energie reicht. Wenn nicht: direkt zum Brunch.", "highlight": false },
-        { "time": "11:30", "title": "Langer Brunch · 2,5 h · Wähl deine Option", "detail": "Drei Spots, alle in Kofferreichweite. Heute kein Heldentum — Hauptsache fett und warm.", "highlight": true,
+        { "time": "11:30", "title": "Brunch @ Restoran Diplomat ✓ (live)", "detail": "Entscheidung kollektiv per akuter Energiearmut getroffen: zurück ins Stammhaus. Diplomat kennt uns, wir kennen die Karte, der Brotkorb steht zuverlässig in unter 90 Sekunden — heute Morgen ist Verlässlichkeit wichtiger als Variation. Felix schafft die Speisekarte nur in Spalten, nicht in Zeilen. Gostiona & Forum bleiben als ungenutzte Brunch-Reserven für die nächste Reise dokumentiert.", "highlight": true,
           "options": [
-            { "ref": "restaurant:Gostiona 1928",       "tag": "Tradition · 2 Min · Frühstücksplatte" },
-            { "ref": "restaurant:Restoran Forum",      "tag": "Café-Vibe · Trg Republike · Chicken-Risotto" },
-            { "ref": "restaurant:Restoran Diplomat",   "tag": "Bekanntes Terrain · ggf. mit Flashbacks" }
+            { "ref": "restaurant:Restoran Diplomat",   "tag": "✓ live · Stammhaus, das uns kennt" },
+            { "ref": "restaurant:Gostiona 1928",       "tag": "ungenutzt · ggf. nächste Reise" },
+            { "ref": "restaurant:Restoran Forum",      "tag": "ungenutzt · ggf. nächste Reise" }
           ]
         },
         { "time": "14:15", "title": "Taxi zum TGD", "detail": "Halo Taxi (19700) oder City Taxi (19711). Festpreis ~12-15 €, 25 Min Fahrt. Taximeter muss laufen, Preisliste hängt im Auto.", "highlight": false },
@@ -900,35 +900,43 @@
   },
 
   "lucaAnalysis": {
-    "title": "Warum immer Luca?",
-    "subtitle": "Comedy-Forschung mit echter Datenbasis. Volle Studie unter ideas/luca-incident-analysis.md im Repo.",
-    "ratio": { "luca": 4, "felix": 1, "label": "Namentliche Vorfälle Fr-So" },
+    "title": "Warum immer Luca? · v3.0 · Sonntag-Update",
+    "subtitle": "Live-Update vom Diplomat-Brunch. Reviewer-Feedback aus dem Apartment ('schreib uns mal witziger, wir haben uns gerade nichts zu sagen') wurde dankbar angenommen. Volle Studie unter ideas/luca-incident-analysis.md im Repo.",
+    "ratio": { "luca": 5, "felix": 3, "label": "Namentliche Vorfälle Fr–So · Felix holt sichtbar auf (späte Rehabilitation)" },
     "incidents": [
-      { "when": "Fr nachmittags", "who": "Felix bestellt · Luca leidet", "what": "Pizza-Bude — Felix ordert den Raki, Luca trinkt mit, beide komplett dicht" },
-      { "when": "Fr 19:30—22:30", "who": "Beide", "what": "Diplomat — wortwörtlich umgebracht mit dem Sprit" },
-      { "when": "Fr 23:00—00:00", "who": "Luca", "what": "Hemera-Plan kollektiv aufgegeben, als Luca die Schlüssel ins Schloss bekam" },
-      { "when": "Fr ab 00:00", "who": "Beide", "what": "Heizstrahler im Bad nicht ausgeschaltet — 7. Klimazone, ca. 400.000 Grad" },
-      { "when": "Sa morgens", "who": "Luca", "what": "'Lucas Magen ist immer noch ein Verhandlungsgegner'" },
-      { "when": "Sa ganzen Tag", "who": "Luca", "what": "Faul-Tag-Modus initiiert (auf Lucas Kosten)" },
-      { "when": "Sa 19:30—22:30", "who": "Felix bestellt · Luca leidet", "what": "Lanterna — Felix bestellt erneut den Raki, Luca trinkt erneut mit. Reproduzierbar wie ein Laborexperiment." },
-      { "when": "So nachts", "who": "Luca", "what": "Bett vollgeblutet (Nasenbluten)" },
-      { "when": "So morgens", "who": "Felix", "what": "Halbtot, sitzt aber — erster eigener Status-Marker (späte Rehabilitation der Statistik)" }
+      { "when": "Fr nachmittags", "who": "Felix bestellt · Luca leidet", "what": "Pizza-Bude — Felix ordert den Raki, Luca trinkt aus Höflichkeit mit, beide enden komplett dicht" },
+      { "when": "Fr 19:30—22:30", "who": "Beide", "what": "Diplomat — wir haben uns wortwörtlich umgebracht mit dem Sprit. Beim Verlassen wussten wir nicht mehr, in welchem Land wir sind." },
+      { "when": "Fr 23:00—00:00", "who": "Luca", "what": "Hemera-Plan kollektiv aufgegeben, als Luca eine volle Minute gebraucht hat, um die Schlüssel ins Schloss zu bekommen" },
+      { "when": "Fr ab 00:00", "who": "Beide", "what": "Heizstrahler im Bad nicht ausgeschaltet — 7. Klimazone, ca. 400.000 Grad. Niemand wollte es zugeben." },
+      { "when": "Sa morgens", "who": "Luca", "what": "Lucas Magen ist immer noch ein Verhandlungsgegner, der bei jedem Vorschlag mit den Augen rollt" },
+      { "when": "Sa ganzen Tag", "who": "Luca", "what": "Faul-Tag-Modus initiiert auf Lucas Kosten — Aufstehen wie aus einer Bewerbungsabsage, knirschend, mit langer Bedenkzeit" },
+      { "when": "Sa 19:30—22:30", "who": "Felix bestellt · Luca leidet", "what": "Lanterna — Felix bestellt erneut den Raki. Lerneffekt aus Freitag: null. Wir sind die Ratten in unserem eigenen Laborexperiment." },
+      { "when": "Sa ~22:45", "who": "Beide", "what": "'Burger King' eingelaufen — Reise-Konstante an Tag 2, weil ohne den Stop kommen wir gar nicht mehr nach Hause" },
+      { "when": "So ~02:30", "who": "Luca", "what": "Bett vollgeblutet · Nasenbluten · Vermieter wird heute Morgen ehrlich informiert" },
+      { "when": "So ~09:00", "who": "Felix", "what": "Senkrechte erst beim dritten Versuch — Felix bewegt sich, als würde er pro Bewegung in bar bezahlen" },
+      { "when": "So 11:30", "who": "Beide", "what": "Diplomat-Brunch — bekanntes Terrain gewählt, weil Experimente heute körperlich nicht verhandelbar sind. Brotkorb erstmals unangetastet — historische Premiere." },
+      { "when": "So 11:42", "who": "Felix", "what": "Vier verschiedene 'mhm'-Tonlagen geliefert, ein 'ja' war noch nicht drin. Speisekarte gelesen wie eine Steuerbescheinigung." }
     ],
     "hypotheses": [
-      { "label": "H1 · Felix-Raki-Paradox (NEU, ersetzt Initiator-Effekt)", "text": "Datenrevision nach Lanterna: Felix ist nachweislich der Initiator — er bestellt den Raki, jedes Mal. Trotzdem trifft's primär Luca. Erkenntnis: Initiator ≠ Risikoträger. Felix wirft die Schwarzpulver-Tüte, Luca zündet sie an. Die Studie hat hier ihren ersten echten Plot-Twist." },
-      { "label": "H2 · Anatomie + Heizstrahler", "text": "Trockene Schleimhaut + Dehydrierung + Blutdruck-Spitzen + 400.000-Grad-Bad = Nasenbluten erwartbar. Die Klimazone hat ihren Job gemacht — die Anatomie auch." },
-      { "label": "H3 · Verantwortungs-Asymmetrie", "text": "Felix führt das Veto (Brauerei, Fisch) UND bestellt den Raki — beides Hebel mit kontrolliertem Risiko für ihn selbst. Luca als Voll-Konsument ohne Veto-Funktion und ohne Order-Hoheit fängt die Restrisiken ab. Strukturell unfair." },
-      { "label": "H4 · Reporting Bias", "text": "Vielleicht ist Felix nicht besser dran, kommt nur weniger zu Wort. Heutiges 'halbtot, sitzt aber' rehabilitiert die Statistik — Felix hat seinen ersten eigenen Status-Eintrag." },
-      { "label": "H5 · Toleranz-Differenzial", "text": "Mögliche Unterhypothese zu H1: Felix bestellt aggressiver, weil er weiß, dass er es verträgt. Luca trinkt aus Geselligkeit mit, ohne den körpereigenen Bremsweg zu kalkulieren. Wenn das stimmt: Felix ist ein heimlicher Stratege, Luca der Treue." }
+      { "label": "H1 · Felix-Raki-Paradox · v2 (bestätigt)", "text": "Datenrevision Sonntag: Felix ist und bleibt der Initiator — er bestellt den Raki, jedes Mal. Sein eigener Zusammenbruch heute am Diplomat-Brunch schließt den letzten offenen Punkt der Studie: der Initiator zahlt verzögert, mit Zinseszins. Felix wirft die Schwarzpulver-Tüte, Luca zündet sie an, Felix bekommt 36 Stunden später die Rechnung. Plot-Twist bestätigt." },
+      { "label": "H2 · Anatomie + Heizstrahler", "text": "Trockene Schleimhaut + Dehydrierung + Blutdruck + 400.000-Grad-Bad = Nasenbluten ist erwartbar gewesen. Die Klimazone hat ihren Job gemacht, Lucas Schleimhäute auch. Wir hätten nur einen Moment vorhersagen können, in dem dieser Heizstrahler ausgeht — diesen Moment haben wir verschlafen." },
+      { "label": "H3 · Verantwortungs-Asymmetrie", "text": "Felix führt die Vetos (Brauerei, Fisch) UND bestellt den Raki — beides Hebel mit kontrolliertem Risiko für ihn selbst. Luca als Voll-Konsument ohne Veto-Funktion und ohne Order-Hoheit fängt die Restrisiken kurzfristig ab. Strukturell unfair — aber heute teilkompensiert durch H6 (siehe unten, mit Genugtuung verfasst)." },
+      { "label": "H4 · Reporting Bias (Status: erledigt)", "text": "Frühere Versionen der Studie haben Luca überrepräsentiert, weil Felix nicht zu Wort kam. Sa und So hat Felix jeweils mehrere eigene Vorfälle geliefert — die Statistik atmet wieder. Felix ist nicht weniger angeschlagen als Luca, er ist nur leiser. Heute Morgen ist er auch das nicht mehr." },
+      { "label": "H5 · Toleranz-Selbsteinschätzung", "text": "Felix bestellt aggressiver, weil er sich für robuster hält. Heutiger Datenpunkt am Diplomat: die Selbsteinschätzung war eher Wunschdenken als Empirie. Empfehlung für die nächste Reise: vor jedem Raki-Bestellvorgang einmal laut sagen, wie's einem geht." },
+      { "label": "H6 · Felix-Sonntags-Singularität (NEU, Hauptbefund)", "text": "Heute ist Felix' großer Tag. Initiator-Steuer wird in Raten eingezogen, ohne Skonto. Symptome: Sätze unter drei Wörtern, Bewegung in 25 %-Geschwindigkeit, Speisekarte nur in Spalten verarbeitbar, Brotkorb-Quote auf null. Diese Hypothese ist nicht reproduzierbar — wir machen das Experiment nicht freiwillig nochmal." },
+      { "label": "H7 · Beobachter-Effekt", "text": "Möglich, dass die Inzidenz-Statistik selbst zum Stressor wird. Wer permanent dokumentiert wird, baut messbar schneller ab — siehe Felix in dem Moment, in dem ihm bewusst wird, dass das hier inzwischen sieben Hypothesen sind. Comedy ist trotzdem wichtiger als Würde." },
+      { "label": "H8 · Studienobjekt = Studienleitung", "text": "Luca tippt diese Analyse parallel zum Brunch und ist damit gleichzeitig Vorfall, Zeuge, Redaktion und Lektorat. Klassischer Interessenkonflikt. Felix hätte vermutlich Einspruch eingelegt, aber er hat heute gerade keine Tokens dafür übrig." }
     ],
-    "synthesis": "Wahrscheinlich H1 + H2 + H3 in Kombination — Felix ordert, Luca trägt, das Bad heizt. H4 ist die ehrliche Schutzhypothese, die heute Morgen erstmals teilweise eingelöst wurde. H5 könnte H1 erklären, müsste aber durch eine Vergleichsstudie auf neutralem Trinkboden überprüft werden.",
+    "synthesis": "Aktualisiertes Modell: H1 + H2 + H3 + H6 sind heute die Hauptfaktoren — Felix ordert, Luca trägt akut, Felix bezahlt verzögert, das Bad heizt im Hintergrund. Die Studie ist damit von einer Luca-zentrierten Schmerz-Hypothese zu einer fairen Zwei-Komponenten-Theorie gereift. Einzige Limitierung: derjenige, der den Text schreibt, teilt den Brotkorb — Objektivität liegt eher im einstelligen Bereich.",
     "prevention": [
       "Heizstrahler-Schutzschalter auf Pre-Trip-Checkliste — die 7. Klimazone war vorhersehbar.",
       "Veto-Rotation: nächste Reise wechseln sich Luca und Felix in der Veto-Rolle ab. Senkt H3-Effekt.",
-      "Initiator-Steuer: wer den Sprit-Suizid initiiert, trinkt verbindlich das letzte Glas Wasser. Senkt H1.",
-      "Ehrliches Tages-Reporting auch von Felix — schließt H4 als Confounder aus."
+      "Initiator-Steuer mit Verzögerungs-Klausel: wer den Raki bestellt, trinkt verbindlich das letzte Glas Wasser UND übernimmt den Brunch-Vorschlag am Folgetag. Entkoppelt H1 und H6.",
+      "Tages-Reporting auch von Felix — ist seit Sa/So eingeführt, H4 gilt als geschlossen.",
+      "Brotkorb-Index als Frühindikator: wenn Felix nach 90 Sekunden nichts angerührt hat, ist das Wochenende vorbei. Frühwarnsystem für H6.",
+      "Studienleitung muss bei der nächsten Reise jemand übernehmen, der nicht selbst betroffen ist. Realistisch: niemand."
     ],
-    "footer": "Pro-Tip Nasenbluten: Nasenflügel zudrücken, nach vorne lehnen (nicht nach hinten — sonst Schluckblut), 10 Min halten. Wenn nach 20 Min nicht aufhört: Ambulanz. Gilt auch in Podgorica, gilt erst recht zu Hause."
+    "footer": "Pro-Tipp Nasenbluten: Nasenflügel zudrücken, nach vorne lehnen (nicht nach hinten, sonst Schluckblut), 10 Min halten. Wenn nach 20 Min nicht aufhört: Ambulanz. Pro-Tipp Felix-Akku: Pommes, Wasser, Diplomat-Brotkorb in dieser Reihenfolge. Pro-Tipp Reise-Ende: Taxi 19700, Wizz Air 17:30, Bett zu Hause."
   },
 
   "manifesto": {
